@@ -59,7 +59,8 @@ body {
         background: #000;
     }
     h2 {
-        margin: $base-spacing 0;
+        // margin: $base-spacing 0;
+        margin: 40px 0;
         margin-bottom: $base-spacing/1.1 - 1;
         font-size: 40px;
         font-family: 'ubuntu';
@@ -145,6 +146,8 @@ footer, .wrapper:after {
     height: $footer-size;
 }
 footer {
+  background: $secundary-color;
+/*
     div {
         padding: $base-spacing/2.5;
         margin: 0px;
@@ -152,7 +155,7 @@ footer {
     h2 {
         font-size: 20px;
         font-weight: lighter;
-    }
+    }*/
 }
 
 .site-name {
@@ -300,4 +303,91 @@ hr {
     font-weight: lighter;
     @media (max-width: $break-small) {
     }
+}
+
+
+
+/* Personal modifications */
+.navbar {
+  background: $secundary-color;
+  color: #fff;
+  position: fixed;
+}
+.navbar--logo--container {
+  color: #fff;
+  float: left;
+  font-size: 28px;
+}
+.navbar--logo--name {
+  text-transform: uppercase;
+}
+.navbar--logo--bracket {
+  color: $accent-color;
+}
+.navbar--menu {
+  float: right;
+  text-transform: lowercase;
+}
+.navbar--logo--container,
+.navbar--logo-name,
+.navbar--logo-phrase,
+.navbar--menu {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 28px;
+}
+
+.footer--container--item {
+  float: left;
+  color: #e6e6e6;
+  border-right: 1px dashed $footer-item-color;
+  padding: 0.9em;
+  height: $footer-size;
+}
+.footer--container--item:last-child {
+  margin-right: 0;
+  border-right: 0;
+}
+
+.footer--infos {
+  list-style: none;
+}
+.footer--infos li {
+  border-bottom: 1px dashed $footer-item-color;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  color: #b3b3b3;
+}
+
+.footer--container--item .navbar--logo {
+  margin-bottom: 10px;
+}
+
+.social--icons {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.social--icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.social--icons .icon {
+  font-size: 32px;
+}
+
+.intro--avatar--container {
+  margin-bottom: 20px;
+}
+
+
+.page-link {
+  color: $light-color; 
+  text-transform: uppercase;
+  &:hover {
+    color: #fff;
+  }
+}
+.page-link:not(:last-child)::after {
+  content: " / ";
 }

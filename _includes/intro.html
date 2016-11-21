@@ -2,8 +2,11 @@
     <div id="intro">
         <div class="container">
             {% if site.profile_picture %}
+              <div class="intro--avatar--container">
                 <img id="intro-img" src="{{ site.profile_picture }}">
+              </div>
             {% endif %}
+            {% include social.html %}
             <h2>
                 {% if site.site_heading %}
                     {{ site.site_heading }}

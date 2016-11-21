@@ -1,7 +1,8 @@
 # User Settings | Edit there as per required
 
-title: accent
-url: "http://ankitsultana.me"
+title: CARLOHCS - Codificando ideias
+title_suffix: / CARLOHCS - Codificando ideias
+url: "https://carlohcs.com.br"
 baseurl: ""
 
 # This will show up at the top of index page
@@ -36,7 +37,7 @@ comments: true
 about_stub: >
     Keep this sentence less than 13 words or it won't look good.
 
-about_footer: true
+#about_footer: true
 
 twitter_username: carlohcs
 github_username: carlohcs
@@ -70,6 +71,8 @@ gems:
 sass:
     style: compressed
     sass_dir: _sass
+
+show_posts: false
 
 # Scopes
 defaults:

@@ -1,8 +1,8 @@
 ---
-layout: about
-title: accent
-author: Ankit Sultana
-permalink: /about
+layout: sobre
+title: Sobre
+author: Carlos Henrique Carvalho de Santana
+permalink: /sobre
 ---
 
 Hi! My name is yourname!

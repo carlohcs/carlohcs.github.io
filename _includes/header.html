@@ -1,10 +1,5 @@
 <nav class="navbar">
-  <a class="navbar--logo--container" href="{{ site.baseurl }}/">
-    <div class="navbar--logo">
-      <span class="navbar--logo--name">carlohcs</span>  <span class="navbar--logo--bracket">{</span>
-      <span class="navbar--logo--phrase faded">Codificando ideias</span>
-    </div>
-  </a>
+  {% include logo.html %}
   <div class="navbar--menu">
     <div class="trigger site-navigation">
       <a class="page-link" href="/blog/">Blog</a>
@@ -14,34 +9,4 @@
     </div>
   </div>
 </nav>
-
-<style>
-  .navbar {
-    background: #000;
-    color: #fff;
-    position: fixed;
-  }
-  .navbar--logo--container {
-    float: left;
-    font-size: 28px;
-  }
-  .navbar--logo--name {
-    text-transform: uppercase;
-  }
-  .navbar--logo--bracket {
-    color: #2f2ac5;
-  }
-  .navbar--menu {
-    float: right;
-    text-transform: lowercase;
-  }
-  .navbar--logo--container,
-  .navbar--logo-name,
-  .navbar--logo-phrase,
-  .navbar--menu {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 28px;
-  }
-</style>
 
