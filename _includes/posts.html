@@ -1,16 +1,6 @@
----
-layout: default
----
-
-{% include intro.html %}
-
-{% if site.show_posts %}
 <section class="post-list">
     <div class="container">
-      <div class="content">
-        <h3>Últimos posts</h3>
-      </div>
-        {% for post in paginator.posts %}
+        {% for post in site.posts %}
             <div class="post-preview">
                 <span class="post-title alignable pull-left">
                     <a class="post-link underline" href="{{ post.url | prepend: site.baseurl }}">
@@ -23,10 +13,6 @@ layout: default
                 <div style="clear:both"></div>
             </div>
         {% endfor %}
-
-        <a class="text-center display-block" href="/blog/">Ver todos</a>
     </div>
 </section>
-{% endif %}
 
-{% include scripts.html %}
