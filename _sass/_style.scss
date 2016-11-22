@@ -32,6 +32,10 @@ body {
     }
 }
 
+.text-right {
+  text-align: right;
+}
+
 /* Intro
 * * * * * * * * * * * */
 #intro {
@@ -133,7 +137,7 @@ a:hover {
 
 .wrapper {
     min-height: 100%;
-    margin-bottom: -$footer-size;
+    // margin-bottom: -$footer-size;
 }
 .wrapper:after {
     content: "";
@@ -142,8 +146,9 @@ a:hover {
 .main {
     padding-top: 74px;
 }
-footer, .wrapper:after {
-    height: $footer-size;
+.wrapper:after {
+   // height: 100px;
+    // height: $footer-size;
 }
 footer {
   background: $secundary-color;
@@ -341,12 +346,7 @@ hr {
   float: left;
   color: #e6e6e6;
   border-right: 1px dashed $footer-item-color;
-  padding: 0.9em;
-  height: $footer-size;
-}
-.footer--container--item:last-child {
-  margin-right: 0;
-  border-right: 0;
+  padding: 0 0.9em;
 }
 
 .footer--infos {
@@ -391,3 +391,66 @@ hr {
 .page-link:not(:last-child)::after {
   content: " / ";
 }
+
+footer {
+  display: block;
+  padding: 20px 0;
+}
+
+.footer--container--item:nth-child(1) {
+  width: 40%;
+}
+footer .navbar--logo--container {
+  width: 100%;
+}
+footer .navbar--logo {
+  width: 100%;
+  display: block;
+}
+
+.footer--container--item:nth-child(2) {
+  border-right: 0;  
+  width: 60%;
+  margin-right: 0;
+  border-right: 0;
+}
+
+.footer--author--prase {
+  font-size: 14px;
+  font-style: italic;
+}
+.footer--author--name {
+  font-size: 13px; 
+  display: block; 
+  margin-top: 5px; 
+}
+
+.footer--container--item .social--icons {
+  margin-top: 20px;
+}
+
+
+/* About
+* * * * * * * * * * * */
+
+.about {
+  text-align: center;
+
+  > ul,
+  > ol {
+    text-align: left;
+  }
+
+  
+}
+
+.about .post-title {
+  text-align: center;
+}
+
+.about .avatar {
+  float: left;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+

@@ -3,7 +3,9 @@
     {% include logo.html %}
     <ul class="footer--infos">
       <li>
-        carlohcs@gmail.com
+        <a href="mailto:{{ site.email }}">
+          carlohcs@gmail.com
+        </a>
       </li>
       <li>
         © 2013 - 2016
@@ -14,12 +16,17 @@
     </ul>
   </div>
   <div class="footer--container--item">
+    <p class="footer--author--prase">
+      "Propagar o conhecimento produtivo para as pessoas que sinceramente o buscam, através
+      da reciprocidade e respeito. Reconhecer e cativar as pessoas que realmente
+      merecem."
+    </p>
+    <small class="footer--author--name">
+      Carlos Henrique Carvalho de Santana
+    </small>
     {% include social.html %}
   </div>
-  <div class="footer--container--item">
-    "Propagar o conhecimento produtivo para as pessoas que sinceramente o buscam,
-    <br />através da reciprocidade e respeito.
-    <br />Reconhecer e cativar as pessoas que realmente merecem."
-  </div>
+
+  <div style=" display: block; width: 100%; clear: both; "></div>
 </footer>
 

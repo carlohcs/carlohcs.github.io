@@ -46,7 +46,7 @@ facebook_id: carlohcs
 favicon: true
 favicon_location: "images/favicon.ico"
 
-profile_picture: images/avatar.jpg
+profile_picture: /images/avatar.jpg
 paginate: 5
 paginate_path: "/page/:num"
 tracking_id: UA-69243698-7 # GA Tracking ID

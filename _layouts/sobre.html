@@ -1,9 +1,14 @@
----
+--- 
 layout: default
 ---
-<div class="container content" style="text-align: center">
-    <h1 class="post-title" style="text-align: center">
-        {{ site.author }}
+
+<div class="container content about">
+  <h1 class="post-title">
+      Quem sou eu?
     </h1>
-    {{ content }}
+    {% if site.profile_picture %}
+      <img class="avatar" src="{{ site.profile_picture }}">
+    {% endif %}
+  {{ content }}
 </div>
+
