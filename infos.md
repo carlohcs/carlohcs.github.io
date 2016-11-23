@@ -15,3 +15,7 @@ Liquid Templates - Engine de template que permite inserir variáveis e outras in
 
 Conceitos básicos do Liquid: https://help.shopify.com/themes/liquid/basics
 Github Liquid: https://github.com/Shopify/liquid
+
+# Como colocar HTML dentro do markdown
+<tag markdown="1">
+https://lodge.statamic.com/discussions/1166-html-inside-markdown
