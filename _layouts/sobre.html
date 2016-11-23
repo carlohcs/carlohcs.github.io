@@ -1,14 +1,16 @@
---- 
+---
 layout: default
 ---
+<div class="intro about">
+  <h1>
+    Quem sou eu?
+  </h1>
+</div>
 
 <div class="container content about">
-  <h1 class="post-title">
-      Quem sou eu?
-    </h1>
-    {% if site.profile_picture %}
-      <img class="avatar" src="{{ site.profile_picture }}">
-    {% endif %}
+  {% if site.profile_picture %}
+    <img class="avatar" src="{{ site.profile_picture }}">
+  {% endif %}
   {{ content }}
 </div>
 

@@ -44,7 +44,7 @@ body {
 
 /* Intro
 * * * * * * * * * * * */
-#intro {
+.intro {
     color: #e6e6e6;
     background: url('/images/cover.jpg') 40% 40% fixed;
     background-size: cover;
@@ -68,7 +68,7 @@ body {
         color: #fff;
         background: #000;
     }
-    h2 {
+    h1 {
         // margin: $base-spacing 0;
         margin: 40px 0;
         margin-bottom: $base-spacing/1.1 - 1;
@@ -80,10 +80,18 @@ body {
     }
 }
 #intro-img {
-    width: 250px;
-    height: 250px;
+    // width: 250px;
+    // height: 250px;
+
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 2px solid transparent;
+
+}
+.intro--avatar--container .social--icons{
+  vertical-align: top;
+    margin-top: 60px;
 }
 
 /* Links
@@ -172,12 +180,12 @@ footer {
 .site-name {
     font-size: 35px;
 }
-.intro {
+/*.intro {
     text-align: center;
     margin: auto;
     font-size: 30px;
     font-family: 'Montserrat';
-}
+}*/
 .container {
     max-width: $max-width;
     margin: auto;
@@ -448,6 +456,15 @@ footer .navbar--logo {
     text-align: left;
   }
 }
+.about.intro {
+  background: url('/images/amor.jpg') no-repeat 40% 40% fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+}
 
 .about .post-title {
   text-align: center;
@@ -465,4 +482,10 @@ footer .navbar--logo {
   font-size: 40px;
   font-family: 'Montserrat';
   color: $accent-color;
+}
+
+.intro h1 {
+  font-size: 80px;
+  font-family: 'ubuntu';
+  font-weight: 700;
 }
