@@ -8,7 +8,7 @@ jobs:
     description: >
       O UOL Música Deezer é a junção da antiga **Rádio UOL** com a plataforma
       de áudio sob demanda global **Deezer**.
-      
+
       A plataforma provê 40 milhões de músicas aos seus usuários pelo website ou pelo app da Deezer.
     features: >
       - Player de música;
@@ -17,18 +17,18 @@ jobs:
 
       - Compartilhamento de músicas, álbuns, artistas, playlists;
 
-      - Favoritamento de músicas; 
+      - Favoritamento de músicas;
 
       - Conteúdo controlado por editoria;
     nerdFeatures: >
       - JavaScript puro (Vanilla), jQuery.js, Backbone.js, Marionette.js, Underscore.js
-        
+
   - title: <span></span>[InterAcesso - Serviço online para gestão de condomínios](http://interacesso.interport.com.br) <span class="faded">Institucional e ERP</span>
     description: >
-      A proposta da plataforma é a de atender a necessidade das pessoas que convivem no ambito de um condomínio. 
+      A proposta da plataforma é a de atender a necessidade das pessoas que convivem no ambito de um condomínio.
       Entre tantas tarefas e itens a se tomar providência, a plataforma garante trazer agilidade e conforto para essas tomadas de decisões.
 
-      
+
       Foi desenvolvido o site institucional e o ERP, responsável por gerenciar todo o negócio.
     features: >
       - Layout responsivo;
@@ -55,6 +55,13 @@ jobs:
       - Controle de eventos, cadastros, profissões, pendências entre outros.
     nerdFeatures: >
       - JavaScript puro (Vanilla), jQuery.js, PHP, MySql
+    screenshots1:
+      name: Site
+      folder: vita-institucional
+      thumbs:
+        - 1.jpg
+        - 2.jpg
+        - 3.jpg
 
   - title: Aduet - Agência de encontros <span class="faded">ERP</span>
     description: >
@@ -146,6 +153,17 @@ gratuitamente.
 {{ job.nerdFeatures }}
 {% endif %}
 
+{% if job.screenshots1 %}
+
+**ScreenShots**
+
+**{{ job.screenshots1.name }}**
+
+{% for screenshot in job.screenshots1.thumb %}
+  <img src="/images/projects/{{ job.screenshots1.folder }}/{{ screenshot }}" markdown="1" />
+{% endfor %}
+
+{% endif %}
 </div>
 </div>
 
