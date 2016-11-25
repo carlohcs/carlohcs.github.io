@@ -62,6 +62,13 @@ jobs:
         - 1.jpg
         - 2.jpg
         - 3.jpg
+    screenshots2:
+      name: ERP 
+      folder: vita-erp
+      thumbs:
+        - 1.jpg
+        - 2.jpg
+        - 3.jpg
 
   - title: Aduet - Agência de encontros <span class="faded">ERP</span>
     description: >
@@ -159,9 +166,31 @@ gratuitamente.
 
 **{{ job.screenshots1.name }}**
 
-{% for screenshot in job.screenshots1.thumb %}
-  <img src="/images/projects/{{ job.screenshots1.folder }}/{{ screenshot }}" markdown="1" />
+<ul class="project--features--screenshot">
+{% for screenshot in job.screenshots1.thumbs %}
+  <li class="project--features--screenshot--item">
+    <a href="project--features--screenshot--item--link">
+      <img src="/images/projects/{{ job.screenshots1.folder }}/thumb/{{ screenshot }}" markdown="1" />
+    </a>
+  </li>
 {% endfor %}
+</ul>
+
+{% if job.screenshots2 %}
+
+**{{ job.screenshots2.name }}**
+
+<ul class="project--features--screenshot">
+{% for screenshot in job.screenshots2.thumbs %}
+  <li class="project--features--screenshot--item">
+    <a href="project--features--screenshot--item--link">
+      <img src="/images/projects/{{ job.screenshots2.folder }}/thumb/{{ screenshot }}" markdown="1" />
+    </a>
+  </li>
+{% endfor %}
+</ul>
+
+{% endif %}
 
 {% endif %}
 </div>
