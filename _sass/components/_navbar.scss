@@ -1,0 +1,37 @@
+.navbar {
+    z-index: 2;
+    margin: auto;
+    padding: 0.9em;
+    width: 100%;
+    background: $secundary-color;
+    color: #fff;
+    position: fixed;
+}
+
+.navbar--logo--container {
+  color: #fff;
+  float: left;
+  font-size: 28px;
+}
+
+.navbar--logo--name {
+  text-transform: uppercase;
+}
+
+.navbar--logo--bracket {
+  color: $accent-color;
+}
+
+.navbar--menu {
+  float: right;
+  text-transform: lowercase;
+}
+
+.navbar--logo--container,
+.navbar--logo-name,
+.navbar--logo-phrase,
+.navbar--menu {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 28px;
+}

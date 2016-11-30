@@ -33,9 +33,9 @@
                 features;
 
               e.preventDefault();
-              
+
               element = e.target;
-              
+
               features = element.closest('.project')
                 .querySelector('.project--features--container');
 
@@ -48,7 +48,7 @@
               return featuresClass.add(hideClass);
 
               debugger;
-              
+
             });
           }
         }
@@ -62,9 +62,11 @@
       App.prototype.introResize = function() {
         var
           screenHeight = window.screen.height,
-          intro = document.querySelector('.intro');
+          screenWidth = window.screen.width,
+          intro = document.querySelector('.intro'),
+          padding = screenWidth <= 320 ? 40 : 80;
 
-        intro.style.height = parseInt(screenHeight - 80) + 'px';
+        intro.style.height = parseInt(screenHeight - padding) + 'px';
       };
 
       /**

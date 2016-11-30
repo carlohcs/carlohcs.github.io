@@ -1,0 +1,34 @@
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.display-block {
+  display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.alignable {
+    display: inline-block;
+}
+
+.pull-left {
+    @extend .alignable;
+    float: left;
+}
+
+.pull-right {
+    @extend .alignable;
+    float: right;
+}
+
+.faded {
+    color: $light-color;
+    font-weight: lighter;
+}
