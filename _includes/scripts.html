@@ -64,9 +64,9 @@
           screenHeight = window.screen.height,
           screenWidth = window.screen.width,
           intro = document.querySelector('.intro'),
-          padding = screenWidth <= 320 ? 40 : 80;
+          padding = parseInt(getComputedStyle(document.querySelector('.navbar')).height.replace('px', ''));
 
-        intro.style.height = parseInt(screenHeight - padding) + 'px';
+        intro.style.height = parseInt(screenHeight + padding - 70) + 'px';
       };
 
       /**
@@ -77,10 +77,17 @@
       App.prototype.init = function() {
         this.introResize();
         this.setupProjectsPage();
+
+        // API
+        return {
+          introResize: this.introResize
+        };
       };
 
       // Init
-      new App().init();
+      var init = new App().init();
+
+      window.onresize = init.introResize;
   })();
 </script>
 

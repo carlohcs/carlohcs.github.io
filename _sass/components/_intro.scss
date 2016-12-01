@@ -41,11 +41,15 @@
       margin: 40px 0;
       margin-bottom: $base-spacing/1.1 - 1;
       font-family: 'ubuntu';
+      font-weight: 700;
+
       @media (max-width: $break-small) {
           font-size: 32px;
-
       }
-      font-weight: 700;
+
+      @media (max-width: $break-medium) {
+        font-size: 30px;
+      }
   }
 }
 
