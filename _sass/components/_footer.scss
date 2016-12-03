@@ -44,6 +44,12 @@
   color: #e6e6e6;
   border-right: 1px dashed $footer-item-color;
   padding: 0 0.9em;
+
+  @media (max-width: $break-small) {
+    text-align: center;
+    float: none;
+    width: 100% !important;
+  }
 }
 
 .footer--infos {

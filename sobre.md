@@ -5,6 +5,7 @@ author: Carlos Henrique Carvalho de Santana
 permalink: /sobre
 ---
 
+<div class="about--intro">
 <p class="text-right">
 Meu nome é <strong>Carlos Henrique</strong>, tenho 23 anos e moro em Diadema (SP).
 Atualmente, sou webmaster no <a href="http://www.uol.com.br" target="_blank">UOL</a>.
@@ -17,6 +18,8 @@ Tenho procurado me atualizar constantemente, atualizando meus conhecimentos de a
 Sou um apaixonado pela tecnologia, e por café também.
 Veja abaixo mais sobre o que sei e o que procuro melhorar.
 </p>
+<br class="clearboth" />
+</div>
 
 ## Skills
  - HTML
@@ -29,7 +32,7 @@ Veja abaixo mais sobre o que sei e o que procuro melhorar.
         - Angular.js 2 (estudando)
         - Node.js (estudando)
    - Testes
-        - QUnit 
+        - QUnit
         - Jasmine
  - PHP
    - Frameworks
@@ -123,6 +126,6 @@ Participações em reuniões de capacitação.
 
 * [Missão Pessoal](http://www.missaopessoal.com.br/) - setembro de 2015
 
-    >"Crie sua missão pessoal agora mesmo! Todos precisam ter um rumo na vida e a missão pessoal faz parte disso. Crie-a agora!" 
-   
+    >"Crie sua missão pessoal agora mesmo! Todos precisam ter um rumo na vida e a missão pessoal faz parte disso. Crie-a agora!"
+
 Com essa chamada, o projeto é uma ferramenta que auxilia as pessoas a criarem suas respectivas missões pessoais e compartilhá-las no site. Tudo isso gratuitamente.

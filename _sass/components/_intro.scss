@@ -38,7 +38,10 @@
 
   h1 {
       font-size: 80px;
-      margin: 40px 0;
+      margin-top: -110px;
+      @media (orientation: landscape) and (max-width: 1024px) {
+        margin-top: 0;
+      }
       margin-bottom: $base-spacing/1.1 - 1;
       font-family: 'ubuntu';
       font-weight: 700;
