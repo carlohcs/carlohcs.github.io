@@ -1,5 +1,6 @@
 .project {
   clear: both;
+  padding: 30px 0;
 }
 .project--features--screenshot {
   list-style-type: none !important;
@@ -40,4 +41,6 @@
   display: none;
 }
 
-
+.content hr:last-child {
+  display: none;
+}

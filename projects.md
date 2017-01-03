@@ -126,20 +126,23 @@ jobs:
 
 # Projetos
 
-- **[Missão pessoal](https://missaopessoal.com.br)**
+
+<div class="project" markdown="1">
+**[Missão pessoal](https://missaopessoal.com.br)**
 > “Crie sua missão pessoal agora mesmo! Todos precisam ter um rumo na vida e a
 missão pessoal faz parte disso. Crie-a agora!”
 
 Com essa chamada, o projeto é uma ferramenta que auxilia as pessoas a criarem
 suas respectivas missões pessoais e compartilhá-las no site. Tudo isso
 gratuitamente.
+</div>
 
 # Sites, sistemas e afins
 
 {% for job in page.jobs %}
 
 <div class="project" markdown="1">
-- **{{ job.title  }}**
+**{{ job.title  }}**
 
 {{ job.description }}
 

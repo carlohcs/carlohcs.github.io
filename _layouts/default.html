@@ -61,18 +61,20 @@
          {{ content }}
         </div>
     </div>
-    {% include footer.html %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="{{ site.baseurl }}/js/rrssb.min.js"></script>
+    <!--{% include footer.html %}-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+    <!--<script src="{{ site.baseurl }}/js/rrssb.min.js"></script>-->
+
+    {% include scripts.html %}
 
     {% if page.title %}
-        <script src="js/anchor.min.js"></script>
+        <!--<script src="js/anchor.min.js"></script>
         <script>
         anchors.options.placement = 'right'
         anchors.options.class = 'hide'
         anchors.add()
         anchors.remove('.post-title')
-        </script>
+        </script>-->
     {% endif %}
     {% if site.tracking_id %}
         {% include analytics.html %}

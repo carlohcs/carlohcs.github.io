@@ -49,6 +49,10 @@ Veja abaixo mais sobre o que sei e o que procuro melhorar.
 
 ## Experiência Profissional
 
+**Webmaster** - UOL - 01/2016 - atualmente
+
+>Webmaster em P&D no serviço UOL Música Deezer e CoLAB.
+
 **Cofundador** – InterAcesso – 11/2013 - 07/2015
 
 > Cofundador do projeto.
@@ -70,10 +74,6 @@ Criação de rede social UrsoLand.
 >Monitoramento de sala de informática.
 Suporte a usuários, indicações de uso de sites úteis.
 Participações em reuniões de capacitação.
-
-**Webmaster** - UOL - 01/2016 - atualmente
-
->Webmaster em P&D no serviço UOL Música Deezer e CoLAB.
 
 ## Formação Acadêmica
 
