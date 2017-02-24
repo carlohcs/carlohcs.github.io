@@ -72,7 +72,7 @@ sass:
     style: compressed
     sass_dir: _sass
 
-show_posts: true
+show_posts: false
 
 # Scopes
 defaults:

@@ -2,7 +2,7 @@
 layout: default
 title: Artigos
 author: Carlos Henrique Carvalho de Santana
-permalink: /artigos
+permalink: /artigos.html
 ---
 
 <div class="intro articles">
@@ -13,6 +13,11 @@ permalink: /artigos
     </div>
 </div>
 
-{% include posts.html %}
+{% comment %}
+include posts.html
+include paginate.html
+{% endcomment %}
 
-{% include paginate.html %}
+<div class="content text-center" markdown="1">
+## Logo mais ;)
+</div>

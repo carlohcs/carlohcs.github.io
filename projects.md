@@ -2,8 +2,21 @@
 layout: projects
 title: Projetos
 author: Carlos Henrique Carvalho de Santana
-permalink: /projetos
+permalink: /projetos.html
 jobs:
+  - title: <span></span>UOL co:lab - Compartilhar + colaborar <span class="faded">Projeto interno</span>
+    description: >
+      O co:lab é um grupo interno no UOl, responsável por projetos corporativos que impactam os diversos produtos do UOL, desde a
+      fase de entendimento explorando métricas (Adobe Analytics) e contexto, fase
+      de definição e desenvolvimento com dinâmicas de co-criação entre as áreas
+      envolvidas, até a fase de validação com aplicação de testes e constante
+      acompanhamento.
+
+      Entre alguns projetos, o de padronização de componentes internos da empresa.
+
+    nerdFeatures: >
+      - JavaScript puro (Vanilla), jQuery.js, SASS, Jekyll, UX e afins.
+
   - title: <span></span>[UOL Música Deezer - Ouça mais de 40 milhões de músicas](http://deezer.musica.uol.com.br) <span class="faded">Plataforma</span>
     description: >
       O UOL Música Deezer é a junção da antiga **Rádio UOL** com a plataforma
@@ -63,7 +76,7 @@ jobs:
         - 2.jpg
         - 3.jpg
     screenshots2:
-      name: ERP 
+      name: ERP
       folder: vita-erp
       thumbs:
         - 1.jpg
@@ -137,6 +150,16 @@ suas respectivas missões pessoais e compartilhá-las no site. Tudo isso
 gratuitamente.
 </div>
 
+<div class="project" markdown="1">
+**[Não é bem isso!](http://naoebemisso.com.br)**
+> “Um podcast para mentes inquietas!”
+
+Com essa chamada, o projeto consiste em ser um meio de transmissão de conteúdo
+e de conhecimento para os ouvintes. Composto por um time de 4 pessoas,
+podcasts com temas variados são lançados quinzenalmente.
+</div>
+
+
 # Sites, sistemas e afins
 
 {% for job in page.jobs %}
@@ -199,5 +222,4 @@ gratuitamente.
 </div>
 </div>
 
----
 {% endfor %}

@@ -2,12 +2,12 @@
 layout: sobre
 title: Sobre
 author: Carlos Henrique Carvalho de Santana
-permalink: /sobre
+permalink: /sobre.html
 ---
 
 <div class="about--intro">
 <p class="text-right">
-Meu nome é <strong>Carlos Henrique</strong>, tenho 23 anos e moro em Diadema (SP).
+Meu nome é <strong>Carlos Henrique</strong>, tenho 24 anos e moro em Diadema (SP).
 Atualmente, sou webmaster no <a href="http://www.uol.com.br" target="_blank">UOL</a>.
 </p>
 
@@ -129,3 +129,12 @@ Participações em reuniões de capacitação.
     >"Crie sua missão pessoal agora mesmo! Todos precisam ter um rumo na vida e a missão pessoal faz parte disso. Crie-a agora!"
 
 Com essa chamada, o projeto é uma ferramenta que auxilia as pessoas a criarem suas respectivas missões pessoais e compartilhá-las no site. Tudo isso gratuitamente.
+
+* [Não é bem isso!](http://naoebemisso.com.br) - janeiro de 2017
+
+  > “Um podcast para mentes inquietas!”
+
+Com essa chamada, o projeto consiste em ser um meio de transmissão de conteúdo
+e de conhecimento para os ouvintes. Composto por um time de 4 pessoas,
+podcasts com temas variados são lançados quinzenalmente.
+
