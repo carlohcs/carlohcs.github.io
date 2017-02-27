@@ -2,8 +2,8 @@
 
 title: CARLOHCS - Codificando ideias
 title_suffix: / CARLOHCS - Codificando ideias
-url: "https://carlohcs.com.br"
-baseurl: ""
+#url: "https://carlohcs.com.br"
+#baseurl: ""
 
 # This will show up at the top of index page
 site_heading: >
@@ -44,16 +44,16 @@ github_username: carlohcs
 facebook_id: carlohcs
 
 favicon: true
-favicon_location: "images/favicon.ico"
+favicon_location: images/favicon.ico
 
 profile_picture: /images/avatar.jpg
 paginate: 5
-paginate_path: "/page/:num"
+paginate_path: /page/:num
 tracking_id: UA-69243698-7 # GA Tracking ID
 
 # Social Stuff | open graph and twitter cards
-og_image: "images/accent.png" # This will show in facebook thumbnails
-twitter_image: "http://ankitsultana.me/images/accent.png?1234" # This will show in twitter cards
+og_image: images/accent.png # This will show in facebook thumbnails
+twitter_image: http://ankitsultana.me/images/accent.png?1234 # This will show in twitter cards
 
 ####################################
 ####################################
@@ -78,17 +78,24 @@ show_posts: false
 defaults:
     -
         scope:
-            path:   ""
-            type:   "pages"
+            path:   ''
+            type:   pages
         values:
-            layout: "page"
+            layout: page
     -
         scope:
-            path:   ""
-            type:   "posts"
+            path:   ''
+            type:   posts
         values:
-            layout: "post"
+            layout: post
 
 exclude: [vendor] # For travis ci
 
-gems: [jekyll-paginate]
+# Server
+source:           source
+destination:      _gh_pages
+host:             dev.carlohcs.com.br
+port:             9001
+url:              https://carlohcs.com.br
+baseurl:          ''
+encoding:         UTF-8
