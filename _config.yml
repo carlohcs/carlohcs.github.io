@@ -90,6 +90,7 @@ defaults:
             layout: post
 
 exclude: [vendor] # For travis ci
+#keep_files: [_config.yml, composer.json, gulpfile.js, package.json, Procfile, README.md]
 
 # Server
 source:           source
@@ -99,3 +100,4 @@ port:             9001
 url:              https://carlohcs.com.br
 baseurl:          ''
 encoding:         UTF-8
+

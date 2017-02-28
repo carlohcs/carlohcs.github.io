@@ -26,6 +26,7 @@
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
+    "gulp-deploy-git": "^0.5.3",
     "gulp-util": "^3.0.8",
     "js-yaml": "^3.8.1"
   }
