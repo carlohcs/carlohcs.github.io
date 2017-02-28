@@ -90,7 +90,7 @@ gulp.task('deploy', () => {
   // gulp.src(config.destination + '/**/*')
   //return gulp.src('./_gh_pages/')
   // return gulp.src('./_gh_pages/**/*', {
-  return gulp.src([config.destination + '/', '_config.yml',
+  return gulp.src([config.destination + '/**', '_config.yml',
       'composer.json', 'gulpfile.js',
       'gulpfile.js', 'package.json',
       'Procfile', 'README.md'
