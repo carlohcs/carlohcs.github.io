@@ -43,14 +43,43 @@
         - Documentação
 - Talks:
     - "Tira a mão da minha propriedade!": Explorando comportamentos de integrantes de times e como suas relações geram resultados. (Março de 2018) - UniUOL
-    - (Procurar as de fronts e colai)
+    - HTML 5 - APIS que você não sabia que existiam
+        - https://github.com/carlohcs/talks/tree/master/2017/html5-apis-que-voce-nao-sabia-que-existiam
+    - JS eperience 2017 - https://github.com/carlohcs/talks/tree/master/2017/js-experience-2017
+    - Agile Trends 2019 - Pegar no colab
+
 - Treinamentos:
     - Vim seu amigo e não seu inimigo (5 turmas, x alunos)
+        - https://github.com/carlohcs/talks/tree/master/2017/vim-seu-amigo
     - Construção de websites (4 turmas, x alunos)
 - Facilitações:
     - Reunião de fronts
     - Design Thinking (3 turmas)
     - colaí
+
+## Características
+
+### Performance vs usabilidade vs beleza
+
+Um site bonito, leve e que tenha alguma firula.
+
+### Term um slogan?!
+
+"Entusiasta, geek, apaixonado por web e inovação!"
+
+### Linha do tempo
+
+Dar foco em como consegui crescer na carreira, tendenciando para gestão.
+
+### Idiomas: Inglês e português
+
+Em qual língua dar enfase?
+
+**Em todo caso: ter as duas!!!**
+
+## Tom de voz
+
+Alegre como sempre sou? Precisa sempre mostrar toda essa seriedade?
 
 ## Identidade visual
 
@@ -75,3 +104,55 @@ Você pode utilizar uma Dark UI:
 
 
 Estudo de 2018: https://medium.com/ui-lab-school/dark-ui-interfaces-escuras-e6c44a7e7a1f
+
+## Redes sociais
+
+- Github: https://github.com/carlohcs
+- LinkedIn: http://br.linkedin.com/in/carlohcs
+- Twitter: http://www.twitter.com/carlohcs
+- Facebook: http://www.facebook.com/carlohcs
+- mailto: carlohcs@gmail.com
+- Sourcerer: https://sourcerer.io/carlohcs
+- Medium: https://medium.com/@carlohcs
+
+## Benchmarking
+
+- Sheen - http://leonardomauro.com/portfolio/
+    - Totalmente em inglês
+    - Foco no currículo e nas pesquisas (parte acadêmica)
+        - Inicialmente nos códigos
+    - Recomendação principal
+    - Citação do filósofo Aristóteles
+    - Formação
+    - Pesquisas
+    - Conteúdo fixo à esquerda
+    - Conteúdo de interação à direita.
+
+- Leonardo Rifeli - https://leonardorifeli.tech/index.html
+    - Foco total nos posts
+    - Apenas três links: home / About / Github
+    - Totalmente em inglês, mas com textos em pt
+
+- Biassi - https://www.rodrigobiassi.com.br/
+    - Uma única página, mas bem cumprida.
+    - Fotos das viagens que ele fez em destaque e mensagem de boas vindas
+    - Descrição sobre ele, foto e prêmios alcançados.
+    - Certificados, artigos publicados, anos de experiência.
+    - Frases de impacto - filósofos e passagem bíblica.
+    - Habilidades
+    - Currículo
+    - Contato
+
+- Íris - https://irisuxdesigner.wordpress.com/
+    - Uma landing contendo cases de sucesso:
+        - https://irisuxdesigner.wordpress.com/2018/02/06/uol-new-header/
+
+- Clauber - https://cstipkovic.github.io/#english
+    - Uma única página, com links e uma mensagem que resume tudo que as pessoas precisam saber.
+
+
+## Insights
+
+- Transformar esse site/repositório em carlohcs-old.github.io
+- FAZER UM DESSE! https://github.dev/
+    - Exemplo: https://santoro.dev/
