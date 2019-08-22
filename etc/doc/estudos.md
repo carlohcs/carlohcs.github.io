@@ -114,6 +114,7 @@ Estudo de 2018: https://medium.com/ui-lab-school/dark-ui-interfaces-escuras-e6c4
 - mailto: carlohcs@gmail.com
 - Sourcerer: https://sourcerer.io/carlohcs
 - Medium: https://medium.com/@carlohcs
+- DevTo: https://dev.to/carlohcs
 
 ## Benchmarking
 
@@ -150,9 +151,60 @@ Estudo de 2018: https://medium.com/ui-lab-school/dark-ui-interfaces-escuras-e6c4
 - Clauber - https://cstipkovic.github.io/#english
     - Uma única página, com links e uma mensagem que resume tudo que as pessoas precisam saber.
 
+- Willian Justen - https://willianjusten.com.br/
+    - menu lateral parecido com o Sheen
+    - Conteúdo à direita: posts criados por ele
+    - Páginas: Home, Sobre mim, Cursos e Séries
+    - Links de acesso rápido as suas redes sociais
+
+- Felipe Fialho - https://www.felipefialho.com/
+    - 4 páginas: home, blog, projects, labs
+    - Projetos são mostrados com foto, link e a tecnologia utilizada
+    - A parte de labs é interessante: demonstra tentativas de projetos que ele fez ou de repositórios, qualquer coisa que ele tentou
+    - Acesso para suas redes sociais no topo do site
+
+
+**Perfis estrangeiros**
+
+- Cameron Nokes - https://cameronnokes.com/
+    - Mensagem de boas vindas
+    - 4 páginas: Home, About, Blog e Courses
+    - Foco para seus posts que parecem serem vindos do Medium
+    - Páginas com poucos conteúdos: claro e direto, sem muitos detalhes dos seus trabalhos.
+
+- Ash Connolly - https://ashconnolly.com/
+    - Sem menu
+    - Site centralizado
+    - Foco em uma frase, logo após sua foto:
+    "I work at SkyBet using React, JavaScript, TypeScript, Redux, Jest and Enzyme daily. I love building React applications, front end architecture, component libraries, and design systems. I’ve been doing this for around 8 years and had the pleasure of working with large clients like the BBC, WWF, and Microsoft."
+    - Mostrou logotipos de grandes empresas, mas sem link
+    - Mostrou uma única foto e descrição com os cases que atuou
+    - Mostra os posts escritos no medium, com link redirecionando para o medium
+    - Possui uma seção: "Side projects", projetos paralelos (posso fazer com o missão pessoal e afins - com as informações de depracted)
+    - Site clean (fundo bege)
+
+- Julia Evans - https://jvns.ca/
+    - Milhares de links de posts que ela escreveu
+    - Páginas: about, talks, projects, twitter, github
+
+- ESSE É IMPACTANTE EM TERMO DE CONTEÚDO! - Jared Palmer - https://jaredpalmer.com/
+    - As principais redes, e uma frase de resumo e diz logo que os códigos dele estão sendo tulizados no mundo inteiro
+    - Páginas: Blog, talks, podcasts, agencia e contato
+    - Possui muitos conteúdos escritos e publicados, este é o grande insight aqui. Os trabalhos falam por ele.
+- CRIADOR DO VUE - Evan You - https://evanyou.me/
+    - UMA ÚNICA PÁGINA: o destaque é para seu grande feito: Vue.js
+    - O site dele termina com o sufixo ".me" -> partircularmente, eu gostei.
+    - Exemplo de post: https://blog.evanyou.me/2014/02/11/first-week-of-launching-an-oss-project/
+
+![Exemplo de site](./exemplo-de-site.png)
+
 
 ## Insights
 
 - Transformar esse site/repositório em carlohcs-old.github.io
 - FAZER UM DESSE! https://github.dev/
     - Exemplo: https://santoro.dev/
+- Colocar no rodapé como o site foi criado:
+    - "This site was built with: ReactJS, Emotion, Kraken, Fontello, and hosted with Zeit Now."
+- Usar esta fonte: https://fonts.googleapis.com/css?family=Rubik:300,500,700 (EU AMEI!)
+- Interessante: https://speakerdeck.com/ - Deixar as apresentações de um jeito bacana
