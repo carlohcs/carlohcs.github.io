@@ -1,0 +1,12 @@
+{
+    "pt-br": {
+        "home": {
+            "welcome": "Olá!"
+        }
+    },
+    "en": {
+        "home": {
+            "welcome": "Hello!"
+        }
+    }
+}
