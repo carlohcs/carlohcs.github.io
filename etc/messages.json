@@ -1,12 +1,26 @@
 {
     "pt-br": {
         "home": {
-            "welcome": "Olá!"
+            "welcome": "Olá!",
+            "welcomeSubdescription": "Meu nome é Carlos Henrique.",
+            "description": [
+                "<strong>Sou engenheiro de software, product owner, instrutor e facilitador no UOL.</strong>",
+                "Formado recentemente em especialista em Gestão em T.I.escrevi um  <a href=\"TROCAR\">artigo</a>. Como engenheiro de software, alguns de meus trabalhos podem ser vistos <a href=\"TROCAR\">aqui</a> ou no <a href=\"https://github.com/carlohcs\">GitHub</a>.",
+                "Ultimamente tenho me aventurado a escrever no <a href=\"https://medium.com/@carlohcs\">Medium</a>. Confira algumas <a href=\"TROCAR\">palestras que apresentei</a>.",
+                "Acredito que todo mundo deve ter uma missão pessoal na vida. Você não sabe o que é ou como fazer? <a href=\"https://missaopessoal.com.br\">Faça a sua missão</a>."
+            ]
         }
     },
     "en": {
         "home": {
-            "welcome": "Hello!"
+            "welcome": "Hello!",
+            "welcomeSubdescription": "My name is Carlos Henrique.",
+            "description": [
+                "<strong> I'm a software engineer, product owner, instructor, and facilitator at UOL. </strong> ",
+                "Recently graduated as a IT Management Specialist I wrote a <a href=\"TROCAR\"> article </a>. As a software engineer, some of my work can be viewed <a href=\"TROCAR\"> here </a> or <a href=\"https://github.com/carlohcs\"> GitHub </a>. ",
+                "Lately I've been venturing to write at the <a href=\"https://medium.com/@carlohcs\"> Medium </a>. Check out some <a href=\"TROCAR\"> lectures I gave </a>.",
+                "I believe everyone should have a personal mission in life. Don't you know what it is or how to do it? <a href=\"https://missaopessoal.com.br\"> Do your mission</a>."
+            ]
         }
     }
 }
