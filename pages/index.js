@@ -17,6 +17,7 @@ class Index extends Component {
                         {getMessage('home', 'description').map((description, key) =>
                             <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
 
+                        <p>{getMessage('home', 'connect')}</p>
                         <button onClick={() => toggleLang('EN')}>Inglês!</button>
                         <br />
                         <button onClick={toggleTheme}>Tema Dark</button>

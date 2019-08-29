@@ -72,7 +72,13 @@ class AppProvider extends Component {
      * @return {String}
      */
     getMessage = (page, prop) => {
-        return this.state.messages[this.state.lang][page][prop]
+        const content = this.state.messages[this.state.lang][page]
+
+        if(prop) {
+            return content[prop]
+        }
+
+        return content
     }
 
     render() {

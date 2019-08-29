@@ -1,6 +1,8 @@
 
-import Head from 'next/head';
-import 'normalize.css';
+import Head from 'next/head'
+import Header from '../components/Header'
+import Menu from '../components/Menu'
+import 'normalize.css'
 
 // https://nextjs.org/learn/basics/using-shared-components/the-layout-component
 
@@ -58,12 +60,6 @@ const Main = props => (
         width: 100%;
       }
 
-      @media screen and (min-width: 768px) {
-        a {
-          padding: 2px 2px 0;
-        }
-      }
-
       body.dark-ui a {
         color: #e1e1e1;
       }
@@ -71,11 +67,31 @@ const Main = props => (
       .container {
         padding: 0 20px;
       }
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      @media screen and (min-width: 768px) {
+        a {
+          padding: 2px 2px 0;
+        }
+
+        h2 {
+          font-size: 1.5em;
+        }
+      }
     `}</style>
+    <div className="header">
+      <Header />
+      <div className="menu">
+        <Menu />
+      </div>
+    </div>
     <div className="container">
       {props.children}
     </div>
   </div>
-);
+)
 
 export default Main;
