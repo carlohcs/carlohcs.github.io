@@ -9,7 +9,7 @@ class Index extends Component {
         const createMarkup = value => ({__html: value})
         return (
             <AppConsumer>
-                {({ getMessage, toggleLang, toggleTheme }) => (
+                {({ getMessage }) => (
                     <Main>
                         <h1>{getMessage('home', 'welcome')}</h1>
                         <h2>{getMessage('home', 'welcomeSubdescription')}</h2>
@@ -18,9 +18,6 @@ class Index extends Component {
                             <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
 
                         <p>{getMessage('home', 'connect')}</p>
-                        <button onClick={() => toggleLang('EN')}>Inglês!</button>
-                        <br />
-                        <button onClick={toggleTheme}>Tema Dark</button>
                     </Main>
                 )}
             </AppConsumer>

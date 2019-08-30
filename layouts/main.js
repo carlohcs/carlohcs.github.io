@@ -81,15 +81,37 @@ const Main = props => (
           font-size: 1.5em;
         }
       }
+
+      .main-content {
+        /* #1DC779; */
+        position:relative;
+        width:100%;
+        height:100%;
+        z-index:20;
+        /* width:100%; Promove rolagem */
+        visibility:visible;
+        /* transition: scale 0.6s ease-in, margin-left 0.6s ease-in, background-color 0.6s ease-in; */
+        transition: all 0.6s ease-in;
+
+        > h1 {
+          margin-top: 0;
+        }
+
+        padding-top: 20px;
+        box-sizing: border-box;
+      }
+
+      /* https://github.com/zeit/next.js/issues/7945 */
+      #__next-prerender-indicator {
+        display: none;
+      }
     `}</style>
-    <div className="header">
+    <div className="app">
       <Header />
-      <div className="menu">
-        <Menu />
+      <Menu />
+      <div className="main-content container">
+        {props.children}
       </div>
-    </div>
-    <div className="container">
-      {props.children}
     </div>
   </div>
 )
