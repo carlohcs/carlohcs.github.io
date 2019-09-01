@@ -1,22 +1,45 @@
 import React, { Component } from 'react'
 import { AppConsumer } from '../components/AppProvider'
 
+const LANGS = {
+    'PT-BR': 'PT-BR',
+    'EN': 'EN'
+}
+
+const languagueActiveOptionClass = 'toggle-language__option--active'
+
 class Header extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            isDark: false
-        }
+    state = {
+        currentLanguage: 'PT-BR',
+        isDark: false
     }
+
+    /**
+     * Altera uma única propriedade
+     * 
+     * @param {String} prop 
+     * @param {Mix} value 
+     */
+    _setPropState(prop, value) {
+        let newState = Object.assign({}, this.state)
+
+        newState[prop] = value
+
+        this.setState(newState)
+    }
+
     toggleMenu() {
         document.body.classList.toggle('menu-open')
     }
-    toggleIsDark() {
-        const isDark = !this.state.isDark ? true : false
-        this.setState({
-            isDark: isDark
-        })
+
+    toggleIsDark() { 
+        this._setPropState('isDark', !this.state.isDark ? true : false)
     }
+
+    toggleCurrentLanguage(currentLanguage) {
+        this._setPropState('currentLanguage', currentLanguage)
+    }
+
     render() {
         return (
             <AppConsumer>
@@ -38,10 +61,42 @@ class Header extends Component {
                             display: flex;
                             flex-direction: row;
                             justify-content: space-between;
+                            align-items: center;
                         }
 
                         .toggle-language {
-                            margin-left: 10px;
+                            margin-right: 10px;
+
+                            &__option {
+                                cursor: pointer;
+
+                                &:nth-of-type(1) {
+                                    &:after {
+                                        content: "";
+                                        width: 1px;
+                                        height: 11px;
+                                        display: inline-block;
+                                        margin: 0 5px;
+                                        background: #1e1e1e;
+                                        position: relative;
+                                    }
+                                }
+
+                                &--active {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+
+                        .dark-ui .toggle-language {
+
+                            &__option {
+                                &:nth-of-type(1) {
+                                    &:after {
+                                        background: #e1e1e1;
+                                    }
+                                }
+                            }
                         }
 
                         /* https://codepen.io/made-on-mars/pen/qqEgXP */
@@ -126,17 +181,23 @@ class Header extends Component {
                             </div>
 
                             <div className="header__actions">
-                                <div>
-                                    <span onClick={() => toggleLang('PT-BR')}>PT-BR</span> |
-                                    <span onClick={() => toggleLang('EN')}>EN</span>
+                                <div className="toggle-language">
+                                    <span onClick={() => {
+                                        toggleLang(LANGS['PT-BR'])
+                                        this.toggleCurrentLanguage(LANGS['PT-BR'])
+                                    }} className={['toggle-language__option', this.state.currentLanguage === LANGS['PT-BR'] ? languagueActiveOptionClass : '' ].join(' ')}>PT-BR</span>
+                                    <span onClick={() => {
+                                        toggleLang(LANGS['EN'])
+                                        this.toggleCurrentLanguage(LANGS['EN'])
+                                    }} className={['toggle-language__option', this.state.currentLanguage === LANGS['EN'] ? languagueActiveOptionClass : '' ].join(' ')}>EN</span>
                                 </div>
 
                                 <div onClick={() => {
                                     this.toggleIsDark()
                                     toggleTheme()
                                 }}
-                                className="toggle-language">
-                                    {this.state.isDark ? 'LIGHT' : 'DARK'}
+                                className={['toggle-theme', this.state.isDark ? 'toggle-theme--light' : 'toggle-theme--dark'].join(' ')}>
+                                    <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/adjust-solid.svg?include`) }} className="icon" />
                                 </div>
                             </div>
                         </header>

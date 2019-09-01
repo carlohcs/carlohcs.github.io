@@ -33,6 +33,7 @@ class Menu extends Component {
                                     font-size: 14px;
                                     padding-left: 20px;
                                     margin: 5px 0;
+                                    border: 0;
                                 }
                             }
 

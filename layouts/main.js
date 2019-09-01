@@ -3,8 +3,11 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 import 'normalize.css'
+import Footer from '../components/Footer';
 
 // https://nextjs.org/learn/basics/using-shared-components/the-layout-component
+
+// Fonts vs SVG: https://fontawesome.com/how-to-use/on-the-web/other-topics/performance
 
 const Main = props => (
   <div>
@@ -28,7 +31,7 @@ const Main = props => (
         color: #e1e1e1;
       }
 
-      a {
+      a:not(.no-link-style) {
         color: #1e1e1e;
         text-decoration: none;
         position: relative;
@@ -36,28 +39,28 @@ const Main = props => (
         vertical-align: middle;
         border-bottom: 2px solid rgba(29, 199, 121, 0.65);
         transition: color 300ms cubic-bezier(0.47, 0.99, 1, 0.99), transform 0.3s ease-in-out;
-      }
 
-      a:hover {
-        color: #fff;
-        transform: scale(1.1);
-      }
+        &:hover {
+          color: #fff;
+          transform: scale(1.1);
+        }
 
-      a:before {
-        content: " ";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 100%;
-        z-index: -1;
-        background-color: #1DC779;
-        transform: perspective(1px) translateZ(0);
-        transition: width 600ms cubic-bezier(0.47, 0.99, 1, 0.99);
-      }
+        &:before {
+          content: " ";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 100%;
+          z-index: -1;
+          background-color: #1DC779;
+          transform: perspective(1px) translateZ(0);
+          transition: width 600ms cubic-bezier(0.47, 0.99, 1, 0.99);
+        }
 
-      a:hover:before {
-        width: 100%;
+        &:hover:before {
+          width: 100%;
+        }
       }
 
       body.dark-ui a {
@@ -85,8 +88,11 @@ const Main = props => (
       .main-content {
         /* #1DC779; */
         position:relative;
+        padding-top: 20px;
+        padding-bottom: 20px;
         width:100%;
-        height:100%;
+        /* height:100%; */
+        min-height: calc(100vh - 50px - 61px);
         z-index:20;
         /* width:100%; Promove rolagem */
         visibility:visible;
@@ -97,13 +103,17 @@ const Main = props => (
           margin-top: 0;
         }
 
-        padding-top: 20px;
         box-sizing: border-box;
       }
 
       /* https://github.com/zeit/next.js/issues/7945 */
       #__next-prerender-indicator {
         display: none;
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
       }
     `}</style>
     <div className="app">
@@ -113,6 +123,7 @@ const Main = props => (
         {props.children}
       </div>
     </div>
+    <Footer />
   </div>
 )
 

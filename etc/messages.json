@@ -36,16 +36,22 @@
                 "url": "/curriculum-vitae"
             }
         ],
+        "footer": {
+            "description": "2019. Este site foi feito com <a href=\"https://nextjs.org/\">Next.js</a> e hospedado no <a href=\"https://www.heroku.com/\" target=\"_blank\">Heroku</a>."
+        },
         "home": {
             "welcome": "Olá!",
             "subdescription": "Meu nome é Carlos Henrique.",
             "shortDescription": "<strong>Sou engenheiro de software, product owner, instrutor e facilitador no UOL.</strong>",
             "description": [
                 "Pós-graduado em Gestão em Tecnologia da Informação, escrevi um  <a href=\"TROCAR\">artigo</a>. Como engenheiro de software, alguns de meus trabalhos podem ser vistos <a href=\"TROCAR\">aqui</a> ou no <a href=\"https://github.com/carlohcs\">GitHub</a>.",
-                "Ultimamente tenho me aventurado a escrever no <a href=\"https://medium.com/@carlohcs\">Medium</a> e a <a href=\"TROCAR\">palestrar</a>.",
+                "Ultimamente tenho me aventurado a <a href=\"https://medium.com/@carlohcs\">escrever</a> e a <a href=\"TROCAR\">palestrar</a>.",
                 "Acredito que todo mundo deve ter uma <a href=\"https://missaopessoal.com.br\">missão pessoal</a> na vida."
             ],
             "connect": "Conecte-se:"
+        },
+        "error": {
+            "citation": "\"<i>[…] só o conhecimento liberta o homem, só através do conhecimento o homem é livre e em sendo livre: ele pode aspirar uma condição melhor de vida para ele e todos os seus semelhantes. […]\" <br />- DRº. Enéas Ferreira Carneiro</i>"
         }
     },
     "en": {
@@ -85,6 +91,9 @@
                 "url": "/en/resume"
             }
         ],
+        "footer": {
+            "description": "2019. This site was made with <a href=\"https://nextjs.org/\">Next.js</a> and hosted at <a href=\"https://www.heroku.com/\" target=\"_blank\">Heroku</a>."
+        },
         "home": {
             "welcome": "Hello!",
             "subdescription": "My name is Carlos Henrique.",
@@ -95,6 +104,9 @@
                 "I believe everyone should have a personal mission in life. Don't you know what it is or how to do it? <a href=\"https://missaopessoal.com.br\"> Do your mission</a>."
             ],
             "connect": "Connect:"
+        },
+        "error": {
+            "citation": "\"<i>[…] only knowledge frees man, only through knowledge is man free and in being free: he can aspire to a better condition of life for himself and all his fellow men. […] \"<br />- DR. Enéas Ferreira Carneiro</i>"
         }
     }
 }
