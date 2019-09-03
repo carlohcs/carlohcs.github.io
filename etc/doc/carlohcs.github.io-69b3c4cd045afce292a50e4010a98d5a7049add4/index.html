@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+{% include intro.html %}
+
+{% if site.show_posts %}
+<section class="post-list">
+    <div class="container">
+      <div class="content">
+        <h3>Últimos posts</h3>
+      </div>
+        {% for post in paginator.posts %}
+            <div class="post-preview">
+                <span class="post-title alignable pull-left">
+                    <a class="post-link underline" href="{{ post.url | prepend: site.baseurl }}">
+                        {{ post.title }}
+                    </a>
+                </span>
+                <span class="post-time alignable pull-right">
+                    <time>{{ post.date | date: '%B %d, %Y '}}</time>
+                </span>
+                <div style="clear:both"></div>
+            </div>
+        {% endfor %}
+
+        <a class="text-center display-block" href="/blog/">Ver todos</a>
+    </div>
+</section>
+{% endif %}
+

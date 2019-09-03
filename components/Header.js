@@ -50,7 +50,7 @@ class Header extends Component {
                             display: flex;
                             flex-direction: row;
                             justify-content: space-between;
-                            padding: 20px 20px 0;
+                            padding: 20px;
                         }
 
                         header div {
@@ -129,59 +129,6 @@ class Header extends Component {
 
                         .trigger-menu-button:after {
                             top: 20px;
-                        }
-
-                        body.menu-open .trigger-menu-button {
-                            border-color:transparent;
-                        }
-
-                        body.menu-open .trigger-menu-button:before,
-                        body.menu-open .trigger-menu-button:after {
-                            width: 33px;
-                            left: -2px;
-                        }
-
-                        body.menu-open .trigger-menu-button:before {
-                            transform: rotate(45deg);
-                        }
-
-                        body.menu-open .trigger-menu-button:after {
-                            transform: rotate(135deg);
-                            top: 9px;
-                        }
-
-                        body.dark-ui:not(.menu-open) .trigger-menu-button {
-                            border-top-color: #e1e1e1;
-                        }
-
-                        body.dark-ui .trigger-menu-button:before,
-                        body.dark-ui .trigger-menu-button:after {
-                            background: #e1e1e1;
-                        }
-
-                        .app {
-                            overflow: hidden !important;
-                        }
-                        body.menu-open {
-                            /*
-                            overflow: hidden; // Pensar em um jeito melhor
-                            */
-
-                            .nav li {
-                              width: 200px;
-                              margin-left: 0;
-                            }
-
-                            .main-content {
-                                transform: scale(0.80) translateY(-10%);
-                                margin-left: 200px;
-                                background-color: rgba(29, 199, 121, .12);
-                                filter: blur(5px);
-                            }
-
-                            footer {
-                                display: none;
-                            }
                         }
                     `}</style>
                         <header>

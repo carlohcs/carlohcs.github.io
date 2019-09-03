@@ -60,45 +60,50 @@
                 "titleDescription": "Missão Pessoal",
                 "url": "https://missaopessoal.com.br",
                 "description": "<p>Projeto pessoal para ajudar as pessoas a criarem suas missões pessoais.</p> <p>O site Missão Pessoal é um projeto criado com intuito de prover uma ferramenta para simplificação da criação de missão pessoal.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Vue.js, PHP e MySql. Hospedado no Heroku.</p>",
-                "cover": "https://dummyimage.com/500x250/aaa/000"
+                "cover": "missaopessoal.png"
             },
             "projects": [
                 {
                     "titleDescription": "Sobre UOL",
                     "url": "https://sobreuol.noticias.uol.com.br/",
                     "description": "<p>Site institucional da empresa UOL.</p><p>Responsável pela edição e manutenção da estrutura do site.</p><p>O site conta as soluções para empresas e clientes finais. Mostra também, highlights importantes sobre quem utiliza seus produtos, bem como informações de mídia e de trabalho.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript. Gulp e Jest.</p>",
-                    "cover": "https://dummyimage.com/500x250/aaa/000"
+                    "cover": "sobreuol.png"
                 },
                 {
                     "titleDescription": "Bootstrap UOL",
                     "description": "<p>Base de código da empresa UOL.</p><p>Sou responsável pela edição e manutenção da estrutura do site.</p><p>O Bootstrap do UOL é um fork do projeto do Twitter Bootstrap. Nele, fazemos alterações e a entrega de componentes necessários aos produtos da empresa.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript e Grunt.</p>",
-                    "cover": "https://dummyimage.com/500x250/aaa/000"
+                    "cover": "bootstrap.png"
+                },
+                {
+                    "titleDescription": "Zero UOL",
+                    "description": "<p>Guia de estilos do UOL</p><p>Sou responsável pela edição e manutenção da estrutura do site.</p><p>O Zero possui recomendações que devem ser utilizadas pelos produtos do UOL. Possui as melhores práticas, sendo uma documentação viva.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Jekyll, Gulp e Jest.</p>",
+                    "cover": "zero.png"
                 },
                 {
                     "titleDescription": "UOL Música Deezer (inativo)",
                     "description": "<p>Serviço de streaming de música.</p><p>Fui um dos responsáveis pelo frontend da aplicação.</p><p>O serviço era um concorrente direto dos serviços Deezer e Spotify. Era disponibilizado de forma gratuita aos usuários. Possuia plano premium que permitia o usuário utilizar o aplicativo da Deezer, parceira da plataforma.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript e Grunt.</p>",
-                    "cover": "https://dummyimage.com/500x250/aaa/000"
+                    "cover": "umd.png"
                 },
                 {
                     "titleDescription": "InterAcesso",
                     "url": "http://interacesso.interport.com.br",
                     "description": "<p>Sistema online para condomínios.</p><p>Fui um dos fundadores da startup, sendo responsável por toda a infra do serviço.</p><p>O serviço contém controle de colaboradores, moradores e gerenciamento interno.</p><p>Chegou a ter em torno de 7 clientes enquanto eu estava fazendo parte do quadro societário.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Gulp, PHP, Laravel.</p>",
-                    "cover": "https://dummyimage.com/500x250/aaa/000"
+                    "cover": "interacesso.png"
                 },
                 {
                     "titleDescription": "Vita do Brasil (inativo)",
                     "description": "<p>Gerenciamento de empresas médicas.</p><p>Fui responsável pela produção do site institucional e do sistema de ERP da empresa.</p><p>O ERP era responsável por uma série de funcionalidades. Entre elas: Gerenciamento de cadastros de empresas, cadastros de médicos e dos colaboradores; emissão de notas fiscais para algumas cidades de São Paulo; inclusão de documentos e configurações ao sistema..</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Jekyll, PHP e MySql.</p>",
-                    "cover": "https://dummyimage.com/500x250/aaa/000"
+                    "cover": "vita.jpg"
                 },
                 {
                     "titleDescription": "Aduet (inativo)",
                     "description": "<p>Sistema para gerenciamento de encontros</p><p>Freela executado para o gerenciamento de um sistema de encontros (uma espécie de Tinder antigo).</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySql.</p>",
-                    "cover": "https://dummyimage.com/500x250/aaa/000"
+                    "cover": "aduet.png"
                 },
                 {
                     "titleDescription": "Ursoland (inativo)",
                     "description": "<p>Rede social para Ursos.</p><p>Fui um dos responsáveis por todo o desenvolvimento da aplicação.</p><p>O serviço era uma rede social voltado exclusivamente para o público LGBT de ursos.</p><p>O site continha: like, troca de mensagens, chat entre outros serviços. Foi o primeiro projeto de grande complexidade.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySql.</p>",
-                    "cover": "https://dummyimage.com/500x250/aaa/000"
+                    "cover": "ursoland.png"
                 }
             ]
         },

@@ -29,15 +29,35 @@ class Index extends Component {
                                     text-align: left;
                                 }
 
-                                &__carlohcs-photography {
-                                    width: 140px;
-                                    border-radius: 50%;
-                                    display: block;
-                                    margin: 20px auto;
-                                    box-shadow: #1dc779 0 0px 10px 0;
+                                @media screen and (min-width: 1024px) {
+                                    display: flex;
+                                    flex-direction: row;
+                                    width: 100%;
+                                }
 
-                                    @media screen and (min-width: 768px) {
+                                &__carlohcs-photography {
+                                    &--xs {
+                                        width: 140px;
+                                        border-radius: 50%;
+                                        display: block;
+                                        margin: 20px auto;
+                                        box-shadow: #1dc779 0 0px 10px 0;
+
+                                        @media screen and (min-width: 768px) {
+                                            display: none;
+                                        }
+                                    }
+
+                                    &--large {
                                         display: none;
+
+                                        @media screen and (min-width: 1024px) {
+                                            display: block;
+                                            min-height: 100vh;
+                                            width: 100%;
+                                            background: url(../static/img/home/carlohcs-large.png) top left no-repeat;
+                                            background-size: contain;
+                                        }
                                     }
                                 }
 
@@ -76,25 +96,29 @@ class Index extends Component {
                             }
                         `}</style>
                         <section className="home">
-                            <img src={require('../assets/img/home/carlohcs-xs.png')} alt="Fotografia de Carlos Henrique" className="home__carlohcs-photography" />
-                            <div className="home__welcome-description">
-                                <h1 className="home__welcome-description__welcome">{getMessage('home', 'welcome')}</h1>
-                                <h2 className="home__welcome-description__subdescription">{getMessage('home', 'subdescription')}</h2>
-                                <p className="home__welcome-description__short-description" dangerouslySetInnerHTML={createMarkup(getMessage('home', 'shortDescription'))} />
+                            <img src={require('../assets/img/home/carlohcs-xs.png')} alt="Fotografia de Carlos Henrique" className="home__carlohcs-photography--xs" />
+
+                            <div className="home__content">
+                                <div className="home__welcome-description">
+                                    <h1 className="home__welcome-description__welcome">{getMessage('home', 'welcome')}</h1>
+                                    <h2 className="home__welcome-description__subdescription">{getMessage('home', 'subdescription')}</h2>
+                                    <p className="home__welcome-description__short-description" dangerouslySetInnerHTML={createMarkup(getMessage('home', 'shortDescription'))} />
+                                </div>
+
+                                {getMessage('home', 'description').map((description, key) =>
+                                    <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
+
+                                <p>{getMessage('home', 'connect')}</p>
+
+                                <div className="social-networks">
+                                    {socialNetworks.map((item, key) =>
+                                        <a href={item.url} target="_blank" className="social-network no-link-style" key={key}>
+                                            <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/${item.iconName}?include`) }} className={['icon', 'social-icon', `social-icon--${item.className}`].join(' ')} />
+                                        </a>
+                                    )}
+                                </div>
                             </div>
-
-                            {getMessage('home', 'description').map((description, key) =>
-                                <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
-
-                            <p>{getMessage('home', 'connect')}</p>
-
-                            <div className="social-networks">
-                                {socialNetworks.map((item, key) =>
-                                    <a href={item.url} target="_blank" className="social-network no-link-style" key={key}>
-                                        <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/${item.iconName}?include`) }} className={['icon', 'social-icon', `social-icon--${item.className}`].join(' ')} />
-                                    </a>
-                                )}
-                            </div>
+                            <div className="home__carlohcs-photography--large"></div>
                         </section>
                     </Main>
                 )}

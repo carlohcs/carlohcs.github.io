@@ -1,0 +1,94 @@
+# User Settings | Edit there as per required
+
+title: CARLOHCS - Codificando ideias
+title_suffix: / CARLOHCS - Codificando ideias
+url: "https://carlohcs.com.br"
+baseurl: ""
+
+# This will show up at the top of index page
+site_heading: >
+  Entusiasta, geek,<br />apaixonado por <span>web e inovação</span>!
+
+email: carlohcs@gmail.com
+author: Carlos Henrique Carvalho de Santana
+# This description will show up in google search results
+# (for index page) etc.
+description: >
+    Geek, apaixonado por web e inovação!
+
+# This will what will show against &copy; in the footer
+copyright: carlohcs
+# Toggle your short bio, which will displayed on your index page
+# Just toggle it and run jekyll again to see
+intro: true         # Tip: Remove the span from site_heading if intro is set to true
+# This will be displayed in your intro
+short_bio: >
+  "Propagar o conhecimento produtivo para as pessoas que sinceramente o buscam, através da reciprocidade e respeito. Reconhecer e cativar as pessoas que realmente merecem."
+
+permalink: /:title
+
+# Comments are powered by disqus
+comments: true
+
+# keep about_stub roughly 12 words long for best results
+# This will show up at the bottom of each post
+# Note that about_footer should be true if you want
+# to see author information at the bottom of each post
+about_stub: >
+    Keep this sentence less than 13 words or it won't look good.
+
+#about_footer: true
+
+twitter_username: carlohcs
+github_username: carlohcs
+facebook_id: carlohcs
+
+favicon: true
+favicon_location: "images/favicon.ico"
+
+profile_picture: /images/avatar.jpg
+paginate: 5
+paginate_path: "/page/:num"
+tracking_id: UA-69243698-7 # GA Tracking ID
+
+# Social Stuff | open graph and twitter cards
+og_image: "images/accent.png" # This will show in facebook thumbnails
+twitter_image: "http://ankitsultana.me/images/accent.png?1234" # This will show in twitter cards
+
+####################################
+####################################
+####################################
+### Build Settings | Don't Touch ###
+####################################
+####################################
+####################################
+
+markdown: kramdown
+
+gems:
+    - jekyll-paginate
+
+sass:
+    style: compressed
+    sass_dir: _sass
+
+show_posts: true
+
+# Scopes
+defaults:
+    -
+        scope:
+            path:   ""
+            type:   "pages"
+        values:
+            layout: "page"
+    -
+        scope:
+            path:   ""
+            type:   "posts"
+        values:
+            layout: "post"
+
+exclude: [vendor] # For travis ci
+
+gems: [jekyll-paginate]

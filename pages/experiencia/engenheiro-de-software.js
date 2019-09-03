@@ -6,19 +6,18 @@ import { AppConsumer } from '../../components/AppProvider'
 class EngenheiroDeSoftware extends Component {
     render() {
         const createMarkup = value => ({ __html: value })
-        const renderProject = project => {
+        const renderProject = (project, key) => {
             return (
-                <div className="skill-page__project">
-                    <img src={project.cover} loading="lazy" alt="Projeto" />
-
+                <div key={key} className="project">
+                    <img src={project.cover.indexOf('https') === -1 ? `../../static/img/projects/${project.cover}` : 'https://dummyimage.com/500x250/aaa/000' } loading="lazy" alt="Projeto" />
+{/* Fotos da Vita, ursoland, Aduet precisam ser redimensionadas para o tamanho do mac ou ao contrário, além de possuírem outras instruções */}
                     <h3 className="project__title" dangerouslySetInnerHTML={createMarkup(project.titleDescription)} />
 
-                    {project.url ? <a href={project.url}>
+                    {project.url ? <a href={project.url} target="_blank">
                         {project.url}
                     </a> : ''}
 
                     <div dangerouslySetInnerHTML={createMarkup(project.description)} />
-                    <hr />
                 </div>
             )
         }   
@@ -35,11 +34,21 @@ class EngenheiroDeSoftware extends Component {
                                 }
 
                                 .project {
+                                    padding: 50px 0;
+                                    border-bottom: 1px solid #e1e1e1;
+
+                                    &:last-child {
+                                        padding-bottom: 0;
+                                        border-bottom: 0;
+                                        
+                                    }
+                                    
                                     &__title {
                                         margin-bottom: 0;
                                     }
                                     &__technology {
                                         font-size: 12px;
+                                        margin-bottom: 0;
                                     }
                                 }
                             `}
@@ -51,29 +60,15 @@ class EngenheiroDeSoftware extends Component {
                                 <p>{getMessage('softwareEngineer', 'description')}</p>
                             </div>
 
-                            <hr />
-
                             <h3>{getMessage('softwareEngineer', 'featured')}</h3>
 
-                            <div className="skill-page__project skill-page__project--main">
-                                <img src={getMessage('softwareEngineer', 'mainProject', 'cover')} />
-
-                                <h3 className="project__title" dangerouslySetInnerHTML={createMarkup(getMessage('softwareEngineer', 'mainProject', 'titleDescription'))} />
-                                <a href={getMessage('softwareEngineer', 'mainProject', 'url')}>
-                                    {getMessage('softwareEngineer', 'mainProject', 'url')}
-                                </a>
-
-                                <div dangerouslySetInnerHTML={createMarkup(getMessage('softwareEngineer', 'mainProject', 'description'))} />
-                            </div>
-
-                            <hr />
+                            {renderProject(getMessage('softwareEngineer', 'mainProject'))}
 
                             <h3>{getMessage('softwareEngineer', 'otherProjects')}</h3>
 
                             {getMessage('softwareEngineer', 'projects').map((project, key) => 
-                            <div key={key}>
-                                {renderProject(project)}
-                            </div>)}
+                                renderProject(project, key)
+                            )}
 
                         </section>
                     )}

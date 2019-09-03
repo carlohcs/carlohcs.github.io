@@ -60,6 +60,10 @@ class AppProvider extends Component {
 
         bodyClassList[activate ? 'add' : 'remove'](darkUIClass)
 
+        // TODO: Implementar controle de horas
+        // TODO: Implementar salvar o tema selecionado para quando o usuário trocar
+        // de página
+
         this.changePropState('theme', THEMES[activate ? 'DARK': 'LIGHT'])
     }
 
