@@ -163,6 +163,10 @@ class Header extends Component {
                             overflow: hidden !important;
                         }
                         body.menu-open {
+                            /*
+                            overflow: hidden; // Pensar em um jeito melhor
+                            */
+
                             .nav li {
                               width: 200px;
                               margin-left: 0;
@@ -173,6 +177,10 @@ class Header extends Component {
                                 margin-left: 200px;
                                 background-color: rgba(29, 199, 121, .12);
                                 filter: blur(5px);
+                            }
+
+                            footer {
+                                display: none;
                             }
                         }
                     `}</style>

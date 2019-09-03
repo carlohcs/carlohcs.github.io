@@ -68,11 +68,16 @@ class AppProvider extends Component {
      * Retorna uma mensagem já traduzida de acordo com o contexto
      * 
      * @param  {String} page
+     * @param  {String} subprop
      * @param  {String} prop
      * @return {String}
      */
-    getMessage = (page, prop) => {
+    getMessage = (page, prop, subprop) => {
         const content = this.state.messages[this.state.lang][page]
+
+        if(prop && subprop) {
+            return content[prop][subprop]
+        }
 
         if(prop) {
             return content[prop]

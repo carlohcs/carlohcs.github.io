@@ -13,6 +13,19 @@ class Footer extends Component {
                             footer {
                                 padding: 20px;
                                 line-height: 1.3;
+                                text-align: center;
+
+                                small {
+                                    font-size: 10px;
+                                }
+
+                                @media screen and (min-width: 768px) {
+                                    text-align: left;
+
+                                    small {
+                                        font-size: 12px;
+                                    }
+                                }
                             }
                         `}
                         </style>

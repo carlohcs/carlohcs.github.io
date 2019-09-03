@@ -87,6 +87,7 @@ const Main = props => (
 
       .main-content {
         /* #1DC779; */
+        display: flex;
         position:relative;
         padding-top: 20px;
         padding-bottom: 20px;
@@ -114,6 +115,19 @@ const Main = props => (
       .icon {
         width: 24px;
         height: 24px;
+      }
+
+      .flex {
+        display: flex;
+        flex-flow: column;
+
+        &--justify-center {
+          justify-content: center;
+        }
+
+        &--justify-start {
+          justify-content: flex-start;
+        }
       }
     `}</style>
     <div className="app">
