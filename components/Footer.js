@@ -8,10 +8,10 @@ class Footer extends Component {
         return (
             <AppConsumer>
                 {({ getMessage }) => (
-                    <div>
+                    <footer>
                         <style jsx>{`
                             footer {
-                                padding: 20px;
+                                padding: 20px 0;
                                 line-height: 1.3;
                                 text-align: center;
 
@@ -26,13 +26,17 @@ class Footer extends Component {
                                         font-size: 12px;
                                     }
                                 }
+
+                                @media screen and (min-width: 1280px) {
+                                    position: absolute;
+                                    bottom: 0;
+                                    padding-bottom: 60px;
+                                }
                             }
                         `}
                         </style>
-                        <footer>
-                            <small dangerouslySetInnerHTML={createMarkup(getMessage('footer', 'description'))} />
-                        </footer>
-                    </div>
+                        <small dangerouslySetInnerHTML={createMarkup(getMessage('footer', 'description'))} />
+                    </footer>
                 )}
             </AppConsumer>
         )

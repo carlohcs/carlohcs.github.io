@@ -35,6 +35,42 @@ class Index extends Component {
                                     width: 100%;
                                 }
 
+                                @media screen and (min-width: 1280px) {
+                                    p {
+                                        font-size: 1.6em;
+                                        font-weight: 300;
+                                        line-height: 1.4;
+                                    }
+
+                                    &__welcome {
+                                        max-width: 750px;
+                                    }
+                                }
+
+                                &__left, &__right {
+                                    @media screen and (min-width: 1280px) {
+                                        min-width: 50%;
+                                    }
+                                }
+
+                                &__left {
+
+                                }
+
+                                &__right {
+                                    display: none;
+
+                                    @media screen and (min-width: 1024px) {
+                                        display: block;
+                                        background: url(../static/img/home/carlohcs-large.png) top left no-repeat;
+                                        background-size: contain;
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        height: 100%;
+                                    }
+                                }
+
                                 &__carlohcs-photography {
                                     &--xs {
                                         width: 140px;
@@ -45,18 +81,6 @@ class Index extends Component {
 
                                         @media screen and (min-width: 768px) {
                                             display: none;
-                                        }
-                                    }
-
-                                    &--large {
-                                        display: none;
-
-                                        @media screen and (min-width: 1024px) {
-                                            display: block;
-                                            min-height: 100vh;
-                                            width: 100%;
-                                            background: url(../static/img/home/carlohcs-large.png) top left no-repeat;
-                                            background-size: contain;
                                         }
                                     }
                                 }
@@ -75,7 +99,7 @@ class Index extends Component {
                                 .social-networks {
                                     display: flex;
                                     justify-content: space-between;
-                                    padding: 5px;
+                                    padding: 5px 0;
                                     max-width: 300px;
                                     margin: 0 auto;
 
@@ -96,19 +120,21 @@ class Index extends Component {
                             }
                         `}</style>
                         <section className="home">
-                            <img src={require('../assets/img/home/carlohcs-xs.png')} alt="Fotografia de Carlos Henrique" className="home__carlohcs-photography--xs" />
+                            <div className="home__left">
+                                <img src={require('../assets/img/home/carlohcs-xs.png')} alt="Fotografia de Carlos Henrique" className="home__carlohcs-photography--xs" />
 
-                            <div className="home__content">
-                                <div className="home__welcome-description">
-                                    <h1 className="home__welcome-description__welcome">{getMessage('home', 'welcome')}</h1>
-                                    <h2 className="home__welcome-description__subdescription">{getMessage('home', 'subdescription')}</h2>
-                                    <p className="home__welcome-description__short-description" dangerouslySetInnerHTML={createMarkup(getMessage('home', 'shortDescription'))} />
+                                <div className="home__welcome">
+                                    <div className="home__welcome-description">
+                                        <h1 className="home__welcome-description__welcome">{getMessage('home', 'welcome')}</h1>
+                                        <h2 className="home__welcome-description__subdescription">{getMessage('home', 'subdescription')}</h2>
+                                        <p className="home__welcome-description__short-description" dangerouslySetInnerHTML={createMarkup(getMessage('home', 'shortDescription'))} />
+                                    </div>
+
+                                    {getMessage('home', 'description').map((description, key) =>
+                                        <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
+
+                                    <p>{getMessage('home', 'connect')}</p>
                                 </div>
-
-                                {getMessage('home', 'description').map((description, key) =>
-                                    <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
-
-                                <p>{getMessage('home', 'connect')}</p>
 
                                 <div className="social-networks">
                                     {socialNetworks.map((item, key) =>
@@ -118,7 +144,7 @@ class Index extends Component {
                                     )}
                                 </div>
                             </div>
-                            <div className="home__carlohcs-photography--large"></div>
+                            <div className="home__right"></div>
                         </section>
                     </Main>
                 )}

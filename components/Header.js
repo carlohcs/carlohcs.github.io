@@ -44,119 +44,114 @@ class Header extends Component {
         return (
             <AppConsumer>
                 {({ toggleLang, toggleTheme }) => (
-                    <div>
+                    <header>
                         <style jsx global>{`
-                        header {
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                            padding: 20px;
-                        }
+                            header {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                padding: 20px;
 
-                        header div {
-                            display: block;
-                        }
+                                @media screen and (min-width: 1280px) {
+                                    padding: 60px;
+                                }
 
-                        .header__actions {
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                            align-items: center;
-                        }
+                                div {
+                                    display: block;
+                                }
+                            }
 
-                        .toggle-language {
-                            margin-right: 10px;
+                            .header__actions {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                align-items: center;
+                            }
 
-                            &__option {
+                            .toggle-language {
+                                margin-right: 10px;
+
+                                &__option {
+                                    cursor: pointer;
+
+                                    &:nth-of-type(1) {
+                                        &:after {
+                                            content: "";
+                                            width: 1px;
+                                            height: 11px;
+                                            display: inline-block;
+                                            margin: 0 5px;
+                                            background: #1e1e1e;
+                                            position: relative;
+                                        }
+                                    }
+
+                                    &--active {
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+
+                            .toggle-theme {
                                 cursor: pointer;
+                            }
 
-                                &:nth-of-type(1) {
-                                    &:after {
-                                        content: "";
-                                        width: 1px;
-                                        height: 11px;
-                                        display: inline-block;
-                                        margin: 0 5px;
-                                        background: #1e1e1e;
-                                        position: relative;
-                                    }
+                            /* https://codepen.io/made-on-mars/pen/qqEgXP */
+                            .trigger-menu-button {
+                                border-top: 3px solid #1e1e1e;
+                                height: 30px;
+                                width: 30px;
+                                box-sizing: border-box;
+                                position: relative;
+                                z-index: 30;
+                                cursor: pointer;
+                                transition: all 0.3s ease-in;
+
+                                &:before, 
+                                &:after {
+                                    content: "";
+                                    display: block;
+                                    position: absolute;
+                                    height: 3px;
+                                    width: 30px;
+                                    left: 0;
+                                    background: #1e1e1e;
+                                    transition: all 0.3s ease-in;
                                 }
 
-                                &--active {
-                                    font-weight: bold;
+                                &:before {
+                                    top: 8px;
+                                }
+
+                                &:after {
+                                    top: 20px;
                                 }
                             }
-                        }
-
-                        .dark-ui .toggle-language {
-
-                            &__option {
-                                &:nth-of-type(1) {
-                                    &:after {
-                                        background: #e1e1e1;
-                                    }
-                                }
-                            }
-                        }
-
-                        /* https://codepen.io/made-on-mars/pen/qqEgXP */
-                        .trigger-menu-button {
-                            border-top: 3px solid #1e1e1e;
-                            height: 30px;
-                            width: 30px;
-                            box-sizing: border-box;
-                            position: relative;
-                            z-index: 30;
-                            cursor: pointer;
-                            transition: all 0.3s ease-in;
-                        }
-
-                        .trigger-menu-button:before, 
-                        .trigger-menu-button:after {
-                            content: "";
-                            display: block;
-                            position: absolute;
-                            height: 3px;
-                            width: 30px;
-                            left: 0;
-                            background: #1e1e1e;
-                            transition: all 0.3s ease-in;
-                        }
-
-                        .trigger-menu-button:before {
-                            top: 8px;
-                        }
-
-                        .trigger-menu-button:after {
-                            top: 20px;
-                        }
                     `}</style>
-                        <header>
-                            <div className="trigger-menu-button" aria-label="Menu" onClick={this.toggleMenu}>
+                        <div className="trigger-menu-button" aria-label="Menu" onClick={this.toggleMenu}>
+                        </div>
+
+                        <div className="header__actions">
+                            <div className="toggle-language">
+                                <span onClick={() => {
+                                    toggleLang(LANGS['PT-BR'])
+                                    this.toggleCurrentLanguage(LANGS['PT-BR'])
+                                }} className={['toggle-language__option', this.state.currentLanguage === LANGS['PT-BR'] ? languagueActiveOptionClass : '' ].join(' ')}>PT-BR</span>
+                                <span onClick={() => {
+                                    toggleLang(LANGS['EN'])
+                                    this.toggleCurrentLanguage(LANGS['EN'])
+                                }} className={['toggle-language__option', this.state.currentLanguage === LANGS['EN'] ? languagueActiveOptionClass : '' ].join(' ')}>EN</span>
                             </div>
 
-                            <div className="header__actions">
-                                <div className="toggle-language">
-                                    <span onClick={() => {
-                                        toggleLang(LANGS['PT-BR'])
-                                        this.toggleCurrentLanguage(LANGS['PT-BR'])
-                                    }} className={['toggle-language__option', this.state.currentLanguage === LANGS['PT-BR'] ? languagueActiveOptionClass : '' ].join(' ')}>PT-BR</span>
-                                    <span onClick={() => {
-                                        toggleLang(LANGS['EN'])
-                                        this.toggleCurrentLanguage(LANGS['EN'])
-                                    }} className={['toggle-language__option', this.state.currentLanguage === LANGS['EN'] ? languagueActiveOptionClass : '' ].join(' ')}>EN</span>
-                                </div>
-
-                                <div onClick={() => {
-                                    this.toggleIsDark()
-                                    toggleTheme()
-                                }}
-                                className={['toggle-theme', this.state.isDark ? 'toggle-theme--light' : 'toggle-theme--dark'].join(' ')}>
-                                    <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/adjust-solid.svg?include`) }} className="icon" />
-                                </div>
+                            <div onClick={() => {
+                                this.toggleIsDark()
+                                toggleTheme()
+                            }}
+                            className={['toggle-theme', this.state.isDark ? 'toggle-theme--light' : 'toggle-theme--dark'].join(' ')}>
+                                <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/adjust-solid.svg?include`) }} className="icon" />
                             </div>
-                        </header>
-                    </div>
+                        </div>
+                    </header>
                 )}
             </AppConsumer>
         )

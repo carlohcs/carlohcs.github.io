@@ -10,13 +10,17 @@ import Footer from '../components/Footer';
 // Fonts vs SVG: https://fontawesome.com/how-to-use/on-the-web/other-topics/performance
 
 const Main = props => (
-  <div>
+  <div className="app">
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
       <link href="https://fonts.googleapis.com/css?family=Rubik:300,500&display=swap" rel="stylesheet"></link>
     </Head>
     <style jsx global>{`
+      html, body, #__next, .app {
+        height: 100%;
+      }
+        
       body { 
         background: #fff;
         color: #1e1e1e;
@@ -24,11 +28,79 @@ const Main = props => (
         font-family: 'Rubik', sans-serif;
         font-weight: 300;
         line-height: 1.5;
-      }
 
-      body.dark-ui {
-        background: #1e1e1e;
-        color: #e1e1e1;
+        /* Tema dark */
+        &.dark-ui {
+          background: #1e1e1e;
+          color: #e1e1e1;
+
+          a {
+            color: #e1e1e1;
+          }
+
+          &:not(.menu-open) .trigger-menu-button {
+            border-top-color: #e1e1e1;
+          }
+
+          .trigger-menu-button {
+            &:before,
+            &:after {
+                background: #e1e1e1;
+            }
+          }
+
+          .toggle-language {
+            &__option {
+                &:nth-of-type(1) {
+                    &:after {
+                        background: #e1e1e1;
+                    }
+                }
+            }
+          }
+        }
+
+        /* Menu aberto */
+        &.menu-open {
+          /*
+          overflow: hidden; // Pensar em um jeito melhor
+          */
+
+          .trigger-menu-button {
+            border-color:transparent;
+  
+            &:before,
+            &:after {
+              width: 33px;
+              left: -2px;
+            }
+  
+            &:before {
+              transform: rotate(45deg);
+            }
+      
+            &:after {
+              transform: rotate(135deg);
+              top: 9px;
+            }
+          }
+
+          .nav li {
+            width: 200px;
+            margin-left: 0;
+          }
+  
+          .main-content {
+            /* transform: scale(0.80) translateY(-5%); */
+            margin-left: 220px;
+            background-color: rgba(29, 199, 121, .12);
+            filter: blur(5px);
+          }
+  
+          footer {
+            display: none;
+          }
+        }
       }
 
       a:not(.no-link-style) {
@@ -63,12 +135,12 @@ const Main = props => (
         }
       }
 
-      body.dark-ui a {
-        color: #e1e1e1;
-      }
-
       .container {
         padding: 0 20px;
+
+        @media screen and (min-width: 1280px) {
+          padding: 60px;
+        }
       }
 
       h2 {
@@ -88,23 +160,29 @@ const Main = props => (
       .main-content {
         /* #1DC779; */
         display: flex;
+        flex-flow: column;
         position:relative;
         padding-top: 20px;
         padding-bottom: 20px;
         width:100%;
-        /* height:100%; */
-        min-height: calc(100vh - 50px - 61px);
+        min-height: calc(100vh - 50px);
         z-index:20;
-        /* width:100%; Promove rolagem */
         visibility:visible;
-        /* transition: scale 0.6s ease-in, margin-left 0.6s ease-in, background-color 0.6s ease-in; */
         transition: all 0.6s ease-in;
-
+        box-sizing: border-box;
+        
         > h1 {
           margin-top: 0;
         }
 
-        box-sizing: border-box;
+        /* height:100%; */
+        /* width:100%; Promove rolagem */
+        /* transition: scale 0.6s ease-in, margin-left 0.6s ease-in, background-color 0.6s ease-in; */
+
+        @media screen and (min-width: 1280px) {
+          min-height: calc(100vh - 150px); /* Tamanho da tela - Header */
+        }
+        
       }
 
       /* https://github.com/zeit/next.js/issues/7945 */
@@ -130,67 +208,16 @@ const Main = props => (
         }
       }
 
-      body.menu-open .trigger-menu-button {
-        border-color:transparent;
-      }
-
-      body.menu-open .trigger-menu-button:before,
-      body.menu-open .trigger-menu-button:after {
-          width: 33px;
-          left: -2px;
-      }
-
-      body.menu-open .trigger-menu-button:before {
-          transform: rotate(45deg);
-      }
-
-      body.menu-open .trigger-menu-button:after {
-          transform: rotate(135deg);
-          top: 9px;
-      }
-
-      body.dark-ui:not(.menu-open) .trigger-menu-button {
-          border-top-color: #e1e1e1;
-      }
-
-      body.dark-ui .trigger-menu-button:before,
-      body.dark-ui .trigger-menu-button:after {
-          background: #e1e1e1;
-      }
-
-      .app {
-          overflow: hidden !important;
-      }
-      body.menu-open {
-        /*
-        overflow: hidden; // Pensar em um jeito melhor
-        */
-
-        .nav li {
-          width: 200px;
-          margin-left: 0;
-        }
-
-        .main-content {
-            /* transform: scale(0.80) translateY(-5%); */
-            margin-left: 220px;
-            background-color: rgba(29, 199, 121, .12);
-            filter: blur(5px);
-        }
-
-        footer {
-            display: none;
-        }
-      }
+      /*.app {
+        overflow: hidden !important;
+      }*/
     `}</style>
-    <div className="app">
-      <Header />
-      <Menu />
-      <div className="main-content container">
-        {props.children}
-      </div>
+    <Header />
+    <Menu />
+    <div className="main-content container">
+      {props.children}
+      <Footer />
     </div>
-    <Footer />
   </div>
 )
 
