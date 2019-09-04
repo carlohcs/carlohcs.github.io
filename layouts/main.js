@@ -148,12 +148,18 @@ const Main = props => (
       }
 
       @media screen and (min-width: 768px) {
-        a {
-          padding: 2px 2px 0;
+        h1 {
+          font-size: 4.5em;
+          font-weight: 500;
+          margin-bottom: 0;
         }
 
         h2 {
-          font-size: 1.5em;
+          font-size: 2.2em;
+        }
+
+        a {
+          padding: 2px 2px 0;
         }
       }
 

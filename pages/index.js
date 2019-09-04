@@ -27,6 +27,10 @@ class Index extends Component {
 
                                 @media screen and (min-width: 768px) {
                                     text-align: left;
+
+                                    &__welcome {
+                                        max-width: 600px;
+                                    }
                                 }
 
                                 @media screen and (min-width: 1024px) {
@@ -47,14 +51,14 @@ class Index extends Component {
                                     }
                                 }
 
-                                &__left, &__right {
+                                &__left {
+                                    @media screen and (min-width: 1024px) {
+                                        min-width: 60%;
+                                    }
+
                                     @media screen and (min-width: 1280px) {
                                         min-width: 50%;
                                     }
-                                }
-
-                                &__left {
-
                                 }
 
                                 &__right {
@@ -62,12 +66,20 @@ class Index extends Component {
 
                                     @media screen and (min-width: 1024px) {
                                         display: block;
-                                        background: url(../static/img/home/carlohcs-large.png) top left no-repeat;
+                                        background: url(../static/img/home/carlohcs-large.png) bottom right no-repeat;
                                         background-size: contain;
                                         position: absolute;
+                                        z-index: -1;
                                         top: 0;
                                         right: 0;
+                                        bottom: 0;
+                                        width: 40%;
                                         height: 100%;
+                                    }
+
+                                    @media screen and (min-width: 1280px) {
+                                        width: 50%;
+                                        background-position: bottom left;
                                     }
                                 }
 
