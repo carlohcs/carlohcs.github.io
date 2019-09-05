@@ -62,12 +62,13 @@ class AppProvider extends Component {
      * 
      * @return {void}
      */
-    toggleTheme = async () => {
+    toggleTheme = async activateDarkUI => {
         const bodyClassList = document.body.classList
         const darkUIClass = 'dark-ui'
-        const activate = [...bodyClassList].indexOf(darkUIClass) === -1
+        const activate = !activateDarkUI && [...bodyClassList].indexOf(darkUIClass) === -1
+        let finalActivate = activateDarkUI || activate
 
-        bodyClassList[activate ? 'add' : 'remove'](darkUIClass)
+        bodyClassList[finalActivate ? 'add' : 'remove'](darkUIClass)
 
         // TODO: Implementar controle de horas
         // TODO: Implementar salvar o tema selecionado para quando o usuário trocar
@@ -80,7 +81,7 @@ class AppProvider extends Component {
         // console.log(this.state.count); // May print 0 or 1
 
         // Mudei par uma promise porque foi a única maneira de rodar
-        await this.changePropState('theme', THEMES[activate ? 'DARK': 'LIGHT'])
+        await this.changePropState('theme', THEMES[finalActivate ? 'DARK': 'LIGHT'])
 
         storage.saveTheme(this.getTheme())
     }
@@ -125,7 +126,9 @@ class AppProvider extends Component {
                 toggleTheme: this.toggleTheme,
                 getMessage: this.getMessage,
                 getTheme: this.getTheme,
-                getLang: this.getLang
+                getLang: this.getLang,
+                themes: THEMES,
+                langs: LANGS
             }}
             >
                 {this.props.children}
