@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import storage from './helpers/storage'
 import messages from '../etc/messages'
 
 // Sem precisar de Redux: 
@@ -18,10 +19,10 @@ const THEMES = {
 const AppContext = React.createContext()
 
 class AppProvider extends Component {
+    
     state = {
         lang: LANGS['PT-BR'],
-        theme: THEMES.LIGHT,
-        messages: messages
+        theme: THEMES.LIGHT
     }
 
     /**
@@ -30,22 +31,30 @@ class AppProvider extends Component {
      * @param {String} prop 
      * @param {Mix} value 
      */
-    changePropState(prop, value) {
-        let newState = Object.assign({}, this.state)
+    changePropState = async (prop, value) => {
+        const setStateFunction = (state, props) => {
+            const newState = {...state}
+            newState[prop] = value;
 
-        newState[prop] = value
+            return newState;
+        }
 
-        this.setState(newState)
+        return await this.setState(setStateFunction)
     }
 
     /**
      * Altera a linguagem
      * 
+     * Esse método não precisa ser assíncrono pois não estou esperando
+     * o retorno dele para definir algum outro comportamento
+     * em detrimento a essa mudança
      * @param  {String} val
      * @return {void
      */
-    toggleLang = val => {
-        this.changePropState('lang', LANGS[val])
+    toggleLang = async val => {
+        await this.changePropState('lang', LANGS[val.toUpperCase()])
+        
+        storage.saveLang(this.getLang())
     }
 
     /**
@@ -53,7 +62,7 @@ class AppProvider extends Component {
      * 
      * @return {void}
      */
-    toggleTheme = () => {
+    toggleTheme = async () => {
         const bodyClassList = document.body.classList
         const darkUIClass = 'dark-ui'
         const activate = [...bodyClassList].indexOf(darkUIClass) === -1
@@ -64,7 +73,16 @@ class AppProvider extends Component {
         // TODO: Implementar salvar o tema selecionado para quando o usuário trocar
         // de página
 
-        this.changePropState('theme', THEMES[activate ? 'DARK': 'LIGHT'])
+        // https://ozmoroz.com/2018/11/why-my-setstate-doesnt-work/
+        // Before this this.state.count is 0
+        // this.setState({count: 1});
+        // Read this.state values immediately after updating them
+        // console.log(this.state.count); // May print 0 or 1
+
+        // Mudei par uma promise porque foi a única maneira de rodar
+        await this.changePropState('theme', THEMES[activate ? 'DARK': 'LIGHT'])
+
+        storage.saveTheme(this.getTheme())
     }
 
     /**
@@ -77,7 +95,7 @@ class AppProvider extends Component {
      * @return {String}
      */
     getMessage = (page, prop, subprop) => {
-        const content = this.state.messages[this.state.lang][page]
+        const content = messages[this.state.lang][page]
 
         if(prop && subprop) {
             return content[prop][subprop]
@@ -90,6 +108,14 @@ class AppProvider extends Component {
         return content
     }
 
+    getTheme = () => {
+        return this.state.theme
+    }
+
+    getLang = () => {
+        return this.state.lang
+    }
+
     render() {
         return <AppContext.Provider
             value={{
@@ -97,7 +123,9 @@ class AppProvider extends Component {
                 theme: this.state.theme,
                 toggleLang: this.toggleLang,
                 toggleTheme: this.toggleTheme,
-                getMessage: this.getMessage
+                getMessage: this.getMessage,
+                getTheme: this.getTheme,
+                getLang: this.getLang
             }}
             >
                 {this.props.children}
@@ -109,4 +137,4 @@ const AppConsumer = AppContext.Consumer
 
 // https://github.com/zeit/next.js/blob/2c7b4d8aaac475f81de21c0e9cb40fdea1a7a178/examples/with-context-api/components/CounterProvider.js#L7
 export default AppProvider
-export { AppConsumer }
+export { AppConsumer, THEMES, LANGS }

@@ -1,15 +1,20 @@
-const STORAGE_KEY = 'carlohcs';
-const TOGGLE_THEME_KEY = 'carlohcs_theme';
+const STORAGE_KEY = 'carlohcs'
+const TOGGLE_THEME_KEY = 'carlohcs_theme'
+const TOGGLE_LANG_KEY = 'carlohcs_lang'
 
-// TODO: Implementar na troca de linguagem e de tema
-
+// TODO: rever toda essa lógica
 const storage = {
   setInitial: key => {
-    const data = {}
+    let finalData = JSON.stringify(localStorage.getItem(STORAGE_KEY))
 
-    data[key] = {}
+    if(typeof finalData !== 'string') { // null
+      finalData[key] = {}
+    } else {
+      finalData = {}
+      finalData[key] = {}
+    }
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+    localStorage.setItem(STORAGE_KEY, finalData)
   },
   set: (key, prop, value) => {
     let data = storage.get(key)
@@ -42,12 +47,18 @@ const storage = {
 
     return data
   },
-  fetchStepsValues: stepName => {
-    return storage.get(CREATE_MISSION_KEY, stepName)
+  getTheme: () => {
+    return storage.get(TOGGLE_THEME_KEY)
   },
-  saveStepValue: (stepName, value) => {
-    return storage.set(CREATE_MISSION_KEY, stepName, value)
-  }
+  saveTheme: theme => {
+    storage.set(TOGGLE_THEME_KEY, 'current', theme)
+  },
+  getLang: () => {
+    return storage.get(TOGGLE_LANG_KEY)
+  },
+  saveLang: lang => {
+    storage.set(TOGGLE_LANG_KEY, 'current', lang)
+  },
 }
 
 export default storage

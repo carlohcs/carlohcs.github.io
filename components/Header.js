@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
-import { AppConsumer } from '../components/AppProvider'
-
-const LANGS = {
-    'PT-BR': 'PT-BR',
-    'EN': 'EN'
-}
+import { AppConsumer, THEMES, LANGS } from '../components/AppProvider'
 
 const languagueActiveOptionClass = 'toggle-language__option--active'
+
+// Reacr Context: https://pt-br.reactjs.org/docs/context.html
 
 class Header extends Component {
     state = {
@@ -43,7 +40,7 @@ class Header extends Component {
     render() {
         return (
             <AppConsumer>
-                {({ toggleLang, toggleTheme }) => (
+                {({ toggleLang, toggleTheme, getTheme }) => (
                     <header>
                         <style jsx global>{`
                             header {
@@ -134,12 +131,12 @@ class Header extends Component {
                         <div className="header__actions">
                             <div className="toggle-language">
                                 <span onClick={() => {
-                                    toggleLang(LANGS['PT-BR'])
                                     this.toggleCurrentLanguage(LANGS['PT-BR'])
+                                    toggleLang(LANGS['PT-BR'])
                                 }} className={['toggle-language__option', this.state.currentLanguage === LANGS['PT-BR'] ? languagueActiveOptionClass : '' ].join(' ')}>PT-BR</span>
                                 <span onClick={() => {
-                                    toggleLang(LANGS['EN'])
                                     this.toggleCurrentLanguage(LANGS['EN'])
+                                    toggleLang(LANGS['EN'])
                                 }} className={['toggle-language__option', this.state.currentLanguage === LANGS['EN'] ? languagueActiveOptionClass : '' ].join(' ')}>EN</span>
                             </div>
 
