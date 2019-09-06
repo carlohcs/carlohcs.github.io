@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import Menu from '../components/Menu'
 import 'normalize.css'
 import Footer from '../components/Footer';
-import { AppConsumer, THEMES, LANGS,  } from '../components/AppProvider'
+import { AppConsumer, THEMES, LANGS, } from '../components/AppProvider'
 
 // https://nextjs.org/learn/basics/using-shared-components/the-layout-component
 
@@ -14,17 +14,35 @@ import { AppConsumer, THEMES, LANGS,  } from '../components/AppProvider'
 // Warning: Main defines an invalid contextType. contextType should point to the Context object returned by React.createContext(). Did you accidentally pass the Context.Consumer instead?
 // O modo utilizado agora não é eficiente, pois o usuário consegue ver o tema sendo mudado em tempo de abertura da página
 class Main extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = { loadedConfigs: false }
+  }
   componentDidMount() {
     const storage = require('../components/helpers/storage').default
     const savedTheme = storage.getTheme()
-    
+    const savedLang = storage.getLang()
+
     // debugger
-    if(savedTheme !== '' && savedTheme !== this.context.getTheme()) {
+    if (savedTheme !== '' && savedTheme !== this.context.getTheme()) {
       this.context.toggleTheme(savedTheme === this.context.themes.DARK)
     }
+
+    if (savedLang !== '' && savedLang !== this.context.getLang()) {
+      this.context.toggleLang(savedLang)
+    }
+
+    this.setState({ loadedConfigs: true })
   }
 
   render() {
+    const loadedConfigs = this.state.loadedConfigs
+    const mainContent = !loadedConfigs ? '' : <div className="main-content container">
+        {this.props.children}
+        <Footer />
+      </div>
+
     return (
       <div className="app">
         <Head>
@@ -236,10 +254,7 @@ class Main extends Component {
         `}</style>
         <Header />
         <Menu />
-        <div className="main-content container">
-          {this.props.children}
-          <Footer />
-        </div>
+        { mainContent }
       </div>
     )
   }

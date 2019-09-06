@@ -115,7 +115,7 @@
         "menu": [
             {
                 "name": "About",
-                "url": "/en"
+                "url": "/en/"
             },
             {
                 "name": "Experience",

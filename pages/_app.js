@@ -1,13 +1,86 @@
 import App from 'next/app'
+import Router from 'next/router'
 import AppProvider from '../components/AppProvider'
+import { PageTransition } from 'next-page-transitions'
+
+const TIMEOUT = 400
+
+// https://github.com/zeit/next.js/blob/canary/examples/with-next-page-transitions/pages/_app.js
+// https://stackoverflow.com/questions/53857063/changing-state-on-route-change-next-js?answertab=active#tab-top
+// https://jscomplete.com/learn/react-beyond-basics/react-cfp
 
 class MyApp extends App {
+    constructor(props){
+        super(props);
+      
+        Router.events.on('routeChangeComplete', (url) => {
+            const classList = document.body.classList
+            const menuOpen = 'menu-open'
+          
+            if([...classList].indexOf(menuOpen) !== -1) {
+                classList.remove(menuOpen)
+            }
+        });
+    }
+    static async getInitialProps({ Component, ctx }) {
+        let pageProps = {}
+
+        if (Component.getInitialProps) {
+            pageProps = await Component.getInitialProps(ctx)
+        }
+
+        return { pageProps }
+    }
+
+    // loadingComponent={<Loader />}
+    /* transition: opacity ${TIMEOUT}ms, transform ${TIMEOUT}ms; */
     render() {
-        const { Component, pageProps } = this.props;
+        const { Component, pageProps } = this.props
+
         return (
-            <AppProvider>
-                <Component {...pageProps} />
-            </AppProvider>
+            <>
+                <PageTransition
+                    timeout={TIMEOUT}
+                    classNames='page-transition'
+                    loadingDelay={500}
+                    loadingTimeout={{
+                    enter: TIMEOUT,
+                    exit: 0
+                }}
+                    loadingClassNames='loading-indicator'
+                >
+                    <AppProvider>
+                        <Component {...pageProps} />
+                    </AppProvider>
+                </PageTransition>
+                <style jsx global>{`
+                    .page-transition-enter {
+                        opacity: 0;
+                        transform: translate3d(0, 20px, 0);
+                    }
+                    .page-transition-enter-active {
+                        opacity: 1;
+                        transform: translate3d(0, 0, 0);
+                        transition: opacity ${TIMEOUT}ms, transform ${TIMEOUT}ms;
+                    }
+                    .page-transition-exit {
+                        opacity: 1;
+                    }
+                    .page-transition-exit-active {
+                        opacity: 0;
+                        transition: opacity ${TIMEOUT}ms;
+                    }
+                    .loading-indicator-appear,
+                    .loading-indicator-enter {
+                        opacity: 0;
+                    }
+                    .loading-indicator-appear-active,
+                    .loading-indicator-enter-active {
+                        opacity: 1;
+                        transition: opacity ${TIMEOUT}ms;
+                    }
+                `}</style>
+            </>
         )
     }
 }

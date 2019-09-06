@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { AppConsumer } from '../components/AppProvider'
+import ActiveLink from './ActiveLink'
 
 class Menu extends Component {
     render() {
@@ -7,9 +8,9 @@ class Menu extends Component {
             <ul className="nav__subnav">
                 {items.map((item, key) =>
                     <li key={key}>
-                        <a href={item.url} className="nav__subitem">
+                        <ActiveLink href={item.url} className='nav__subitem'>
                             {item.name}
-                        </a>
+                        </ActiveLink>
                     </li>
                 )}
             </ul>
@@ -72,9 +73,9 @@ class Menu extends Component {
                         <ul className="nav">
                             {getMessage('menu').map((item, key) =>
                                 <li key={key} className="nav__item">
-                                    <a href={item.url}>
+                                    <ActiveLink href={item.url}>
                                         {item.name}
-                                    </a>
+                                    </ActiveLink>
 
                                     {item.items ? list(item.items) : ''}
                                 </li>

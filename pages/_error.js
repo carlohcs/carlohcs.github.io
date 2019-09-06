@@ -28,13 +28,17 @@ class Error extends React.Component {
                       &__message {
                         margin-top: 0;
                       }
+
+                      &__citation {
+                        max-width: 750px;
+                      }
                     }
                   `}
                   </style>
                     <h1 className="error-page__status-code">{this.props.statusCode}</h1>
                     <h2 className="error-page__message">{this.props.statusCode === 404 ? 'Página não encontrada.' : 'Erro no servidor.'}</h2>
                     
-                    <quote dangerouslySetInnerHTML={createMarkup(getMessage('error', 'citation'))} />
+                    <div className="error-page__citation" dangerouslySetInnerHTML={createMarkup(getMessage('error', 'citation'))} />
                 </div>
             )}
             </AppConsumer>
