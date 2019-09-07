@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Main from '../../layouts/main'
-import AppContext from '../../components/AppProvider'
+import Main from '../layouts/main'
+import AppContext from '../components/AppProvider'
 
 // TODO: usar essa página como modelo para as outras -> criar um componente
 class EngenheiroDeSoftware extends Component {

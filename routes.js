@@ -4,44 +4,37 @@ const customRoutes = [
     {
         name: 'home',
         pattern: '/en/', 
-        page:  'index', 
-        data: {}
+        page:  'index'
     },
     {
         name: 'engenheiro',
-        pattern: '/en/experience/software-engineer', 
-        page:  'experiencia/engenheiro-de-software', 
-        data: {}
+        pattern: '/en/software-engineer', 
+        page:  'engenheiro-de-software'
     },
     {
         name: 'instrutor',
-        pattern: '/en/experience/instructor', 
-        page:  'experiencia/instrutor', 
-        data: {}
+        pattern: '/en/instructor', 
+        page:  'instrutor'
     },
     {
         name: 'palestras',
-        pattern: '/en/experience/talks', 
-        page:  'experiencia/palestras', 
-        data: {}
+        pattern: '/en/talks', 
+        page:  'palestras'
     },
     {
         name: 'productowner',
-        pattern: '/en/experience/product-owner', 
-        page:  'experiencia/productowner', 
-        data: {}
+        pattern: '/en/product-owner', 
+        page:  'productowner'
     },
     {
         name: 'facilitator',
-        pattern: '/en/experience/facilitator', 
-        page:  'experiencia/facilitador', 
-        data: {}
+        pattern: '/en/facilitator', 
+        page:  'facilitador'
     },
     {
         name: 'curriculo',
         pattern: '/en/resume', 
-        page:  'curriculo', 
-        data: {}
+        page:  'curriculo'
     }
 ];
 

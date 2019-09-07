@@ -10,8 +10,8 @@ class Menu extends Component {
             <ul className="nav__subnav">
                 {items.map((item, key) =>
                     <li key={key}>
-                        <ActiveLink href={item.url} className='nav__subitem'>
-                            {item.name}
+                        <ActiveLink route={item.name} className='nav__subitem'>
+                            {item.description}
                         </ActiveLink>
                     </li>
                 )}
@@ -68,13 +68,13 @@ class Menu extends Component {
                         overflow: hidden;
                         
                     }
-                    }
+                }
                 `}</style>    
                 <ul className="nav">
                     {this.context.getMessage('menu').map((item, key) =>
                         <li key={key} className="nav__item">
-                            <ActiveLink href={item.url}>
-                                {item.name}
+                            <ActiveLink route={item.url}>
+                                {item.description}
                             </ActiveLink>
 
                             {item.items ? list(item.items) : ''}

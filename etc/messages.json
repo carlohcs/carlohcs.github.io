@@ -2,37 +2,38 @@
     "pt-br": {
         "menu": [
             {
-                "name": "Sobre",
+                "name": "home",
+                "description": "Sobre",
                 "url": "/"
             },
             {
-                "name": "Experiência",
-                "url": "#",
-                "items": [
-                    {
-                        "name": "Engenheiro de software",
-                        "url": "/experiencia/engenheiro-de-software"
-                    },
-                    {
-                        "name": "Instrutor",
-                        "url": "/experiencia/instrutor"
-                    },
-                    {
-                        "name": "Palestras",
-                        "url": "/experiencia/palestras"
-                    },
-                    {
-                        "name": "Product Owner",
-                        "url": "/experiencia/product-owner"
-                    },
-                    {
-                        "name": "Facilitador",
-                        "url": "/experiencia/facilitador"
-                    }
-                ]
+                "name": "softwareengineer",
+                "description": "Engenheiro de software",
+                "url": "/engenheiro-de-software"
             },
             {
-                "name": "Currículum Vitae",
+                "name": "instructor",
+                "description": "Instrutor",
+                "url": "/instrutor"
+            },
+            {
+                "name": "talks",
+                "description": "Palestras",
+                "url": "/palestras"
+            },
+            {
+                "name": "productowner",
+                "description": "Product Owner",
+                "url": "/product-owner"
+            },
+            {
+                "name": "facilitator",
+                "description": "Facilitador",
+                "url": "/facilitador"
+            },
+            {
+                "name": "resume",
+                "description": "Currículum Vitae",
                 "url": "/curriculum-vitae"
             }
         ],
@@ -114,37 +115,38 @@
     "en": {
         "menu": [
             {
-                "name": "About",
+                "name": "home",
+                "description": "About",
                 "url": "/en/"
             },
             {
-                "name": "Experience",
-                "url": "#",
-                "items": [
-                    {
-                        "name": "Software Engineer",
-                        "url": "/en/experience/software-engineer"
-                    },
-                    {
-                        "name": "Instructor",
-                        "url": "/en/experience/instructor"
-                    },
-                    {
-                        "name": "Talks",
-                        "url": "/en/experience/talks"
-                    },
-                    {
-                        "name": "Product Owner",
-                        "url": "/en/experience/product-owner"
-                    },
-                    {
-                        "name": "Facilitator",
-                        "url": "/en/experience/facilitator"
-                    }
-                ]
+                "name": "softwareengineer",
+                "description": "Software Engineer",
+                "url": "/en/software-engineer"
             },
             {
-                "name": "Resume",
+                "name": "instructor",
+                "description": "Instructor",
+                "url": "/en/instructor"
+            },
+            {
+                "name": "talks",
+                "description": "Talks",
+                "url": "/en/talks"
+            },
+            {
+                "name": "productowner",
+                "description": "Product Owner",
+                "url": "/en/product-owner"
+            },
+            {
+                "name": "facilitator",
+                "description": "Facilitator",
+                "url": "/en/facilitator"
+            },
+            {
+                "name": "resume",
+                "description": "Resume",
                 "url": "/en/resume"
             }
         ],
@@ -156,11 +158,68 @@
             "subdescription": "My name is Carlos Henrique.",
             "shortDescription": "<strong>I'm a software engineer, product owner, instructor, and facilitator at UOL.</strong>",
             "description": [
-                "Recently graduated as a IT Management Specialist I wrote a <a href=\"TROCAR\"> article </a>. As a software engineer, some of my work can be viewed <a href=\"TROCAR\"> here </a> or <a href=\"https://github.com/carlohcs\"> GitHub </a>. ",
-                "Lately I've been venturing to write at the <a href=\"https://medium.com/@carlohcs\"> Medium </a>. Check out some <a href=\"TROCAR\"> lectures I gave </a>.",
-                "I believe everyone should have a personal mission in life. Don't you know what it is or how to do it? <a href=\"https://missaopessoal.com.br\"> Do your mission</a>."
+                "Postgraduate in Information Technology Management, I wrote an <a href=\"TROCAR\"> article </a>. As a software engineer, some of my work can be seen <a href=\"CHANGE\">here</a> or <a href=\"https://github.com/carlohcs\">GitHub</a>.",
+                "Lately I've been venturing to <a href=\"https://medium.com/@carlohcs\"> write </a> and <a href=\"TROCAR\"> to lecture </a>.",
+                "I believe everyone should have a <a href=\"https://missaopessoal.com.br\"> personal mission </a> in life."
             ],
             "connect": "Connect:"
+        },
+        "softwareEngineer": {
+            "title": "Software Engineer",
+            "titleDescription": "Some projects I worked on.",
+            "description": "For over 8 years, I have been developing technology solutions for the market. The most important thing I've learned in these years: technologies come all the time and it's up to us developers to think first of all about users. Technology must be the means to this. Below you can check out some of these works.",
+            "featured": "Spotlight",
+            "otherProjects": "Other projects",
+            "mainProject": {
+                "titleDescription": "Missão Pessoal",
+                "url": "https://missaopessoal.com.br",
+                "description": "<p>Personal project to help people create their personal missions. </p><p>The Personal Mission site is a project created to provide a tool for simplifying personal mission creation. </p> <p class =\"project__technology\"> Technologies Used: HTML, CSS, JavaScript, Vue.js, PHP, and MySql. Hosted at Heroku.</p>",
+                "cover": "missaopessoal.png"
+            },
+            "projects": [
+                {
+                    "titleDescription": "Sobre UOL",
+                    "url": "https://sobreuol.noticias.uol.com.br/",
+                    "description": "<p>Site institucional da empresa UOL.</p><p>Responsável pela edição e manutenção da estrutura do site.</p><p>O site conta as soluções para empresas e clientes finais. Mostra também, highlights importantes sobre quem utiliza seus produtos, bem como informações de mídia e de trabalho.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript. Gulp e Jest.</p>",
+                    "cover": "sobreuol.png"
+                },
+                {
+                    "titleDescription": "Bootstrap UOL",
+                    "description": "<p>Base de código da empresa UOL.</p><p>Sou responsável pela edição e manutenção da estrutura do site.</p><p>O Bootstrap do UOL é um fork do projeto do Twitter Bootstrap. Nele, fazemos alterações e a entrega de componentes necessários aos produtos da empresa.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript e Grunt.</p>",
+                    "cover": "bootstrap.png"
+                },
+                {
+                    "titleDescription": "Zero UOL",
+                    "description": "<p>Guia de estilos do UOL</p><p>Sou responsável pela edição e manutenção da estrutura do site.</p><p>O Zero possui recomendações que devem ser utilizadas pelos produtos do UOL. Possui as melhores práticas, sendo uma documentação viva.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Jekyll, Gulp e Jest.</p>",
+                    "cover": "zero.png"
+                },
+                {
+                    "titleDescription": "UOL Música Deezer (inativo)",
+                    "description": "<p>Serviço de streaming de música.</p><p>Fui um dos responsáveis pelo frontend da aplicação.</p><p>O serviço era um concorrente direto dos serviços Deezer e Spotify. Era disponibilizado de forma gratuita aos usuários. Possuia plano premium que permitia o usuário utilizar o aplicativo da Deezer, parceira da plataforma.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript e Grunt.</p>",
+                    "cover": "umd.png"
+                },
+                {
+                    "titleDescription": "InterAcesso",
+                    "url": "http://interacesso.interport.com.br",
+                    "description": "<p>Sistema online para condomínios.</p><p>Fui um dos fundadores da startup, sendo responsável por toda a infra do serviço.</p><p>O serviço contém controle de colaboradores, moradores e gerenciamento interno.</p><p>Chegou a ter em torno de 7 clientes enquanto eu estava fazendo parte do quadro societário.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Gulp, PHP, Laravel.</p>",
+                    "cover": "interacesso.png"
+                },
+                {
+                    "titleDescription": "Vita do Brasil (inativo)",
+                    "description": "<p>Gerenciamento de empresas médicas.</p><p>Fui responsável pela produção do site institucional e do sistema de ERP da empresa.</p><p>O ERP era responsável por uma série de funcionalidades. Entre elas: Gerenciamento de cadastros de empresas, cadastros de médicos e dos colaboradores; emissão de notas fiscais para algumas cidades de São Paulo; inclusão de documentos e configurações ao sistema..</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Jekyll, PHP e MySql.</p>",
+                    "cover": "vita.jpg"
+                },
+                {
+                    "titleDescription": "Aduet (inativo)",
+                    "description": "<p>Sistema para gerenciamento de encontros</p><p>Freela executado para o gerenciamento de um sistema de encontros (uma espécie de Tinder antigo).</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySql.</p>",
+                    "cover": "aduet.png"
+                },
+                {
+                    "titleDescription": "Ursoland (inativo)",
+                    "description": "<p>Rede social para Ursos.</p><p>Fui um dos responsáveis por todo o desenvolvimento da aplicação.</p><p>O serviço era uma rede social voltado exclusivamente para o público LGBT de ursos.</p><p>O site continha: like, troca de mensagens, chat entre outros serviços. Foi o primeiro projeto de grande complexidade.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySql.</p>",
+                    "cover": "ursoland.png"
+                }
+            ]
         },
         "error": {
             "citation": "\"<i>[…] only knowledge frees man, only through knowledge is man free and in being free: he can aspire to a better condition of life for himself and all his fellow men. […] \"<br />- DR. Enéas Ferreira Carneiro</i>"

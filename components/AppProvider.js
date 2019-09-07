@@ -59,6 +59,7 @@ class AppProvider extends Component {
 
     /**
      * Altera o tema para dark ou não
+     * https://medium.com/free-code-camp/how-to-detect-a-users-preferred-color-scheme-in-javascript-ec8ee514f1ef
      * 
      * @return {void}
      */
