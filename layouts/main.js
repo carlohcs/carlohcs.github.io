@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import Menu from '../components/Menu'
 import 'normalize.css'
 import Footer from '../components/Footer';
-import { AppConsumer, THEMES, LANGS, } from '../components/AppProvider'
+import AppContext from '../components/AppProvider'
 
 // https://nextjs.org/learn/basics/using-shared-components/the-layout-component
 
@@ -14,6 +14,8 @@ import { AppConsumer, THEMES, LANGS, } from '../components/AppProvider'
 // Warning: Main defines an invalid contextType. contextType should point to the Context object returned by React.createContext(). Did you accidentally pass the Context.Consumer instead?
 // O modo utilizado agora não é eficiente, pois o usuário consegue ver o tema sendo mudado em tempo de abertura da página
 class Main extends Component {
+  static contextType = AppContext
+
   constructor(props) {
     super(props)
 
@@ -24,7 +26,6 @@ class Main extends Component {
     const savedTheme = storage.getTheme()
     const savedLang = storage.getLang()
 
-    // debugger
     if (savedTheme !== '' && savedTheme !== this.context.getTheme()) {
       this.context.toggleTheme(savedTheme === this.context.themes.DARK)
     }
@@ -262,6 +263,4 @@ class Main extends Component {
 
 // https://stackoverflow.com/questions/49809884/access-react-context-outside-of-render-function?answertab=votes#tab-top
 // https://reactjs.org/docs/hooks-reference.html#usecontext
-Main.contextType = AppConsumer
-
 export default Main

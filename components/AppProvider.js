@@ -87,6 +87,15 @@ class AppProvider extends Component {
     }
 
     /**
+     * Altera a exibição do menu lateral
+     * 
+     * @return {void}
+     */
+    toggleMenu = () => {
+        document.body.classList.toggle('menu-open')
+    }
+
+    /**
      * 
      * Retorna uma mensagem já traduzida de acordo com o contexto
      * 
@@ -109,10 +118,20 @@ class AppProvider extends Component {
         return content
     }
 
+    /**
+     * Retorna o tema definido
+     * 
+     * @return {String}
+     */
     getTheme = () => {
         return this.state.theme
     }
 
+    /**
+     * Retorna o idioma definido
+     * 
+     * @return {String}
+     */
     getLang = () => {
         return this.state.lang
     }
@@ -124,6 +143,7 @@ class AppProvider extends Component {
                 theme: this.state.theme,
                 toggleLang: this.toggleLang,
                 toggleTheme: this.toggleTheme,
+                toggleMenu: this.toggleMenu,
                 getMessage: this.getMessage,
                 getTheme: this.getTheme,
                 getLang: this.getLang,
@@ -136,8 +156,8 @@ class AppProvider extends Component {
     }
 }
 
+// https://github.com/zeit/next.js/blob/2c7b4d8aaac475f81de21c0e9cb40fdea1a7a178/examples/with-context-api/components/CounterProvider.js#L7
 const AppConsumer = AppContext.Consumer
 
-// https://github.com/zeit/next.js/blob/2c7b4d8aaac475f81de21c0e9cb40fdea1a7a178/examples/with-context-api/components/CounterProvider.js#L7
-export default AppProvider
-export { AppConsumer, THEMES, LANGS }
+export { AppConsumer, AppProvider, THEMES, LANGS }
+export default AppContext
