@@ -40,7 +40,7 @@ class Main extends Component {
 
   render() {
     const loadedConfigs = this.state.loadedConfigs
-    const mainContent = !loadedConfigs ? '' : <div className="main-content container">
+    const mainContent = !loadedConfigs ? '' : <div className="main-content">
         {this.props.children}
         <Footer />
       </div>

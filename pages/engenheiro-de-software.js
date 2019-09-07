@@ -6,41 +6,110 @@ import AppContext from '../components/AppProvider'
 class EngenheiroDeSoftware extends Component {
     static contextType = AppContext
 
+    /* Fotos da Vita, ursoland, Aduet precisam ser redimensionadas para o tamanho do mac ou ao contrário, além de possuírem outras instruções */
+
     render() {
         const createMarkup = value => ({ __html: value })
         const renderProject = (project, key) => {
+            const main = typeof key === 'undefined'
+
             return (
-                <div key={key} className="project">
-                    <img src={project.cover.indexOf('https') === -1 ? `../../static/img/projects/${project.cover}` : 'https://dummyimage.com/500x250/aaa/000' } loading="lazy" alt="Projeto" />
-{/* Fotos da Vita, ursoland, Aduet precisam ser redimensionadas para o tamanho do mac ou ao contrário, além de possuírem outras instruções */}
+                <div key={key} className={['project', main ? 'project--main' : ''].join(' ')}>
+
                     <h3 className="project__title" dangerouslySetInnerHTML={createMarkup(project.titleDescription)} />
 
                     {project.url ? <a href={project.url} target="_blank">
                         {project.url}
                     </a> : ''}
 
-                    <div dangerouslySetInnerHTML={createMarkup(project.description)} />
+                    <div className='project__content'>
+                        <div className="project__content__column">
+                            <img src={project.cover.indexOf('https') === -1 ? `../../static/img/projects/${project.cover}` : 'https://dummyimage.com/500x250/aaa/000'} loading="lazy" alt="Projeto" className="project__cover" />
+                        </div>
+
+                        <div className="project__content__column">
+                            <div dangerouslySetInnerHTML={createMarkup(project.description)} />
+                        </div>
+                    </div>
                 </div>
             )
-        }   
+        }
 
         return (
             <div>
                 <Main>
-                    <section className="skill-page">
+                    <section className="skill-page container">
                         <style jsx global>{`
-                            img {
-                                width: 100%;
-                            }
-
                             .project {
                                 padding: 50px 0;
-                                border-bottom: 1px solid #e1e1e1;
+
+                                &__cover {
+                                    width: 100%;
+                                }
+
+                                &--main {
+                                    .project__content{
+                                        flex-flow: column !important;
+
+                                        &__column {
+                                            max-width: 100% !important;
+                                        }
+                                    }
+                                }
+
+                                .project__content {
+                                    display: flex;
+                                    flex-flow: column;
+
+                                    &__column {
+                                        @media screen and (min-width: 1280px) {
+                                            max-width: 50%;
+                                        }
+                                    }
+                                }
+
+                                @media screen and (min-width: 1280px) {
+                                    .project__content {
+                                        flex-flow: row;
+                                    }
+
+                                    &:not(.project--main):nth-child(even) {
+                                        .project__content {
+                                            flex-direction: row-reverse;
+
+                                            &__column {
+                                                @media screen and (min-width: 1280px) {
+                                                    &:nth-of-type(1) {
+                                                        padding-left: 60px;
+                                                    }
+        
+                                                    &:nth-of-type(2) {
+                                                        padding-right: 60px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:not(.project--main):nth-child(odd) {
+                                        .project__content {
+                                            &__column {
+                                                @media screen and (min-width: 1280px) {
+                                                    &:nth-of-type(1) {
+                                                        padding-right: 60px;
+                                                    }
+        
+                                                    &:nth-of-type(2) {
+                                                        padding-left: 60px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
 
                                 &:last-child {
                                     padding-bottom: 0;
-                                    border-bottom: 0;
-                                    
                                 }
                                 
                                 &__title {
@@ -66,7 +135,7 @@ class EngenheiroDeSoftware extends Component {
 
                         <h3>{this.context.getMessage('softwareEngineer', 'otherProjects')}</h3>
 
-                        {this.context.getMessage('softwareEngineer', 'projects').map((project, key) => 
+                        {this.context.getMessage('softwareEngineer', 'projects').map((project, key) =>
                             renderProject(project, key)
                         )}
 

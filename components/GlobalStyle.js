@@ -125,10 +125,49 @@ class GlobalStyle extends Component {
           }
 
           .container {
-            padding: 0 20px;
+            /* https://ricostacruz.com/til/css-media-query-breakpoints */
+            @media (min-width:576px){
+              max-width:540px;
+            }
+            
+            @media (min-width:768px){
+              max-width:720px;
+            }
 
-            @media screen and (min-width: 1280px) {
-              padding: 60px;
+            @media (min-width:992px){
+              max-width:960px;
+            }
+          
+            @media (min-width:1200px){
+              max-width:1140px;
+            }
+
+            @media (min-width:1440px){
+              max-width:1348px;
+            }
+
+            @media (min-width:1680px){
+              max-width:1556px;
+            }
+          }
+
+          .column {
+            width: 50%;
+            
+            &:nth-of-type(1) {
+              padding-right: 20px;
+
+              @media screen and (min-width: 1280px) {
+                padding-right: 60px;
+              }
+            }
+
+            &:nth-of-type(2) {
+              padding-left: 20px;
+
+              @media screen and (min-width: 1280px) {
+                padding-left: 60px;
+              }
             }
           }
 
@@ -157,14 +196,18 @@ class GlobalStyle extends Component {
             display: flex;
             flex-flow: column;
             position:relative;
-            padding-top: 20px;
-            padding-bottom: 20px;
             width:100%;
             min-height: calc(100vh - 50px);
             z-index:20;
             visibility:visible;
             transition: all 0.6s ease-in;
             box-sizing: border-box;
+
+            padding: 0 20px;
+
+            @media screen and (min-width: 1280px) {
+              padding: 60px;
+            }
             
             > h1 {
               margin-top: 0;
