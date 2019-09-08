@@ -134,6 +134,12 @@ class Index extends Component {
                             color: #1dc779;
                         }
                     }
+
+                    footer {
+                        margin-top: 20px;
+                        display: block;
+                        font-size: 12px;
+                    }
                 `}</style>
                 <section className="home">
                     <div className="home__left">
@@ -159,6 +165,8 @@ class Index extends Component {
                                 </a>
                             )}
                         </div>
+
+                        <footer dangerouslySetInnerHTML={createMarkup(this.context.getMessage('footer', 'description'))} />
                     </div>
                     <div className="home__right"></div>
                 </section>

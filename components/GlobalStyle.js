@@ -181,11 +181,12 @@ class GlobalStyle extends Component {
             h1 {
               font-size: 4.5em;
               font-weight: 500;
-              margin-bottom: 0;
+              margin: 0;
             }
 
             h2 {
               font-size: 2.2em;
+              margin-top: 0;
             }
 
             a {
@@ -205,7 +206,7 @@ class GlobalStyle extends Component {
             transition: all 0.6s ease-in;
             box-sizing: border-box;
 
-            padding: 0 20px;
+            padding: 0 20px 20px;
 
             @media screen and (min-width: 1024px) {
               padding: 40px;

@@ -41,30 +41,52 @@ class EngenheiroDeSoftware extends Component {
                 <Main>
                     <section className="software-engineer container">
                         <style jsx global>{`
-                            
                             .project:not(.project--main) {
-                                &:nth-child(odd) {
-                                    .project__cover {
-                                        box-shadow: -25px 50px 20px 5px rgba(0, 0, 0, .3);
+                                .project__title {
+                                    @media (min-width: 1280px) {
+                                        margin-top: -40px !important;
+                                    }
+
+                                    @media (min-width: 1440px) {
+                                        margin-top: -60px !important;
                                     }
                                 }
+
+                                &:nth-child(odd) {
+                                    .project__cover {
+                                        @media (min-width: 1280px) {
+                                            box-shadow: -25px 50px 20px 5px rgba(0, 0, 0, .3);
+                                        }
+                                    }
+                                }
+
                                 &:nth-child(even) {
                                     .project__cover {
-                                        box-shadow: 25px 50px 20px 5px rgba(0, 0, 0, .3);
+                                        @media (min-width: 1280px) {
+                                            box-shadow: 25px 50px 20px 5px rgba(0, 0, 0, .3);
+                                        }
                                     }
                                 }
                             }
                             
                             .dark-ui {
                                 .project:not(.project--main) {
+                                    &__cover {
+                                        box-shadow: 0 15px 20px 5px rgba(68, 68, 68, .3);
+                                    }
+
                                     &:nth-child(odd) {
                                         .project__cover {
-                                            box-shadow: -25px 50px 20px 5px rgba(68, 68, 68, .3);
+                                            @media (min-width: 1280px) {
+                                                box-shadow: -25px 50px 20px 5px rgba(68, 68, 68, .3);
+                                            }
                                         }
                                     }
                                     &:nth-child(even) {
                                         .project__cover {
-                                            box-shadow: 25px 50px 20px 5px rgba(68, 68, 68, .3);
+                                            @media (min-width: 1280px) {
+                                                box-shadow: 25px 50px 20px 5px rgba(68, 68, 68, .3);
+                                            }
                                         }
                                     }
                                 }
@@ -75,15 +97,22 @@ class EngenheiroDeSoftware extends Component {
                                 margin: 80px 0;
 
                                 @media screen and (min-width: 1024px) {
+                                    margin: 100px 0;
+                                }
+
+                                @media screen and (min-width: 1280px) {
                                     margin: 200px 0;
                                 }
 
                                 &__cover {
-                                    width: 100%;                           
+                                    width: 100%;
+                                    margin: 0 auto 20px;   
+                                    box-shadow: 0 15px 20px 5px rgba(68, 68, 68, .3);                      
                                 }
 
                                 &__description {
                                     max-width: 650px;
+                                    margin-top: 10px;
 
                                     @media screen and (min-width: 1024px) {
                                         margin-top: 20px;
@@ -95,9 +124,8 @@ class EngenheiroDeSoftware extends Component {
                                 }
 
                                 &--main {
-
-                                    @media screen and (min-width: 1024px) {
-                                        .project__cover {
+                                    .project__cover {
+                                        @media screen and (min-width: 1024px) {
                                             max-width: 1200px;
                                             margin: 0 auto 60px;
                                             display: block;

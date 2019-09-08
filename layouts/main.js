@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 import 'normalize.css'
-import Footer from '../components/Footer';
 import AppContext from '../components/AppProvider'
 import GlobalStyle from '../components/GlobalStyle'
 
@@ -42,7 +41,6 @@ class Main extends Component {
     const loadedConfigs = this.state.loadedConfigs
     const mainContent = !loadedConfigs ? '' : <div className="main-content">
         {this.props.children}
-        <Footer />
       </div>
 
     return (
