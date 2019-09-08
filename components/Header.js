@@ -18,6 +18,10 @@ class Header extends Component {
                         justify-content: space-between;
                         padding: 20px;
 
+                        @media screen and (min-width: 1024px) {
+                            padding: 40px 40px 0;
+                        }
+
                         @media screen and (min-width: 1280px) {
                             padding: 60px;
                         }

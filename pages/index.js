@@ -106,6 +106,10 @@ class Index extends Component {
                             & * {
                                 margin: 0;
                             }
+
+                            &__connect {
+                                margin: 0 0 5px;
+                            }
                         }
 
                         .social-networks {
@@ -145,7 +149,7 @@ class Index extends Component {
                             {this.context.getMessage('home', 'description').map((description, key) =>
                                 <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
 
-                            <p>{this.context.getMessage('home', 'connect')}</p>
+                            <p className="home__welcome-description__connect">{this.context.getMessage('home', 'connect')}</p>
                         </div>
 
                         <div className="social-networks">

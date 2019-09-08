@@ -103,7 +103,7 @@ class GlobalStyle extends Component {
 
             &:hover {
               color: #fff;
-              transform: scale(1.1);
+              /* transform: scale(1.1); */
             }
 
             &:before {
@@ -125,18 +125,20 @@ class GlobalStyle extends Component {
           }
 
           .container {
-            /* https://ricostacruz.com/til/css-media-query-breakpoints */
-            @media (min-width:576px){
-              max-width:540px;
-            }
-            
-            @media (min-width:768px){
-              max-width:720px;
-            }
+            margin: 0 auto;
 
-            @media (min-width:992px){
+            /* https://ricostacruz.com/til/css-media-query-breakpoints */
+            /*@media (min-width:576px){
+              max-width:540px;
+            }*/
+            
+            /*@media (min-width:768px){
+              max-width:720px;
+            }*/
+
+            /*@media (min-width:992px){
               max-width:960px;
-            }
+            }*/
           
             @media (min-width:1200px){
               max-width:1140px;
@@ -204,6 +206,10 @@ class GlobalStyle extends Component {
             box-sizing: border-box;
 
             padding: 0 20px;
+
+            @media screen and (min-width: 1024px) {
+              padding: 40px;
+            }
 
             @media screen and (min-width: 1280px) {
               padding: 60px;
