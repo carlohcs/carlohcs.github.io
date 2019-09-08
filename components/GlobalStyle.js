@@ -127,6 +127,10 @@ class GlobalStyle extends Component {
           .container {
             margin: 0 auto;
 
+            &--left {
+              margin-left: 0;
+            }
+
             /* https://ricostacruz.com/til/css-media-query-breakpoints */
             /*@media (min-width:576px){
               max-width:540px;

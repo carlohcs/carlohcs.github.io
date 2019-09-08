@@ -108,6 +108,45 @@
                 }
             ]
         },
+        "talks": {
+            "title": "Palestras.",
+            "titleDescription": "Já falei um pouco, mas ainda quero muito mais.",
+            "talks": {
+                "years": [
+                    {
+                        "year": "2019",
+                        "talks": [
+                            {
+                                "title": "Fronteiras da regulação comercial - Desafios de governança e compliance para os anos 2020 (em breve)",
+                                "link": ""
+                            }
+                        ]
+                    },
+                    {
+                        "year": "2018",
+                        "talks": [
+                            {
+                                "title": "\"Tira a mão da minha propriedade!\": explorando comportamento de times e como eles geram resultados. - UniUOL - UOL",
+                                "link": ""
+                            }
+                        ]
+                    },
+                    {
+                        "year": "2017",
+                        "talks": [
+                            {
+                                "title": "HTML 5 e suas mágicas: API`s que você provavelmente não sabia que existiam (adaptação da apresentação do Zeno Rocha) - Reunião dos Designers Todos - UOL",
+                                "link": ""
+                            },
+                            {
+                                "title": "Resumo JS Experience 2017 - Reunião dos Fronts - UOL",
+                                "link": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
         "error": {
             "citation": "\"<i>[…] só o conhecimento liberta o homem, só através do conhecimento o homem é livre e em sendo livre: ele pode aspirar uma condição melhor de vida para ele e todos os seus semelhantes. […]\" <br />- DRº. Enéas Ferreira Carneiro</i>"
         }
@@ -185,7 +224,8 @@
                 },
                 {
                     "titleDescription": "Bootstrap UOL",
-                    "description": "<p> Company code base <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a>. </p> <p> I am responsible by the site structure, evolution and content. </p> <p> The project is a <i> fork </i> of <a href =\"https: //getbootstrap.com/docs/3.3/\" target =\" blank\"> Twitter Bootstrap </a>. In it we maintain the delivery of necessary components to the company's products. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript and Grunt. </p>", "cover": "bootstrap.png"
+                    "description": "<p> Company code base <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a>. </p> <p> I am responsible by the site structure, evolution and content. </p> <p> The project is a <i> fork </i> of <a href =\"https: //getbootstrap.com/docs/3.3/\" target =\" blank\"> Twitter Bootstrap </a>. In it we maintain the delivery of necessary components to the company's products. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript and Grunt. </p>",
+                    "cover": "bootstrap.png"
                 },
                 {
                     "titleDescription": "Zero UOL",
@@ -194,7 +234,8 @@
                 },
                 {
                     "titleDescription": "UOL Música Deezer (discontinued)",
-                    "description": "<p> <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a> Music Streaming Service. </p> <p> I was one of responsible for the <i> frontend </i> of the application. </p> <p> The service was concurrent with the services <a href =\"https: //www.deezer.com/\" target =\"_blank\"> Deezer </a> and <a href=\"https://www.spotify.com/\" target=\"_blank\"> Spotify </a>. It was made available to users free of charge and also had a premium plan with additional functionality. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, and Grunt. </ p>", "cover": "umd.png"
+                    "description": "<p> <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a> Music Streaming Service. </p> <p> I was one of responsible for the <i> frontend </i> of the application. </p> <p> The service was concurrent with the services <a href =\"https: //www.deezer.com/\" target =\"_blank\"> Deezer </a> and <a href=\"https://www.spotify.com/\" target=\"_blank\"> Spotify </a>. It was made available to users free of charge and also had a premium plan with additional functionality. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, and Grunt. </ p>",
+                    "cover": "umd.png"
                 },
                 {
                     "titleDescription": "InterAcesso",

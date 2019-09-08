@@ -40,212 +40,6 @@ class EngenheiroDeSoftware extends Component {
             <>
                 <Main>
                     <section className="software-engineer container">
-                        <style jsx global>{`
-                            .project:not(.project--main) {
-                                .project__title {
-                                    @media (min-width: 1280px) {
-                                        margin-top: -40px !important;
-                                    }
-
-                                    @media (min-width: 1440px) {
-                                        margin-top: -60px !important;
-                                    }
-                                }
-
-                                &:nth-child(odd) {
-                                    .project__cover {
-                                        @media (min-width: 1280px) {
-                                            box-shadow: -25px 50px 20px 5px rgba(0, 0, 0, .3);
-                                        }
-                                    }
-                                }
-
-                                &:nth-child(even) {
-                                    .project__cover {
-                                        @media (min-width: 1280px) {
-                                            box-shadow: 25px 50px 20px 5px rgba(0, 0, 0, .3);
-                                        }
-                                    }
-                                }
-                            }
-                            
-                            .dark-ui {
-                                .project:not(.project--main) {
-                                    &__cover {
-                                        box-shadow: 0 15px 20px 5px rgba(68, 68, 68, .3);
-                                    }
-
-                                    &:nth-child(odd) {
-                                        .project__cover {
-                                            @media (min-width: 1280px) {
-                                                box-shadow: -25px 50px 20px 5px rgba(68, 68, 68, .3);
-                                            }
-                                        }
-                                    }
-                                    &:nth-child(even) {
-                                        .project__cover {
-                                            @media (min-width: 1280px) {
-                                                box-shadow: 25px 50px 20px 5px rgba(68, 68, 68, .3);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            
-
-                            .project {
-                                margin: 80px 0;
-
-                                @media screen and (min-width: 1024px) {
-                                    margin: 100px 0;
-                                }
-
-                                @media screen and (min-width: 1280px) {
-                                    margin: 200px 0;
-                                }
-
-                                &__cover {
-                                    width: 100%;
-                                    margin: 0 auto 20px;   
-                                    box-shadow: 0 15px 20px 5px rgba(68, 68, 68, .3);                      
-                                }
-
-                                &__description {
-                                    max-width: 650px;
-                                    margin-top: 10px;
-
-                                    @media screen and (min-width: 1024px) {
-                                        margin-top: 20px;
-                                    }
-
-                                    p {
-                                        margin: 0;
-                                    }
-                                }
-
-                                &--main {
-                                    .project__cover {
-                                        @media screen and (min-width: 1024px) {
-                                            max-width: 1200px;
-                                            margin: 0 auto 60px;
-                                            display: block;
-                                        }
-                                    }
-                                        
-
-                                    .project__content{
-                                        flex-flow: column !important;
-
-                                        &__column {
-                                            &:nth-of-type(1) {
-                                                width: 100% !important;
-                                            }
-                                            &:nth-of-type(2) {
-                                                width: auto !important;
-                                            }
-                                        }
-                                    }
-                                }
-
-                                .project__content {
-                                    display: flex;
-                                    flex-flow: column;
-                                    align-items: center;
-                                    justify-content: center;
-
-                                    &__column {
-                                        @media screen and (min-width: 1024px) {
-                                            width: 50%;
-                                        }
-                                    }
-                                }
-
-                                @media screen and (min-width: 1024px) {
-                                    .project__content {
-                                        flex-flow: row;
-                                    }
-
-                                    &:not(.project--main):nth-child(even) {
-                                        .project__content {
-                                            flex-direction: row-reverse;
-
-                                            &__column {
-                                                @media screen and (min-width: 1024px) {
-                                                    &:nth-of-type(1) {
-                                                        padding-left: 20px;
-                                                    }
-        
-                                                    &:nth-of-type(2) {
-                                                        padding-right: 20px;
-                                                    }
-                                                }
-
-                                                @media screen and (min-width: 1280px) {
-                                                    &:nth-of-type(1) {
-                                                        padding-left: 40px;
-                                                    }
-        
-                                                    &:nth-of-type(2) {
-                                                        padding-right: 40px;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-
-                                    &:not(.project--main):nth-child(odd) {
-                                        .project__content {
-                                            &__column {
-                                                @media screen and (min-width: 1024px) {
-                                                    &:nth-of-type(1) {
-                                                        padding-right: 20px;
-                                                    }
-        
-                                                    &:nth-of-type(2) {
-                                                        padding-left: 20px;
-                                                    }
-                                                }
-
-                                                @media screen and (min-width: 1280px) {
-                                                    &:nth-of-type(1) {
-                                                        padding-right: 40px;
-                                                    }
-        
-                                                    &:nth-of-type(2) {
-                                                        padding-left: 40px;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                &:last-child {
-                                    margin-bottom: 0;
-                                }
-                                
-                                &__title {
-                                    margin: 0;
-                                }
-
-                                &__technology {
-                                    font-size: 12px;
-                                    margin-bottom: 0;
-
-                                    @media screen and (min-width: 1024px) {
-                                        font-size: 16px;
-                                        margin-top: 20px !important;
-                                    }
-                                }
-                            }
-
-                            .page {
-                                &__description {
-                                    max-width: 750px;
-                                }
-                            }
-                        `}
-                        </style>
                         <div className="software-engineer__introduction">
                             <h1 className="page__title">{this.context.getMessage('softwareEngineer', 'title')}</h1>
                             <h2 className="page__title-description">{this.context.getMessage('softwareEngineer', 'titleDescription')}</h2>
@@ -253,17 +47,220 @@ class EngenheiroDeSoftware extends Component {
                             <p className="page__description">{this.context.getMessage('softwareEngineer', 'description')}</p>
                         </div>
 
-                        {/* <h3>{this.context.getMessage('softwareEngineer', 'featured')}</h3> */}
+                        <div className="projects">
+                            {renderProject(this.context.getMessage('softwareEngineer', 'mainProject'))}
 
-                        {renderProject(this.context.getMessage('softwareEngineer', 'mainProject'))}
-
-                        {/* <h3>{this.context.getMessage('softwareEngineer', 'otherProjects')}</h3> */}
-
-                        {this.context.getMessage('softwareEngineer', 'projects').map((project, key) =>
-                            renderProject(project, key)
-                        )}
-
+                            {this.context.getMessage('softwareEngineer', 'projects').map((project, key) =>
+                                renderProject(project, key)
+                            )}
+                        </div>
                     </section>
+                    <style jsx global>{`
+                        .project:not(.project--main) {
+                            .project__title {
+                                @media (min-width: 1280px) {
+                                    margin-top: -40px !important;
+                                }
+
+                                @media (min-width: 1440px) {
+                                    margin-top: -60px !important;
+                                }
+                            }
+
+                            &:nth-child(odd) {
+                                .project__cover {
+                                    @media (min-width: 1280px) {
+                                        box-shadow: -25px 50px 20px 5px rgba(0, 0, 0, .3);
+                                    }
+                                }
+                            }
+
+                            &:nth-child(even) {
+                                .project__cover {
+                                    @media (min-width: 1280px) {
+                                        box-shadow: 25px 50px 20px 5px rgba(0, 0, 0, .3);
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .dark-ui {
+                            .project:not(.project--main) {
+                                &__cover {
+                                    box-shadow: 0 15px 20px 5px rgba(68, 68, 68, .3);
+                                }
+
+                                &:nth-child(odd) {
+                                    .project__cover {
+                                        @media (min-width: 1280px) {
+                                            box-shadow: -25px 50px 20px 5px rgba(68, 68, 68, .3);
+                                        }
+                                    }
+                                }
+                                &:nth-child(even) {
+                                    .project__cover {
+                                        @media (min-width: 1280px) {
+                                            box-shadow: 25px 50px 20px 5px rgba(68, 68, 68, .3);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+
+                        .project {
+                            margin: 80px 0;
+
+                            @media screen and (min-width: 1024px) {
+                                margin: 100px 0;
+                            }
+
+                            @media screen and (min-width: 1280px) {
+                                margin: 200px 0;
+                            }
+
+                            &__cover {
+                                width: 100%;
+                                margin: 0 auto 20px;   
+                                box-shadow: 0 15px 20px 5px rgba(68, 68, 68, .3);                      
+                            }
+
+                            &__description {
+                                max-width: 650px;
+                                margin-top: 10px;
+
+                                @media screen and (min-width: 1024px) {
+                                    margin-top: 20px;
+                                }
+
+                                p {
+                                    margin: 0;
+                                }
+                            }
+
+                            &--main {
+                                .project__cover {
+                                    @media screen and (min-width: 1024px) {
+                                        max-width: 1200px;
+                                        margin: 0 auto 60px;
+                                        display: block;
+                                    }
+                                }
+                                    
+
+                                .project__content{
+                                    flex-flow: column !important;
+
+                                    &__column {
+                                        &:nth-of-type(1) {
+                                            width: 100% !important;
+                                        }
+                                        &:nth-of-type(2) {
+                                            width: auto !important;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .project__content {
+                                display: flex;
+                                flex-flow: column;
+                                align-items: center;
+                                justify-content: center;
+
+                                &__column {
+                                    @media screen and (min-width: 1024px) {
+                                        width: 50%;
+                                    }
+                                }
+                            }
+
+                            @media screen and (min-width: 1024px) {
+                                .project__content {
+                                    flex-flow: row;
+                                }
+
+                                &:not(.project--main):nth-child(even) {
+                                    .project__content {
+                                        flex-direction: row-reverse;
+
+                                        &__column {
+                                            @media screen and (min-width: 1024px) {
+                                                &:nth-of-type(1) {
+                                                    padding-left: 20px;
+                                                }
+    
+                                                &:nth-of-type(2) {
+                                                    padding-right: 20px;
+                                                }
+                                            }
+
+                                            @media screen and (min-width: 1280px) {
+                                                &:nth-of-type(1) {
+                                                    padding-left: 40px;
+                                                }
+    
+                                                &:nth-of-type(2) {
+                                                    padding-right: 40px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &:not(.project--main):nth-child(odd) {
+                                    .project__content {
+                                        &__column {
+                                            @media screen and (min-width: 1024px) {
+                                                &:nth-of-type(1) {
+                                                    padding-right: 20px;
+                                                }
+    
+                                                &:nth-of-type(2) {
+                                                    padding-left: 20px;
+                                                }
+                                            }
+
+                                            @media screen and (min-width: 1280px) {
+                                                &:nth-of-type(1) {
+                                                    padding-right: 40px;
+                                                }
+    
+                                                &:nth-of-type(2) {
+                                                    padding-left: 40px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            
+                            &__title {
+                                margin: 0;
+                            }
+
+                            &__technology {
+                                font-size: 12px;
+                                margin-bottom: 0;
+
+                                @media screen and (min-width: 1024px) {
+                                    font-size: 16px;
+                                    margin-top: 20px !important;
+                                }
+                            }
+                        }
+
+                        .page {
+                            &__description {
+                                max-width: 750px;
+                            }
+                        }
+                    `}
+                    </style>
                 </Main>
             </>
         )
