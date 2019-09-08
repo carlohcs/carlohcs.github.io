@@ -54,56 +54,56 @@
         "softwareEngineer": {
             "title": "Engenheiro de software",
             "titleDescription": "Alguns projetos que trabalhei.",
-            "description": "Há mais de 8 anos, venho desenvolvendo soluções de tecnologia para o mercado. O mais importante que aprendi nestes anos: tecnologias surgem o tempo todo e cabe a nós desenvolvedores pensarmos antes de tudo, nos usuários. A tecnologia deve ser o meio para isso. Mais abaixo, você pode conferir alguns destes trabalhos.",
+            "description": "Há mais de 8 anos, desenvolvo soluções de tecnologia. O mais importante que aprendi: tecnologias surgem o tempo todo e cabe a nós desenvolvedores pensarmos em como ela pode ser usada a favor dos usuários. Mais abaixo, você pode conferir alguns destes trabalhos.",
             "featured": "Destaque",
             "otherProjects": "Outros projetos",
             "mainProject": {
                 "titleDescription": "Missão Pessoal",
                 "url": "https://missaopessoal.com.br",
-                "description": "<p>Projeto pessoal para ajudar as pessoas a criarem suas missões pessoais.</p> <p>O site Missão Pessoal é um projeto criado com intuito de prover uma ferramenta para simplificação da criação de missão pessoal.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Vue.js, PHP e MySql. Hospedado no Heroku.</p>",
+                "description": "<p>Projeto pessoal para ajudar as pessoas a criarem suas missões pessoais.</p> <p>É possível criar, compartilhar e dar\"like\". Até o momento, 114 missões já foram criadas.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Vue.js, PHP e MySql. Hospedado no Heroku.</p>",
                 "cover": "missaopessoal.png"
             },
             "projects": [
                 {
                     "titleDescription": "Sobre UOL",
                     "url": "https://sobreuol.noticias.uol.com.br/",
-                    "description": "<p>Site institucional da empresa UOL.</p><p>Responsável pela edição e manutenção da estrutura do site.</p><p>O site conta as soluções para empresas e clientes finais. Mostra também, highlights importantes sobre quem utiliza seus produtos, bem como informações de mídia e de trabalho.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript. Gulp e Jest.</p>",
+                    "description": "<p>Site institucional da empresa <a href=\"https://uol.com.br\" target=\"_blank\">UOL</a>.</p><p>Sou um dos responsáveis pela estrutura e conteúdo do site.</p><p>Contém soluções para empresas e clientes finais, além de highlights importantes, bem como informações de mídia e de trabalho.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript. Gulp e Jest.</p>",
                     "cover": "sobreuol.png"
                 },
                 {
                     "titleDescription": "Bootstrap UOL",
-                    "description": "<p>Base de código da empresa UOL.</p><p>Sou responsável pela edição e manutenção da estrutura do site.</p><p>O Bootstrap do UOL é um fork do projeto do Twitter Bootstrap. Nele, fazemos alterações e a entrega de componentes necessários aos produtos da empresa.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript e Grunt.</p>",
+                    "description": "<p>Base de código da empresa <a href=\"https://uol.com.br\" target=\"_blank\">UOL</a>.</p><p>Sou um dos responsáveis pela estrutura, evolução e conteúdo do site.</p><p>O projeto é um <i>fork</i> do <a href=\"https://getbootstrap.com/docs/3.3/\" target=\"_blank\">Twitter Bootstrap</a>. Nele, mantemos a entrega de componentes necessários aos produtos da empresa.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript e Grunt.</p>",
                     "cover": "bootstrap.png"
                 },
                 {
                     "titleDescription": "Zero UOL",
-                    "description": "<p>Guia de estilos do UOL</p><p>Sou responsável pela edição e manutenção da estrutura do site.</p><p>O Zero possui recomendações que devem ser utilizadas pelos produtos do UOL. Possui as melhores práticas, sendo uma documentação viva.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Jekyll, Gulp e Jest.</p>",
+                    "description": "<p>Guia de estilos do <a href=\"https://uol.com.br\" target=\"_blank\">UOL</a>.</p><p>Sou responsável pela edição e manutenção da estrutura do site.</p><p>O Zero possui recomendações que devem ser utilizadas pelos produtos do UOL. Possui as melhores práticas, sendo uma documentação viva.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Jekyll, Gulp e Jest.</p>",
                     "cover": "zero.png"
                 },
                 {
-                    "titleDescription": "UOL Música Deezer (inativo)",
-                    "description": "<p>Serviço de streaming de música.</p><p>Fui um dos responsáveis pelo frontend da aplicação.</p><p>O serviço era um concorrente direto dos serviços Deezer e Spotify. Era disponibilizado de forma gratuita aos usuários. Possuia plano premium que permitia o usuário utilizar o aplicativo da Deezer, parceira da plataforma.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript e Grunt.</p>",
+                    "titleDescription": "UOL Música Deezer (descontinuado)",
+                    "description": "<p>Serviço de streaming de música do <a href=\"https://uol.com.br\" target=\"_blank\">UOL</a>.</p><p>Fui um dos responsáveis pelo <i>frontend</i> da aplicação.</p><p>O serviço foi concorrente dos serviços <a href=\"https://www.deezer.com/\" target=\"_blank\">Deezer</a> e <a href=\"https://www.spotify.com/\" target=\"_blank\">Spotify</a>. Era disponibilizado de forma gratuita aos usuários, possuindo também plano <i>premium</i> com funcionalidades adicionais.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript e Grunt.</p>",
                     "cover": "umd.png"
                 },
                 {
                     "titleDescription": "InterAcesso",
                     "url": "http://interacesso.interport.com.br",
-                    "description": "<p>Sistema online para condomínios.</p><p>Fui um dos fundadores da startup, sendo responsável por toda a infra do serviço.</p><p>O serviço contém controle de colaboradores, moradores e gerenciamento interno.</p><p>Chegou a ter em torno de 7 clientes enquanto eu estava fazendo parte do quadro societário.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Gulp, PHP, Laravel.</p>",
+                    "description": "<p>Sistema online para condomínios.</p><p>Fui um dos fundadores da startup, sendo responsável por toda a infra do serviço.</p><p>O serviço contém controle de colaboradores, moradores e gerenciamento interno.</p><p>Chegou a ter em torno de 7 clientes enquanto eu fazia parte do quadro societário.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Gulp, PHP, Laravel.</p>",
                     "cover": "interacesso.png"
                 },
                 {
-                    "titleDescription": "Vita do Brasil (inativo)",
-                    "description": "<p>Gerenciamento de empresas médicas.</p><p>Fui responsável pela produção do site institucional e do sistema de ERP da empresa.</p><p>O ERP era responsável por uma série de funcionalidades. Entre elas: Gerenciamento de cadastros de empresas, cadastros de médicos e dos colaboradores; emissão de notas fiscais para algumas cidades de São Paulo; inclusão de documentos e configurações ao sistema..</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Jekyll, PHP e MySql.</p>",
+                    "titleDescription": "Vita do Brasil (descontinuado)",
+                    "description": "<p>Gerenciamento de empresas médicas.</p><p>Fui responsável pela produção do site institucional e do sistema de ERP da empresa.</p><p>O ERP continha uma série de funcionalidades, entre elas: gerenciamento de cadastros de empresas, de médicos e dos colaboradores; emissão de notas fiscais entre outros.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Jekyll, PHP e MySql.</p>",
                     "cover": "vita.png"
                 },
                 {
-                    "titleDescription": "Aduet (inativo)",
-                    "description": "<p>Sistema para gerenciamento de encontros</p><p>Freela executado para o gerenciamento de um sistema de encontros (uma espécie de Tinder antigo).</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySql.</p>",
+                    "titleDescription": "Aduet (descontinuado)",
+                    "description": "<p>Sistema para gerenciamento de encontros.</p><p>Fui responsável por toda a concepção do sistema, que era uma espécie de Tinder antigo. Continha o cadastro de clientes, contratos, relatórios entre outros.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySql.</p>",
                     "cover": "aduet.png"
                 },
                 {
-                    "titleDescription": "Ursoland (inativo)",
-                    "description": "<p>Rede social para Ursos.</p><p>Fui um dos responsáveis por todo o desenvolvimento da aplicação.</p><p>O serviço era uma rede social voltado exclusivamente para o público LGBT de ursos.</p><p>O site continha: like, troca de mensagens, chat entre outros serviços. Foi o primeiro projeto de grande complexidade.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySql.</p>",
+                    "titleDescription": "Ursoland (descontinuado)",
+                    "description": "<p>Rede social para público <i>bear</i>.</p><p>Fui um dos responsáveis por todo o desenvolvimento do site.</p><p>O serviço era uma rede social voltado exclusivamente para o público LGBT de ursos.</p><p>O site continha like, troca de mensagens, videochat entre outros serviços.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySql.</p>",
                     "cover": "ursoland.png"
                 }
             ]
@@ -167,62 +167,60 @@
         "softwareEngineer": {
             "title": "Software Engineer",
             "titleDescription": "Some projects I worked on.",
-            "description": "For over 8 years, I have been developing technology solutions for the market. The most important thing I've learned in these years: technologies come all the time and it's up to us developers to think first of all about users. Technology must be the means to this. Below you can check out some of these works.",
+            "description": "For over 8 years, I have been developing technology solutions. The most important thing I learned: technologies come all the time and it's up to us developers to think about how it can be used on behalf of users. Below you can check out some of these works.",
             "featured": "Spotlight",
             "otherProjects": "Other projects",
             "mainProject": {
                 "titleDescription": "Missão Pessoal",
                 "url": "https://missaopessoal.com.br",
-                "description": "<p>Personal project to help people create their personal missions. </p><p>The Personal Mission site is a project created to provide a tool for simplifying personal mission creation. </p> <p class =\"project__technology\"> Technologies Used: HTML, CSS, JavaScript, Vue.js, PHP, and MySql. Hosted at Heroku.</p>",
+                "description": "<p> Personal project to help people create their personal missions. </p> <p> You can create, share and like. So far, 114 missions have been created. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, Vue.js, PHP and MySql. Hosted at Heroku. </p>",
                 "cover": "missaopessoal.png"
             },
             "projects": [
                 {
                     "titleDescription": "Sobre UOL",
                     "url": "https://sobreuol.noticias.uol.com.br/",
-                    "description": "<p>Site institucional da empresa UOL.</p><p>Responsável pela edição e manutenção da estrutura do site.</p><p>O site conta as soluções para empresas e clientes finais. Mostra também, highlights importantes sobre quem utiliza seus produtos, bem como informações de mídia e de trabalho.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript. Gulp e Jest.</p>",
+                    "description": "<p> Company website <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a>. </p> <p> I am responsible for site structure and content. </p> <p> Contains solutions for businesses and end customers, as well as important highlights as well as media and work information. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript. Gulp and Jest. </p>",
                     "cover": "sobreuol.png"
                 },
                 {
                     "titleDescription": "Bootstrap UOL",
-                    "description": "<p>Base de código da empresa UOL.</p><p>Sou responsável pela edição e manutenção da estrutura do site.</p><p>O Bootstrap do UOL é um fork do projeto do Twitter Bootstrap. Nele, fazemos alterações e a entrega de componentes necessários aos produtos da empresa.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript e Grunt.</p>",
-                    "cover": "bootstrap.png"
+                    "description": "<p> Company code base <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a>. </p> <p> I am responsible by the site structure, evolution and content. </p> <p> The project is a <i> fork </i> of <a href =\"https: //getbootstrap.com/docs/3.3/\" target =\" blank\"> Twitter Bootstrap </a>. In it we maintain the delivery of necessary components to the company's products. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript and Grunt. </p>", "cover": "bootstrap.png"
                 },
                 {
                     "titleDescription": "Zero UOL",
-                    "description": "<p>Guia de estilos do UOL</p><p>Sou responsável pela edição e manutenção da estrutura do site.</p><p>O Zero possui recomendações que devem ser utilizadas pelos produtos do UOL. Possui as melhores práticas, sendo uma documentação viva.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Jekyll, Gulp e Jest.</p>",
+                    "description": "<p> UOL Style Guide </p> <p> I am responsible for editing and maintaining the site structure. </p> <p> Zero has recommendations that should be used by UOL products. It has best practices and is living documentation. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, Jekyll, Gulp and Jest. </p>",
                     "cover": "zero.png"
                 },
                 {
-                    "titleDescription": "UOL Música Deezer (inativo)",
-                    "description": "<p>Serviço de streaming de música.</p><p>Fui um dos responsáveis pelo frontend da aplicação.</p><p>O serviço era um concorrente direto dos serviços Deezer e Spotify. Era disponibilizado de forma gratuita aos usuários. Possuia plano premium que permitia o usuário utilizar o aplicativo da Deezer, parceira da plataforma.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript e Grunt.</p>",
-                    "cover": "umd.png"
+                    "titleDescription": "UOL Música Deezer (discontinued)",
+                    "description": "<p> <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a> Music Streaming Service. </p> <p> I was one of responsible for the <i> frontend </i> of the application. </p> <p> The service was concurrent with the services <a href =\"https: //www.deezer.com/\" target =\"_blank\"> Deezer </a> and <a href=\"https://www.spotify.com/\" target=\"_blank\"> Spotify </a>. It was made available to users free of charge and also had a premium plan with additional functionality. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, and Grunt. </ p>", "cover": "umd.png"
                 },
                 {
                     "titleDescription": "InterAcesso",
                     "url": "http://interacesso.interport.com.br",
-                    "description": "<p>Sistema online para condomínios.</p><p>Fui um dos fundadores da startup, sendo responsável por toda a infra do serviço.</p><p>O serviço contém controle de colaboradores, moradores e gerenciamento interno.</p><p>Chegou a ter em torno de 7 clientes enquanto eu estava fazendo parte do quadro societário.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Gulp, PHP, Laravel.</p>",
+                    "description": "<p> Online condominium system. </p> <p> I was a founder of the startup, being responsible for the entire infrastructure of the service. </p> <p> The service contains employee, resident, and internal management control. </p> <p> There were around 7 clients while I was on the corporate board. </p> <p class=\"project__technology\"> Technologies Used: HTML, CSS, JavaScript, Gulp, PHP, Laravel. </p>",
                     "cover": "interacesso.png"
                 },
                 {
-                    "titleDescription": "Vita do Brasil (inativo)",
-                    "description": "<p>Gerenciamento de empresas médicas.</p><p>Fui responsável pela produção do site institucional e do sistema de ERP da empresa.</p><p>O ERP era responsável por uma série de funcionalidades. Entre elas: Gerenciamento de cadastros de empresas, cadastros de médicos e dos colaboradores; emissão de notas fiscais para algumas cidades de São Paulo; inclusão de documentos e configurações ao sistema..</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, Jekyll, PHP e MySql.</p>",
+                    "titleDescription": "Vita do Brasil (discontinued)",
+                    "description": "<p> Medical Business Management. </p> <p> I was responsible for producing the company's institutional website and ERP system. </p> <p> ERP contained a number of features, including: business, medical and employee records; issuing invoices among others. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, Jekyll, PHP and MySql. </p>",
                     "cover": "vita.png"
                 },
                 {
-                    "titleDescription": "Aduet (inativo)",
-                    "description": "<p>Sistema para gerenciamento de encontros</p><p>Freela executado para o gerenciamento de um sistema de encontros (uma espécie de Tinder antigo).</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySql.</p>",
+                    "titleDescription": "Aduet (discontinued)",
+                    "description": "<p> Dating management system. </p> <p> I was responsible for the whole design of the system, which was a kind of old Tinder. It contained customer registration, contracts, reports and more. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, PHP and MySql. </p>",
                     "cover": "aduet.png"
                 },
                 {
-                    "titleDescription": "Ursoland (inativo)",
-                    "description": "<p>Rede social para Ursos.</p><p>Fui um dos responsáveis por todo o desenvolvimento da aplicação.</p><p>O serviço era uma rede social voltado exclusivamente para o público LGBT de ursos.</p><p>O site continha: like, troca de mensagens, chat entre outros serviços. Foi o primeiro projeto de grande complexidade.</p><p class=\"project__technology\">Tecnologias utilizadas: HTML, CSS, JavaScript, PHP e MySql.</p>",
+                    "titleDescription": "Ursoland (discontinued)",
+                    "description": "<p> Social Network for the Public <i>bear</i>.</p> <p> I was one of the people responsible for all the development of the site. </p> <p> The service was a social network focused exclusively on the LGBT audience of bears. </p> <p> The site contained like, message exchange, videochat among other services. </p> <p class=\"project__technology\"> Technologies Used: HTML, CSS, JavaScript, PHP and MySql. </p>",
                     "cover": "ursoland.png"
                 }
             ]
         },
         "error": {
-            "citation": "\"<i>[…] only knowledge frees man, only through knowledge is man free and in being free: he can aspire to a better condition of life for himself and all his fellow men. […] \"<br />- DR. Enéas Ferreira Carneiro</i>"
+            "citation": "\"<i>[…] only knowledge frees man, only through knowledge is man free and in being free: he can aspire to a better condition of life for himself and all his fellow men. […]\"<br />- DR. Enéas Ferreira Carneiro</i>"
         }
     }
 }
