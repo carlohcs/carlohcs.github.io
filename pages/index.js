@@ -69,6 +69,18 @@ class Index extends Component {
                             }
                         }
 
+                        &__welcome {
+                            p {
+                                @media (min-width: 1200px) {
+                                    font-size: 1.6em;
+                                    font-weight: 300;
+                                    line-height: 1.4;
+                                    /* max-width: 26em; */
+
+                                    margin: 10px 0;
+                                }
+                            }
+                        }
                         &__welcome-description {
                             &__short-description {
                                 font-size: 14px;
