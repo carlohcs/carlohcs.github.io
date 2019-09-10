@@ -33,8 +33,20 @@ class Palestras extends Component {
         return (
             <>
                 <Main>
-                    <section className="software-engineer container container--left">
-                        <style jsx global>{`
+                    <section className="talks container">
+                        <div className="content">
+                            <div className="page__introduction">
+                                <h1 className="page__title">{this.context.getMessage('talks', 'title')}</h1>
+                                <h2 className="page__title-description">{this.context.getMessage('talks', 'titleDescription')}</h2>
+                            </div>
+
+                            <div className="page__description">
+                                {this.context.getMessage('talks', 'talks', 'years').map((talksYear, key) => renderTalksYear(talksYear, key)
+                                )}
+                            </div>
+                        </div>
+                    </section>
+                    <style jsx global>{`
                             .project:not(.project--main) {
                                 .project__title {
                                     @media (min-width: 1280px) {
@@ -221,34 +233,9 @@ class Palestras extends Component {
                                 &__title {
                                     margin: 0;
                                 }
-
-                                &__technology {
-                                    font-size: 12px;
-                                    margin-bottom: 0;
-
-                                    @media screen and (min-width: 1024px) {
-                                        font-size: 16px;
-                                        margin-top: 20px !important;
-                                    }
-                                }
-                            }
-
-                            .page {
-                                &__description {
-                                    max-width: 750px;
-                                }
                             }
                         `}
                         </style>
-                        <div className="page__introduction">
-                            <h1 className="page__title">{this.context.getMessage('talks', 'title')}</h1>
-                            <h2 className="page__title-description">{this.context.getMessage('talks', 'titleDescription')}</h2>
-                        </div>
-
-                        {this.context.getMessage('talks', 'talks', 'years').map((talksYear, key) => renderTalksYear(talksYear, key)
-                        )}
-
-                    </section>
                 </Main>
             </>
         )

@@ -10,7 +10,7 @@ class Header extends Component {
 
     render() {
         return (
-            <header className="container">
+            <header>
                 <style jsx global>{`
                     header {
                         display: flex;

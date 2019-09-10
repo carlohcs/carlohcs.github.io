@@ -39,20 +39,24 @@ class EngenheiroDeSoftware extends Component {
         return (
             <>
                 <Main>
-                    <section className="software-engineer container">
-                        <div className="software-engineer__introduction">
-                            <h1 className="page__title">{this.context.getMessage('softwareEngineer', 'title')}</h1>
-                            <h2 className="page__title-description">{this.context.getMessage('softwareEngineer', 'titleDescription')}</h2>
+                    <section className="software-engineer">
+                        <div className="content">
+                            <div className="software-engineer__introduction">
+                                <h1 className="page__title">{this.context.getMessage('softwareEngineer', 'title')}</h1>
+                                <h2 className="page__title-description">{this.context.getMessage('softwareEngineer', 'titleDescription')}</h2>
 
-                            <p className="page__description">{this.context.getMessage('softwareEngineer', 'description')}</p>
+                                <p className="page__description">{this.context.getMessage('softwareEngineer', 'description')}</p>
+                            </div>
                         </div>
 
-                        <div className="projects">
-                            {renderProject(this.context.getMessage('softwareEngineer', 'mainProject'))}
+                        <div className="content container container--center">
+                            <div className="projects">
+                                {renderProject(this.context.getMessage('softwareEngineer', 'mainProject'))}
 
-                            {this.context.getMessage('softwareEngineer', 'projects').map((project, key) =>
-                                renderProject(project, key)
-                            )}
+                                {this.context.getMessage('softwareEngineer', 'projects').map((project, key) =>
+                                    renderProject(project, key)
+                                )}
+                            </div>
                         </div>
                     </section>
                     <style jsx global>{`
@@ -251,12 +255,6 @@ class EngenheiroDeSoftware extends Component {
                                     font-size: 16px;
                                     margin-top: 20px !important;
                                 }
-                            }
-                        }
-
-                        .page {
-                            &__description {
-                                max-width: 750px;
                             }
                         }
                     `}

@@ -125,10 +125,10 @@ class GlobalStyle extends Component {
           }
 
           .container {
-            margin: 0 auto;
+            /*margin: 0 auto;*/
 
-            &--left {
-              margin-left: 0;
+            &--center {
+              margin: 0 auto;
             }
 
             /* https://ricostacruz.com/til/css-media-query-breakpoints */
@@ -140,9 +140,9 @@ class GlobalStyle extends Component {
               max-width:720px;
             }*/
 
-            /*@media (min-width:992px){
+            @media (min-width:992px){
               max-width:960px;
-            }*/
+            }
           
             @media (min-width:1200px){
               max-width:1140px;
@@ -156,6 +156,54 @@ class GlobalStyle extends Component {
               max-width:1556px;
             }
           }
+
+
+          .page {
+            &__description {
+              max-width: 600px;
+              display: inline-block;
+            }
+          }
+
+          .content {
+            text-align: center;
+            /*max-width: 750px;*/
+
+            
+            @media (min-width: 1024px) and (min-height: 768px) {
+              text-align: left;
+            }
+
+            /*
+            @media (min-width: 1024px) {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+
+                p {
+                    font-size: 1.4em;
+                    font-weight: 300;
+                    line-height: 1.4;
+                }
+
+                &__welcome {
+                    max-width: 550px;
+                }
+            }
+
+            @media (min-width: 1440px) {
+                p {
+                    font-size: 1.6em;
+                    font-weight: 300;
+                    line-height: 1.4;
+                }
+            }*/
+          }
+
+
+          /*&__welcome {
+            max-width: 600px;
+          }*/
 
           .column {
             width: 50%;
@@ -209,8 +257,8 @@ class GlobalStyle extends Component {
             visibility:visible;
             transition: all 0.6s ease-in;
             box-sizing: border-box;
-
             padding: 0 20px 20px;
+            justify-content: center;
 
             @media screen and (min-width: 1024px) {
               padding: 40px;
@@ -257,34 +305,35 @@ class GlobalStyle extends Component {
             }
           }
 
-          /*.app {
-            overflow: hidden !important;
-          }*/
+        /*.app {
+          overflow: hidden !important;
+        }*/
 
-          .page-transition-enter {
-            opacity: 0;
-            transform: translate3d(0, 20px, 0);
+        /* ==== TRANSIÇÃO DE PÁGINAS ==== */
+        .page-transition-enter {
+          opacity: 0;
+          transform: translate3d(0, 20px, 0);
         }
         .page-transition-enter-active {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-            transition: opacity ${TIMEOUT}ms, transform ${TIMEOUT}ms;
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+          transition: opacity ${TIMEOUT}ms, transform ${TIMEOUT}ms;
         }
         .page-transition-exit {
-            opacity: 1;
+          opacity: 1;
         }
         .page-transition-exit-active {
-            opacity: 0;
-            transition: opacity ${TIMEOUT}ms;
+          opacity: 0;
+          transition: opacity ${TIMEOUT}ms;
         }
         .loading-indicator-appear,
         .loading-indicator-enter {
-            opacity: 0;
+          opacity: 0;
         }
         .loading-indicator-appear-active,
         .loading-indicator-enter-active {
-            opacity: 1;
-            transition: opacity ${TIMEOUT}ms;
+          opacity: 1;
+          transition: opacity ${TIMEOUT}ms;
         }
         `}</style>
         )

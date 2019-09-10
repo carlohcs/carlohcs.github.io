@@ -23,40 +23,12 @@ class Index extends Component {
             <Main>
                 <style jsx global>{`
                     .home {
-                        text-align: center;
-
-                        @media screen and (min-width: 768px) {
-                            text-align: left;
-
-                            &__welcome {
-                                max-width: 600px;
-                            }
-                        }
-
-                        @media screen and (min-width: 1024px) {
-                            display: flex;
-                            flex-direction: row;
-                            width: 100%;
-                        }
-
-                        @media screen and (min-width: 1280px) {
-                            p {
-                                font-size: 1.6em;
-                                font-weight: 300;
-                                line-height: 1.4;
-                            }
-
-                            &__welcome {
-                                max-width: 750px;
-                            }
-                        }
-
                         &__left {
-                            @media screen and (min-width: 1024px) {
+                            @media (min-width: 1024px) {
                                 min-width: 60%;
                             }
 
-                            @media screen and (min-width: 1280px) {
+                            @media (min-width: 1280px) {
                                 min-width: 50%;
                             }
                         }
@@ -64,7 +36,7 @@ class Index extends Component {
                         &__right {
                             display: none;
 
-                            @media screen and (min-width: 1024px) {
+                            @media (min-width: 1024px) and (min-height: 768px) {
                                 display: block;
                                 background: url(../static/img/home/carlohcs-large.png) bottom right no-repeat;
                                 background-size: contain;
@@ -77,7 +49,7 @@ class Index extends Component {
                                 height: 100%;
                             }
 
-                            @media screen and (min-width: 1280px) {
+                            @media (min-width: 1280px) {
                                 width: 50%;
                                 background-position: bottom left;
                             }
@@ -91,7 +63,7 @@ class Index extends Component {
                                 margin: 20px auto;
                                 box-shadow: #1dc779 0 0px 10px 0;
 
-                                @media screen and (min-width: 768px) {
+                                @media (min-width: 992px) {
                                     display: none;
                                 }
                             }
@@ -113,14 +85,19 @@ class Index extends Component {
                         }
 
                         .social-networks {
-                            display: flex;
-                            justify-content: space-between;
+                            display: inline-block;
                             padding: 5px 0;
-                            max-width: 300px;
-                            margin: 0 auto;
+                            
+                            &__content {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 260px;
+                                
+                                /*margin: 0 auto;*/
 
-                            @media screen and (min-width: 768px) {
-                                margin: 0;
+                                @media (min-width: 768px) {
+                                    /*margin: 0;*/
+                                }
                             }
                         }
 
@@ -135,40 +112,46 @@ class Index extends Component {
                         }
                     }
 
-                    footer {
+                    .footer {
                         margin-top: 20px;
                         display: block;
                         font-size: 12px;
                     }
                 `}</style>
-                <section className="home">
-                    <div className="home__left">
-                        <img src={require('../assets/img/home/carlohcs-xs.png')} alt="Fotografia de Carlos Henrique" className="home__carlohcs-photography--xs" />
+                <section className="home container">
+                    <div className="content">
+                        <div className="home__left">
+                            <img src={require('../assets/img/home/carlohcs-xs.png')} alt="Fotografia de Carlos Henrique" className="home__carlohcs-photography--xs" />
 
-                        <div className="home__welcome">
-                            <div className="home__welcome-description">
-                                <h1 className="home__welcome-description__welcome">{this.context.getMessage('home', 'welcome')}</h1>
-                                <h2 className="home__welcome-description__subdescription">{this.context.getMessage('home', 'subdescription')}</h2>
-                                <p className="home__welcome-description__short-description" dangerouslySetInnerHTML={createMarkup(this.context.getMessage('home', 'shortDescription'))} />
+                            <div className="page__description">
+                                <div className="home__welcome">
+                                    <div className="home__welcome-description">
+                                        <h1 className="home__welcome-description__welcome">{this.context.getMessage('home', 'welcome')}</h1>
+                                        <h2 className="home__welcome-description__subdescription">{this.context.getMessage('home', 'subdescription')}</h2>
+                                        <p className="home__welcome-description__short-description" dangerouslySetInnerHTML={createMarkup(this.context.getMessage('home', 'shortDescription'))} />
+                                    </div>
+
+                                    {this.context.getMessage('home', 'description').map((description, key) =>
+                                        <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
+
+                                    <p className="home__welcome-description__connect">{this.context.getMessage('home', 'connect')}</p>
+                                </div>
+
+                                <div className="social-networks">
+                                    <div className="social-networks__content">
+                                        {socialNetworks.map((item, key) =>
+                                            <a href={item.url} target="_blank" className="social-network no-link-style" key={key}>
+                                                <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/${item.iconName}?include`) }} className={['icon', 'social-icon', `social-icon--${item.className}`].join(' ')} />
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+
+                                <footer className="footer" dangerouslySetInnerHTML={createMarkup(this.context.getMessage('footer', 'description'))} />
                             </div>
-
-                            {this.context.getMessage('home', 'description').map((description, key) =>
-                                <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
-
-                            <p className="home__welcome-description__connect">{this.context.getMessage('home', 'connect')}</p>
                         </div>
-
-                        <div className="social-networks">
-                            {socialNetworks.map((item, key) =>
-                                <a href={item.url} target="_blank" className="social-network no-link-style" key={key}>
-                                    <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/${item.iconName}?include`) }} className={['icon', 'social-icon', `social-icon--${item.className}`].join(' ')} />
-                                </a>
-                            )}
-                        </div>
-
-                        <footer dangerouslySetInnerHTML={createMarkup(this.context.getMessage('footer', 'description'))} />
+                        <div className="home__right"></div>
                     </div>
-                    <div className="home__right"></div>
                 </section>
             </Main>
         )
