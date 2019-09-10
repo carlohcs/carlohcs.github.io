@@ -86,9 +86,9 @@ class GlobalStyle extends Component {
                 filter: blur(5px);
               }
       
-              footer {
+              /*footer {
                 display: none;
-              }
+              }*/
             }
           }
 

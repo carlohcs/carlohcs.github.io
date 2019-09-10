@@ -43,6 +43,13 @@ class Palestras extends Component {
                             <div className="page__description">
                                 {this.context.getMessage('talks', 'talks', 'years').map((talksYear, key) => renderTalksYear(talksYear, key)
                                 )}
+
+                                <p> 
+                                    <a href={this.context.getMessage('talks', 'sitePresentations', 'link')}>
+                                        {this.context.getMessage('talks', 'sitePresentations', 'description')}
+                                        Speaker Deck.
+                                    </a>
+                                </p>
                             </div>
                         </div>
                     </section>

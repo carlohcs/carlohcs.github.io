@@ -12,24 +12,14 @@ const customRoutes = [
         page:  'engenheiro-de-software'
     },
     {
-        name: 'instrutor',
-        pattern: '/en/instructor', 
-        page:  'instrutor'
+        name: 'habilidades',
+        pattern: '/en/skills', 
+        page:  'habilidades'
     },
     {
         name: 'palestras',
         pattern: '/en/talks', 
         page:  'palestras'
-    },
-    {
-        name: 'productowner',
-        pattern: '/en/product-owner', 
-        page:  'productowner'
-    },
-    {
-        name: 'facilitator',
-        pattern: '/en/facilitator', 
-        page:  'facilitador'
     },
     {
         name: 'curriculo',

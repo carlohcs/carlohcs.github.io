@@ -5,6 +5,9 @@ import routes from '../routes'
 // but this example shows how you can also access the router
 // using the withRouter utility.
 
+// TODO: Adicionar controle para navegação na mesma página. Apenas ocultar
+// O menu ao invés de abrir novamente a página
+
 const ActiveLink = ({ children, router, route, className }) => {
   const active = router.pathname === route ? 'nav__item--active' : ''
 
