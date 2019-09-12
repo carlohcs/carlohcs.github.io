@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build",
-    "deploy:github": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to Github\" && git subtree push --prefix out origin master",
+    "deploy:github": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to Github\" && git push origin `git subtree split --prefix dist master`:master --force",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
