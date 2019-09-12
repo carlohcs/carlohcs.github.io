@@ -1,6 +1,7 @@
 import React from 'react'
 import Main from '../layouts/main'
 import AppContext from '../components/AppProvider'
+import CustomHead from '../components/CustomHead'
 
 class Error extends React.Component {
   static contextType = AppContext
@@ -12,9 +13,12 @@ class Error extends React.Component {
 
   render() {
     const createMarkup = value => ({ __html: value })
+    const title = this.props.statusCode === 404 ? this.context.getMessage('error', 'codes', '404') : this.context.getMessage('error', 'defaultErrorMessage')
 
     return (
-        <Main>  
+        <>
+          <CustomHead title={title} />
+          <Main>  
           <div className="error-page flex flex--justify-start">
             <style jsx global>{`
               .error-page {
@@ -36,11 +40,12 @@ class Error extends React.Component {
             `}
             </style>
               <h1 className="error-page__status-code">{this.props.statusCode}</h1>
-              <h2 className="error-page__message">{this.props.statusCode === 404 ? 'Página não encontrada.' : 'Erro no servidor.'}</h2>
+              <h2 className="error-page__message">{title}</h2>
               
               <div className="error-page__citation" dangerouslySetInnerHTML={createMarkup(this.context.getMessage('error', 'citation'))} />
           </div>
         </Main>
+        </>
     )
   }
 }

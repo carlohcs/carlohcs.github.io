@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Main from '../layouts/main'
 import AppContext from '../components/AppProvider'
+import CustomHead from '../components/CustomHead'
 
 const socialNetworks = [
     { iconName: 'github-brands.svg', className: 'github', url: 'https://github.com/carlohcs' },
@@ -19,8 +20,10 @@ class Index extends Component {
 
     render() {
         const createMarkup = value => ({ __html: value })
-        return ( 
-            <Main>
+        return (
+            <>
+                <CustomHead title="Home" /> 
+                <Main>
                 <style jsx global>{`
                     .home {
                         &__left {
@@ -166,6 +169,7 @@ class Index extends Component {
                     </div>
                 </section>
             </Main>
+            </>
         )
     }
 }

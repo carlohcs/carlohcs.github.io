@@ -1,6 +1,5 @@
-# Site pessoal carlohcs.com.br
+# Site pessoal 
 
-Todo:
-    - Corrigir transição de páginas:
-        - Links que vão para 404
-        - Páginas em inglês
+Acesse: [https://carlohcs.com.br](carlohcs.com.br)
+
+Stack: [https://nextjs.org](Next.js)

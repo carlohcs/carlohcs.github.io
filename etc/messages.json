@@ -1,5 +1,9 @@
 {
     "pt-br": {
+        "page": {
+            "defaultTitle": "Carlos Henrique - Portfólio",
+            "titleSuffix": "- Carlos Henrique - Portfólio"
+        },
         "menu": [
             {
                 "name": "home",
@@ -35,9 +39,9 @@
             "subdescription": "Meu nome é Carlos Henrique.",
             "shortDescription": "<strong>Sou engenheiro de software, product owner, instrutor e facilitador no UOL.</strong>",
             "description": [
-                "Pós-graduado em Gestão em Tecnologia da Informação, escrevi um  <a href=\"TROCAR\">artigo</a>. Como engenheiro de software, alguns de meus trabalhos podem ser vistos <a href=\"TROCAR\">aqui</a> ou no <a href=\"https://github.com/carlohcs\">GitHub</a>.",
-                "Ultimamente tenho me aventurado a <a href=\"https://medium.com/@carlohcs\">escrever</a> e a <a href=\"TROCAR\">palestrar</a>.",
-                "Acredito que todos devem ter uma <a href=\"https://missaopessoal.com.br\">missão pessoal</a> na vida."
+                "Pós-graduado em Gestão em Tecnologia da Informação, escrevi um  <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" target=\"_blank\">artigo</a>. Como engenheiro de software, alguns de meus trabalhos podem ser vistos <a href=\"\/engenheiro-de-software\">aqui</a> ou no <a href=\"https://github.com/carlohcs\" target=\"_blank\">GitHub</a>.",
+                "Ultimamente tenho me aventurado a <a href=\"https://medium.com/@carlohcs\" target=\"_blank\">escrever</a> e a <a href=\"/palestras\">palestrar</a>.",
+                "Acredito que todos devem ter uma <a href=\"https://missaopessoal.com.br\" target=\"_blank\">missão pessoal</a> na vida."
             ],
             "connect": "Conecte-se:"
         },
@@ -99,7 +103,7 @@
             ]
         },
         "talks": {
-            "title": "Palestras.",
+            "title": "Palestras",
             "titleDescription": "Já falei um pouco, mas ainda quero muito mais.",
             "talks": {
                 "years": [
@@ -295,10 +299,18 @@
             ]
         },
         "error": {
-            "citation": "\"<i>[…] só o conhecimento liberta o homem, só através do conhecimento o homem é livre e em sendo livre: ele pode aspirar uma condição melhor de vida para ele e todos os seus semelhantes. […]\" <br />- DRº. Enéas Ferreira Carneiro</i>"
+            "citation": "\"<i>[…] só o conhecimento liberta o homem, só através do conhecimento o homem é livre e em sendo livre: ele pode aspirar uma condição melhor de vida para ele e todos os seus semelhantes. […]\" <br />- DRº. Enéas Ferreira Carneiro</i>",
+            "codes": {
+                "404": "Página não encontrada."
+            },
+            "defaultErrorMessage": "Erro no servidor."
         }
     },
     "en": {
+        "page": {
+            "defaultTitle": "Carlos Henrique - Portfolio",
+            "titleSuffix": "- Carlos Henrique - Portfolio"
+        },
         "menu": [
             {
                 "name": "home",
@@ -334,9 +346,9 @@
             "subdescription": "My name is Carlos Henrique.",
             "shortDescription": "<strong>I'm a software engineer, product owner, instructor, and facilitator at UOL.</strong>",
             "description": [
-                "Postgraduate in Information Technology Management, I wrote an <a href=\"TROCAR\"> article </a>. As a software engineer, some of my work can be seen <a href=\"CHANGE\">here</a> or <a href=\"https://github.com/carlohcs\">GitHub</a>.",
-                "Lately I've been venturing to <a href=\"https://medium.com/@carlohcs\"> write </a> and <a href=\"TROCAR\"> to lecture </a>.",
-                "I believe everyone should have a <a href=\"https://missaopessoal.com.br\"> personal mission </a> in life."
+                "Postgraduate in Information Technology Management, I wrote an <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" target=\"_blank\">article</a>. As a software engineer, some of my work can be seen <a href=\"/engenheiro-de-software\">here</a> or <a href=\"https://github.com/carlohcs\" target=\"_blank\">GitHub</a>.",
+                "Lately I've been venturing to <a href=\"https://medium.com/@carlohcs\" target=\"_blank\">write</a> and <a href=\"/palestras\">to lecture</a>.",
+                "I believe everyone should have a <a href=\"https://missaopessoal.com.br\" target=\"_blank\">personal mission</a> in life."
             ],
             "connect": "Connect:"
         },
@@ -594,7 +606,11 @@
             ]
         },
         "error": {
-            "citation": "\"<i>[…] only knowledge frees man, only through knowledge is man free and in being free: he can aspire to a better condition of life for himself and all his fellow men. […]\"<br />- DR. Enéas Ferreira Carneiro</i>"
+            "citation": "\"<i>[…] only knowledge frees man, only through knowledge is man free and in being free: he can aspire to a better condition of life for himself and all his fellow men. […]\"<br />- DR. Enéas Ferreira Carneiro</i>",
+            "codes": {
+                "404": "Page not found."
+            },
+            "defaultErrorMessage": "Internal server error."
         }
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Head from 'next/head'
+// import Router from 'next/router'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 import 'normalize.css'
@@ -20,7 +21,12 @@ class Main extends Component {
     super(props)
 
     this.state = { loadedConfigs: false }
+
+    // Router.events.on('routeChangeStart', url => {
+    //   console.log('App is changing to: ', url)
+    // })
   }
+  
   componentDidMount() {
     const storage = require('../components/helpers/storage').default
     const savedTheme = storage.getTheme()

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Main from '../layouts/main'
 import AppContext from '../components/AppProvider'
-
-// TODO: ordenar tudo em ordem decrescente
+import CustomHead from '../components/CustomHead'
 
 class Skills extends Component {
     static contextType = AppContext
@@ -47,6 +46,7 @@ class Skills extends Component {
 
         return (
             <>
+                <CustomHead title={this.context.getMessage('skills', 'title')} />
                 <Main>
                     <section className="resume container">
                         <div className="content">

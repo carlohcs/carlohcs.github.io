@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Main from '../layouts/main'
 import AppContext from '../components/AppProvider'
+import CustomHead from '../components/CustomHead'
 
 // TODO: CORRIGIR ESPAÇAMENTOS NOVAMENTE
 // TODO: CORRIGIR MÚLTIPLOS RENDERS
@@ -32,6 +33,7 @@ class Palestras extends Component {
 
         return (
             <>
+                <CustomHead title={this.context.getMessage('talks', 'title')} />
                 <Main>
                     <section className="talks container">
                         <div className="content">

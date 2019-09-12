@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import Main from '../layouts/main'
 import AppContext from '../components/AppProvider'
+import CustomHead from '../components/CustomHead'
 
 // TODO: usar essa página como modelo para as outras -> criar um componente
 class EngenheiroDeSoftware extends Component {
     static contextType = AppContext
-
-    /* Fotos da Vita, ursoland, Aduet precisam ser redimensionadas para o tamanho do mac ou ao contrário, além de possuírem outras instruções */
-
-    // TODO: Corrigir sombras no mobile
 
     render() {
         const createMarkup = value => ({ __html: value })
@@ -38,6 +35,7 @@ class EngenheiroDeSoftware extends Component {
 
         return (
             <>
+                <CustomHead title={this.context.getMessage('softwareEngineer', 'title')} />
                 <Main>
                     <section className="software-engineer">
                         <div className="content">
