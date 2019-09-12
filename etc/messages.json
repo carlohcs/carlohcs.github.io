@@ -137,14 +137,14 @@
                 ]
             },
             "sitePresentations": {
-                "description": "Outras apresentações podem ser vistas no",
+                "description": "Outras apresentações podem ser vistas no ",
                 "link": "https://speakerdeck.com/carlohcs"
             }
         },
-        "extraSkills": {
+        "skills": {
             "title": "Habilidades",
-            "titleDescription": "Habilidades que venho desenvolvendo nos últimos anos.",
-            "description": "Tenho desenvolvido habilidades em áreas como educação, facilitação e gerenciamento de projetos.",
+            "titleDescription": "Outras áreas que venho atuando.",
+            "description": "Tenho desenvolvido habilidades na área de educação, facilitação e gerenciamento de projetos. Mais abaixo, é possível ver no detalhe.",
             "items": [
                 {
                     "title": "Instrutor",
@@ -152,11 +152,11 @@
                     "items": [
                         {
                             "title": "<strong>Construção de websites</strong>",
-                            "description": "<p>\"Como é feito um website?\" \"Será que eu consigo?\"</p><p>Junto dos meus colegas, apresentamos os conceitos básicos para a construção de websites utilizando HTML e CSS. Muitos feedbacks positivos! Quatro turmas já foram realizadas.</p>"
+                            "description": "<p>\"Como é feito um website?\"</p><p>Junto dos meus colegas de trabalho, buscamos ensinar o básico para a construção de websites utilizando HTML e CSS. Cinco turmas já foram aplicadas.</p>"
                         },
                         {
                             "title": "<strong>Editor VIm</strong>",
-                            "description": "<p>\"O que o Atom, VSCode, SublimeText… possuem em comum? Não são o VIm!\"</p><p>No treinamento. conceitos simples até os mais avançados são passados. A maioria que participa, diz ter vontade de utilizá-lo no dia a dia devido ao potencial da ferramenta. Cinco turmas já foram aplicadas.</p>"
+                            "description": "<p>\"O que o Atom, VSCode, SublimeText, etc. possuem em comum? Não são o VIm!\"</p><p>No treinamento aplicado por mim, sáo explicados desde conceitos simples até os mais avançados no editor de terminal VIm. Os participantes dizem ter vontade de utilizá-lo no dia a dia devido ao potencial encontrado. Cinco turmas já foram aplicadas.</p>"
                         }
                     ],
                     "cover": "instructor.png"
@@ -164,11 +164,11 @@
                 {
                     "title": "Product Owner",
                     "titleDescription": "<strong>Projeto de Onboarding da área.</strong>",
-                    "description": "<p>Em julho de 2018, fui agraciado como papel de product owner do projeto de onboarding da área no qual meu time se encontra. A área possui mais de 20 times e o processo de onboarding torna-se extremamente importante para prover uma melhor experiência aos novos colaboradores que chegam na empresa.</p><p>Até o presente momento, conseguimos entregar dois subprojetos:</p>",
+                    "description": "<p>Em julho de 2018, fui conquistei o papel de product owner do projeto de onboarding da área do meu time. A área possui mais de 20 times e o processo de onboarding torna-se extremamente importante para prover uma melhor experiência de recepção aos novos colaboradores que chegam na empresa.</p><p>Até o presente momento, conseguimos entregar dois subprojetos:</p>",
                     "items": [
                         {
                             "title": "<strong>Guia</strong>",
-                            "description": "<p>O guia consiste na junção de informações úteis a entrada dos novos colaboradores e também aos antigos. O material online contém Informações corriqueiras do dia a dia, sobre o que fazer, o que ler equais são os recursos disponíveis.</p>"
+                            "description": "<p>O guia consiste na disponibilização de informações úteis a entrada dos novos colaboradores, como recursos disponíveis, entendimento sobre a empresa, dicas e entre outros.</p>"
                         },
                         {
                             "title": "<strong>Guia de apadrinhamento<strong>",
@@ -184,7 +184,7 @@
                     "items": [
                         {
                             "title": "<strong>Reunião de frontenders</strong>",
-                            "description": "<p>Eu era responsável pela reunião de frontenders, uma espécie de meetup mais técnico que acontecia internamente na empresa. Organizava o calendário, convidava as pessoas, cuidava da divulgação e fazia a facilitação durante as apresentações.</p>"
+                            "description": "<p>Sendo um <i>meetup</i> técnico que acontecia internamente na empresa, eu organizava o calendário, convidava as pessoas, cuidava da divulgação e fazia a facilitação durante as apresentações.</p>"
                         },
                         {
                             "title": "<strong>Colaí</strong>",
@@ -205,7 +205,7 @@
         },
         "resume": {
             "title": "Currículum Vitae",
-            "titleDescription": "Software Engineer e PO no UOL | Apaixonado por web, música e café; @carlohcs São Paulo - SP - Brasil",
+            "titleDescription": "Meu histórico profissional.",
             "experiences": [
                 {
                     "title": "Experiência Profissional",
@@ -239,47 +239,49 @@
                 {
                     "title": "Formação Acadêmica",
                     "items": [
-                        "Pós-graduação em MBA em Gestão de T.I - Faculdade Impacta - Início em agosto de 2017 - Atualmente.",
-                        "Graduação em Sistemas para Internet – Faculdades Metropolitanas Unidas (FMU) – Início em fevereiro de 2012 – Término em dezembro de 2014.",
-                        "Técnico em Informática para Internet – ETEC Parque da Juventude – Início em fevereiro de 2012 – Término em dezembro de 2014."
+                        "<strong>Pós-graduação em MBA em Gestão de T.I</strong> - Faculdade Impacta - Início em agosto de 2017 - Término em julho de 2019.",
+                        "<strong>Graduação em Sistemas para Internet</strong> – Faculdades Metropolitanas Unidas (FMU) – Início em fevereiro de 2012 – Término em dezembro de 2014.",
+                        "<strong>Técnico em Informática para Internet</strong> – ETEC Parque da Juventude – Início em fevereiro de 2012 – Término em dezembro de 2014."
                     ]
                 },
                 {
                     "title": "Treinamentos",
                     "items": [
-                        "Montagem e Manutenção de Hardware – Microcamp",
-                        "PHP & MySql – 4Linux",
+                        "Zend Framework 2 PHP – Tempo Real Eventos",
                         "JavaScript – Impacta",
-                        "Zend Framework 2 PHP – Tempo Real Eventos"
+                        "PHP & MySql – 4Linux",
+                        "Montagem e Manutenção de Hardware – Microcamp"
                     ]
                 },
                 {
                     "title": "Eventos e Conferências",
                     "items": [
-                        "PHP Conference 2013 – Tempo Real Eventos",
-                        "InterCon PHP 2014 – iMasters",
-                        "The Developers Conference – Trilha de JavaScript 2015",
-                        "The Developers Conference – Trilha de StartUps 2015",
-                        "AWS Summit 2015 – Amazon",
-                        "The Developers Conference – Trilha de JavaScript 2016",
-                        "The Developers Conference – Trilha Modern Web 2016",
-                        "BrazilJS Conf 2016 - BrazilJS",
+                        "Agile Trends 2019",
+                        "QConSP 2018",
+                        "Code In The Dark 2017 - iMasters",
+                        "Front In Sampa 2017 - iMasters",
                         "JS Experience 2017 - iMasters",
-                        "Code In The Dark 2017 - Front In Sampa 2017 - iMasters"
+                        "BrazilJS Conf 2016",
+                        "The Developers Conference – Trilha Modern Web e JavaScript 2016",
+                        "AWS Summit 2015",
+                        "The Developers Conference – Trilha de StartUps e JavaScript 2015",
+                        "InterCon PHP 2014",
+                        "PHP Conference 2013"
                     ]
                 },
                 {
                     "title": "Informações adicionais",
                     "items": [
-                        "Conhecimento de Inglês: Básico (leitura, escrita).",
-                        "Github"
+                        "Conhecimento de Inglês: leitura - básico, porém estudando. Consigo conversar com um pouco de dificuldade.",
+                        "<a href=\"https://github.com/carlohcs\" target=\"_blank\">Perfil no Github</a>",
+                        "<strong>Tecnologias que já tive contato:</strong><br /><strong>JavaScript: </strong>jQuery, React, Backbone, Angular, Node, Vue, QUnit, Jasmine, Jest, AVA, Puppeteer. <br /><strong>PHP</strong>: Laravel, Zend, Symfony, Silex, Lumen, PHPUnit, Doctrine.<br /><strong>Outros</strong>: AWS, Git, Bitbucket, Linux, MacOS, VIm."
                     ]
                 },
                 {
                     "title": "Projetos",
                     "items": [
                         {
-                            "title": "<strong>Missão Pessoal</strong> - setembro de 2015",
+                            "title": "<a href=\"https://missaopessoal.com.br\" target=\"_blank\"><strong>Missão Pessoal</strong></a> - setembro de 2015",
                             "quote": "Crie sua missão pessoal agora mesmo! Todos precisam ter um rumo na vida e a missão pessoal faz parte disso. Crie-a agora!",
                             "description": "Com essa chamada, o projeto é uma ferramenta que auxilia as pessoas a criarem suas respectivas missões pessoais e compartilhá-las no site. Tudo isso gratuitamente."
                         },
@@ -309,24 +311,14 @@
                 "url": "/en/software-engineer"
             },
             {
-                "name": "skills",
-                "description": "Instructor",
-                "url": "/en/instructor"
-            },
-            {
                 "name": "talks",
                 "description": "Talks",
                 "url": "/en/talks"
             },
             {
-                "name": "productowner",
-                "description": "Product Owner",
-                "url": "/en/product-owner"
-            },
-            {
-                "name": "facilitator",
-                "description": "Facilitator",
-                "url": "/en/facilitator"
+                "name": "skills",
+                "description": "Skills",
+                "url": "/en/skills"
             },
             {
                 "name": "resume",
@@ -357,56 +349,56 @@
             "mainProject": {
                 "titleDescription": "Missão Pessoal",
                 "url": "https://missaopessoal.com.br",
-                "description": "<p> Personal project to help people create their personal missions. </p> <p> You can create, share and like. So far, 114 missions have been created. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, Vue.js, PHP and MySql. Hosted at Heroku. </p>",
+                "description": "<p>Personal project to help people create their personal missions.</p> <p>You can create, share and like. So far, 114 missions have been created.</p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, Vue.js, PHP and MySql. Hosted at Heroku.</p>",
                 "cover": "missaopessoal.png"
             },
             "projects": [
                 {
                     "titleDescription": "Sobre UOL",
                     "url": "https://sobreuol.noticias.uol.com.br/",
-                    "description": "<p> Company website <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a>. </p> <p> I am responsible for site structure and content. </p> <p> Contains solutions for businesses and end customers, as well as important highlights as well as media and work information. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript. Gulp and Jest. </p>",
+                    "description": "<p>Company website <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a>.</p> <p>I am responsible for site structure and content.</p> <p>Contains solutions for businesses and end customers, as well as important highlights as well as media and work information.</p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript. Gulp and Jest.</p>",
                     "cover": "sobreuol.png"
                 },
                 {
                     "titleDescription": "Bootstrap UOL",
-                    "description": "<p> Company code base <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a>. </p> <p> I am responsible by the site structure, evolution and content. </p> <p> The project is a <i> fork </i> of <a href =\"https: //getbootstrap.com/docs/3.3/\" target =\" blank\"> Twitter Bootstrap </a>. In it we maintain the delivery of necessary components to the company's products. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript and Grunt. </p>",
+                    "description": "<p>Company code base <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a>.</p> <p>I am responsible by the site structure, evolution and content.</p> <p>The project is a <i> fork </i> of <a href =\"https: //getbootstrap.com/docs/3.3/\" target =\" blank\"> Twitter Bootstrap </a>. In it we maintain the delivery of necessary components to the company's products.</p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript and Grunt.</p>",
                     "cover": "bootstrap.png"
                 },
                 {
                     "titleDescription": "Zero UOL",
-                    "description": "<p> UOL Style Guide </p> <p> I am responsible for editing and maintaining the site structure. </p> <p> Zero has recommendations that should be used by UOL products. It has best practices and is living documentation. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, Jekyll, Gulp and Jest. </p>",
+                    "description": "<p>UOL Style Guide </p> <p>I am responsible for editing and maintaining the site structure.</p> <p>Zero has recommendations that should be used by UOL products. It has best practices and is living documentation.</p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, Jekyll, Gulp and Jest.</p>",
                     "cover": "zero.png"
                 },
                 {
                     "titleDescription": "UOL Música Deezer (discontinued)",
-                    "description": "<p> <a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a> Music Streaming Service. </p> <p> I was one of responsible for the <i> frontend </i> of the application. </p> <p> The service was concurrent with the services <a href =\"https: //www.deezer.com/\" target =\"_blank\"> Deezer </a> and <a href=\"https://www.spotify.com/\" target=\"_blank\"> Spotify </a>. It was made available to users free of charge and also had a premium plan with additional functionality. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, and Grunt. </ p>",
+                    "description": "<p><a href=\"https://uol.com.br\" target=\"_blank\"> UOL </a> Music Streaming Service.</p> <p>I was one of responsible for the <i> frontend </i> of the application.</p> <p>The service was concurrent with the services <a href =\"https: //www.deezer.com/\" target =\"_blank\"> Deezer </a> and <a href=\"https://www.spotify.com/\" target=\"_blank\"> Spotify </a>. It was made available to users free of charge and also had a premium plan with additional functionality.</p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, and Grunt. </ p>",
                     "cover": "umd.png"
                 },
                 {
                     "titleDescription": "InterAcesso",
                     "url": "http://interacesso.interport.com.br",
-                    "description": "<p> Online condominium system. </p> <p> I was a founder of the startup, being responsible for the entire infrastructure of the service. </p> <p> The service contains employee, resident, and internal management control. </p> <p> There were around 7 clients while I was on the corporate board. </p> <p class=\"project__technology\"> Technologies Used: HTML, CSS, JavaScript, Gulp, PHP, Laravel. </p>",
+                    "description": "<p>Online condominium system.</p> <p>I was a founder of the startup, being responsible for the entire infrastructure of the service.</p> <p>The service contains employee, resident, and internal management control.</p> <p>There were around 7 clients while I was on the corporate board.</p> <p class=\"project__technology\"> Technologies Used: HTML, CSS, JavaScript, Gulp, PHP, Laravel.</p>",
                     "cover": "interacesso.png"
                 },
                 {
                     "titleDescription": "Vita do Brasil (discontinued)",
-                    "description": "<p> Medical Business Management. </p> <p> I was responsible for producing the company's institutional website and ERP system. </p> <p> ERP contained a number of features, including: business, medical and employee records; issuing invoices among others. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, Jekyll, PHP and MySql. </p>",
+                    "description": "<p>Medical Business Management.</p> <p>I was responsible for producing the company's institutional website and ERP system.</p> <p>ERP contained a number of features, including: business, medical and employee records; issuing invoices among others.</p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, Jekyll, PHP and MySql.</p>",
                     "cover": "vita.png"
                 },
                 {
                     "titleDescription": "Aduet (discontinued)",
-                    "description": "<p> Dating management system. </p> <p> I was responsible for the whole design of the system, which was a kind of old Tinder. It contained customer registration, contracts, reports and more. </p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, PHP and MySql. </p>",
+                    "description": "<p>Dating management system.</p> <p>I was responsible for the whole design of the system, which was a kind of old Tinder. It contained customer registration, contracts, reports and more.</p> <p class=\"project__technology\"> Technologies used: HTML, CSS, JavaScript, PHP and MySql.</p>",
                     "cover": "aduet.png"
                 },
                 {
                     "titleDescription": "Ursoland (discontinued)",
-                    "description": "<p> Social Network for the Public <i>bear</i>.</p> <p> I was one of the people responsible for all the development of the site. </p> <p> The service was a social network focused exclusively on the LGBT audience of bears. </p> <p> The site contained like, message exchange, videochat among other services. </p> <p class=\"project__technology\"> Technologies Used: HTML, CSS, JavaScript, PHP and MySql. </p>",
+                    "description": "<p>Social Network for the Public <i>bear</i>.</p> <p>I was one of the people responsible for all the development of the site.</p> <p>The service was a social network focused exclusively on the LGBT audience of bears.</p> <p>The site contained like, message exchange, videochat among other services.</p> <p class=\"project__technology\"> Technologies Used: HTML, CSS, JavaScript, PHP and MySql.</p>",
                     "cover": "ursoland.png"
                 }
             ]
         },
         "talks": {
-            "title": "Talks.",
+            "title": "Talks",
             "titleDescription": "I've said a little, but I still want a lot more.",
             "talks": {
                 "years": [
@@ -447,6 +439,159 @@
                 "description": "Other presentations can be seen on the",
                 "link": "https://speakerdeck.com/carlohcs"
             }
+        },
+        "skills": {
+            "title": "Skills",
+            "titleDescription": "Other areas I've been working on.",
+            "description": "I have developed skills in education, facilitation and project management. See below for details.",
+            "items": [
+                {
+                    "title": "Instructor",
+                    "titleDescription": "I have the opportunity to share knowledge.",
+                    "items": [
+                        {
+                            "title": "<strong> Website building </strong>",
+                            "description": "<p>\"How is a website made?\"</p> <p>Together with my coworkers, we have tried to teach the basics of building websites using HTML and CSS. Five classes have already been applied.</p> "
+                        },
+                        {
+                            "title": "<strong> VIm Editor </strong>",
+                            "description": "<p>\"What Atom, VSCode, SublimeText, etc. do they have in common? Not the VIm!\"</p> <p>In the training I applied, they are explained from simple concepts to the most advanced in the VIm terminal editor. Participants say they want to use it on a daily basis due to the potential found. Five classes have already been applied.</p> "
+                        }
+                    ],
+                    "cover": "instructor.png"
+                },
+                {
+                    "title": "Product Owner",
+                    "titleDescription": "<strong> Area Onboarding Project. </strong>",
+                    "description": "<p>In July 2018 I was conquered the role of product owner of my team's area onboarding project. The area has more than 20 teams and the onboarding process becomes extremely important to provide a better reception experience for new employees coming in.</p> <p>So far, we have been able to deliver two subprojects: </p> ",
+                    "items": [
+                        {
+                            "title": "<strong> Guide </strong>",
+                            "description": "<p>The guide consists of providing helpful input to new employees, such as available resources, understanding of the company, tips, and more.</p>"
+                        },
+                        {
+                            "title": "<strong> Sponsorship Guide <strong>",
+                            "description": "<p>The sponsorship guide consists of a script with useful information on what to do when receiving a new contributor.</p>"
+                        }
+                    ],
+                    "finalDisclaimer": "Currently the onboarding project continues to expand and is already requested by a sister area.",
+                    "cover": "productowner.png"
+                },
+                {
+                    "title": "Facilitator",
+                    "titleDescription": "Trainings, meetings, meetups, events… A bit of everything!",
+                    "items": [
+                        {
+                            "title": "<strong> Frontend meeting </strong>",
+                            "description": "<p>As a <i> meetup </i> coach that was held internally at the company, I organized the calendar, invited people, handled outreach, and facilitated presentations.</p>"
+                        },
+                        {
+                            "title": "<strong> Colaí </strong>",
+                            "description": "<p>A monthly meeting focused on sharing design knowledge and research. I often attend being one of those responsible for opening, introducing the team and people, and helping behind the scenes.</p>"
+                        },
+                        {
+                            "title": "<strong> Design Thinking Training </strong>",
+                            "description": "<p>I often help in facilitating classes, applying dynamics and explaining knowledge capsules.</p>"
+                        },
+                        {
+                            "title": "<strong> Area Events </strong>",
+                            "description": "<p>I've helped behind the scenes of internal company events as well as applying dynamics.</p>"
+                        }
+                    ],
+                    "cover": "facilitator.png"
+                }
+            ]
+        },
+        "resume": {
+            "title": "Resume",
+            "titleDescription": "My work history.",
+            "experiences": [
+                {
+                    "title": "Professional Experience",
+                    "items": [
+                        {
+                            "title": "<strong> Frontend Full </strong> - co: lab - UOL - 07/2016 - currently",
+                            "description": "Acting within the co: lab team, responsible for helping to integrate areas and develop collaborative jobs. These include styleguide, standalone modules like UOL Account, Eye Catcher, UOL Bootstrap, etc. Meeting applications like \"Frontends Meeting\" and \"Design Everything Meeting\". "
+                        },
+                        {
+                            "title": "<strong> Frontend </strong> - UOL Music Deezer - UOL - 01/2016 - 07/2016",
+                            "description": "Functionality developer for the old \" UOL Radio \". These include the new player, artist page, bookmark management and the like."
+                        },
+                        {
+                            "title": "<strong> Co-founder </strong> - InterAcesso - 11/2013 - 07/2015",
+                            "description": "Project co-founder. Structuring of the project's IT base, definition of methodologies, software, languages ​​and programming resources for project progress. Brand development, usability and improvement of system processes to adapt to clients. "
+                        },
+                        {
+                            "title": "<strong> Web Developer </strong> - Vita do Brasil - 06/2012 - 11/2013",
+                            "description": "Enterprise ERP development, for automation and improvement of internal processes, as well as helping to reformulate the company. Creation of the company's institutional website."
+                        },
+                        {
+                            "title": "<strong> Web Developer </strong> - HadNet - 02/2012 - 06/2012",
+                            "description": "Website structuring with HTML, CSS, PHP, MySql, JavaScript, jQuery and AJAX. UrsoLand social networking."
+                        },
+                        {
+                            "title": "<strong> Computer Room Monitor (Intern) </strong> - São Paulo State Government - 02/2010 - 11/2010",
+                            "description": "Computer room monitoring. Support for users, directions for use of useful websites. Participation in training meetings."
+                        }
+                    ]
+                },
+                {
+                    "title": "Academic Background",
+                    "items": [
+                        "<strong> MBA in T.I Management Postgraduate </strong> - Faculdade Impacta - Beginning August 2017 - Ending July 2019.",
+                        "<strong> Undergraduate in Internet Systems </strong> - Faculdades Metropolitanas Unidas (FMU) - Beginning February 2012 - Ending December 2014.",
+                        "<strong> Internet Computer Technician </strong> - ETEC Parque da Juventude - Beginning February 2012 - Ending December 2014."
+                    ]
+                },
+                {
+                    "title": "Training",
+                    "items": [
+                        "Zend Framework 2 PHP - Real Time Events",
+                        "JavaScript - Impact",
+                        "PHP & MySql - 4Linux",
+                        "Hardware Mounting and Maintenance - Microcamp"
+                    ]
+                },
+                {
+                    "title": "Events and Conferences",
+                    "items": [
+                        "Agile Trends 2019",
+                        "QConSP 2018",
+                        "Code In The Dark 2017 - iMasters",
+                        "Front In Sampa 2017 - iMasters",
+                        "JS Experience 2017 - iMasters",
+                        "BrazilJS Conf 2016",
+                        "The Developers Conference - Modern Web and JavaScript Track 2016",
+                        "AWS Summit 2015",
+                        "The Developers Conference - StartUps and JavaScript 2015 Track",
+                        "InterCon PHP 2014",
+                        "PHP Conference 2013"
+                    ]
+                },
+                {
+                    "title": "Additional Information",
+                    "items": [
+                        "Knowledge of English: reading - basic but studying. I can talk with a little difficulty.",
+                        "<a href=\"https://github.com/carlohcs\" target=\"_blank\">Github Profile</a>",
+                        "<strong> Technologies I've had contact with: </strong> <br /> <strong> JavaScript: </strong> jQuery, React, Backbone, Angular, Node, Vue, QUnit, Jasmine, Jest, AVA, Puppeteer. <strong> PHP </strong>: Laravel, Zend, Symfony, Silex, Lumen, PHPUnit, Doctrine. </strong> <br /><strong>Other:</strong>: AWS, Git, Bitbucket, Linux, MacOS, VIm."
+                    ]
+                },
+                {
+                    "title": "Projects",
+                    "items": [
+                        {
+                            "title": "<a href=\"https://missaopessoal.com.br\" target=\"_blank\"><strong>Missão Pessoal</strong></a> - September 2015",
+                            "quote": "Create your personal mission right now! Everyone needs to have a bearing on life and personal mission is part of it. Create it now!",
+                            "description": "With this call, the project is a tool that helps people create their personal missions and share them on the site. All for free."
+                        },
+                        {
+                            "title": "<strong>Não é bem isso!</strong> - January 2017 - discontinued",
+                            "quote": "A podcast for restless minds!",
+                            "description": "With this call, the project is to be a means of transmitting content and knowledge to listeners. Composed by a team of 4 people, podcasts with varied themes are released fortnightly."
+                        }
+                    ]
+                }
+            ]
         },
         "error": {
             "citation": "\"<i>[…] only knowledge frees man, only through knowledge is man free and in being free: he can aspire to a better condition of life for himself and all his fellow men. […]\"<br />- DR. Enéas Ferreira Carneiro</i>"

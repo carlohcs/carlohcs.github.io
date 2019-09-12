@@ -24,7 +24,7 @@ const customRoutes = [
     {
         name: 'curriculo',
         pattern: '/en/resume', 
-        page:  'curriculo'
+        page:  'curriculum-vitae'
     }
 ];
 

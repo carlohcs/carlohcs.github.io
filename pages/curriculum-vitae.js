@@ -10,38 +10,27 @@ class CurriculumVitae extends Component {
     render() {
         const createMarkup = value => ({ __html: value })
         const renderExperienceItems = items => {
-            // const renderTalk = (talk, key) => {
+            let content = ''
 
-                let content = ''
+            if (typeof items[0] === 'string' && Array.isArray(items)) {
+                content = items.map((item, key) => <p key={key} dangerouslySetInnerHTML={createMarkup(item)} />)
+            } else {
+                content = items.map((item, key) => {
+                    return (
+                        <div key={key}>
+                            <p dangerouslySetInnerHTML={createMarkup(item.title)} />
+                            {item.quote ? (<p><i dangerouslySetInnerHTML={createMarkup(item.quote)} /></p>) : ''}
+                            <p dangerouslySetInnerHTML={createMarkup(item.description)} />
+                        </div>
+                    )
+                })
+            }
 
-                if(typeof items[0] === 'string' && Array.isArray(items)) {
-                    content = items.map((item, key) => <p key={key} dangerouslySetInnerHTML={createMarkup(item)} />) 
-                } else {
-                    content = items.map((item, key) => {
-                        return (
-                            <div key={key}>
-                                <p dangerouslySetInnerHTML={createMarkup(item.title)} />
-                                {item.quote ? (<p><i dangerouslySetInnerHTML={createMarkup(item.quote)} /></p>) : ''}
-                                <p dangerouslySetInnerHTML={createMarkup(item.description)} />
-                            </div>
-                        )
-                    })
-                }
-
-                return (
-                    <div>
-                        {content}
-                    </div>
-                )
-            // }
-
-            // return (
-            //     <div key={key} className="talks-year">
-            //         <h2 className="talks-year__title">{talksYear.year}</h2>
-
-            //         {talksYear.talks.map((talk, key) => renderTalk(talk, key))}
-            //     </div>
-            // )
+            return (
+                <>
+                    {content}
+                </>
+            )
         }
 
         return (
@@ -57,16 +46,14 @@ class CurriculumVitae extends Component {
                             <div className="page__description">
                                 {
                                     this.context.getMessage('resume', 'experiences').map((experience, key) => {
-                                        // console.log('ITEMS', experience.items)
                                         return (
-                                            <div key={key}>
+                                            <div key={key} className="page__item">
                                                 <h2 className="">{experience.title}</h2>
-                                                { renderExperienceItems(experience.items) }
+                                                {renderExperienceItems(experience.items)}
                                             </div>
                                         )
-                                    // renderExperiences(talksYear, key)
-                                }
-                                )}
+                                    }
+                                    )}
 
                             </div>
                         </div>

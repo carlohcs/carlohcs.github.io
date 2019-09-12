@@ -167,6 +167,10 @@ class GlobalStyle extends Component {
                 max-width: 700px;
               }
             }
+
+            &__item {
+                margin: 80px 0;
+            }
           }
 
           .content {
@@ -405,10 +409,26 @@ class GlobalStyle extends Component {
               margin: 200px 0;
           }
 
+          &--no-shadow {
+            .project__cover {
+              box-shadow: none !important;
+            }
+          }
+
+          &--reduced-margin {
+            @media screen and (min-width: 1024px) {
+              margin: 100px 0;
+            }
+
+            @media screen and (min-width: 1280px) {
+                margin: 100px 0;
+            } 
+          }
+
           &__cover {
-              width: 100%;
+              max-width: 100%;
               margin: 0 auto 20px;   
-              box-shadow: 0 15px 20px 5px rgba(68, 68, 68, .3);                      
+              box-shadow: 0 15px 20px 5px rgba(68, 68, 68, .3);
           }
 
           &__description {
