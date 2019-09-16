@@ -8,10 +8,11 @@ class CustomHead extends Component {
 
     render() {
         const title = this.props.title
-
+        const finalTitle = title === 'Home' ? this.context.getMessage('page', 'defaultTitle') : `${title} ${this.context.getMessage('page', 'titleSuffix')}`
+        
         return (
             <Head>
-                <title>{title} {this.context.getMessage('page', 'titleSuffix')}</title>
+                <title>{finalTitle}</title>
             </Head>
         )
     }

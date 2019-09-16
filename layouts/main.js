@@ -55,7 +55,26 @@ class Main extends Component {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
-          <link href="https://fonts.googleapis.com/css?family=Rubik:300,500&display=swap" rel="stylesheet"></link>
+          <meta name="theme-color" content="#1e1e1e" />
+          <meta name="msapplication-navbutton-color" content="#1e1e1e"/>
+          <meta name="apple-mobile-web-app-status-bar-style" content="#1e1e1e" />
+          <meta name="author" content="Carlos Henrique Carvalho de Santana" />
+          <meta name="description" content={this.context.getMessage('page', 'seoDescription')} />
+          <meta property="og:description" content={this.context.getMessage('page', 'seoDescription')} />
+          <meta property="og:url" content="https://carlohcs.me" />
+          <meta property="og:title" content={this.context.getMessage('page', 'seoTitle')} />
+          <meta property="twitter:title" content={this.context.getMessage('page', 'seoTitle')} />
+          <meta property="og:image" content="/static/img/home/carlohcs-xs.png" />
+          <meta property="og:image:alt" content={this.context.getMessage('page', 'seoAltImageTitle')} />
+          <meta property="og:locale" content="pt_BR" />
+          <meta property="og:type" content="article" />
+          <meta property="twitter:card" content="summary" />
+          <meta property="twitter:site" content="@carlohcs" />
+          <meta property="twitter:creator" content="@carlohcs"/>
+          <meta property="twitter:image" content="/static/img/home/carlohcs-xs.png" />
+          <meta name="keywords" content="Carlos Henrique Carvalho de Santana, Carlos Henrique, Carlos, Henrique, Carvalho, Santana, portfólio, portfolio" />
+          <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Carlos H. Carvalho de Santana" />
+          <link href="https://fonts.googleapis.com/css?family=Rubik:300,500&display=swap" rel="stylesheet" />
         </Head>
         <Header />
         <Menu />

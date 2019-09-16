@@ -1,8 +1,11 @@
 {
     "pt-br": {
         "page": {
-            "defaultTitle": "Carlos Henrique - Portfólio",
-            "titleSuffix": "- Carlos Henrique - Portfólio"
+            "defaultTitle": "Carlos Henrique Carvalho de Santana",
+            "titleSuffix": "- Carlos Henrique Carvalho de Santana",
+            "seoTitle": "Conheça um pouco mais sobre mim.",
+            "seoDescription": "Saiba mias sobre minhas habilidades, palestras e projetos que atuei.",
+            "seoAltImageTitle": "Foto de Carlos Henrique Carvalho de Santana"
         },
         "menu": [
             {
@@ -168,7 +171,7 @@
                 {
                     "title": "Product Owner",
                     "titleDescription": "<strong>Projeto de Onboarding da área.</strong>",
-                    "description": "<p>Em julho de 2018, fui conquistei o papel de product owner do projeto de onboarding da área do meu time. A área possui mais de 20 times e o processo de onboarding torna-se extremamente importante para prover uma melhor experiência de recepção aos novos colaboradores que chegam na empresa.</p><p>Até o presente momento, conseguimos entregar dois subprojetos:</p>",
+                    "description": "<p>Em julho de 2018, conquistei o papel de product owner do projeto de onboarding da área do meu time. A área possui mais de 20 times e o processo de onboarding torna-se extremamente importante para prover uma melhor experiência de recepção aos novos colaboradores que chegam na empresa.</p><p>Até o presente momento, conseguimos entregar dois subprojetos:</p>",
                     "items": [
                         {
                             "title": "<strong>Guia</strong>",
@@ -308,8 +311,11 @@
     },
     "en": {
         "page": {
-            "defaultTitle": "Carlos Henrique - Portfolio",
-            "titleSuffix": "- Carlos Henrique - Portfolio"
+            "defaultTitle": "Carlos Henrique Carvalho de Santana",
+            "titleSuffix": "- Carlos Henrique Carvalho de Santana",
+            "seoTitle": "Know a little more about me.",
+            "seoDescription": "Learn more about my skills, lectures and projects I worked.",
+            "seoAltImageTitle": "Picute of Carlos Henrique Carvalho de Santana"
         },
         "menu": [
             {
@@ -475,7 +481,7 @@
                 {
                     "title": "Product Owner",
                     "titleDescription": "<strong> Area Onboarding Project. </strong>",
-                    "description": "<p>In July 2018 I was conquered the role of product owner of my team's area onboarding project. The area has more than 20 teams and the onboarding process becomes extremely important to provide a better reception experience for new employees coming in.</p> <p>So far, we have been able to deliver two subprojects: </p> ",
+                    "description": "<p>In July 2018 I conquered the role of product owner of my team's area onboarding project. The area has more than 20 teams and the onboarding process becomes extremely important to provide a better reception experience for new employees coming in.</p> <p>So far, we have been able to deliver two subprojects: </p> ",
                     "items": [
                         {
                             "title": "<strong> Guide </strong>",

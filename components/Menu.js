@@ -27,7 +27,7 @@ class Menu extends Component {
                     padding: 0;
                     overflow:hidden;
 
-                    .nav__subnav {
+                    /*.nav__subnav {
                         padding-left: 0;
 
                         a {
@@ -36,10 +36,10 @@ class Menu extends Component {
                             margin: 5px 0;
                             border: 0;
                         }
-                    }
+                    }*/
 
                     li {
-                        list-style-type:none;
+                        list-style-type: none;
                         display: block;
                     }
 
@@ -48,25 +48,29 @@ class Menu extends Component {
                         margin-left: -120px;
                         transition: width 0.6s ease-in, margin-left 0.6s ease-in;
 
-                        .nav__subitem {
-                        padding: 5px;
-                        margin-left: 0px;
-                        }
+                        /*.nav__subitem {
+                            padding: 5px;
+                            margin-left: 0px;
+                        }*/
                     }
 
                     a {
                         display: block;
                         height: 30px;
-                        margin: 10px 0;
                         border: none;
-                        &::before, &::after {
+
+                        /*&::before, 
+                        &::after {
                             display: none;
-                        }
+                        }*/
 
                         /* https://www.w3schools.com/cssref/css3_pr_text-overflow.asp */
                         white-space: nowrap; 
                         overflow: hidden;
                         
+                        &.nav__item__link--active {
+                            font-weight: bold;
+                        }
                     }
                 }
                 `}</style>    

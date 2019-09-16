@@ -9,7 +9,7 @@ import routes from '../routes'
 // O menu ao invés de abrir novamente a página
 
 const ActiveLink = ({ children, router, route, className }) => {
-  const active = router.pathname === route ? 'nav__item--active' : ''
+  const active = router.pathname === route ? 'nav__item__link--active' : ''
 
   const handleClick = e => {
     e.preventDefault()
