@@ -64,16 +64,16 @@ class Main extends Component {
           <meta property="og:url" content="https://carlohcs.me" />
           <meta property="og:title" content={this.context.getMessage('page', 'seoTitle')} />
           <meta property="twitter:title" content={this.context.getMessage('page', 'seoTitle')} />
-          <meta property="og:image" content="/static/img/home/carlohcs-xs.png" />
+          <meta property="og:image" content="https://carlohcs.me/static/img/home/carlohcs-xs.png" />
           <meta property="og:image:alt" content={this.context.getMessage('page', 'seoAltImageTitle')} />
           <meta property="og:locale" content="pt_BR" />
           <meta property="og:type" content="article" />
           <meta property="twitter:card" content="summary" />
           <meta property="twitter:site" content="@carlohcs" />
           <meta property="twitter:creator" content="@carlohcs"/>
-          <meta property="twitter:image" content="/static/img/home/carlohcs-xs.png" />
+          <meta property="twitter:image" content="https://carlohcs.me/static/img/home/carlohcs-xs.png" />
           <meta name="keywords" content="Carlos Henrique Carvalho de Santana, Carlos Henrique, Carlos, Henrique, Carvalho, Santana, portfólio, portfolio" />
-          <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Carlos H. Carvalho de Santana" />
+          <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Carlos Henrique Carvalho de Santana" />
           <link href="https://fonts.googleapis.com/css?family=Rubik:300,500&display=swap" rel="stylesheet" />
         </Head>
         <Header />
