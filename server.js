@@ -44,5 +44,5 @@ app.prepare().then(() => {
     .use(handleRedirect)
     // .use(sslRedirect(['production'], 301)) // Habilita redirecionamento SSL
     .use(routesHandler) // Habilita rotas "/en/talks"
-    .listen(3000)
+    .listen(process.env.PORT || 3000)
 })
