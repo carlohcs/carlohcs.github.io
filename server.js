@@ -4,7 +4,7 @@ const app = next({ dev: process.env.NODE_ENV !== 'production' })
 const sslRedirect = require('heroku-ssl-redirect')
 const routesHandler = routes.getRequestHandler(app)
 const express = require('express')
-const ENV = process.NODE_ENV
+const ENV = process.env.NODE_ENV
 const HOST = 'carlohcs.me'
 const BASE_URL = `https://${HOST}`
 
@@ -16,34 +16,34 @@ const BASE_URL = `https://${HOST}`
 function handleRedirect(req, res, next) {
   let requestedUrl = req.originalUrl === '/' ? '' : req.originalUrl
 
+  // console.log('req.hostname !== HOST', req.hostname, HOST)
   // Redireciona se o site não for 'carlohcs.me'
   if (ENV === 'production' && req.hostname !== HOST) {
-    res.redirect(301, `${BASE_URL}${requestedUrl}`)
+    return res.redirect(301, `${BASE_URL}${requestedUrl}`)
   } else {
-    next()
+    return next()
   }
 }
 
-function forceSSL(req, res, next) {
-  if (req.headers['x-forwarded-proto'] !== 'https') {
-    console.log('FORCING SSL. Redirecting... ', [BASE_URL, req.url].join(''))
-    res.redirect([BASE_URL, req.url].join(''))
-  }
+// function forceSSL(req, res, next) {
+//   if (req.headers['x-forwarded-proto'] !== 'https') {
+//     // console.log('FORCING SSL. Redirecting... ', [BASE_URL, req.url].join(''))
+//     return res.redirect(301, [BASE_URL, req.url].join(''))
+//   }
   
-  next();
-};
+//   return next();
+// };
 
 app.prepare().then(() => {
   const server = express()
   
-  console.log('ENV: FROM SERVER: ', ENV)
-  if (ENV === 'production') {
-    console.log('CALLING TO FORCESSL: ', ENV)
-    server
-      .use(forceSSL)
-  }
+  // console.log('ENV: FROM SERVER: ', ENV)
+  // if (ENV === 'production') {
+  //   // console.log('CALLING TO FORCESSL: ', ENV)
+  //   server
+  //     .use(forceSSL)
+  // }
   
-
   server
     .use(handleRedirect)
     .use(sslRedirect(['production'], 301)) // Habilita redirecionamento SSL
