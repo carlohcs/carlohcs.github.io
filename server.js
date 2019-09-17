@@ -1,7 +1,7 @@
 const next = require('next')
 const routes = require('./routes')
 const app = next({ dev: process.env.NODE_ENV !== 'production' })
-// const sslRedirect = require('heroku-ssl-redirect')
+const sslRedirect = require('heroku-ssl-redirect')
 const routesHandler = routes.getRequestHandler(app)
 const express = require('express')
 const ENV = process.NODE_ENV
@@ -26,15 +26,19 @@ function handleRedirect(req, res, next) {
 
 function forceSSL(req, res, next) {
   if (req.headers['x-forwarded-proto'] !== 'https') {
-    return res.redirect([BASE_URL, req.url].join(''))
+    console.log('FORCING SSL. Redirecting... ', [BASE_URL, req.url].join(''))
+    res.redirect([BASE_URL, req.url].join(''))
   }
-  return next();
+  
+  next();
 };
 
 app.prepare().then(() => {
   const server = express()
   
+  console.log('ENV: FROM SERVER: ', ENV)
   if (ENV === 'production') {
+    console.log('CALLING TO FORCESSL: ', ENV)
     server
       .use(forceSSL)
   }
@@ -42,7 +46,7 @@ app.prepare().then(() => {
 
   server
     .use(handleRedirect)
-    // .use(sslRedirect(['production'], 301)) // Habilita redirecionamento SSL
+    .use(sslRedirect(['production'], 301)) // Habilita redirecionamento SSL
     .use(routesHandler) // Habilita rotas "/en/talks"
     .listen(process.env.PORT || 3000)
 })
