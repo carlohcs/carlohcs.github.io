@@ -18,7 +18,7 @@ class Menu extends Component {
             </ul>
 
         return (
-            <div>
+            <>
                 <style jsx global>{`
                 .nav {
                     position: absolute;
@@ -86,7 +86,7 @@ class Menu extends Component {
                         </li>
                     )}
                 </ul>
-            </div>
+            </>
         )
     }
 }

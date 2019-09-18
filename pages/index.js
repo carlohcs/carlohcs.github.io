@@ -159,7 +159,8 @@ class Index extends Component {
                                         {socialNetworks.map((item, key) =>
                                             <a href={item.url} target="_blank" className="social-network link--zoom no-link-style" key={key} 
                                             title={item.title}
-                                            aria-label={networksMessages[item.className]}>
+                                            aria-label={networksMessages[item.className]}
+                                            rel="noopener">
                                                 <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/${item.iconName}?include`) }} className={['icon', 'social-icon', `social-icon--${item.className}`].join(' ')} />
                                             </a>
                                         )}

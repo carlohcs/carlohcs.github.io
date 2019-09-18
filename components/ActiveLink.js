@@ -8,8 +8,24 @@ import routes from '../routes'
 // TODO: Adicionar controle para navegação na mesma página. Apenas ocultar
 // O menu ao invés de abrir novamente a página
 
+function findRoute(route) {
+  let routeObject = {}
+
+  routes.routes.forEach(currentRoute => {
+    if(route === currentRoute.pattern) {
+      routeObject = currentRoute
+    }
+  })
+
+  return routeObject
+}
+
 const ActiveLink = ({ children, router, route, className }) => {
-  const active = router.pathname === route ? 'nav__item__link--active' : ''
+  const activeClass = 'nav__item__link--active'
+  const currentPath = router.pathname
+  const findCurrentRoute = findRoute(route).page
+  let active = currentPath === route || findCurrentRoute === currentPath ? activeClass : ''
+  let findEnPage = {}
 
   const handleClick = e => {
     e.preventDefault()
@@ -23,14 +39,12 @@ const ActiveLink = ({ children, router, route, className }) => {
       finalRoute = '/'
     } else {
       // Procurando rotas inglês
-      routes.routes.forEach(currentRoute => {
-        if(route === currentRoute.pattern) {
-          finalRoute = currentRoute.page
-        }
-      })
+      findEnPage = findRoute(route)
 
       // A rota está em pt
-      if(!finalRoute) {
+      if(findEnPage.page) {
+        finalRoute = findEnPage.page
+      } else {
         finalRoute = route
       }
     }
@@ -38,9 +52,8 @@ const ActiveLink = ({ children, router, route, className }) => {
     router.push(finalRoute)
   }
 
-
   return (
-      <a href={route} onClick={handleClick} className={[className, active].join(' ')}>
+      <a href={route} data-page={findCurrentRoute} onClick={handleClick} className={[className, active].join(' ')}>
         {children}
       </a>
   )
