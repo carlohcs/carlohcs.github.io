@@ -4,13 +4,13 @@ import AppContext from '../components/AppProvider'
 import CustomHead from '../components/CustomHead'
 
 const socialNetworks = [
-    { iconName: 'github-brands.svg', className: 'github', url: 'https://github.com/carlohcs' },
-    { iconName: 'linkedin-in-brands.svg', className: 'linkedin', url: 'https://br.linkedin.com/in/carlohcs' },
-    { iconName: 'twitter-brands.svg', className: 'twitter', url: 'https://www.twitter.com/carlohcs' },
-    { iconName: 'facebook-brands.svg', className: 'facebook', url: 'https://www.facebook.com/carlohcs' },
-    { iconName: 'envelope-regular.svg', className: 'mail', url: 'mailto: carlohcs@gmail.com' },
+    { iconName: 'github-brands.svg', className: 'github', url: 'https://github.com/carlohcs', title: "Github" },
+    { iconName: 'linkedin-in-brands.svg', className: 'linkedin', url: 'https://br.linkedin.com/in/carlohcs', title: "LinkedIn" },
+    { iconName: 'twitter-brands.svg', className: 'twitter', url: 'https://www.twitter.com/carlohcs', title: "Twitter" },
+    { iconName: 'facebook-brands.svg', className: 'facebook', url: 'https://www.facebook.com/carlohcs', title: "Facebook" },
+    { iconName: 'envelope-regular.svg', className: 'mail', url: 'mailto: carlohcs@gmail.com', title: "E-mail" },
     // Falta o sourcerer.io
-    { iconName: 'medium-m-brands.svg', className: 'medium', url: 'https://medium.com/@carlohcs' }
+    { iconName: 'medium-m-brands.svg', className: 'medium', url: 'https://medium.com/@carlohcs', title: "Medium" }
 ]
 
 // https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml
@@ -20,6 +20,8 @@ class Index extends Component {
 
     render() {
         const createMarkup = value => ({ __html: value })
+        const networksMessages = this.context.getMessage('home', 'networks')
+
         return (
             <>
                 <CustomHead title="Home" /> 
@@ -155,7 +157,9 @@ class Index extends Component {
                                 <div className="social-networks">
                                     <div className="social-networks__content">
                                         {socialNetworks.map((item, key) =>
-                                            <a href={item.url} target="_blank" className="social-network no-link-style" key={key}>
+                                            <a href={item.url} target="_blank" className="social-network link--zoom no-link-style" key={key} 
+                                            title={item.title}
+                                            aria-label={networksMessages[item.className]}>
                                                 <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/${item.iconName}?include`) }} className={['icon', 'social-icon', `social-icon--${item.className}`].join(' ')} />
                                             </a>
                                         )}

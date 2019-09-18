@@ -26,6 +26,7 @@ class Menu extends Component {
                     margin: 20px 0 20px 20px;
                     padding: 0;
                     overflow:hidden;
+                    height: 100%;
 
                     /*.nav__subnav {
                         padding-left: 0;
@@ -73,7 +74,7 @@ class Menu extends Component {
                         }
                     }
                 }
-                `}</style>    
+                `}</style>
                 <ul className="nav">
                     {this.context.getMessage('menu').map((item, key) =>
                         <li key={key} className="nav__item">

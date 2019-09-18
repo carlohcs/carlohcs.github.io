@@ -9,6 +9,35 @@ class GlobalStyle extends Component {
           html, body, #__next, .app {
             height: 100%;
           }
+
+          /* https://gist.github.com/oskarhane/615d28c6455081035d2ec83311fa3b2d#file-global-css */
+          html {
+            content: "";
+
+            &.overflow--hidden {
+                overflow: hidden;
+
+                body, .app {
+                  overflow: hidden;
+
+                  @media (max-width: 1024px) {
+                    overflow: hidden;
+                  }
+              }
+            }
+          }
+
+          @media (prefers-color-scheme: light) {
+            html {
+                content: "light";
+            }
+          }
+
+          @media (prefers-color-scheme: dark) {
+            html {
+                content: "dark";
+            }
+          }
             
           body { 
             background: #fff;
@@ -51,9 +80,18 @@ class GlobalStyle extends Component {
 
             /* Menu aberto */
             &.menu-open {
-              /*
-              overflow: hidden; // Pensar em um jeito melhor
-              */
+              /* overflow-x: hidden; */ /* Pensar em um jeito melhor */
+
+              .main-content {
+                &:after {
+                  z-index: 3;
+                  content: "";
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                }
+              }
 
               .trigger-menu-button {
                 border-color:transparent;
@@ -99,7 +137,7 @@ class GlobalStyle extends Component {
             display: inline-block;
             vertical-align: middle;
             border-bottom: 2px solid rgba(29, 199, 121, 0.65);
-            transition: color 300ms cubic-bezier(0.47, 0.99, 1, 0.99), transform 0.3s ease-in-out;
+            transition: color 500ms cubic-bezier(0.47, 0.99, 1, 0.99), transform 0.3s ease-in-out;
 
             &:hover {
               color: #fff;
@@ -116,11 +154,22 @@ class GlobalStyle extends Component {
               z-index: -1;
               background-color: #1DC779;
               transform: perspective(1px) translateZ(0);
-              transition: width 600ms cubic-bezier(0.47, 0.99, 1, 0.99);
+              transition: width 500ms cubic-bezier(0.47, 0.99, 1, 0.99);
             }
 
             &:hover:before {
               width: 100%;
+            }
+          }
+
+          a {
+            &.link {
+              &--zoom {
+                transition: transform 500ms cubic-bezier(0.47, 0.99, 1, 0.99);
+                &:hover {
+                  transform: scale(1.3);
+                }
+              }
             }
           }
 
@@ -361,7 +410,7 @@ class GlobalStyle extends Component {
           &:nth-child(odd) {
               .project__cover {
                   @media (min-width: 1280px) {
-                      box-shadow: -25px 50px 20px 5px rgba(0, 0, 0, .3);
+                      box-shadow: -25px 30px 60px 5px rgba(0, 0, 0, .3);
                   }
               }
           }
@@ -369,31 +418,16 @@ class GlobalStyle extends Component {
           &:nth-child(even) {
               .project__cover {
                   @media (min-width: 1280px) {
-                      box-shadow: 25px 50px 20px 5px rgba(0, 0, 0, .3);
+                      box-shadow: 25px 30px 60px 5px rgba(0, 0, 0, .3);
                   }
               }
           }
       }
       
       .dark-ui {
-          .project:not(.project--main) {
+          .project {
               &__cover {
-                  box-shadow: 0 15px 20px 5px rgba(68, 68, 68, .3);
-              }
-
-              &:nth-child(odd) {
-                  .project__cover {
-                      @media (min-width: 1280px) {
-                          box-shadow: -25px 50px 20px 5px rgba(68, 68, 68, .3);
-                      }
-                  }
-              }
-              &:nth-child(even) {
-                  .project__cover {
-                      @media (min-width: 1280px) {
-                          box-shadow: 25px 50px 20px 5px rgba(68, 68, 68, .3);
-                      }
-                  }
+                  box-shadow: none;
               }
           }
       }

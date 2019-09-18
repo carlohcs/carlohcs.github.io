@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import Router from 'next/router'
 import Head from 'next/head'
-// import Router from 'next/router'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 import 'normalize.css'
 import AppContext from '../components/AppProvider'
 import GlobalStyle from '../components/GlobalStyle'
+import { DEFAULT_LANG, THEMES, DEFAULT_THEME } from '../components/helpers/constants'
 
 // https://nextjs.org/learn/basics/using-shared-components/the-layout-component
 
@@ -22,30 +23,72 @@ class Main extends Component {
 
     this.state = { loadedConfigs: false }
 
-    // Router.events.on('routeChangeStart', url => {
-    //   console.log('App is changing to: ', url)
-    // })
+    // https://github.com/zeit/next.js/#router-events
+    // routeChangeStart(url) - Fires when a route starts to change
+    // routeChangeComplete(url) - Fires when a route changed completely
+    // routeChangeError(err, url) - Fires when there's an error when changing routes, or a route load is cancelled
+    // beforeHistoryChange(url) - Fires just before changing the browser's history
+    // hashChangeStart(url) - Fires when the hash will change but not the page
+    // hashChangeComplete(url) - Fires when the hash has changed but not the page
+    Router.events.on('routeChangeComplete', url => {
+      // console.log('App is changing to: ', url)
+      this.context.resetMenuBehavior()
+    })
   }
   
   componentDidMount() {
     const storage = require('../components/helpers/storage').default
-    const savedTheme = storage.getTheme()
-    const savedLang = storage.getLang()
+    // const lang = require('../components/helpers/lang').default
+    const savedTheme = storage.getTheme() // BUG: só está salvando um item por vez
+    const savedLang = storage.getLang() // BUG: só está salvando um item por vez
+    const contextLang = this.context.getLang() 
 
-    if (savedTheme !== '' && savedTheme !== this.context.getTheme()) {
-      this.context.toggleTheme(savedTheme === this.context.themes.DARK)
+    // Se o usuário já possuía um tema salvo
+    if (savedTheme && savedTheme !== '') {
+      this.context.toggleTheme(savedTheme)
+    } else {
+      // Se ele possuir uma preferência de tema
+      const userPreferedTheme = window
+          .getComputedStyle(document.documentElement)
+          .getPropertyValue('content')
+          .replace(/"/g, '')
+
+      if(userPreferedTheme === THEMES.DARK) {
+        // Então o tema do usuário é dark
+        this.context.toggleTheme(THEMES.DARK)
+      } else {
+        // salva o tema padrão
+        this.context.toggleTheme(DEFAULT_THEME)
+      }
     }
 
-    if (savedLang !== '' && savedLang !== this.context.getLang()) {
+    // Se houver uma língua salva anteriormente
+    if (savedLang && savedLang !== '' && savedLang !== contextLang) {
       this.context.toggleLang(savedLang)
+    } else {
+      // salva a língua padrão
+      this.context.toggleLang(DEFAULT_LANG)
     }
+
+    document.body.addEventListener('click', this.handleCloseMenu.bind(this))
 
     this.setState({ loadedConfigs: true })
   }
 
+  /**
+   * Faz o handle para verificar se irá fechar o menu ou não
+   * 
+   * @param {HTMLEvent} evt 
+   */
+  handleCloseMenu(evt) {
+    if(evt.target.getAttribute('data-close-menu')) {
+      this.context.resetMenuBehavior()
+    }
+  }
+
   render() {
     const loadedConfigs = this.state.loadedConfigs
-    const mainContent = !loadedConfigs ? '' : <div className="main-content">
+    const mainContent = !loadedConfigs ? '' : <div className="main-content" data-close-menu>
         {this.props.children}
       </div>
 
@@ -74,6 +117,7 @@ class Main extends Component {
           <meta property="twitter:image" content="https://carlohcs.me/static/img/home/carlohcs-xs.png" />
           <meta name="keywords" content="Carlos Henrique Carvalho de Santana, Carlos Henrique, Carlos, Henrique, Carvalho, Santana, portfólio, portfolio" />
           <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Carlos Henrique Carvalho de Santana" />
+          <meta httpEquiv="Content-Language" content="pt-br, en" />
           <link href="https://fonts.googleapis.com/css?family=Rubik:300,500&display=swap" rel="stylesheet" />
         </Head>
         <Header />

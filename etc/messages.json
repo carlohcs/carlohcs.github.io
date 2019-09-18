@@ -7,6 +7,14 @@
             "seoDescription": "Saiba mais sobre minhas habilidades, palestras e projetos que atuei.",
             "seoAltImageTitle": "Foto de Carlos Henrique Carvalho de Santana"
         },
+        "toggleTheme": {
+            "title": "Alterar o tema",
+            "aria": "Alterar o tema"
+        },
+        "toggleLang": {
+            "ptBrLangLabel": "Alterar o idioma para português do Brasil",
+            "enLangLabel": "Change language to English"
+        },
         "menu": [
             {
                 "name": "home",
@@ -44,9 +52,17 @@
             "description": [
                 "Pós-graduado em Gestão em Tecnologia da Informação, escrevi um  <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" target=\"_blank\">artigo</a>. Como engenheiro de software, alguns de meus trabalhos podem ser vistos <a href=\"\/engenheiro-de-software\">aqui</a> ou no <a href=\"https://github.com/carlohcs\" target=\"_blank\">GitHub</a>.",
                 "Ultimamente tenho me aventurado a <a href=\"https://medium.com/@carlohcs\" target=\"_blank\">escrever</a> e a <a href=\"/palestras\">palestrar</a>.",
-                "Acredito que todos devem ter uma <a href=\"https://missaopessoal.com.br\" target=\"_blank\">missão pessoal</a> na vida."
+                "Acredito que todos devem ter uma <a href=\"https://missaopessoal.com.br\" target=\"_blank\">missão pessoal</a>."
             ],
-            "connect": "Conecte-se:"
+            "connect": "Conecte-se:",
+            "networks": {
+                "github": "Veja meus repositórios no Github",
+                "linkedin": "Veja meus currículo no LinkedIn",
+                "twitter": "Veja meus tweets no Twitter",
+                "facebook": "Veja meus posts no Facebook",
+                "mail": "Me envie um e-mail",
+                "medium": "Veja o que escrevo no Medium"
+            }
         },
         "softwareEngineer": {
             "title": "Engenheiro de software",
@@ -317,6 +333,14 @@
             "seoDescription": "Learn more about my skills, lectures and projects I worked.",
             "seoAltImageTitle": "Picute of Carlos Henrique Carvalho de Santana"
         },
+        "toggleTheme": {
+            "title": "Change the theme",
+            "aria": "Change the theme"
+        },
+        "toggleLang": {
+            "ptBrLangLabel": "Alterar o idioma para português do Brasil",
+            "enLangLabel": "Change language to English"
+        },
         "menu": [
             {
                 "name": "home",
@@ -354,9 +378,17 @@
             "description": [
                 "Postgraduate in Information Technology Management, I wrote an <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" target=\"_blank\">article</a>. As a software engineer, some of my work can be seen <a href=\"/engenheiro-de-software\">here</a> or <a href=\"https://github.com/carlohcs\" target=\"_blank\">GitHub</a>.",
                 "Lately I've been venturing to <a href=\"https://medium.com/@carlohcs\" target=\"_blank\">write</a> and <a href=\"/palestras\">to lecture</a>.",
-                "I believe everyone should have a <a href=\"https://missaopessoal.com.br\" target=\"_blank\">personal mission</a> in life."
+                "I believe everyone should have a <a href=\"https://missaopessoal.com.br\" target=\"_blank\">personal mission</a>."
             ],
-            "connect": "Connect:"
+            "connect": "Connect:",
+            "networks": {
+                "github": "See my repositories on Github",
+                "linkedin": "See my resumes on LinkedIn",
+                "twitter": "See my tweets on Twitter",
+                "facebook": "See my posts on Facebook ",
+                "mail": "Send me an email",
+                "medium": "See what I write in Medium "
+            }
         },
         "softwareEngineer": {
             "title": "Software Engineer",

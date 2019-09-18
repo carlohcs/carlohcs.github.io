@@ -1,28 +1,23 @@
 import React, { Component } from 'react'
 import storage from './helpers/storage'
 import messages from '../etc/messages'
+import { LANGS, THEMES, DEFAULT_LANG, DEFAULT_THEME } from '../components/helpers/constants'
 
 // Sem precisar de Redux: 
 // https://github.com/zeit/next.js/tree/2c7b4d8aaac475f81de21c0e9cb40fdea1a7a178/examples/with-context-api
 // https://reacttricks.com/sharing-global-data-in-next-with-custom-app-and-usecontext-hook/
 
-const LANGS = {
-    'PT-BR': 'pt-br',
-    'EN': 'en',
-}
-
-const THEMES = {
-    'LIGHT': 'light',
-    'DARK': 'dark',
-}
 
 const AppContext = React.createContext()
+
+const MENU_OPEN = 'menu-open'
+const OVERFLOW = 'overflow--hidden'
 
 class AppProvider extends Component {
     
     state = {
-        lang: LANGS['PT-BR'],
-        theme: THEMES.LIGHT
+        lang: DEFAULT_LANG,
+        theme: DEFAULT_THEME
     }
 
     /**
@@ -52,9 +47,35 @@ class AppProvider extends Component {
      * @return {void
      */
     toggleLang = async val => {
+        // TypeError: Cannot read property 'toUpperCase' of undefined
+        if(!val) {
+            throw new Error('Invalid lang')
+        }
+
         await this.changePropState('lang', LANGS[val.toUpperCase()])
         
         storage.saveLang(this.getLang())
+        document.documentElement.lang = this.getLang()
+    }
+
+    /**
+     * 
+     */
+    toggleTheme = async theme => {
+        const bodyClassList = document.body.classList
+        const darkUIClass = 'dark-ui'
+        const choosedTheme = THEMES[theme.toUpperCase()]
+
+        if(!choosedTheme) {
+            throw new Error('invalid theme')
+        }
+
+        const activateDark = choosedTheme === THEMES.DARK
+        bodyClassList[activateDark ? 'add' : 'remove'](darkUIClass)
+
+        await this.changePropState('theme', choosedTheme)
+
+        storage.saveTheme(this.getTheme())
     }
 
     /**
@@ -63,13 +84,12 @@ class AppProvider extends Component {
      * 
      * @return {void}
      */
-    toggleTheme = async activateDarkUI => {
+    toogleBetweenThemes = async () => {
         const bodyClassList = document.body.classList
         const darkUIClass = 'dark-ui'
-        const activate = !activateDarkUI && [...bodyClassList].indexOf(darkUIClass) === -1
-        let finalActivate = activateDarkUI || activate
+        const activate = [...bodyClassList].indexOf(darkUIClass) === -1
 
-        bodyClassList[finalActivate ? 'add' : 'remove'](darkUIClass)
+        bodyClassList[activate ? 'add' : 'remove'](darkUIClass)
 
         // TODO: Implementar controle de horas
         // TODO: Implementar salvar o tema selecionado para quando o usuário trocar
@@ -82,7 +102,7 @@ class AppProvider extends Component {
         // console.log(this.state.count); // May print 0 or 1
 
         // Mudei par uma promise porque foi a única maneira de rodar
-        await this.changePropState('theme', THEMES[finalActivate ? 'DARK': 'LIGHT'])
+        await this.changePropState('theme', THEMES[activate ? 'DARK': 'LIGHT'])
 
         storage.saveTheme(this.getTheme())
     }
@@ -93,7 +113,18 @@ class AppProvider extends Component {
      * @return {void}
      */
     toggleMenu = () => {
-        document.body.classList.toggle('menu-open')
+        document.body.classList.toggle(MENU_OPEN)
+        document.documentElement.classList.toggle(OVERFLOW)
+    }
+
+    /**
+     * Altera a exibição do menu lateral
+     * 
+     * @return {void}
+     */
+    resetMenuBehavior = () => {
+        document.body.classList.remove(MENU_OPEN)
+        document.documentElement.classList.remove(OVERFLOW)
     }
 
     /**
@@ -144,7 +175,9 @@ class AppProvider extends Component {
                 theme: this.state.theme,
                 toggleLang: this.toggleLang,
                 toggleTheme: this.toggleTheme,
+                toogleBetweenThemes: this.toogleBetweenThemes,
                 toggleMenu: this.toggleMenu,
+                resetMenuBehavior: this.resetMenuBehavior,
                 getMessage: this.getMessage,
                 getTheme: this.getTheme,
                 getLang: this.getLang,

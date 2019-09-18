@@ -10,7 +10,22 @@ class Header extends Component {
 
     render() {
         return (
-            <header>
+            <header data-close-menu>
+                <div className="trigger-menu-button" aria-label="Menu" onClick={() => this.context.toggleMenu()} />
+                <div className="trigger-menu-button__hover"></div>
+                <div className="header__actions">
+                    <div className="toggle-language">
+                        <span onClick={() => this.context.toggleLang(LANGS['PT-BR'])} className={['toggle-language__option', this.context.getLang() === LANGS['PT-BR'] ? languagueActiveOptionClass : '' ].join(' ')} aria-label={this.context.getMessage('toggleLang', 'ptBrLangLabel')}>PT-BR</span>
+                        <span onClick={() => this.context.toggleLang(LANGS['EN'])} className={['toggle-language__option', this.context.getLang() === LANGS['EN'] ? languagueActiveOptionClass : '' ].join(' ')} aria-label={this.context.getMessage('toggleLang', 'enLangLabel')}>EN</span>
+                    </div>
+
+                    <div onClick={() => this.context.toogleBetweenThemes()}
+                    className={['toggle-theme', this.context.getTheme() === THEMES.DARK ? 'toggle-theme--light' : 'toggle-theme--dark'].join(' ')}
+                    aria-label={this.context.getMessage('toggleTheme', 'aria')}
+                    title={this.context.getMessage('toggleTheme', 'title')}>
+                        <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/adjust-solid.svg?include`) }} className="icon" />
+                    </div>
+                </div>
                 <style jsx global>{`
                     header {
                         display: flex;
@@ -39,10 +54,12 @@ class Header extends Component {
                     }
 
                     .toggle-language {
-                        margin-right: 10px;
+                        margin-right: 15px;
 
                         &__option {
                             cursor: pointer;
+                            transition: opacity 300ms ease-in;
+                            opacity: .8;
 
                             &:nth-of-type(1) {
                                 &:after {
@@ -50,13 +67,18 @@ class Header extends Component {
                                     width: 1px;
                                     height: 11px;
                                     display: inline-block;
-                                    margin: 0 5px;
+                                    margin: 0 10px;
                                     background: #1e1e1e;
                                     position: relative;
                                 }
                             }
 
+                            &:hover {
+                                opacity: 1;
+                            }
+
                             &--active {
+                                opacity: 1;
                                 font-weight: bold;
                             }
                         }
@@ -64,6 +86,12 @@ class Header extends Component {
 
                     .toggle-theme {
                         cursor: pointer;
+                        transition: opacity 300ms ease-in;
+                        opacity: .8;
+
+                        &:hover {
+                            opacity: 1;
+                        }
                     }
 
                     /* https://codepen.io/made-on-mars/pen/qqEgXP */
@@ -75,7 +103,8 @@ class Header extends Component {
                         position: relative;
                         z-index: 30;
                         cursor: pointer;
-                        transition: all 0.3s ease-in;
+                        transition: opacity 300ms ease-in;
+                        opacity: .8;
 
                         &:before, 
                         &:after {
@@ -96,20 +125,35 @@ class Header extends Component {
                         &:after {
                             top: 20px;
                         }
+
+                        &:hover {
+                            opacity: 1;
+
+                            & + .trigger-menu-button__hover {
+                                opacity: 1;
+                            }
+                        }
+
+                        &__hover {
+                            width: 60px;
+                            height: 60px;
+                            margin-top: -16px;
+                            margin-left: -15px;
+                            border-radius: 50%;
+                            position: absolute;
+                            background-color: rgba(154, 154, 154, 0.1);
+                            opacity: 0;
+                            transition: opacity 600ms cubic-bezier(0.47, 0.99, 1, 0.99);
+
+                            @media (min-width: 1024px) {
+                                width: 80px;
+                                height: 80px;
+                                margin-top: -26px;
+                                margin-left: -25px;
+                            }
+                        }
                     }
             `}</style>
-                <div className="trigger-menu-button" aria-label="Menu" onClick={() => this.context.toggleMenu()} />
-                <div className="header__actions">
-                    <div className="toggle-language">
-                        <span onClick={() => this.context.toggleLang(LANGS['PT-BR'])} className={['toggle-language__option', this.context.getLang() === LANGS['PT-BR'] ? languagueActiveOptionClass : '' ].join(' ')}>PT-BR</span>
-                        <span onClick={() => this.context.toggleLang(LANGS['EN'])} className={['toggle-language__option', this.context.getLang() === LANGS['EN'] ? languagueActiveOptionClass : '' ].join(' ')}>EN</span>
-                    </div>
-
-                    <div onClick={() => this.context.toggleTheme()}
-                    className={['toggle-theme', this.context.getTheme() === THEMES.DARK ? 'toggle-theme--light' : 'toggle-theme--dark'].join(' ')}>
-                        <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/adjust-solid.svg?include`) }} className="icon" />
-                    </div>
-                </div>
             </header>
         )
     }
