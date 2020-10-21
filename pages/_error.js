@@ -34,7 +34,17 @@ class Error extends React.Component {
                 }
 
                 &__citation {
-                  max-width: 750px;
+                  max-width: 850px;
+
+                  @media (min-width: 1024px) {
+                    font-size: 1.4em;
+                    font-weight: 300;
+                    line-height: 1.4;
+                  }
+
+                  @media (min-width: 1200px) {
+                      font-size: 1.6em;                        
+                  }
                 }
               }
             `}

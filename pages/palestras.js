@@ -47,9 +47,9 @@ class Palestras extends Component {
                                 )}
 
                                 <p> 
-                                    <a href={this.context.getMessage('talks', 'sitePresentations', 'link')}>
+                                    <a href={this.context.getMessage('talks', 'sitePresentations', 'link')} target="_blank">
                                         {this.context.getMessage('talks', 'sitePresentations', 'description')}
-                                        Speaker Deck.
+                                        slideshare.
                                     </a>
                                 </p>
                             </div>

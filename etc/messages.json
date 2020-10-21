@@ -8,8 +8,8 @@
             "seoAltImageTitle": "Foto de Carlos Henrique Carvalho de Santana"
         },
         "toggleTheme": {
-            "title": "Alterar o tema",
-            "aria": "Alterar o tema"
+            "title": "Alterar tema",
+            "aria": "Alterar tema"
         },
         "toggleLang": {
             "ptBrLangLabel": "Alterar o idioma para português do Brasil",
@@ -43,25 +43,26 @@
             }
         ],
         "footer": {
-            "description": "2019. Este site foi feito com <a href=\"https://nextjs.org/\" rel=\"noopener\" target=\"_blank\">Next.js</a> e hospedado no <a href=\"https://www.heroku.com/\" target=\"_blank\">Heroku</a>."
+            "description": "Este site foi feito com <a href=\"https://nextjs.org/\" rel=\"noopener\" target=\"_blank\">Next.js</a> e hospedado no <a href=\"https://www.heroku.com/\" target=\"_blank\">Heroku</a>."
         },
         "home": {
             "welcome": "Olá!",
             "subdescription": "Meu nome é Carlos Henrique.",
-            "shortDescription": "<strong>Sou engenheiro de software, product owner, instrutor e facilitador no UOL.</strong>",
+            "shortDescription": "<strong>Sou engenheiro de software, instrutor e facilitador.</strong>",
             "description": [
                 "Pós-graduado em Gestão em Tecnologia da Informação, escrevi um  <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" target=\"_blank\">artigo</a>. Como engenheiro de software, alguns de meus trabalhos podem ser vistos <a href=\"\/engenheiro-de-software\">aqui</a> ou no <a href=\"https://github.com/carlohcs\" target=\"_blank\">GitHub</a>.",
-                "Ultimamente tenho me aventurado a <a href=\"https://medium.com/@carlohcs\" target=\"_blank\">escrever</a> e a <a href=\"/palestras\">palestrar</a>.",
+                "Ultimamente tenho me aventurado a <a href=\"https://medium.com/@carlohcs\" target=\"_blank\">escrever</a>, <a href=\"/palestras\">palestrar</a> e a <a href=\"https://www.youtube.com/user/carlohcs\">tocar guitarra</a>.",
                 "Acredito que todos devem ter uma <a href=\"https://missaopessoal.com.br\" target=\"_blank\">missão pessoal</a>."
             ],
             "connect": "Conecte-se:",
             "networks": {
                 "github": "Veja meus repositórios no Github",
+                "medium": "Veja o que escrevo no Medium",
                 "linkedin": "Veja meus currículo no LinkedIn",
                 "twitter": "Veja meus tweets no Twitter",
                 "facebook": "Veja meus posts no Facebook",
-                "mail": "Me envie um e-mail",
-                "medium": "Veja o que escrevo no Medium"
+                "youtube": "Veja meus vídeos no YouTube",
+                "mail": "Me envie um e-mail"
             }
         },
         "softwareEngineer": {
@@ -130,7 +131,7 @@
                         "year": "2019",
                         "talks": [
                             {
-                                "title": "Fronteiras da regulação comercial - Desafios de governança e compliance para os anos 2020 (em breve)",
+                                "title": "Fronteiras da regulação comercial - Desafios de governança e compliance para os anos 2020 (cancelado)",
                                 "link": ""
                             }
                         ]
@@ -161,7 +162,7 @@
             },
             "sitePresentations": {
                 "description": "Outras apresentações podem ser vistas no ",
-                "link": "https://speakerdeck.com/carlohcs"
+                "link": "https://www.slideshare.net/CarlosHenriqueCarvalho"
             }
         },
         "skills": {
@@ -334,8 +335,8 @@
             "seoAltImageTitle": "Picute of Carlos Henrique Carvalho de Santana"
         },
         "toggleTheme": {
-            "title": "Change the theme",
-            "aria": "Change the theme"
+            "title": "Change theme",
+            "aria": "Change theme"
         },
         "toggleLang": {
             "ptBrLangLabel": "Alterar o idioma para português do Brasil",
@@ -369,25 +370,26 @@
             }
         ],
         "footer": {
-            "description": "2019. This site was made with <a href=\"https://nextjs.org/\" rel=\"noopener\" target=\"_blank\">Next.js</a> and hosted at <a href=\"https://www.heroku.com/\" rel=\"noopener\" target=\"_blank\">Heroku</a>."
+            "description": "This site was made with <a href=\"https://nextjs.org/\" rel=\"noopener\" target=\"_blank\">Next.js</a> and hosted at <a href=\"https://www.heroku.com/\" rel=\"noopener\" target=\"_blank\">Heroku</a>."
         },
         "home": {
             "welcome": "Hello!",
             "subdescription": "My name is Carlos Henrique.",
-            "shortDescription": "<strong>I'm a software engineer, product owner, instructor, and facilitator at UOL.</strong>",
+            "shortDescription": "<strong>I'm a software engineer, instructor and facilitator.</strong>",
             "description": [
-                "Postgraduate in Information Technology Management, I wrote an <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" rel=\"noopener\" target=\"_blank\">article</a>. As a software engineer, some of my work can be seen <a href=\"/engenheiro-de-software\">here</a> or <a href=\"https://github.com/carlohcs\" rel=\"noopener\" target=\"_blank\">GitHub</a>.",
-                "Lately I've been venturing to <a href=\"https://medium.com/@carlohcs\" rel=\"noopener\" target=\"_blank\">write</a> and <a href=\"/palestras\">to lecture</a>.",
+                "Postgraduate in Information Technology Management, I wrote an <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" rel=\"noopener\" target=\"_blank\">article</a>. As a software engineer, some of my work can be seen <a href=\"/engenheiro-de-software\">here</a> or on <a href=\"https://github.com/carlohcs\" rel=\"noopener\" target=\"_blank\">GitHub</a>.",
+                "Lately I've been venturing to <a href=\"https://medium.com/@carlohcs\" rel=\"noopener\" target=\"_blank\">write</a>, <a href=\"/palestras\">to lecture</a> and <a href=\"https://www.youtube.com/user/carlohcs\">to play guitar</a>.",
                 "I believe everyone should have a <a href=\"https://missaopessoal.com.br\" rel=\"noopener\" target=\"_blank\">personal mission</a>."
             ],
             "connect": "Connect:",
             "networks": {
                 "github": "See my repositories on Github",
+                "medium": "See what I write in Medium",
                 "linkedin": "See my resumes on LinkedIn",
                 "twitter": "See my tweets on Twitter",
-                "facebook": "See my posts on Facebook ",
-                "mail": "Send me an email",
-                "medium": "See what I write in Medium "
+                "facebook": "See my posts on Facebook",
+                "youtube": "See my vídeos on YouTube",
+                "mail": "Send me an email"
             }
         },
         "softwareEngineer": {
@@ -456,7 +458,7 @@
                         "year": "2019",
                         "talks": [
                             {
-                                "title": "Trade regulation boundaries - Governance and compliance challenges for the 2020s (coming soon)",
+                                "title": "Trade regulation boundaries - Governance and compliance challenges for the 2020s (canceled)",
                                 "link": ""
                             }
                         ]
@@ -486,8 +488,8 @@
                 ]
             },
             "sitePresentations": {
-                "description": "Other presentations can be seen on the",
-                "link": "https://speakerdeck.com/carlohcs"
+                "description": "Other presentations can be seen on the ",
+                "link": "https://www.slideshare.net/CarlosHenriqueCarvalho"
             }
         },
         "skills": {

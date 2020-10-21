@@ -4,13 +4,14 @@ import AppContext from '../components/AppProvider'
 import CustomHead from '../components/CustomHead'
 
 const socialNetworks = [
-    { iconName: 'github-brands.svg', className: 'github', url: 'https://github.com/carlohcs', title: "Github" },
-    { iconName: 'linkedin-in-brands.svg', className: 'linkedin', url: 'https://br.linkedin.com/in/carlohcs', title: "LinkedIn" },
-    { iconName: 'twitter-brands.svg', className: 'twitter', url: 'https://www.twitter.com/carlohcs', title: "Twitter" },
-    { iconName: 'facebook-brands.svg', className: 'facebook', url: 'https://www.facebook.com/carlohcs', title: "Facebook" },
-    { iconName: 'envelope-regular.svg', className: 'mail', url: 'mailto: carlohcs@gmail.com', title: "E-mail" },
+    { iconName: 'github-brands.svg', className: 'github', url: 'https://github.com/carlohcs', title: 'Github' },
+    { iconName: 'linkedin-in-brands.svg', className: 'linkedin', url: 'https://br.linkedin.com/in/carlohcs', title: 'LinkedIn' },
+    { iconName: 'twitter-brands.svg', className: 'twitter', url: 'https://www.twitter.com/carlohcs', title: 'Twitter' },
+    { iconName: 'facebook-brands.svg', className: 'facebook', url: 'https://www.facebook.com/carlohcs', title: 'Facebook' },
     // Falta o sourcerer.io
-    { iconName: 'medium-m-brands.svg', className: 'medium', url: 'https://medium.com/@carlohcs', title: "Medium" }
+    { iconName: 'medium-m-brands.svg', className: 'medium', url: 'https://medium.com/@carlohcs', title: 'Medium' },
+    { iconName: 'youtube-brands.svg', className: 'youtube', url: 'https://www.youtube.com/user/carlohcs', title: 'YouTube' },
+    { iconName: 'envelope-regular.svg', className: 'mail', url: 'mailto: carlohcs@gmail.com', title: 'E-mail' },
 ]
 
 // https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml

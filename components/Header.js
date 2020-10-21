@@ -11,18 +11,20 @@ class Header extends Component {
     render() {
         return (
             <header data-close-menu>
-                <div className="trigger-menu-button" aria-label="Menu" onClick={() => this.context.toggleMenu()} />
+                <div className="trigger-menu-button" role="menubar" tabIndex="1" title="Menu" onClick={() => this.context.toggleMenu()} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleMenu() : ''} />
                 <div className="trigger-menu-button__hover"></div>
                 <div className="header__actions">
-                    <div className="toggle-language">
-                        <span onClick={() => this.context.toggleLang(LANGS['PT-BR'])} className={['toggle-language__option', this.context.getLang() === LANGS['PT-BR'] ? languagueActiveOptionClass : '' ].join(' ')} aria-label={this.context.getMessage('toggleLang', 'ptBrLangLabel')}>PT-BR</span>
-                        <span onClick={() => this.context.toggleLang(LANGS['EN'])} className={['toggle-language__option', this.context.getLang() === LANGS['EN'] ? languagueActiveOptionClass : '' ].join(' ')} aria-label={this.context.getMessage('toggleLang', 'enLangLabel')}>EN</span>
+                    <div className="toggle-language" role="menu">
+                        <span role="menuitem" tabIndex="2" title="PT-BR" onClick={() => this.context.toggleLang(LANGS['PT-BR'])} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleLang(LANGS['PT-BR']) : ''} className={['toggle-language__option', this.context.getLang() === LANGS['PT-BR'] ? languagueActiveOptionClass : '' ].join(' ')} aria-label={this.context.getMessage('toggleLang', 'ptBrLangLabel')}>PT-BR</span>
+                        <span role="menuitem" tabIndex="3" title="EN" onClick={() => this.context.toggleLang(LANGS['EN'])} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleLang(LANGS['EN']) : ''} className={['toggle-language__option', this.context.getLang() === LANGS['EN'] ? languagueActiveOptionClass : '' ].join(' ')} aria-label={this.context.getMessage('toggleLang', 'enLangLabel')}>EN</span>
                     </div>
 
                     <div onClick={() => this.context.toogleBetweenThemes()}
+                    onKeyDown={(e) => e.key === 'Enter' ? this.context.toogleBetweenThemes() : ''}
                     className={['toggle-theme', this.context.getTheme() === THEMES.DARK ? 'toggle-theme--light' : 'toggle-theme--dark'].join(' ')}
                     aria-label={this.context.getMessage('toggleTheme', 'aria')}
-                    title={this.context.getMessage('toggleTheme', 'title')}>
+                    title={this.context.getMessage('toggleTheme', 'title')}
+                    role="menuitem" tabIndex="4">
                         <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/adjust-solid.svg?include`) }} className="icon" />
                     </div>
                 </div>
@@ -60,6 +62,7 @@ class Header extends Component {
                             cursor: pointer;
                             transition: opacity 300ms ease-in;
                             opacity: .8;
+                            outline: none;
 
                             &:nth-of-type(1) {
                                 &:after {
@@ -73,10 +76,9 @@ class Header extends Component {
                                 }
                             }
 
-                            &:hover {
-                                opacity: 1;
-                            }
-
+                            &:hover,
+                            &:active,
+                            &:focus,
                             &--active {
                                 opacity: 1;
                                 font-weight: bold;
@@ -88,8 +90,11 @@ class Header extends Component {
                         cursor: pointer;
                         transition: opacity 300ms ease-in;
                         opacity: .8;
+                        outline: none;
 
-                        &:hover {
+                        &:hover,
+                        &:active,
+                        &:focus {
                             opacity: 1;
                         }
                     }
@@ -105,6 +110,7 @@ class Header extends Component {
                         cursor: pointer;
                         transition: opacity 300ms ease-in;
                         opacity: .8;
+                        outline: none;
 
                         &:before, 
                         &:after {
@@ -126,7 +132,9 @@ class Header extends Component {
                             top: 20px;
                         }
 
-                        &:hover {
+                        &:hover,
+                        &:active,
+                        &:focus {
                             opacity: 1;
 
                             & + .trigger-menu-button__hover {

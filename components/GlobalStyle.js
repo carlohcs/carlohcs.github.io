@@ -138,8 +138,11 @@ class GlobalStyle extends Component {
             vertical-align: middle;
             border-bottom: 2px solid rgba(29, 199, 121, 0.65);
             transition: color 500ms cubic-bezier(0.47, 0.99, 1, 0.99), transform 0.3s ease-in-out;
+            outline: none;
 
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus {
               color: #fff;
               /* transform: scale(1.1); */
             }
@@ -157,16 +160,22 @@ class GlobalStyle extends Component {
               transition: width 500ms cubic-bezier(0.47, 0.99, 1, 0.99);
             }
 
-            &:hover:before {
+            &:hover:before,
+            &:active:before,
+            &:focus:before {
               width: 100%;
             }
           }
 
           a {
+            outline: none;
+
             &.link {
               &--zoom {
                 transition: transform 500ms cubic-bezier(0.47, 0.99, 1, 0.99);
-                &:hover {
+                &:hover,
+                &:active,
+                &:focus {
                   transform: scale(1.3);
                 }
               }
@@ -316,6 +325,7 @@ class GlobalStyle extends Component {
             box-sizing: border-box;
             padding: 0 20px 20px;
             justify-content: center;
+            will-change: margin-left;
 
             @media screen and (min-width: 1024px) {
               padding: 40px;

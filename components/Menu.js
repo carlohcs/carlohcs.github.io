@@ -28,42 +28,22 @@ class Menu extends Component {
                     overflow:hidden;
                     height: 100%;
 
-                    /*.nav__subnav {
-                        padding-left: 0;
-
-                        a {
-                            font-size: 14px;
-                            padding-left: 20px;
-                            margin: 5px 0;
-                            border: 0;
-                        }
-                    }*/
-
                     li {
                         list-style-type: none;
                         display: block;
+                        will-change: width, margin-left;
                     }
 
                     &__item {
                         width: 0;
                         margin-left: -120px;
                         transition: width 0.6s ease-in, margin-left 0.6s ease-in;
-
-                        /*.nav__subitem {
-                            padding: 5px;
-                            margin-left: 0px;
-                        }*/
                     }
 
                     a {
                         display: block;
                         height: 30px;
                         border: none;
-
-                        /*&::before, 
-                        &::after {
-                            display: none;
-                        }*/
 
                         /* https://www.w3schools.com/cssref/css3_pr_text-overflow.asp */
                         white-space: nowrap; 

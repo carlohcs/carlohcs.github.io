@@ -10,10 +10,10 @@ import { LANGS, THEMES, DEFAULT_LANG, DEFAULT_THEME } from '../components/helper
 
 const AppContext = React.createContext()
 
-const MENU_OPEN = 'menu-open'
+const MENU_OPEN = "menu-open"
 const OVERFLOW = 'overflow--hidden'
 
-class AppProvider extends Component {
+    class AppProvider extends Component {
     
     state = {
         lang: DEFAULT_LANG,
