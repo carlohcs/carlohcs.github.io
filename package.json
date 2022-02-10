@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
+    "export": "next export -o docs/",
     "start": "cross-env NODE_ENV=production node server.js",
     "heroku-postbuild": "npm run build",
-    "deploy:github": "next build && next export && touch dir/.nojekyll && git add dir/ && git commit -m \"Deploy to Github\" && git push origin main",
+    "deploy:github": "npm run build && npm run export && touch docs/.nojekyll && git add docs/ && git commit -m \"Deploy docs to Github\" && git push origin main",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
