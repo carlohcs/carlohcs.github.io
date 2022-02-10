@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
     "heroku-postbuild": "npm run build",
-    "deploy:github": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to Github\" && git push origin `git subtree split --prefix out master`:master --force",
+    "deploy:github": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to Github\" && git push origin `git subtree split --prefix out gh-pages`:gh-pages --force",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
