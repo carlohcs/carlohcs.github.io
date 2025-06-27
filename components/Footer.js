@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { AppConsumer } from '../components/AppProvider'
 
-
 class Footer extends Component {
-    render() {
-        const createMarkup = value => ({ __html: value })
-        return (
-            <AppConsumer>
-                {({ getMessage }) => (
-                    <footer>
-                        <style jsx>{`
+  render() {
+    const createMarkup = value => ({ __html: value })
+    return (
+      <AppConsumer>
+        {({ getMessage }) => (
+          <footer>
+            <style jsx>{`
                             footer {
                                 padding: 20px 0;
                                 line-height: 1.3;
@@ -34,13 +33,13 @@ class Footer extends Component {
                                 }
                             }
                         `}
-                        </style>
-                        <small dangerouslySetInnerHTML={createMarkup(getMessage('footer', 'description'))} />
-                    </footer>
-                )}
-            </AppConsumer>
-        )
-    }
+            </style>
+            <small dangerouslySetInnerHTML={createMarkup(getMessage('footer', 'description'))} />
+          </footer>
+        )}
+      </AppConsumer>
+    )
+  }
 }
 
 export default Footer

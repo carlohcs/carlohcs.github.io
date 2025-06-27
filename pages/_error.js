@@ -16,9 +16,9 @@ class Error extends React.Component {
     const title = this.props.statusCode === 404 ? this.context.getMessage('error', 'codes', '404') : this.context.getMessage('error', 'defaultErrorMessage')
 
     return (
-        <>
-          <CustomHead title={title} />
-          <Main>  
+      <>
+        <CustomHead title={title} />
+        <Main>
           <div className="error-page flex flex--justify-start">
             <style jsx global>{`
               .error-page {
@@ -49,15 +49,20 @@ class Error extends React.Component {
               }
             `}
             </style>
-              <h1 className="error-page__status-code">{this.props.statusCode}</h1>
-              <h2 className="error-page__message">{title}</h2>
-              
-              <div className="error-page__citation" dangerouslySetInnerHTML={createMarkup(this.context.getMessage('error', 'citation'))} />
+            <h1 className="error-page__status-code">{this.props.statusCode}</h1>
+            <h2 className="error-page__message">{title}</h2>
+
+            <div className="error-page__citation" dangerouslySetInnerHTML={createMarkup(this.context.getMessage('error', 'citation'))} />
           </div>
         </Main>
-        </>
+      </>
     )
   }
+}
+
+Error.propTypes = {
+  // eslint-disable-next-line react/no-deprecated
+  statusCode: React.PropTypes.number
 }
 
 export default Error

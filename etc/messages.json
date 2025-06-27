@@ -4,7 +4,7 @@
       "defaultTitle": "Carlos Henrique Carvalho de Santana",
       "titleSuffix": "- Carlos Henrique Carvalho de Santana",
       "seoTitle": "Conheça um pouco mais sobre mim.",
-      "seoDescription": "Saiba mais sobre minhas habilidades, palestras e projetos que atuei.",
+      "seoDescription": "Saiba mais sobre minhas habilidades e projetos que atuei.",
       "seoAltImageTitle": "Foto de Carlos Henrique Carvalho de Santana"
     },
     "toggleTheme": {
@@ -27,11 +27,6 @@
         "url": "/engenheiro-de-software"
       },
       {
-        "name": "talks",
-        "description": "Palestras",
-        "url": "/palestras"
-      },
-      {
         "name": "skills",
         "description": "Habilidades",
         "url": "/habilidades"
@@ -43,16 +38,18 @@
       }
     ],
     "footer": {
-      "description": "Este site foi feito com <a href=\"https://nextjs.org/\" rel=\"noopener\" target=\"_blank\">Next.js</a>."
+      "description": "Quando não me sentir mais útil, quando sentir que estou pensando só em mim mesmo, não tenho mais o direito de estar vivo. É assim que penso. <br /><br />(CARNEIRO, Enéas)"
     },
     "home": {
-      "welcome": "Olá!",
+      "welcome": "Olá.",
       "subdescription": "Meu nome é Carlos Henrique.",
       "shortDescription": "<strong>Sou engenheiro de software, instrutor e facilitador.</strong>",
       "description": [
-        "Pós-graduado em Gestão em Tecnologia da Informação, escrevi um  <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" target=\"_blank\">artigo</a>. Como engenheiro de software, alguns de meus trabalhos podem ser vistos <a href=\"/engenheiro-de-software\">aqui</a> ou no <a href=\"https://github.com/carlohcs\" target=\"_blank\">GitHub</a>.",
-        "Ultimamente tenho me aventurado a <a href=\"https://medium.com/@carlohcs\" target=\"_blank\">escrever</a>, <a href=\"/palestras\">palestrar</a> e a <a href=\"https://www.youtube.com/user/carlohcs\">tocar guitarra</a>.",
-        "Acredito que todos devem ter uma <a href=\"https://missaopessoal.com.br\" target=\"_blank\">missão pessoal</a>."
+        "Pós-graduado em Arquitetura de Software, <a href=\"https://github.com/ALFAC-Org\" target=\"_blank\">fiz um grande projeto com meu grupo</a>.",
+        "Pós-graduado em Gestão em Tecnologia da Informação, <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" target=\"_blank\">escrevi um artigo</a>.",
+        "Como engenheiro de software, alguns de meus trabalhos podem ser vistos <a href=\"/engenheiro-de-software\">aqui</a> ou no <a href=\"https://github.com/carlohcs\" target=\"_blank\">GitHub</a>.",
+        "Tenho me aventurado a <a href=\"https://medium.com/@carlohcs\" target=\"_blank\">escrever</a>, a <a href=\"https://www.youtube.com/user/carlohcs\" target=\"_blank\">tocar guitarra</a> e a <a href=\"https://www.strava.com/athletes/158753829\" target=\"_blank\">correr</a>.",
+        "Acredito que todos devam ter uma <a href=\"https://missaopessoal.com.br\" target=\"_blank\">missão pessoal</a>."
       ],
       "connect": "Conecte-se:",
       "networks": {
@@ -133,49 +130,6 @@
           "cover": "ursoland.png"
         }
       ]
-    },
-    "talks": {
-      "title": "Palestras",
-      "titleDescription": "Já falei um pouco, mas ainda quero muito mais.",
-      "talks": {
-        "years": [
-          {
-            "year": "2019",
-            "talks": [
-              {
-                "title": "Fronteiras da regulação comercial - Desafios de governança e compliance para os anos 2020 (cancelado)",
-                "link": ""
-              }
-            ]
-          },
-          {
-            "year": "2018",
-            "talks": [
-              {
-                "title": "\"Tira a mão da minha propriedade!\": explorando comportamento de times e como eles geram resultados. - UniUOL - UOL",
-                "link": ""
-              }
-            ]
-          },
-          {
-            "year": "2017",
-            "talks": [
-              {
-                "title": "HTML 5 e suas mágicas: API`s que você provavelmente não sabia que existiam (adaptação da apresentação do Zeno Rocha) - Reunião dos Designers Todos - UOL",
-                "link": ""
-              },
-              {
-                "title": "Resumo JS Experience 2017 - Reunião dos Fronts - UOL",
-                "link": ""
-              }
-            ]
-          }
-        ]
-      },
-      "sitePresentations": {
-        "description": "Outras apresentações podem ser vistas no ",
-        "link": "https://www.slideshare.net/CarlosHenriqueCarvalho"
-      }
     },
     "skills": {
       "title": "Habilidades",
@@ -366,11 +320,6 @@
         "url": "/en/software-engineer"
       },
       {
-        "name": "talks",
-        "description": "Talks",
-        "url": "/en/talks"
-      },
-      {
         "name": "skills",
         "description": "Skills",
         "url": "/en/skills"
@@ -382,16 +331,18 @@
       }
     ],
     "footer": {
-      "description": "This site was made with <a href=\"https://nextjs.org/\" rel=\"noopener\" target=\"_blank\">Next.js</a>."
+      "description": "When I no longer feel useful, when I feel that I am thinking only of myself, I no longer have the right to be alive. That is how I think. <br /><br />(CARNEIRO, Enéas)."
     },
     "home": {
-      "welcome": "Hello!",
+      "welcome": "Hello.",
       "subdescription": "My name is Carlos Henrique.",
-      "shortDescription": "<strong>I'm a software engineer, instructor and facilitator.</strong>",
+      "shortDescription": "<strong>I am a software engineer, instructor and facilitator.</strong>",
       "description": [
-        "Postgraduate in Information Technology Management, I wrote an <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" rel=\"noopener\" target=\"_blank\">article</a>. As a software engineer, some of my work can be seen <a href=\"/engenheiro-de-software\">here</a> or on <a href=\"https://github.com/carlohcs\" rel=\"noopener\" target=\"_blank\">GitHub</a>.",
-        "Lately I've been venturing to <a href=\"https://medium.com/@carlohcs\" rel=\"noopener\" target=\"_blank\">write</a>, <a href=\"/palestras\">to lecture</a> and <a href=\"https://www.youtube.com/user/carlohcs\">to play guitar</a>.",
-        "I believe everyone should have a <a href=\"https://missaopessoal.com.br\" rel=\"noopener\" target=\"_blank\">personal mission</a>."
+        "Postgraduate in Software Architecture, <a href=\"https://github.com/ALFAC-Org\" target=\"_blank\">I did a big project with my group</a>.",
+        "Postgraduate in Information Technology Management, <a href=\"https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing\" target=\"_blank\">I wrote an article</a>.",
+        "As a software engineer, some of my work can be seen <a href=\"/engenheiro-de-software\">here</a> or on <a href=\"https://github.com/carlohcs\" target=\"_blank\">GitHub</a>.",
+        "I have been venturing to <a href=\"https://medium.com/@carlohcs\" target=\"_blank\">write</a>, to <a href=\"https://www.youtube.com/user/carlohcs\" target=\"_blank\">play guitar</a> and to <a href=\"https://www.strava.com/athletes/158753829\" target=\"_blank\">run</a>.",
+        "I believe everyone should have a <a href=\"https://missaopessoal.com.br\" target=\"_blank\">personal mission</a>."
       ],
       "connect": "Connect:",
       "networks": {
@@ -472,49 +423,6 @@
           "cover": "ursoland.png"
         }
       ]
-    },
-    "talks": {
-      "title": "Talks",
-      "titleDescription": "I've said a little, but I still want a lot more.",
-      "talks": {
-        "years": [
-          {
-            "year": "2019",
-            "talks": [
-              {
-                "title": "Trade regulation boundaries - Governance and compliance challenges for the 2020s (canceled)",
-                "link": ""
-              }
-            ]
-          },
-          {
-            "year": "2018",
-            "talks": [
-              {
-                "title": "\"Take my property!\": Exploring team behavior and how they generate results. - UniUOL - UOL",
-                "link": ""
-              }
-            ]
-          },
-          {
-            "year": "2017",
-            "talks": [
-              {
-                "title": "HTML 5 and its magic: APIs you probably didn't know existed (adaptation of Zeno Rocha's presentation) - Designers All Meeting - UOL",
-                "link": ""
-              },
-              {
-                "title": "JS Experience 2017 Summary - Fronts Meeting - UOL",
-                "link": ""
-              }
-            ]
-          }
-        ]
-      },
-      "sitePresentations": {
-        "description": "Other presentations can be seen on the ",
-        "link": "https://www.slideshare.net/CarlosHenriqueCarvalho"
-      }
     },
     "skills": {
       "title": "Skills",

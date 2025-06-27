@@ -3,7 +3,7 @@ const TOGGLE_THEME_KEY = 'theme'
 const TOGGLE_LANG_KEY = 'lang'
 
 // if (process.env === 'test') {
-  // console.log('process', process.env)
+// console.log('process', process.env)
 //   if (typeof localStorage === 'undefined' || localStorage === null) {
 //     const LocalStorage = require('node-localstorage').LocalStorage;
 //     localStorage = new LocalStorage('./etc/scratch');
@@ -17,9 +17,13 @@ const storage = {
 
     try {
       finalData = JSON.parse(localStorage.getItem(STORAGE_KEY))
-    } catch (err) {}
-    
-    if(!finalData) {
+    } catch (_err) {
+      // Se não conseguir, inicializa o objeto
+      finalData = {}
+    }
+
+    if (!finalData) {
+    // Se não conseguir, inicializa o objeto
       finalData = {}
       finalData[key] = ''
     }
@@ -30,19 +34,19 @@ const storage = {
     let data = false
     try {
       data = JSON.parse(localStorage.getItem(STORAGE_KEY))
-    } catch (err) {
+    } catch (_err) {
       storage.setInitial(key)
 
       data = JSON.parse(localStorage.getItem(STORAGE_KEY))
     }
-    
+
     data[key] = value
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
   },
   /**
    * Retorna o objeto da chave definida
-   * 
+   *
    * @param  {String}
    * @return {Object}
    */
@@ -61,7 +65,7 @@ const storage = {
   },
 
   getAll: () => {
-    let data;
+    let data
 
     try {
       data = JSON.parse(localStorage.getItem(STORAGE_KEY))
@@ -83,7 +87,7 @@ const storage = {
   },
   saveLang: lang => {
     storage.set(TOGGLE_LANG_KEY, lang)
-  },
+  }
 }
 
 // TODO: adicionar nos testes unitários
@@ -94,13 +98,11 @@ const storage = {
 // const savedLang = storage.getLang()
 // console.log('lang should be pt: ', savedLang)
 
-
 // const theme = storage.getTheme()
 // console.log('theme should be empty', theme)
 // const saveTheme = storage.saveTheme('dark')
 // const savedTheme = storage.getTheme()
 // console.log('theme should be dark: ', savedTheme)
-
 
 // console.log('all values: ', storage.getAll())
 

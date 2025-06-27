@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import Router from 'next/router'
 import Head from 'next/head'
 import Header from '../components/Header'
@@ -7,6 +7,7 @@ import 'normalize.css'
 import AppContext from '../components/AppProvider'
 import GlobalStyle from '../components/GlobalStyle'
 import { DEFAULT_LANG, THEMES, DEFAULT_THEME } from '../components/helpers/constants'
+import PropTypes from 'prop-types'
 
 // https://nextjs.org/learn/basics/using-shared-components/the-layout-component
 
@@ -30,18 +31,18 @@ class Main extends Component {
     // beforeHistoryChange(url) - Fires just before changing the browser's history
     // hashChangeStart(url) - Fires when the hash will change but not the page
     // hashChangeComplete(url) - Fires when the hash has changed but not the page
-    Router.events.on('routeChangeComplete', url => {
+    Router.events.on('routeChangeComplete', _url => {
       // console.log('App is changing to: ', url)
       this.context.resetMenuBehavior()
     })
   }
-  
+
   componentDidMount() {
     const storage = require('../components/helpers/storage').default
     // const lang = require('../components/helpers/lang').default
     const savedTheme = storage.getTheme() // BUG: só está salvando um item por vez
     const savedLang = storage.getLang() // BUG: só está salvando um item por vez
-    const contextLang = this.context.getLang() 
+    const contextLang = this.context.getLang()
 
     // Se o usuário já possuía um tema salvo
     if (savedTheme && savedTheme !== '') {
@@ -49,11 +50,11 @@ class Main extends Component {
     } else {
       // Se ele possuir uma preferência de tema
       const userPreferedTheme = window
-          .getComputedStyle(document.documentElement)
-          .getPropertyValue('content')
-          .replace(/"/g, '')
+        .getComputedStyle(document.documentElement)
+        .getPropertyValue('content')
+        .replace(/"/g, '')
 
-      if(userPreferedTheme === THEMES.DARK) {
+      if (userPreferedTheme === THEMES.DARK) {
         // Então o tema do usuário é dark
         this.context.toggleTheme(THEMES.DARK)
       } else {
@@ -77,11 +78,11 @@ class Main extends Component {
 
   /**
    * Faz o handle para verificar se irá fechar o menu ou não
-   * 
-   * @param {HTMLEvent} evt 
+   *
+   * @param {HTMLEvent} evt
    */
   handleCloseMenu(evt) {
-    if(evt.target.getAttribute('data-close-menu')) {
+    if (evt.target.getAttribute('data-close-menu')) {
       this.context.resetMenuBehavior()
     }
   }
@@ -89,8 +90,8 @@ class Main extends Component {
   render() {
     const loadedConfigs = this.state.loadedConfigs
     const mainContent = !loadedConfigs ? '' : <div className="main-content" data-close-menu>
-        {this.props.children}
-      </div>
+      {this.props.children}
+    </div>
 
     return (
       <div className="app">
@@ -107,14 +108,14 @@ class Main extends Component {
           <meta property="og:url" content="https://carlohcs.me" />
           <meta property="og:title" content={this.context.getMessage('page', 'seoTitle')} />
           <meta property="twitter:title" content={this.context.getMessage('page', 'seoTitle')} />
-          <meta property="og:image" content="https://carlohcs.me/static/img/home/carlohcs-xs.png" />
+          <meta property="og:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
           <meta property="og:image:alt" content={this.context.getMessage('page', 'seoAltImageTitle')} />
           <meta property="og:locale" content="pt_BR" />
           <meta property="og:type" content="article" />
           <meta property="twitter:card" content="summary" />
           <meta property="twitter:site" content="@carlohcs" />
           <meta property="twitter:creator" content="@carlohcs"/>
-          <meta property="twitter:image" content="https://carlohcs.me/static/img/home/carlohcs-xs.png" />
+          <meta property="twitter:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
           <meta name="keywords" content="Carlos Henrique Carvalho de Santana, Carlos Henrique, Carlos, Henrique, Carvalho, Santana, portfólio, portfolio" />
           <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Carlos Henrique Carvalho de Santana" />
           <meta httpEquiv="Content-Language" content="pt-br, en" />
@@ -126,6 +127,10 @@ class Main extends Component {
       </div>
     )
   }
+}
+
+Main.propTypes = {
+  children: PropTypes.node
 }
 
 // https://stackoverflow.com/questions/49809884/access-react-context-outside-of-render-function?answertab=votes#tab-top

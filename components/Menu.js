@@ -3,23 +3,23 @@ import ActiveLink from './ActiveLink'
 import AppContext from '../components/AppProvider'
 
 class Menu extends Component {
-    static contextType = AppContext
+  static contextType = AppContext
 
-    render() {
-        const list = items =>
-            <ul className="nav__subnav">
-                {items.map((item, key) =>
-                    <li key={key}>
-                        <ActiveLink route={item.name} className='nav__subitem'>
-                            {item.description}
-                        </ActiveLink>
-                    </li>
-                )}
-            </ul>
+  render() {
+    const list = items =>
+      <ul className="nav__subnav">
+        {items.map((item, key) =>
+          <li key={key}>
+            <ActiveLink route={item.name} className='nav__subitem'>
+              {item.description}
+            </ActiveLink>
+          </li>
+        )}
+      </ul>
 
-        return (
-            <>
-                <style jsx global>{`
+    return (
+      <>
+        <style jsx global>{`
                 .nav {
                     position: absolute;
                     z-index: 10;
@@ -55,20 +55,20 @@ class Menu extends Component {
                     }
                 }
                 `}</style>
-                <ul className="nav">
-                    {this.context.getMessage('menu').map((item, key) =>
-                        <li key={key} className="nav__item">
-                            <ActiveLink route={item.url}>
-                                {item.description}
-                            </ActiveLink>
+        <ul className="nav">
+          {this.context.getMessage('menu').map((item, key) =>
+            <li key={key} className="nav__item">
+              <ActiveLink route={item.url}>
+                {item.description}
+              </ActiveLink>
 
-                            {item.items ? list(item.items) : ''}
-                        </li>
-                    )}
-                </ul>
-            </>
-        )
-    }
+              {item.items ? list(item.items) : ''}
+            </li>
+          )}
+        </ul>
+      </>
+    )
+  }
 }
 
 export default Menu

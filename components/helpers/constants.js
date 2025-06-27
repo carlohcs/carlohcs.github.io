@@ -1,11 +1,11 @@
 const LANGS = {
-    'PT-BR': 'pt-br',
-    'EN': 'en'
+  'PT-BR': 'pt-br',
+  'EN': 'en'
 }
 
 const THEMES = {
-    'LIGHT': 'light',
-    'DARK': 'dark'
+  'LIGHT': 'light',
+  'DARK': 'dark'
 }
 
 const DEFAULT_LANG = 'en' // o inglês vai ser a minha preferência atualmente

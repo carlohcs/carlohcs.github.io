@@ -6,29 +6,29 @@ const languagueActiveOptionClass = 'toggle-language__option--active'
 // Reacr Context: https://pt-br.reactjs.org/docs/context.html
 
 class Header extends Component {
-    static contextType = AppContext
+  static contextType = AppContext
 
-    render() {
-        return (
-            <header data-close-menu>
-                <div className="trigger-menu-button" role="menubar" tabIndex="1" title="Menu" onClick={() => this.context.toggleMenu()} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleMenu() : ''} />
-                <div className="trigger-menu-button__hover"></div>
-                <div className="header__actions">
-                    <div className="toggle-language" role="menu">
-                        <span role="menuitem" tabIndex="2" title="PT-BR" onClick={() => this.context.toggleLang(LANGS['PT-BR'])} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleLang(LANGS['PT-BR']) : ''} className={['toggle-language__option', this.context.getLang() === LANGS['PT-BR'] ? languagueActiveOptionClass : '' ].join(' ')} aria-label={this.context.getMessage('toggleLang', 'ptBrLangLabel')}>PT-BR</span>
-                        <span role="menuitem" tabIndex="3" title="EN" onClick={() => this.context.toggleLang(LANGS['EN'])} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleLang(LANGS['EN']) : ''} className={['toggle-language__option', this.context.getLang() === LANGS['EN'] ? languagueActiveOptionClass : '' ].join(' ')} aria-label={this.context.getMessage('toggleLang', 'enLangLabel')}>EN</span>
-                    </div>
+  render() {
+    return (
+      <header data-close-menu>
+        <div className="trigger-menu-button" role="menubar" tabIndex="1" title="Menu" onClick={() => this.context.toggleMenu()} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleMenu() : ''} />
+        <div className="trigger-menu-button__hover"></div>
+        <div className="header__actions">
+          <div className="toggle-language" role="menu">
+            <span role="menuitem" tabIndex="2" title="PT-BR" onClick={() => this.context.toggleLang(LANGS['PT-BR'])} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleLang(LANGS['PT-BR']) : ''} className={['toggle-language__option', this.context.getLang() === LANGS['PT-BR'] ? languagueActiveOptionClass : ''].join(' ')} aria-label={this.context.getMessage('toggleLang', 'ptBrLangLabel')}>PT-BR</span>
+            <span role="menuitem" tabIndex="3" title="EN" onClick={() => this.context.toggleLang(LANGS['EN'])} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleLang(LANGS['EN']) : ''} className={['toggle-language__option', this.context.getLang() === LANGS['EN'] ? languagueActiveOptionClass : ''].join(' ')} aria-label={this.context.getMessage('toggleLang', 'enLangLabel')}>EN</span>
+          </div>
 
-                    <div onClick={() => this.context.toogleBetweenThemes()}
-                    onKeyDown={(e) => e.key === 'Enter' ? this.context.toogleBetweenThemes() : ''}
-                    className={['toggle-theme', this.context.getTheme() === THEMES.DARK ? 'toggle-theme--light' : 'toggle-theme--dark'].join(' ')}
-                    aria-label={this.context.getMessage('toggleTheme', 'aria')}
-                    title={this.context.getMessage('toggleTheme', 'title')}
-                    role="menuitem" tabIndex="4">
-                        <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/adjust-solid.svg?include`) }} className="icon" />
-                    </div>
-                </div>
-                <style jsx global>{`
+          <div onClick={() => this.context.toogleBetweenThemes()}
+            onKeyDown={(e) => e.key === 'Enter' ? this.context.toogleBetweenThemes() : ''}
+            className={['toggle-theme', this.context.getTheme() === THEMES.DARK ? 'toggle-theme--light' : 'toggle-theme--dark'].join(' ')}
+            aria-label={this.context.getMessage('toggleTheme', 'aria')}
+            title={this.context.getMessage('toggleTheme', 'title')}
+            role="menuitem" tabIndex="4">
+            <div dangerouslySetInnerHTML={{ __html: require('../assets/img/icons/adjust-solid.svg?include') }} className="icon" />
+          </div>
+        </div>
+        <style jsx global>{`
                     header {
                         display: flex;
                         flex-direction: row;
@@ -40,7 +40,11 @@ class Header extends Component {
                         }
 
                         @media screen and (min-width: 1280px) {
-                            padding: 60px;
+                            padding: 40px 80px 0;
+                        }
+
+                        @media screen and (min-width: 1440px) {
+                            padding: 120px 120px 0;
                         }
 
                         div {
@@ -162,9 +166,9 @@ class Header extends Component {
                         }
                     }
             `}</style>
-            </header>
-        )
-    }
+      </header>
+    )
+  }
 }
 
 export default Header

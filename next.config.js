@@ -8,29 +8,29 @@ const optimizedImages = require('next-optimized-images')
 
 // https://github.com/cyrilwanner/next-compose-plugins
 const nextConfig = {
-    webpack: (config, options) => {
+  webpack: (config, _options) => {
 
-        // modify the `config` here
+    // modify the `config` here
 
-        return config;
-    },
+    return config
+  }
 }
 
 module.exports = withPlugins([
-    [optimizedImages, {
-        imagesName: '[name]-[hash].[ext]',
-        handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
-        optimizeImages: true,
-        svgo: {
+  [optimizedImages, {
+    imagesName: '[name]-[hash].[ext]',
+    handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
+    optimizeImages: true,
+    svgo: {
 
-        },
-        optipng: {
-            optimizationLevel: 3,
-        },
-    }],
-    [withCSS, {
-        plugins: {
-            'postcss-css-nested': {}
-        }
-    }]
+    },
+    optipng: {
+      optimizationLevel: 3
+    }
+  }],
+  [withCSS, {
+    plugins: {
+      'postcss-css-nested': {}
+    }
+  }]
 ], nextConfig)

@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 const TIMEOUT = 400
 
 class GlobalStyle extends Component {
-    render() {
-        return (
-            <style jsx global>{`
+  render() {
+    return (
+      <style jsx global>{`
           html, body, #__next, .app {
-            height: 100%;
+            /*height: 100%;*/
+            min-height: 100vh;
           }
 
           /* https://gist.github.com/oskarhane/615d28c6455081035d2ec83311fa3b2d#file-global-css */
@@ -318,13 +319,14 @@ class GlobalStyle extends Component {
             flex-flow: column;
             position:relative;
             width:100%;
-            min-height: calc(100vh - 50px);
+            min-height: calc(100vh - 120px);
+            justify-content: flex-start;
             z-index:20;
             visibility:visible;
             transition: all 0.6s ease-in;
             box-sizing: border-box;
             padding: 0 20px 20px;
-            justify-content: center;
+            /*justify-content: center;*/
             will-change: margin-left;
 
             @media screen and (min-width: 1024px) {
@@ -332,7 +334,11 @@ class GlobalStyle extends Component {
             }
 
             @media screen and (min-width: 1280px) {
-              padding: 60px;
+              padding: 80px;
+            }
+
+            @media screen and (min-width: 1440px) {
+              padding: 80px 120px;
             }
             
             > h1 {
@@ -343,9 +349,10 @@ class GlobalStyle extends Component {
             /* width:100%; Promove rolagem */
             /* transition: scale 0.6s ease-in, margin-left 0.6s ease-in, background-color 0.6s ease-in; */
 
-            @media screen and (min-width: 1280px) {
-              min-height: calc(100vh - 150px); /* Tamanho da tela - Header */
-            }
+             /* Tamanho da tela - Header */
+            /*@media screen and (min-width: 1280px) {
+              min-height: calc(100vh - 150px);
+            }*/
             
           }
 
@@ -604,8 +611,8 @@ class GlobalStyle extends Component {
           }
       }
         `}</style>
-        )
-    }
+    )
+  }
 }
 
 export default GlobalStyle

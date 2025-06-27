@@ -1,7 +1,6 @@
 const next = require('next')
 const routes = require('./routes')
 const app = next({ dev: process.env.NODE_ENV !== 'production' })
-const sslRedirect = require('heroku-ssl-redirect') // https://www.npmjs.com/package/heroku-ssl-redirect
 const routesHandler = routes.getRequestHandler(app)
 const express = require('express')
 const ENV = process.env.NODE_ENV
@@ -13,7 +12,7 @@ const BASE_URL = `https://${HOST}`
 // https://medium.com/letsboot/basic-redirect-with-expressjs-f5acedf0ba9b
 function handleRedirect(req, res, next) {
   let requestedUrl = req.originalUrl === '/' ? '' : req.originalUrl
-  
+
   if (ENV === 'production' && req.hostname !== HOST) {
     return res.redirect(301, `${BASE_URL}${requestedUrl}`)
   } else {
@@ -23,10 +22,9 @@ function handleRedirect(req, res, next) {
 
 app.prepare().then(() => {
   const server = express()
-  
+
   server
     .use(handleRedirect) // Redireciona se o site não for 'carlohcs.me'
-    .use(sslRedirect(['production'], 301)) // Habilita redirecionamento SSL
-    .use(routesHandler) // Habilita rotas "/en/talks"
+    .use(routesHandler) // Habilita rotas "/en/software-engineer"
     .listen(process.env.PORT || 3000)
 })

@@ -1,4 +1,5 @@
 import { withRouter } from 'next/router'
+import PropTypes from 'prop-types'
 import routes from '../routes'
 
 // typically you want to use `next/link` for this usecase
@@ -11,8 +12,8 @@ import routes from '../routes'
 function findRoute(route) {
   let routeObject = {}
 
-  routes.routes.forEach(currentRoute => {
-    if(route === currentRoute.pattern) {
+  routes.routes.forEach((currentRoute) => {
+    if (route === currentRoute.pattern) {
       routeObject = currentRoute
     }
   })
@@ -24,25 +25,26 @@ const ActiveLink = ({ children, router, route, className }) => {
   const activeClass = 'nav__item__link--active'
   const currentPath = router.pathname
   const findCurrentRoute = findRoute(route).page
-  let active = currentPath === route || findCurrentRoute === currentPath ? activeClass : ''
+  let active =
+    currentPath === route || findCurrentRoute === currentPath ? activeClass : ''
   let findEnPage = {}
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     e.preventDefault()
     let finalRoute = false
 
-    if(route === '#') {
-        return
+    if (route === '#') {
+      return
     }
 
-    if(route === '/') {
+    if (route === '/') {
       finalRoute = '/'
     } else {
       // Procurando rotas inglês
       findEnPage = findRoute(route)
 
       // A rota está em pt
-      if(findEnPage.page) {
+      if (findEnPage.page) {
         finalRoute = findEnPage.page
       } else {
         finalRoute = route
@@ -53,10 +55,22 @@ const ActiveLink = ({ children, router, route, className }) => {
   }
 
   return (
-      <a href={route} data-page={findCurrentRoute} onClick={handleClick} className={[className, active].join(' ')}>
-        {children}
-      </a>
+    <a
+      href={route}
+      data-page={findCurrentRoute}
+      onClick={handleClick}
+      className={[className, active].join(' ')}
+    >
+      {children}
+    </a>
   )
+}
+
+ActiveLink.propTypes = {
+  children: PropTypes.node.isRequired,
+  router: PropTypes.object.isRequired,
+  route: PropTypes.string.isRequired,
+  className: PropTypes.string
 }
 
 export default withRouter(ActiveLink)
