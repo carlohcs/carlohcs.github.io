@@ -25,6 +25,7 @@ app.prepare().then(() => {
 
   server
     .use(handleRedirect) // Redireciona se o site não for 'carlohcs.me'
+    .use('/static', express.static('static')) // Serve arquivos estáticos da pasta 'static'
     .use(routesHandler) // Habilita rotas "/en/software-engineer"
     .listen(process.env.PORT || 3000)
 })

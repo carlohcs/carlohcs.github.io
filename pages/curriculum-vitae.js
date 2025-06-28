@@ -59,8 +59,16 @@ class CurriculumVitae extends Component {
             </div>
           </section>
           <style jsx global>{`
-                    `}
-          </style>
+            .resume {
+              p {
+                & > strong {
+                  &:before {
+                    content: '- ';
+                  }
+                }
+              }
+            }
+          `}</style>
         </Main>
       </>
     )

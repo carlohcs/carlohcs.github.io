@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' node server.js",
     "build": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next build",
-    "export": "next export -o docs/",
+    "export": "next export -o docs/ && touch docs/.nojekyll && touch docs/CNAME && echo 'carlohcs.me' > docs/CNAME",
     "start": "cross-env NODE_ENV=production node server.js",
-    "deploy:github": "npm run build && npm run export && touch docs/.nojekyll && git add docs/ && git commit -m \"Deploy docs to Github\" && git push origin main",
+    "deploy:github": "npm run build && npm run export && git add docs/ && git commit -m \"Deploy docs to Github\" && git push origin main",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"

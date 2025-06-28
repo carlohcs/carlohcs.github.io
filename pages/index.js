@@ -43,24 +43,25 @@ class Index extends Component {
 
                         &__right {
                             filter: saturate(.9);
+                            display: none;
+                            position: absolute;
+                            z-index: -1;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            width: 100%;
+                            height: 100%;
 
-                            @media (min-width: 1024px) and (min-height: 768px) {
-                                display: block;
-                                background: url(../static/img/home/carlohcs-lg.png) bottom right no-repeat;
+                            /*@media (min-width: 1024px) and (min-height: 768px) {    
                                 background-size: contain;
-                                position: absolute;
-                                z-index: -1;
-                                top: 0;
-                                right: 0;
-                                bottom: 0;
-                                width: 100%;
-                                height: 100%;
-                            }
+                            }*/
 
                             @media (min-width: 1280px) {
+                                display: block;
+                                background: url(../static/img/home/carlohcs-lg.png) bottom right no-repeat;
                                 width: 50%;
                                 background-position: bottom left;
-                                background-size: 800px;
+                                background-size: 840px;
                             }
                         }
 
@@ -92,7 +93,7 @@ class Index extends Component {
                         }
                         &__welcome-description {
                             &__short-description {
-                                font-size: 14px;
+                                /*font-size: 14px;*/
                                 line-height: 1.3;
                                 margin-top: 0 !important;
                             }

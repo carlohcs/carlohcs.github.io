@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import storage from './helpers/storage'
-import messages from '../etc/messages'
+import { messages } from '../etc/messages'
 import { LANGS, THEMES, DEFAULT_LANG, DEFAULT_THEME } from '../components/helpers/constants'
 
 // Sem precisar de Redux:
@@ -169,7 +169,6 @@ class AppProvider extends Component {
   }
 
   render() {
-    console.log('AppProvider render', this.props.children)
     return <AppContext.Provider
       value={{
         lang: this.state.lang,

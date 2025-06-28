@@ -1,6 +1,6 @@
 import { Component } from 'react'
 
-const TIMEOUT = 400
+const TIMEOUT = 200
 
 class GlobalStyle extends Component {
   render() {
@@ -47,6 +47,7 @@ class GlobalStyle extends Component {
             font-family: 'Rubik', sans-serif;
             font-weight: 300;
             line-height: 1.5;
+            font-size: 1.125em;
 
             /* Tema dark */
             &.dark-ui {
@@ -223,7 +224,8 @@ class GlobalStyle extends Component {
               display: inline-block;
 
               @media (min-width: 1200px) {
-                max-width: 700px;
+                /*max-width: 700px;*/
+                max-width: 800px;
               }
             }
 
@@ -444,7 +446,8 @@ class GlobalStyle extends Component {
       .dark-ui {
           .project {
               &__cover {
-                  box-shadow: none;
+                  /*box-shadow: none;*/
+                  box-shadow: 5px 10px 30px 0px rgba(255,255,255,0.2) !important;
               }
           }
       }
@@ -590,6 +593,12 @@ class GlobalStyle extends Component {
                       }
                   }
               }
+          }
+
+          .project__video {
+            width: 100%;
+            max-width: 100%;
+            cursor: pointer;
           }
 
           &:last-child {
