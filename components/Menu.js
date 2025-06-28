@@ -23,7 +23,7 @@ class Menu extends Component {
                 .nav {
                     position: absolute;
                     z-index: 10;
-                    margin: 20px 0 20px 20px;
+                    margin: 0 0 20px 40px;
                     padding: 0;
                     overflow:hidden;
                     height: 100%;

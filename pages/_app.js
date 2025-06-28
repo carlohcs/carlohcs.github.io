@@ -1,13 +1,7 @@
 import App from 'next/app'
 import Router from 'next/router'
 import { AppProvider } from '../components/AppProvider'
-import { PageTransition } from 'next-page-transitions'
 import withGA from 'next-ga'
-
-// import { useRouter } from 'next/router'
-//  key={router.route}
-
-const TIMEOUT = 400
 
 // https://github.com/zeit/next.js/blob/canary/examples/with-next-page-transitions/pages/_app.js
 // https://stackoverflow.com/questions/53857063/changing-state-on-route-change-next-js?answertab=active#tab-top
@@ -39,27 +33,14 @@ class MyApp extends App {
     return { pageProps }
   }
 
-  // loadingComponent={<Loader />}
-  /* transition: opacity ${TIMEOUT}ms, transform ${TIMEOUT}ms; */
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, router } = this.props
 
     return (
       <>
-        <PageTransition
-          timeout={TIMEOUT}
-          classNames='page-transition'
-          loadingDelay={500}
-          loadingTimeout={{
-            enter: TIMEOUT,
-            exit: 0
-          }}
-          loadingClassNames='loading-indicator'
-        >
-          <AppProvider>
-            <Component {...pageProps} />
-          </AppProvider>
-        </PageTransition>
+        <AppProvider key={router.route}>
+          <Component {...pageProps} key={router.route} />
+        </AppProvider>
       </>
     )
   }

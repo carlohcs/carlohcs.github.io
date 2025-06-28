@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import Router from 'next/router'
+import Router, { withRouter } from 'next/router'
 import Head from 'next/head'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
@@ -8,6 +8,10 @@ import AppContext from '../components/AppProvider'
 import GlobalStyle from '../components/GlobalStyle'
 import { DEFAULT_LANG, THEMES, DEFAULT_THEME } from '../components/helpers/constants'
 import PropTypes from 'prop-types'
+import storage from '../components/helpers/storage'
+import { Introduction } from '../components/page/Introduction'
+import { findRoute } from '../components/helpers/find-route'
+import CustomHead from '../components/CustomHead'
 
 // https://nextjs.org/learn/basics/using-shared-components/the-layout-component
 
@@ -22,24 +26,37 @@ class Main extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { loadedConfigs: false }
+    this.state = { loadedConfigs: false, translationKey: 'home', isTransitioning: false }
 
-    // https://github.com/zeit/next.js/#router-events
-    // routeChangeStart(url) - Fires when a route starts to change
-    // routeChangeComplete(url) - Fires when a route changed completely
-    // routeChangeError(err, url) - Fires when there's an error when changing routes, or a route load is cancelled
-    // beforeHistoryChange(url) - Fires just before changing the browser's history
-    // hashChangeStart(url) - Fires when the hash will change but not the page
-    // hashChangeComplete(url) - Fires when the hash has changed but not the page
-    Router.events.on('routeChangeComplete', _url => {
-      // console.log('App is changing to: ', url)
-      this.context.resetMenuBehavior()
-    })
+    this.handleRouteChangeStart = this.handleRouteChangeStart.bind(this)
+    this.handleRouteChangeComplete = this.handleRouteChangeComplete.bind(this)
+    this.handleRouteChangeError = this.handleRouteChangeError.bind(this)
+    this.handleCloseMenu = this.handleCloseMenu.bind(this)
+  }
+
+  handleRouteChangeStart = (_url) => {
+    this.setState({ isTransitioning: true })
+  }
+
+  handleRouteChangeComplete = (_url) => {
+    this.context.resetMenuBehavior()
+    setTimeout(() => {
+      this.setState({ isTransitioning: false })
+    }, 100)
+  }
+
+  handleRouteChangeError = (_url) => {
+    this.setState({ isTransitioning: false })
   }
 
   componentDidMount() {
-    const storage = require('../components/helpers/storage').default
-    // const lang = require('../components/helpers/lang').default
+    const { router } = this.props
+
+    // Adicionar event listeners
+    Router.events.on('routeChangeStart', this.handleRouteChangeStart)
+    Router.events.on('routeChangeComplete', this.handleRouteChangeComplete)
+    Router.events.on('routeChangeError', this.handleRouteChangeError)
+
     const savedTheme = storage.getTheme() // BUG: só está salvando um item por vez
     const savedLang = storage.getLang() // BUG: só está salvando um item por vez
     const contextLang = this.context.getLang()
@@ -71,9 +88,19 @@ class Main extends Component {
       this.context.toggleLang(DEFAULT_LANG)
     }
 
-    document.body.addEventListener('click', this.handleCloseMenu.bind(this))
+    document.body.addEventListener('click', this.handleCloseMenu)
 
-    this.setState({ loadedConfigs: true })
+    const translationKey = findRoute(router.route).name
+
+    this.setState({ loadedConfigs: true, translationKey })
+  }
+
+  componentWillUnmount() {
+    document.body.removeEventListener('click', this.handleCloseMenu)
+
+    Router.events.off('routeChangeStart', this.handleRouteChangeStart)
+    Router.events.off('routeChangeComplete', this.handleRouteChangeComplete)
+    Router.events.off('routeChangeError', this.handleRouteChangeError)
   }
 
   /**
@@ -89,7 +116,10 @@ class Main extends Component {
 
   render() {
     const loadedConfigs = this.state.loadedConfigs
-    const mainContent = !loadedConfigs ? '' : <div className="main-content" data-close-menu>
+    const isTransitioning = this.state.isTransitioning
+    const pageClasses = `page-component ${isTransitioning ? 'page-exit-active' : 'page-enter-active'}`
+
+    const mainContent = !loadedConfigs && !isTransitioning ? '' : <div className={pageClasses} data-close-menu>
       {this.props.children}
     </div>
 
@@ -108,21 +138,57 @@ class Main extends Component {
           <meta property="og:url" content="https://carlohcs.me" />
           <meta property="og:title" content={this.context.getMessage('page', 'seoTitle')} />
           <meta property="twitter:title" content={this.context.getMessage('page', 'seoTitle')} />
-          <meta property="og:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
+          <meta property="og:image" content="/static/img/home/carlohcs-xs-2.jpg" />
           <meta property="og:image:alt" content={this.context.getMessage('page', 'seoAltImageTitle')} />
           <meta property="og:locale" content="pt_BR" />
           <meta property="og:type" content="article" />
           <meta property="twitter:card" content="summary" />
           <meta property="twitter:site" content="@carlohcs" />
           <meta property="twitter:creator" content="@carlohcs"/>
-          <meta property="twitter:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
+          <meta property="twitter:image" content="/static/img/home/carlohcs-xs-2.jpg" />
           <meta name="keywords" content="Carlos Henrique Carvalho de Santana, Carlos Henrique, Carlos, Henrique, Carvalho, Santana, portfólio, portfolio" />
           <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Carlos Henrique Carvalho de Santana" />
           <meta httpEquiv="Content-Language" content="pt-br, en" />
+
+          {/* FAVICON */}
+          {/* https://realfavicongenerator.net/your-favicon-is-ready */}
+          <link rel="icon" href="/static/img/favicon/favicon.ico" sizes="any" />
+          <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
+          <link rel="icon" type="image/png" sizes="96x96" href="/static/img/favicon/favicon-96x96.png" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+
+          {/* PWA Icons */}
+          <link rel="icon" type="image/png" sizes="192x192" href="/static/img/favicon/web-app-manifest-192x192.png" />
+          <link rel="icon" type="image/png" sizes="512x512" href="/static/img/favicon/web-app-manifest-512x512.png" />
+
+          <meta name="apple-mobile-web-app-title" content="Carlohcs" />
+          <meta name="theme-color" content="#000000" />
+
+          <link rel="manifest" href="/static/manifest.json" />
+
+          {/* Preload de imagens críticas - baixa automaticamente */}
+          <link rel="preload" as="image" href="/static/img/home/carlohcs-lg.png" />
+          <link rel="preload" as="image" href="/static/img/home/carlohcs-xs-2.jpg" />
+
+          {/* Prefetch para imagens de outras páginas - quando o navegador estiver livre */}
+          <link rel="prefetch" as="video" href="/static/video/godaddy.webm" />
+          <link rel="prefetch" as="image" href="/static/img/projects/godaddy.png" />
+          <link rel="prefetch" as="image" href="/static/img/skills/instructor.png" />
+          <link rel="prefetch" as="image" href="/static/img/skills/productowner.png" />
+          <link rel="prefetch" as="image" href="/static/img/skills/facilitator.png" />
+
           <link href="https://fonts.googleapis.com/css?family=Rubik:300,500&display=swap" rel="stylesheet" />
         </Head>
         <Header />
         <Menu />
+        {isTransitioning && <div className="loading-indicator" />}
+        { this.state.translationKey &&
+          <>
+            <CustomHead title={this.context.getMessage(this.state.translationKey, 'title')} />
+            {this.state.translationKey !== 'home' && <Introduction translationKey={this.state.translationKey} />}
+          </>
+        }
+
         { mainContent }
       </div>
     )
@@ -130,9 +196,10 @@ class Main extends Component {
 }
 
 Main.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  router: PropTypes.object
 }
 
 // https://stackoverflow.com/questions/49809884/access-react-context-outside-of-render-function?answertab=votes#tab-top
 // https://reactjs.org/docs/hooks-reference.html#usecontext
-export default Main
+export default withRouter(Main)

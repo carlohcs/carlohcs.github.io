@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import Main from '../layouts/main'
 import AppContext from '../components/AppProvider'
-import CustomHead from '../components/CustomHead'
 
-class CurriculumVitae extends Component {
+export default class Resume extends Component {
   static contextType = AppContext
 
   render() {
@@ -34,15 +33,9 @@ class CurriculumVitae extends Component {
 
     return (
       <>
-        <CustomHead title={this.context.getMessage('resume', 'title')} />
         <Main>
           <section className="resume container">
             <div className="content">
-              <div className="page__introduction">
-                <h1 className="page__title">{this.context.getMessage('resume', 'title')}</h1>
-                <h2 className="page__title-description">{this.context.getMessage('resume', 'titleDescription')}</h2>
-              </div>
-
               <div className="page__description">
                 {
                   this.context.getMessage('resume', 'experiences').map((experience, key) => {
@@ -74,5 +67,3 @@ class CurriculumVitae extends Component {
     )
   }
 }
-
-export default CurriculumVitae

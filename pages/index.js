@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Main from '../layouts/main'
 import AppContext from '../components/AppProvider'
-import CustomHead from '../components/CustomHead'
 
 const socialNetworks = [
   { iconName: 'github-brands.svg', className: 'github', url: 'https://github.com/carlohcs', title: 'Github' },
@@ -18,7 +17,7 @@ const socialNetworks = [
 
 // https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml
 
-class Index extends Component {
+export default class Index extends Component {
   static contextType = AppContext
 
   render() {
@@ -27,7 +26,6 @@ class Index extends Component {
 
     return (
       <>
-        <CustomHead title="Home" />
         <Main>
           <style jsx global>{`
                     .home {
@@ -73,7 +71,15 @@ class Index extends Component {
                                 margin: 20px auto;
                                 box-shadow: #1dc779 0 0px 10px 0;
 
-                                @media (min-width: 992px) {
+                                @media (min-width: 768px) {
+                                  width: 200px;
+                                }
+
+                                @media (min-width: 1024px) {
+                                  width: 280px;
+                                }
+
+                                @media (min-width: 1279px) {
                                     display: none;
                                 }
                             }
@@ -194,5 +200,3 @@ class Index extends Component {
     )
   }
 }
-
-export default Index

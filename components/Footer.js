@@ -1,9 +1,9 @@
 import { Component } from 'react'
 import { AppConsumer } from '../components/AppProvider'
+import { createMarkup } from './helpers/create-markup'
 
 class Footer extends Component {
   render() {
-    const createMarkup = value => ({ __html: value })
     return (
       <AppConsumer>
         {({ getMessage }) => (
@@ -12,7 +12,7 @@ class Footer extends Component {
                             footer {
                                 padding: 20px 0;
                                 line-height: 1.3;
-                                text-align: center;
+                                /*text-align: center;*/
 
                                 small {
                                     font-size: 10px;

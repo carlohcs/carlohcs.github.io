@@ -9,7 +9,7 @@ class CustomHead extends Component {
 
   render() {
     const title = this.props.title
-    const finalTitle = title === 'Home' ? this.context.getMessage('page', 'defaultTitle') : `${title} ${this.context.getMessage('page', 'titleSuffix')}`
+    const finalTitle = title  ? `${title} ${this.context.getMessage('page', 'titleSuffix')}` : this.context.getMessage('page', 'defaultTitle')
 
     return (
       <Head>
@@ -20,7 +20,7 @@ class CustomHead extends Component {
 }
 
 CustomHead.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string
 }
 
 export default CustomHead

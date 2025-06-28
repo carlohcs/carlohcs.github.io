@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AppContext, { LANGS, THEMES } from '../components/AppProvider'
+import Link from 'next/link'
 
 const languagueActiveOptionClass = 'toggle-language__option--active'
 
@@ -11,7 +12,15 @@ class Header extends Component {
   render() {
     return (
       <header data-close-menu>
-        <div className="trigger-menu-button" role="menubar" tabIndex="1" title="Menu" onClick={() => this.context.toggleMenu()} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleMenu() : ''} />
+        <div className='left-header'>
+          <div className="trigger-menu-button" role="menubar" tabIndex="1" title="Menu" onClick={() => this.context.toggleMenu()} onKeyDown={(e) => e.key === 'Enter' ? this.context.toggleMenu() : ''} />
+          <div className='left-header__name'>
+            <Link href="/" passHref>
+              <strong>CARLOHCS.ME</strong>
+            </Link>
+          </div>
+        </div>
+
         <div className="trigger-menu-button__hover"></div>
         <div className="header__actions">
           <div className="toggle-language" role="menu">
@@ -33,18 +42,14 @@ class Header extends Component {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                        padding: 20px;
-
-                        @media screen and (min-width: 1024px) {
-                            padding: 40px 40px 0;
-                        }
+                        padding: 40px;
 
                         @media screen and (min-width: 1280px) {
-                            padding: 40px 80px 0;
+                            padding: 40px 80px 80px;
                         }
 
                         @media screen and (min-width: 1440px) {
-                            padding: 120px 120px 0;
+                            padding: 80px 120px 80px;
                         }
 
                         div {
@@ -100,6 +105,22 @@ class Header extends Component {
                         &:active,
                         &:focus {
                             opacity: 1;
+                        }
+                    }
+
+                    .left-header {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 20px;
+
+                        &__name {
+                            display: none;
+
+                            @media screen and (min-width: 768px) {
+                                display: block;
+                                cursor: pointer;
+                            }
                         }
                     }
 
@@ -163,6 +184,10 @@ class Header extends Component {
                                 margin-top: -26px;
                                 margin-left: -25px;
                             }
+                        }
+
+                        & > div {
+                            margin-left: 60px;
                         }
                     }
             `}</style>

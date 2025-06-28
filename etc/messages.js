@@ -1,8 +1,8 @@
 export const messages = {
   'pt-br': {
     'page': {
-      'defaultTitle': 'Carlos Henrique Carvalho de Santana',
-      'titleSuffix': '- Carlos Henrique Carvalho de Santana',
+      'defaultTitle': 'Carlos Henrique | carlohcs.me',
+      'titleSuffix': '| carlohcs.me',
       'seoTitle': 'Conheça um pouco mais sobre mim.',
       'seoDescription': 'Saiba mais sobre minhas habilidades e projetos que atuei.',
       'seoAltImageTitle': 'Foto de Carlos Henrique Carvalho de Santana'
@@ -24,23 +24,24 @@ export const messages = {
       {
         'name': 'softwareengineer',
         'description': 'Engenheiro de software',
-        'url': '/engenheiro-de-software'
+        'url': '/engineer'
       },
       {
         'name': 'skills',
         'description': 'Habilidades',
-        'url': '/habilidades'
+        'url': '/skills'
       },
       {
         'name': 'resume',
         'description': 'Currículum Vitae',
-        'url': '/curriculum-vitae'
+        'url': '/resume'
       }
     ],
     'footer': {
       'description': '"Quando não me sentir mais útil, quando sentir que estou pensando só em mim mesmo, não tenho mais o direito de estar vivo. É assim que penso."<br /><br />- Enéas Carneiro'
     },
     'home': {
+      'title': 'Carlos Henrique | carlohcs.me',
       'welcome': 'Olá.',
       'subdescription': 'Meu nome é Carlos Henrique.',
       'shortDescription': '<strong>Sou engenheiro de software, instrutor e facilitador.</strong>',
@@ -62,7 +63,7 @@ export const messages = {
         'mail': 'Me envie um e-mail'
       }
     },
-    'softwareEngineer': {
+    'engineer': {
       'title': 'Engenheiro de software',
       'titleDescription': 'Alguns projetos que trabalhei.',
       'description': 'Há mais de 14 anos, desenvolvo soluções de tecnologia. O mais importante que aprendi: tecnologias surgem o tempo todo e cabe a nós desenvolvedores pensarmos em como ela pode ser usada a favor dos usuários. Mais abaixo, você pode conferir alguns destes trabalhos.',
@@ -312,8 +313,8 @@ export const messages = {
   },
   'en': {
     'page': {
-      'defaultTitle': 'Carlos Henrique Carvalho de Santana',
-      'titleSuffix': '- Carlos Henrique Carvalho de Santana',
+      'defaultTitle': 'Carlos Henrique | carlohcs.me',
+      'titleSuffix': '| carlohcs.me',
       'seoTitle': 'Know a little more about me.',
       'seoDescription': 'Learn more about my skills, lectures and projects I worked.',
       'seoAltImageTitle': 'Picute of Carlos Henrique Carvalho de Santana'
@@ -330,28 +331,29 @@ export const messages = {
       {
         'name': 'home',
         'description': 'About',
-        'url': '/en/'
+        'url': '/'
       },
       {
         'name': 'softwareengineer',
         'description': 'Software Engineer',
-        'url': '/en/software-engineer'
+        'url': '/engineer'
       },
       {
         'name': 'skills',
         'description': 'Skills',
-        'url': '/en/skills'
+        'url': '/skills'
       },
       {
         'name': 'resume',
         'description': 'Resume',
-        'url': '/en/resume'
+        'url': '/resume'
       }
     ],
     'footer': {
       'description': '"When I no longer feel useful, when I feel that I am thinking only of myself, I no longer have the right to be alive. That is how I think."<br /><br />- Enéas Carneiro'
     },
     'home': {
+      'title': 'Carlos Henrique | carlohcs.me',
       'welcome': 'Hello.',
       'subdescription': 'My name is Carlos Henrique.',
       'shortDescription': '<strong>I am a software engineer, instructor and facilitator.</strong>',
@@ -373,7 +375,7 @@ export const messages = {
         'mail': 'Send me an email'
       }
     },
-    'softwareEngineer': {
+    'engineer': {
       'title': 'Software Engineer',
       'titleDescription': 'Some projects I worked on.',
       'description': 'For over 14 years, I have been developing technology solutions. The most important thing I learned: technologies come all the time and it\'s up to us developers to think about how it can be used on behalf of users. Below you can check out some of these works.',

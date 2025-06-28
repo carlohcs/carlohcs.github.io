@@ -1,28 +1,36 @@
-const routes = require('next-routes')()
+const nextRoutes = require('next-routes')
 
 const customRoutes = [
   {
     name: 'home',
-    pattern: '/en/',
-    page:  'index'
+    patterns: ['/en/', '/'],
+    page:  '/'
   },
   {
-    name: 'engenheiro',
-    pattern: '/en/software-engineer',
-    page:  'engenheiro-de-software'
+    name: 'engineer',
+    // patterns: ['/en/software-engineer', '/engenheiro-de-software'],
+    patterns: ['/engineer'],
+    page:  '/engineer'
   },
   {
-    name: 'habilidades',
-    pattern: '/en/skills',
-    page:  'habilidades'
+    name: 'skills',
+    // patterns: ['/en/skills', '/habilidades'],
+    patterns: ['/skills'],
+    page:  '/skills'
   },
   {
-    name: 'curriculo',
-    pattern: '/en/resume',
-    page:  'curriculum-vitae'
+    name: 'resume',
+    // patterns: ['/en/resume', '/curriculum-vitae'],
+    patterns: ['/resume'],
+    page:  '/resume'
   }
 ]
 
-customRoutes.map(route => routes.add(route))
+const routes = nextRoutes()
 
-module.exports = routes
+// customRoutes.forEach(route => routes.add(route))
+
+module.exports = {
+  routes,
+  customRoutes
+}

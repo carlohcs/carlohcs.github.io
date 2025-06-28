@@ -5,7 +5,7 @@ import CustomHead from '../components/CustomHead'
 import Video from '../components/video/video'
 
 // TODO: usar essa página como modelo para as outras -> criar um componente
-class EngenheiroDeSoftware extends Component {
+export default class Engineer extends Component {
   static contextType = AppContext
 
   render() {
@@ -37,23 +37,13 @@ class EngenheiroDeSoftware extends Component {
 
     return (
       <>
-        <CustomHead title={this.context.getMessage('softwareEngineer', 'title')} />
         <Main>
           <section className="software-engineer">
-            <div className="content">
-              <div className="software-engineer__introduction">
-                <h1 className="page__title">{this.context.getMessage('softwareEngineer', 'title')}</h1>
-                <h2 className="page__title-description">{this.context.getMessage('softwareEngineer', 'titleDescription')}</h2>
-
-                <p className="page__description">{this.context.getMessage('softwareEngineer', 'description')}</p>
-              </div>
-            </div>
-
             <div className="content container container--center">
               <div className="projects">
-                {renderProject(this.context.getMessage('softwareEngineer', 'mainProject'))}
+                {renderProject(this.context.getMessage('engineer', 'mainProject'))}
 
-                {this.context.getMessage('softwareEngineer', 'projects').map((project, key) =>
+                {this.context.getMessage('engineer', 'projects').map((project, key) =>
                   renderProject(project, key)
                 )}
               </div>
@@ -68,5 +58,3 @@ class EngenheiroDeSoftware extends Component {
     )
   }
 }
-
-export default EngenheiroDeSoftware

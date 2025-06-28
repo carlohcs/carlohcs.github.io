@@ -23,7 +23,7 @@ const Video = ({ videoName }) => {
   const videoFullName = `../../static/video/${videoName}`
 
   return (
-    <video className="project__video project__cover" ref={videoRef} loop muted playsInline onMouseOver={play} onClick={togglePlay} preload='auto'>
+    <video className="project__video project__cover" ref={videoRef} loop muted playsInline onMouseOver={play} onClick={togglePlay} onTouchStartCapture={play} preload='auto'>
       <source src={`${videoFullName}.webm`} type="video/webm" />
       <source src={`${videoFullName}.mp4`} type="video/mp4" />
         Your browser does not support the video tag.

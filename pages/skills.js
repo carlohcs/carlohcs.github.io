@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import Main from '../layouts/main'
 import AppContext from '../components/AppProvider'
-import CustomHead from '../components/CustomHead'
 
-class Skills extends Component {
+export default class Skills extends Component {
   static contextType = AppContext
 
   render() {
@@ -46,16 +45,9 @@ class Skills extends Component {
 
     return (
       <>
-        <CustomHead title={this.context.getMessage('skills', 'title')} />
         <Main>
-          <section className="resume container">
-            <div className="content">
-              <div className="page__introduction">
-                <h1 className="page__title">{this.context.getMessage('skills', 'title')}</h1>
-                <h2 className="page__title-description">{this.context.getMessage('skills', 'titleDescription')}</h2>
-                <p className="page__description">{this.context.getMessage('skills', 'description')}</p>
-              </div>
-
+          <section className="resume">
+            <div className="content container container--center">
               <div className="">
                 {this.context.getMessage('skills', 'items').map((project, key) =>
                   renderProject(project, key)
@@ -64,19 +56,6 @@ class Skills extends Component {
             </div>
           </section>
           <style jsx global>{`
-                        /*.page {
-                            &__content-item {
-                                margin: 80px 0;
-
-                                @media screen and (min-width: 1024px) {
-                                    margin: 100px 0;
-                                }
-
-                                @media screen and (min-width: 1280px) {
-                                    margin: 200px 0;
-                                }
-                            }
-                        }*/
                     `}
           </style>
         </Main>
@@ -84,5 +63,3 @@ class Skills extends Component {
     )
   }
 }
-
-export default Skills

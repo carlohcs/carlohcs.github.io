@@ -1,11 +1,11 @@
 const next = require('next')
-const routes = require('./routes')
-const app = next({ dev: process.env.NODE_ENV !== 'production' })
-const routesHandler = routes.getRequestHandler(app)
+const { routes } = require('./routes')
+const { makeConfig } = require('./config')
 const express = require('express')
-const ENV = process.env.NODE_ENV
-const HOST = 'carlohcs.me'
-const BASE_URL = `https://${HOST}`
+
+const envConfig = makeConfig()
+const app = next({ dev: envConfig.env !== 'production' })
+const routesHandler = routes.getRequestHandler(app)
 
 // https://github.com/fridays/next-routes#on-the-server
 
@@ -13,8 +13,8 @@ const BASE_URL = `https://${HOST}`
 function handleRedirect(req, res, next) {
   let requestedUrl = req.originalUrl === '/' ? '' : req.originalUrl
 
-  if (ENV === 'production' && req.hostname !== HOST) {
-    return res.redirect(301, `${BASE_URL}${requestedUrl}`)
+  if (envConfig.env === 'production' && req.hostname !== envConfig.host) {
+    return res.redirect(301, `${envConfig.baseUrl}${requestedUrl}`)
   } else {
     return next()
   }

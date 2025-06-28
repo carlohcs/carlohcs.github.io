@@ -1,31 +1,29 @@
 import { Component } from 'react'
 
-const TIMEOUT = 200
-
 class GlobalStyle extends Component {
   render() {
     return (
       <style jsx global>{`
           html, body, #__next, .app {
-            /*height: 100%;*/
             min-height: 100vh;
           }
 
           /* https://gist.github.com/oskarhane/615d28c6455081035d2ec83311fa3b2d#file-global-css */
           html {
             content: "";
+            overflow-x: hidden;
 
             &.overflow--hidden {
                 overflow: hidden;
 
                 body, .app {
                   overflow: hidden;
-
-                  @media (max-width: 1024px) {
-                    overflow: hidden;
-                  }
               }
             }
+          }
+
+          html, body {
+            scrollbar-gutter: stable; /* Evita o "jump" quando scrollbar aparece/desaparece */
           }
 
           @media (prefers-color-scheme: light) {
@@ -43,6 +41,13 @@ class GlobalStyle extends Component {
           body { 
             background: #fff;
             color: #1e1e1e;
+            /* Definir scroll behavior apenas após o load */
+            scroll-behavior: auto;
+            /*https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter*/
+            scrollbar-gutter: stable;
+
+            /* Evita o "jump" quando scrollbar aparece/desaparece */
+            overflow: hidden auto;
 
             font-family: 'Rubik', sans-serif;
             font-weight: 300;
@@ -80,15 +85,25 @@ class GlobalStyle extends Component {
               }
             }
 
+            /* Ativar smooth scroll apenas após carregamento */
+            &.loaded {
+              scroll-behavior: smooth;
+            }
+
             /* Menu aberto */
             &.menu-open {
               /* overflow-x: hidden; */ /* Pensar em um jeito melhor */
 
-              .main-content {
+              .page-component,
+              .page__introduction {
                 &:after {
                   z-index: 3;
                   content: "";
                   position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
                   width: 100%;
                   height: 100%;
                   display: block;
@@ -119,16 +134,13 @@ class GlobalStyle extends Component {
                 margin-left: 0;
               }
       
-              .main-content {
-                /* transform: scale(0.80) translateY(-5%); */
-                margin-left: 220px;
+              .page-component, 
+              .page__introduction {
+                /*margin-left: 260px;*/
+                transform: translateX(260px);
                 background-color: rgba(29, 199, 121, .12);
                 filter: blur(5px);
               }
-      
-              /*footer {
-                display: none;
-              }*/
             }
           }
 
@@ -201,24 +213,40 @@ class GlobalStyle extends Component {
             }*/
 
             @media (min-width:992px){
-              max-width:960px;
+              max-width: 960px;
             }
           
             @media (min-width:1200px){
-              max-width:1140px;
+              max-width: 1140px;
             }
 
             @media (min-width:1440px){
-              max-width:1348px;
+              max-width: 1348px;
             }
 
             @media (min-width:1680px){
-              max-width:1556px;
+              max-width: 1556px;
+            }
+
+            @media (min-width:1920px){
+              max-width: 1764px;
             }
           }
 
-
           .page {
+
+            &__introduction {
+              padding: 0 40px;
+
+              @media screen and (min-width: 1280px) {
+                padding: 0 80p;
+              }
+
+              @media screen and (min-width: 1440px) {
+                padding: 0 120px;
+              }
+            }
+
             &__description {
               max-width: 600px;
               display: inline-block;
@@ -230,12 +258,12 @@ class GlobalStyle extends Component {
             }
 
             &__item {
-                margin: 80px 0;
+                /*margin: 80px 0;*/
             }
           }
 
           .content {
-            text-align: center;
+            /*text-align: center;*/
             /*max-width: 750px;*/
 
             
@@ -315,47 +343,50 @@ class GlobalStyle extends Component {
             }
           }
 
-          .main-content {
+          .page-component {
             /* #1DC779; */
             display: flex;
             flex-flow: column;
-            position:relative;
             width:100%;
             min-height: calc(100vh - 120px);
             justify-content: flex-start;
-            z-index:20;
-            visibility:visible;
-            transition: all 0.6s ease-in;
+            visibility: visible;
             box-sizing: border-box;
-            padding: 0 20px 20px;
-            /*justify-content: center;*/
-            will-change: margin-left;
-
-            @media screen and (min-width: 1024px) {
-              padding: 40px;
-            }
+            padding: 0 40px 40px;
 
             @media screen and (min-width: 1280px) {
-              padding: 80px;
+              padding: 0 80px 80px 80px;
             }
 
             @media screen and (min-width: 1440px) {
-              padding: 80px 120px;
+              padding: 0 120px 120px 120px;
             }
             
             > h1 {
               margin-top: 0;
             }
+          }
 
-            /* height:100%; */
-            /* width:100%; Promove rolagem */
-            /* transition: scale 0.6s ease-in, margin-left 0.6s ease-in, background-color 0.6s ease-in; */
+          .page-component, 
+          .page__introduction {
+            position: relative; /* Necessário devido ao click fora do componente */
+            animation: fadeInUp 0.5s ease-out;
+            opacity: 1;
+            z-index: 20;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in, filter 0.6s ease-out;
+            will-change: opacity, transform, filter;
+          }
 
-             /* Tamanho da tela - Header */
-            /*@media screen and (min-width: 1280px) {
-              min-height: calc(100vh - 150px);
-            }*/
-            
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(100px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
           }
 
           /* https://github.com/zeit/next.js/issues/7945 */
@@ -381,38 +412,50 @@ class GlobalStyle extends Component {
             }
           }
 
-        /*.app {
-          overflow: hidden !important;
+        /* ==== TRANSIÇÃO DE PÁGINAS ==== */
+        /* Efeito de fade in quando a página carrega */
+        /*
+        .page-enter {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        .page-enter-active {
+          opacity: 1;
+          transform: translateY(0);
+          transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         }*/
 
-        /* ==== TRANSIÇÃO DE PÁGINAS ==== */
-        .page-transition-enter {
-          opacity: 0;
-          transform: translate3d(0, 20px, 0);
-        }
-        .page-transition-enter-active {
+        /* Efeito de fade out quando sai da página */
+        /*
+        .page-exit {
           opacity: 1;
-          transform: translate3d(0, 0, 0);
-          transition: opacity ${TIMEOUT}ms, transform ${TIMEOUT}ms;
-        }
-        .page-transition-exit {
-          opacity: 1;
-        }
-        .page-transition-exit-active {
-          opacity: 0;
-          transition: opacity ${TIMEOUT}ms;
-        }
-        .loading-indicator-appear,
-        .loading-indicator-enter {
-          opacity: 0;
-        }
-        .loading-indicator-appear-active,
-        .loading-indicator-enter-active {
-          opacity: 1;
-          transition: opacity ${TIMEOUT}ms;
+          transform: translateY(0);
         }
 
+        .page-exit-active {
+          opacity: 0;
+          transform: translateY(-20px);
+          transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }*/
 
+        /* Loading indicator */
+        .loading-indicator {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, #000, #28a745);
+          z-index: 9999;
+          animation: loading-slide 10s ease-in-out infinite;
+        }
+
+        @keyframes loading-slide {
+          0% { transform: translateX(-100%); }
+          50% { transform: translateX(0%); }
+          100% { transform: translateX(100%); }
+        }
 
         /* ==== PROJETOS ==== */
         .project:not(.project--main) {
@@ -459,9 +502,9 @@ class GlobalStyle extends Component {
               margin: 100px 0;
           }
 
-          @media screen and (min-width: 1280px) {
+          /*@media screen and (min-width: 1280px) {
               margin: 200px 0;
-          }
+          }*/
 
           &--no-shadow {
             .project__cover {
@@ -472,10 +515,6 @@ class GlobalStyle extends Component {
           &--reduced-margin {
             @media screen and (min-width: 1024px) {
               margin: 100px 0;
-            }
-
-            @media screen and (min-width: 1280px) {
-                margin: 100px 0;
             } 
           }
 
