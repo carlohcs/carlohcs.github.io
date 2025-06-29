@@ -106,7 +106,7 @@ const Main = withRouter(({ children, router }) => {
         <meta property="og:url" content="https://carlohcs.me" />
         <meta property="og:title" content={getMessage('page', 'seoTitle')} />
         <meta property="twitter:title" content={getMessage('page', 'seoTitle')} />
-        <meta property="og:image" content="/static/img/home/carlohcs-xs-2.jpg" />
+        <meta property="og:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
         <meta property="og:image:alt" content={getMessage('page', 'seoAltImageTitle')} />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:type" content="article" />
@@ -114,7 +114,7 @@ const Main = withRouter(({ children, router }) => {
         <meta property="twitter:site" content="@carlohcs" />
         <meta property="twitter:creator" content="@carlohcs"/>
         <meta property="twitter:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
-        <meta name="keywords" content="Carlos Henrique Carvalho de Santana, Carlos Henrique, Carlos, Henrique, Carvalho, Santana, portfólio, portfolio" />
+        <meta name="keywords" content="Carlos Henrique Carvalho de Santana, Carlos Henrique, Carlos, Henrique, Carvalho, Santana, portfólio, portfolio, resume, engineer, it, tech" />
         <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Carlos Henrique Carvalho de Santana" />
         <meta httpEquiv="Content-Language" content="pt-br, en" />
 
