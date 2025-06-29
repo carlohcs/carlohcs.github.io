@@ -95,57 +95,204 @@ const Main = withRouter(({ children, router }) => {
   return (
     <div className="app">
       <Head>
+        {/* ========================================= */}
+        {/* 🔴 PRIORIDADE CRÍTICA - Essencial       */}
+        {/* ========================================= */}
+
+        {/* Configurações básicas do navegador */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
-        <meta name="theme-color" content="#1e1e1e" />
-        <meta name="msapplication-navbutton-color" content="#1e1e1e"/>
-        <meta name="apple-mobile-web-app-status-bar-style" content="#1e1e1e" />
-        <meta name="author" content="Carlos Henrique Carvalho de Santana" />
+
+        {/* SEO fundamental - impacto direto no ranking */}
         <meta name="description" content={getMessage('page', 'seoDescription')} />
-        <meta property="og:description" content={getMessage('page', 'seoDescription')} />
-        <meta property="og:url" content="https://carlohcs.me" />
-        <meta property="og:title" content={getMessage('page', 'seoTitle')} />
-        <meta property="twitter:title" content={getMessage('page', 'seoTitle')} />
-        <meta property="og:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
-        <meta property="og:image:alt" content={getMessage('page', 'seoAltImageTitle')} />
-        <meta property="og:locale" content="pt_BR" />
-        <meta property="og:type" content="article" />
-        <meta property="twitter:card" content="summary" />
-        <meta property="twitter:site" content="@carlohcs" />
-        <meta property="twitter:creator" content="@carlohcs"/>
-        <meta property="twitter:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
-        <meta name="keywords" content="Carlos Henrique Carvalho de Santana, Carlos Henrique, Carlos, Henrique, Carvalho, Santana, portfólio, portfolio, resume, engineer, it, tech" />
-        <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Carlos Henrique Carvalho de Santana" />
+        <meta name="keywords" content="Carlos Henrique Carvalho de Santana, Carlos Henrique, Carlos, Henrique, Carvalho, Santana, portfólio, portfolio, software engineer, frontend developer, react, javascript" />
+        <meta name="author" content="Carlos Henrique Carvalho de Santana" />
+
+        {/* Controle de indexação - define como motores de busca veem o site */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+
+        {/* URL canônica - evita conteúdo duplicado (crucial para SEO) */}
+        <link rel="canonical" href="https://carlohcs.me" />
+
+        {/* Idioma do conteúdo */}
         <meta httpEquiv="Content-Language" content="pt-br, en" />
 
-        {/* FAVICON */}
-        {/* https://realfavicongenerator.net/your-favicon-is-ready */}
-        <link rel="icon" href="/static/img/favicon/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/static/img/favicon/favicon-96x96.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+        {/* ========================================= */}
+        {/* 🔴 OPEN GRAPH - Compartilhamento Social  */}
+        {/* ========================================= */}
 
-        {/* PWA Icons */}
-        <link rel="icon" type="image/png" sizes="192x192" href="/static/img/favicon/web-app-manifest-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/static/img/favicon/web-app-manifest-512x512.png" />
+        {/* Informações básicas para Facebook, LinkedIn, WhatsApp */}
+        <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Carlos Henrique Carvalho de Santana" />
+        <meta property="og:title" content={getMessage('page', 'seoTitle')} />
+        <meta property="og:description" content={getMessage('page', 'seoDescription')} />
+        <meta property="og:url" content="https://carlohcs.me" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
 
-        <meta name="apple-mobile-web-app-title" content="Carlohcs" />
-        <meta name="theme-color" content="#000000" />
+        {/* Imagem principal para compartilhamento */}
+        <meta property="og:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
+        <meta property="og:image:alt" content={getMessage('page', 'seoAltImageTitle')} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:secure_url" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
 
-        <link rel="manifest" href="/static/manifest.json" />
+        {/* Imagem alternativa para diferentes contextos */}
+        <meta property="og:image" content="https://carlohcs.me/static/img/home/carlohcs-lg.png" />
 
-        {/* Preload de imagens críticas - baixa automaticamente */}
+        {/* Informações específicas para artigos/portfolio */}
+        <meta property="article:author" content="Carlos Henrique Carvalho de Santana" />
+        <meta property="article:section" content="Portfolio" />
+        <meta property="article:tag" content="Software Engineer" />
+        <meta property="article:tag" content="Frontend Developer" />
+        <meta property="article:tag" content="FullStack Developer" />
+
+        {/* ========================================= */}
+        {/* 🔴 TWITTER CARDS - Compartilhamento      */}
+        {/* ========================================= */}
+
+        {/* Configuração para Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:site" content="@carlohcs" />
+        <meta property="twitter:creator" content="@carlohcs" />
+        <meta property="twitter:title" content={getMessage('page', 'seoTitle')} />
+        <meta property="twitter:description" content={getMessage('page', 'seoDescription')} />
+        <meta property="twitter:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
+        <meta name="twitter:image:alt" content={getMessage('page', 'seoAltImageTitle')} />
+        <meta name="twitter:domain" content="carlohcs.me" />
+
+        {/* ========================================= */}
+        {/* 🟡 PRIORIDADE ALTA - Performance         */}
+        {/* ========================================= */}
+
+        {/* DNS Prefetch - resolve DNS antes de precisar */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+
+        {/* Preconnect - estabelece conexão antecipada */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true.toString()} />
+
+        {/* Preload - carrega recursos críticos imediatamente */}
         <link rel="preload" as="image" href="/static/img/home/carlohcs-lg.png" />
         <link rel="preload" as="image" href="/static/img/home/carlohcs-xs-2.jpg" />
 
-        {/* Prefetch para imagens de outras páginas - quando o navegador estiver livre */}
+        {/* Prefetch - carrega recursos quando navegador estiver livre */}
         <link rel="prefetch" as="video" href="/static/video/godaddy.webm" />
         <link rel="prefetch" as="image" href="/static/img/projects/godaddy.png" />
         <link rel="prefetch" as="image" href="/static/img/skills/instructor.png" />
         <link rel="prefetch" as="image" href="/static/img/skills/productowner.png" />
         <link rel="prefetch" as="image" href="/static/img/skills/facilitator.png" />
 
+        {/* Fontes externas com otimização de carregamento */}
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,500&display=swap" rel="stylesheet" />
+
+        {/* ========================================= */}
+        {/* 🟡 FAVICONS E ÍCONES - Branding          */}
+        {/* ========================================= */}
+
+        {/* Favicons modernos - suporte cross-browser */}
+        <link rel="icon" href="/static/img/favicon/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/static/img/favicon/favicon-96x96.png" />
+        <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
+
+        {/* Apple Touch Icons */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+
+        {/* PWA Icons - quando usuário adiciona à tela inicial */}
+        <link rel="icon" type="image/png" sizes="192x192" href="/static/img/favicon/web-app-manifest-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/static/img/favicon/web-app-manifest-512x512.png" />
+
+        {/* ========================================= */}
+        {/* 🟡 PWA - Progressive Web App             */}
+        {/* ========================================= */}
+
+        {/* Configurações de tema */}
+        <meta name="theme-color" content="#1e1e1e" />
+        <meta name="msapplication-navbutton-color" content="#1e1e1e" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        {/* Configurações de Web App */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="Carlohcs" />
+        <meta name="application-name" content="Carlohcs" />
+        <meta name="mobile-web-app-capable" content="yes" />
+
+        {/* Microsoft Tiles */}
+        <meta name="msapplication-TileColor" content="#1e1e1e" />
+        <meta name="msapplication-TileImage" content="/static/img/favicon/web-app-manifest-192x192.png" />
+
+        {/* Web App Manifest */}
+        <link rel="manifest" href="/static/manifest.json" />
+
+        {/* ========================================= */}
+        {/* 🟠 PRIORIDADE MÉDIA - SEO Avançado       */}
+        {/* ========================================= */}
+
+        {/* Sitemap para motores de busca */}
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+        {/* Robots.txt para controle de crawling */}
+        <link rel="robots" href="/robots.txt" />
+
+        {/* Suporte para temas do sistema operacional */}
+        <meta name="color-scheme" content="dark light" />
+
+        {/* Acessibilidade - redução de movimento */}
+        <meta name="prefers-reduced-motion" content="no-preference" />
+
+        {/* RSS Feed para blog (quando implementar) */}
+        {/* TODO: Posts que tenho no Medium, trazê-los pra cá também */}
+        {/* <link rel="alternate" type="application/rss+xml" title="Carlohcs Blog" href="/feed.xml" /> */}
+
+        {/* ========================================= */}
+        {/* 🟢 PRIORIDADE BAIXA - Informações        */}
+        {/* ========================================= */}
+
+        {/* Informações de copyright e geração */}
+        <meta name="copyright" content="© 2025 Carlos Henrique Carvalho de Santana" />
+        <meta name="generator" content="Next.js Custom Site" />
+
+        {/* Links de contato e perfis sociais */}
+        <link rel="me" href="mailto:carlohcs@gmail.com" />
+        <link rel="me" href="https://github.com/carlohcs" />
+
+        {/* ========================================= */}
+        {/* 🟢 SEGURANÇA - Proteções                 */}
+        {/* ========================================= */}
+
+        {/* Política de referrer - protege privacidade */}
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+        {/* ========================================= */}
+        {/* 🔵 STRUCTURED DATA - Rich Snippets       */}
+        {/* ========================================= */}
+
+        {/* JSON-LD para Google Rich Snippets */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Carlos Henrique Carvalho de Santana",
+            "url": "https://carlohcs.me",
+            "image": "https://carlohcs.me/static/img/home/carlohcs-lg.png",
+            "jobTitle": "Software Engineer",
+            "description": "${getMessage('page', 'seoDescription')}",
+            "sameAs": [
+              "https://github.com/carlohcs",
+              "https://linkedin.com/in/carlohcs",
+              "https://twitter.com/carlohcs"
+            ],
+            "knowsAbout": ["JavaScript", "React", "Node.js", "Frontend Development", "Software Architecture"],
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "BR"
+            }
+          }`}
+        </script>
       </Head>
       <Header />
       <Menu />
