@@ -472,7 +472,6 @@ body.menu-open .nav li {
 
 body.menu-open .page-component,
     body.menu-open .page__introduction {
-      /*margin-left: 260px;*/
       transform: translateX(260px);
       background-color: rgba(29, 199, 121, 0.12);
       filter: blur(5px);
@@ -616,44 +615,12 @@ a.link--zoom:hover,
     /*margin: 80px 0;*/
   }
 
-.content {
-
-  /*
-            @media (min-width: 1024px) {
-                display: flex;
-                flex-direction: row;
-                width: 100%;
-
-                p {
-                    font-size: 1.4em;
-                    font-weight: 300;
-                    line-height: 1.4;
-                }
-
-                &__welcome {
-                    max-width: 550px;
-                }
-            }
-
-            @media (min-width: 1440px) {
-                p {
-                    font-size: 1.6em;
-                    font-weight: 300;
-                    line-height: 1.4;
-                }
-            }*/
-}
-
 @media (min-width: 1024px) and (min-height: 768px) {
 
 .content {
     text-align: left
 }
   }
-
-/*&__welcome {
-            max-width: 600px;
-          }*/
 
 .column {
   width: 50%;
@@ -778,32 +745,31 @@ h2 {
     justify-content: flex-start;
   }
 
-/* ==== TRANSIÇÃO DE PÁGINAS ==== */
 /* Efeito de fade in quando a página carrega */
 /*
-        .page-enter {
-          opacity: 0;
-          transform: translateY(20px);
-        }
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
 
-        .page-enter-active {
-          opacity: 1;
-          transform: translateY(0);
-          transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        }*/
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}*/
 
 /* Efeito de fade out quando sai da página */
 /*
-        .page-exit {
-          opacity: 1;
-          transform: translateY(0);
-        }
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-        .page-exit-active {
-          opacity: 0;
-          transform: translateY(-20px);
-          transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        }*/
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}*/
 
 /* Loading indicator */
 .loading-indicator {
@@ -852,7 +818,6 @@ h2 {
       }
 
 .dark-ui .project__cover {
-      /*box-shadow: none;*/
       box-shadow: 5px 10px 30px 0px rgba(255, 255, 255, 0.2) !important;
     }
 
@@ -866,10 +831,6 @@ h2 {
     margin: 100px 0
 }
   }
-
-/*@media screen and (min-width: 1280px) {
-              margin: 200px 0;
-          }*/
 
 .project--no-shadow .project__cover {
       box-shadow: none !important;
@@ -1198,6 +1159,10 @@ header {
       font-weight: bold;
     }
 
+.resume p > strong:before {
+        content: "- ";
+      }
+
 @media (min-width: 1024px) {.home__left {
       min-width: 60%
   }
@@ -1310,4 +1275,37 @@ header {
     font-size: 18px
 }
   }
+
+.error-page {
+  min-height: 100%;
+  padding-top: 30px;
+}
+
+  .error-page__status-code {
+    margin-bottom: 0;
+  }
+
+  .error-page__message {
+    margin-top: 0;
+  }
+
+  .error-page__citation {
+    max-width: 850px;
+  }
+
+  @media (min-width: 1024px) {
+
+  .error-page__citation {
+      font-size: 1.4em;
+      font-weight: 300;
+      line-height: 1.4
+  }
+    }
+
+  @media (min-width: 1200px) {
+
+  .error-page__citation {
+      font-size: 1.6em
+  }
+    }
 
