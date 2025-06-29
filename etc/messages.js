@@ -3,9 +3,9 @@ export const messages = {
     'page': {
       'defaultTitle': 'Carlos Henrique | carlohcs.me',
       'titleSuffix': '| carlohcs.me',
-      'seoTitle': 'Conheça um pouco mais sobre mim.',
-      'seoDescription': 'Saiba mais sobre minhas habilidades e projetos que atuei.',
-      'seoAltImageTitle': 'Foto de Carlos Henrique Carvalho de Santana'
+      'seoTitle': 'Olá. Meu nome é Carlos Henrique | carlohcs.me',
+      'seoDescription': 'Sou engenheiro de software, instrutor e facilitador.',
+      'seoAltImageTitle': 'Foto de Carlos Henrique'
     },
     'toggleTheme': {
       'title': 'Alterar tema',
@@ -48,7 +48,7 @@ export const messages = {
       'description': [
         'Pós-graduado em Arquitetura de Software, <a href="https://github.com/ALFAC-Org" target="_blank">fiz um grande projeto com meu grupo</a>.',
         'Pós-graduado em Gestão em Tecnologia da Informação, <a href="https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing" target="_blank">escrevi um artigo</a>.',
-        'Como engenheiro de software, alguns de meus trabalhos podem ser vistos <a href="/engenheiro-de-software">aqui</a> ou no <a href="https://github.com/carlohcs" target="_blank">GitHub</a>.',
+        'Como engenheiro de software, alguns de meus trabalhos podem ser vistos <a href="/engineer">aqui</a> ou no <a href="https://github.com/carlohcs" target="_blank">GitHub</a>.',
         'Tenho me aventurado a <a href="https://medium.com/@carlohcs" target="_blank">escrever</a>, a <a href="https://www.youtube.com/user/carlohcs" target="_blank">tocar guitarra</a> e a <a href="https://www.strava.com/athletes/158753829" target="_blank">correr</a>.',
         'Acredito que todos devam ter uma <a href="https://missaopessoal.com.br" target="_blank">missão pessoal</a>.'
       ],
@@ -315,9 +315,9 @@ export const messages = {
     'page': {
       'defaultTitle': 'Carlos Henrique | carlohcs.me',
       'titleSuffix': '| carlohcs.me',
-      'seoTitle': 'Know a little more about me.',
-      'seoDescription': 'Learn more about my skills, lectures and projects I worked.',
-      'seoAltImageTitle': 'Picute of Carlos Henrique Carvalho de Santana'
+      'seoTitle': 'Hello. I am Carlos Henrique | carlohcs.me',
+      'seoDescription': 'I am a software engineer, instructor and facilitator.',
+      'seoAltImageTitle': 'Picture of Carlos Henrique'
     },
     'toggleTheme': {
       'title': 'Change theme',
@@ -360,7 +360,7 @@ export const messages = {
       'description': [
         'Postgraduate in Software Architecture, <a href="https://github.com/ALFAC-Org" target="_blank">I did a big project with my group</a>.',
         'Postgraduate in Information Technology Management, <a href="https://drive.google.com/file/d/1SV5MvFJ3q2fqAgOC_FNdvo_YnLoXWiEu/view?usp=sharing" target="_blank">I wrote an article</a>.',
-        'As a software engineer, some of my work can be seen <a href="/engenheiro-de-software">here</a> or on <a href="https://github.com/carlohcs" target="_blank">GitHub</a>.',
+        'As a software engineer, some of my work can be seen <a href="/engineer">here</a> or on <a href="https://github.com/carlohcs" target="_blank">GitHub</a>.',
         'I have been venturing to <a href="https://medium.com/@carlohcs" target="_blank">write</a>, to <a href="https://www.youtube.com/user/carlohcs" target="_blank">play guitar</a> and to <a href="https://www.strava.com/athletes/158753829" target="_blank">run</a>.',
         'I believe everyone should have a <a href="https://missaopessoal.com.br" target="_blank">personal mission</a>.'
       ],

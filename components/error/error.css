@@ -1,0 +1,26 @@
+.error-page {
+  min-height: 100%;
+  padding-top: 30px;
+
+  &__status-code {
+    margin-bottom: 0;
+  }
+
+  &__message {
+    margin-top: 0;
+  }
+
+  &__citation {
+    max-width: 850px;
+
+    @media (min-width: 1024px) {
+      font-size: 1.4em;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 1.6em;
+    }
+  }
+}

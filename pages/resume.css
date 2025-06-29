@@ -1,0 +1,9 @@
+.resume {
+  p {
+    & > strong {
+      &:before {
+        content: "- ";
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { withRouter } from 'next/router'
 import PropTypes from 'prop-types'
-import { findRoute } from './helpers/find-route'
+import { findRoute } from '../helpers/find-route'
 
 // typically you want to use `next/link` for this usecase
 // but this example shows how you can also access the router
@@ -23,7 +23,6 @@ const ActiveLink = ({ children, router, route, className }) => {
       return
     }
 
-    // Procurando rotas inglês
     const finalRoute = findRoute(route).name
 
     router.push(finalRoute !== 'home' ? finalRoute : '/')

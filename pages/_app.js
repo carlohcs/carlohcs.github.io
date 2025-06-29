@@ -1,7 +1,10 @@
 import App from 'next/app'
 import Router from 'next/router'
-import { AppProvider } from '../components/AppProvider'
+import { AppProvider } from '../components/providers/AppProvider'
 import withGA from 'next-ga'
+
+import 'normalize.css'
+import '../styles/globals.css'
 
 // https://github.com/zeit/next.js/blob/canary/examples/with-next-page-transitions/pages/_app.js
 // https://stackoverflow.com/questions/53857063/changing-state-on-route-change-next-js?answertab=active#tab-top

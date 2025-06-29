@@ -1,66 +1,29 @@
-import React from 'react'
-import Main from '../../layouts/main'
-import AppContext from '../../components/AppProvider'
-import CustomHead from '../../components/CustomHead'
+import { useContext } from 'react'
+import { Main } from '../../layouts/main'
+import { AppContext } from '../providers/AppProvider'
+import { CustomHead } from '../custom-head/CustomHead'
 import PropTypes from 'prop-types'
 
-class ErrorWrapper extends React.Component {
-  static contextType = AppContext
+import './error.css'
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      statusCode: props.statusCode || 500
-    }
-  }
+const ErrorWrapper = ({ statusCode }) => {
+  const { getMessage } = useContext(AppContext)
 
-  render() {
-    const createMarkup = value => ({ __html: value })
-    const title = this.state.statusCode === 404 ? this.context.getMessage('error', 'codes', '404') : this.context.getMessage('error', 'defaultErrorMessage')
+  const createMarkup = value => ({ __html: value })
+  const title = statusCode === 404 ? getMessage('error', 'codes', '404') : getMessage('error', 'defaultErrorMessage')
+  return (
+    <>
+      <CustomHead title={title} />
+      <Main>
+        <div className="error-page flex flex--justify-start">
+          <h1 className="error-page__status-code">{statusCode}</h1>
+          <h2 className="error-page__message">{title}</h2>
 
-    return (
-      <>
-        <CustomHead title={title} />
-        <Main>
-          <div className="error-page flex flex--justify-start">
-            <style jsx global>{`
-              .error-page {
-                min-height: 100%;
-                padding-top: 30px;
-
-                &__status-code {
-                  margin-bottom: 0;
-                }
-
-                &__message {
-                  margin-top: 0;
-                }
-
-                &__citation {
-                  max-width: 850px;
-
-                  @media (min-width: 1024px) {
-                    font-size: 1.4em;
-                    font-weight: 300;
-                    line-height: 1.4;
-                  }
-
-                  @media (min-width: 1200px) {
-                      font-size: 1.6em;                        
-                  }
-                }
-              }
-            `}
-            </style>
-            <h1 className="error-page__status-code">{this.props.statusCode}</h1>
-            <h2 className="error-page__message">{title}</h2>
-
-            <div className="error-page__citation" dangerouslySetInnerHTML={createMarkup(this.context.getMessage('error', 'citation'))} />
-          </div>
-        </Main>
-      </>
-    )
-  }
+          <div className="error-page__citation" dangerouslySetInnerHTML={createMarkup(getMessage('error', 'citation'))} />
+        </div>
+      </Main>
+    </>
+  )
 }
 
 ErrorWrapper.propTypes = {

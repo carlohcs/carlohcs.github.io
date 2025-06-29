@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import AppContext from '../AppProvider'
+import { AppContext } from '../providers/AppProvider'
 import PropTypes from 'prop-types'
 import { createMarkup } from '../helpers/create-markup'
 

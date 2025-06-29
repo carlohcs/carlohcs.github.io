@@ -29,8 +29,10 @@ module.exports = withPlugins([
     }
   }],
   [withCSS, {
-    plugins: {
-      'postcss-css-nested': {}
+    cssModules: false, // Para permitir CSS global
+    cssLoaderOptions: {
+      importLoaders: 1,
+      localIdentName: '[local]___[hash:base64:5]'
     }
   }]
 ], nextConfig)

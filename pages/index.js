@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import Main from '../layouts/main'
-import AppContext from '../components/AppProvider'
+import { useContext } from 'react'
+import { Main } from '../layouts/main'
+import { AppContext } from '../components/providers/AppProvider'
+import { createMarkup } from '../components/helpers/create-markup'
 
 const socialNetworks = [
   { iconName: 'github-brands.svg', className: 'github', url: 'https://github.com/carlohcs', title: 'Github' },
@@ -15,188 +16,55 @@ const socialNetworks = [
   { iconName: 'envelope-regular.svg', className: 'mail', url: 'mailto: carlohcs@gmail.com', title: 'E-mail' }
 ]
 
-// https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml
+import './index.css'
 
-export default class Index extends Component {
-  static contextType = AppContext
+const Index = () => {
+  const { getMessage } = useContext(AppContext)
+  const networksMessages = getMessage('home', 'networks')
 
-  render() {
-    const createMarkup = value => ({ __html: value })
-    const networksMessages = this.context.getMessage('home', 'networks')
+  // KEEP: data-close-menu -> usado para fechar o menu quando clicar fora dele
+  return (
+    <Main>
+      <section className="home container">
+        <div className="content">
+          <div className="home__left">
+            <img src={require('../assets/img/home/carlohcs-xs-2.jpg')} alt="Fotografia de Carlos Henrique" className="home__carlohcs-photography--xs" />
 
-    return (
-      <>
-        <Main>
-          <style jsx global>{`
-                    .home {
-                        &__left {
-                            @media (min-width: 1024px) {
-                                min-width: 60%;
-                            }
+            <div className="page__description">
+              <div className="home__welcome">
+                <div className="home__welcome-description">
+                  <h1 className="home__welcome-description__welcome">{getMessage('home', 'welcome')}</h1>
+                  <h2 className="home__welcome-description__subdescription">{getMessage('home', 'subdescription')}</h2>
+                  <p className="home__welcome-description__short-description" dangerouslySetInnerHTML={createMarkup(getMessage('home', 'shortDescription'))} />
+                </div>
 
-                            @media (min-width: 1280px) {
-                                min-width: 50%;
-                            }
-                        }
+                {getMessage('home', 'description').map((description, key) =>
+                  <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
 
-                        &__right {
-                            filter: saturate(.9);
-                            display: none;
-                            position: absolute;
-                            z-index: -1;
-                            top: 0;
-                            right: 0;
-                            bottom: 0;
-                            width: 100%;
-                            height: 100%;
+                <p className="home__welcome-description__connect">{getMessage('home', 'connect')}</p>
+              </div>
 
-                            /*@media (min-width: 1024px) and (min-height: 768px) {    
-                                background-size: contain;
-                            }*/
-
-                            @media (min-width: 1280px) {
-                                display: block;
-                                background: url(../static/img/home/carlohcs-lg.png) bottom right no-repeat;
-                                width: 50%;
-                                background-position: bottom left;
-                                background-size: 840px;
-                            }
-                        }
-
-                        &__carlohcs-photography {
-                            &--xs {
-                                width: 140px;
-                                border-radius: 50%;
-                                display: block;
-                                margin: 20px auto;
-                                box-shadow: #1dc779 0 0px 10px 0;
-
-                                @media (min-width: 768px) {
-                                  width: 200px;
-                                }
-
-                                @media (min-width: 1024px) {
-                                  width: 280px;
-                                }
-
-                                @media (min-width: 1279px) {
-                                    display: none;
-                                }
-                            }
-                        }
-
-                        &__welcome {
-                            p {
-                                @media (min-width: 1200px) {
-                                    font-size: 1.6em;
-                                    font-weight: 300;
-                                    line-height: 1.4;
-                                    /* max-width: 26em; */
-
-                                    margin: 32px 0;
-                                }
-                            }
-                        }
-                        &__welcome-description {
-                            &__short-description {
-                                /*font-size: 14px;*/
-                                line-height: 1.3;
-                                margin-top: 0 !important;
-                            }
-
-                            & * {
-                                margin: 0;
-                            }
-
-                            &__connect {
-                                margin: 0 !important;
-                            }
-                        }
-
-                        .social-networks {
-                            display: inline-block;
-                            padding: 5px 0;
-                            
-                            &__content {
-                                display: flex;
-                                justify-content: space-between;
-                                width: 260px;
-                                
-                                /*margin: 0 auto;*/
-
-                                @media (min-width: 768px) {
-                                    /*margin: 0;*/
-                                }
-                            }
-                        }
-
-                        .social-network {
-                            color: #000;
-                        }
-                    }
-
-                    .dark-ui {
-                        .social-icon {
-                            color: #1dc779;
-                        }
-
-                        .footer {
-                          color: #b0b0b0;
-                        }
-                    }
-
-                    .footer {
-                        margin-top: 20px;
-                        display: block;
-                        font-size: 12px;
-                        font-style: italic;
-                        color: #606060;
-
-                        @media (min-width: 1200px) {
-                            font-size: 18px;
-                        }
-                    }
-                `}</style>
-          <section className="home container">
-            <div className="content">
-              <div className="home__left">
-                <img src={require('../assets/img/home/carlohcs-xs-2.jpg')} alt="Fotografia de Carlos Henrique" className="home__carlohcs-photography--xs" />
-
-                <div className="page__description">
-                  <div className="home__welcome">
-                    <div className="home__welcome-description">
-                      <h1 className="home__welcome-description__welcome">{this.context.getMessage('home', 'welcome')}</h1>
-                      <h2 className="home__welcome-description__subdescription">{this.context.getMessage('home', 'subdescription')}</h2>
-                      <p className="home__welcome-description__short-description" dangerouslySetInnerHTML={createMarkup(this.context.getMessage('home', 'shortDescription'))} />
-                    </div>
-
-                    {this.context.getMessage('home', 'description').map((description, key) =>
-                      <p dangerouslySetInnerHTML={createMarkup(description)} key={key} />)}
-
-                    <p className="home__welcome-description__connect">{this.context.getMessage('home', 'connect')}</p>
-                  </div>
-
-                  <div className="social-networks">
-                    <div className="social-networks__content">
-                      {socialNetworks.map((item, key) =>
-                        <a href={item.url} target="_blank" className="social-network link--zoom no-link-style" key={key}
-                          title={item.title}
-                          aria-label={networksMessages[item.className]}
-                          rel="noopener noreferrer">
-                          <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/${item.iconName}?include`) }} className={['icon', 'social-icon', `social-icon--${item.className}`].join(' ')} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-
-                  <footer className="footer" dangerouslySetInnerHTML={createMarkup(this.context.getMessage('footer', 'description'))} />
+              <div className="social-networks">
+                <div className="social-networks__content">
+                  {socialNetworks.map((item, key) =>
+                    <a href={item.url} target="_blank" className="social-network link--zoom no-link-style" key={key}
+                      title={item.title}
+                      aria-label={networksMessages[item.className]}
+                      rel="noopener noreferrer">
+                      <div dangerouslySetInnerHTML={{ __html: require(`../assets/img/icons/${item.iconName}?include`) }} className={['icon', 'social-icon', `social-icon--${item.className}`].join(' ')} />
+                    </a>
+                  )}
                 </div>
               </div>
-              <div className="home__right"></div>
+
+              <footer className="footer" dangerouslySetInnerHTML={createMarkup(getMessage('footer', 'description'))} />
             </div>
-          </section>
-        </Main>
-      </>
-    )
-  }
+          </div>
+          <div className="home__right"></div>
+        </div>
+      </section>
+    </Main>
+  )
 }
+
+export default Index

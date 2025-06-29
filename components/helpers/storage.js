@@ -11,7 +11,7 @@ const TOGGLE_LANG_KEY = 'lang'
 // }
 
 // TODO: rever toda essa lógica
-const storage = {
+export const storage = {
   setInitial: key => {
     let finalData = {}
 
@@ -32,6 +32,11 @@ const storage = {
   },
   set: (key, value) => {
     let data = false
+
+    if (typeof localStorage === 'undefined') {
+      return false
+    }
+
     try {
       data = JSON.parse(localStorage.getItem(STORAGE_KEY))
     } catch (_err) {
@@ -53,9 +58,13 @@ const storage = {
   get: key => {
     let data = false
 
+    if (typeof localStorage === 'undefined') {
+      return false
+    }
+
     try {
       data = JSON.parse(localStorage.getItem(STORAGE_KEY))[key]
-    } catch (err) {
+    } catch (_err) {
       storage.setInitial(key)
 
       return storage.get(key)
@@ -111,4 +120,3 @@ const storage = {
 // console.log('lang should be en: ', savedAnotherLang)
 
 // console.log('all values: ', storage.getAll())
-export default storage
