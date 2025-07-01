@@ -16,7 +16,7 @@ import { getImageUrl } from '../components/helpers/get-image-url'
 
 // Fonts vs SVG: https://fontawesome.com/how-to-use/on-the-web/other-topics/performance
 
-const Main = withRouter(({ children, router }) => {
+const Main = withRouter(({ children, router, customTitle, customTitleDescription, customDescription }) => {
   const { getMessage, toggleTheme, toggleLang, resetMenuBehavior } = useContext(AppContext)
   const [loadedConfigs, setLoadedConfigs] = useState(false)
   const [translationKey, setTranslationKey] = useState('home')
@@ -75,7 +75,11 @@ const Main = withRouter(({ children, router }) => {
 
     document.body.addEventListener('click', handleCloseMenu)
 
-    const translationKey = findRoute(router.route).name
+    let translationKey = findRoute(router.route).name
+
+    if (router.route === '/blog' || router.route.startsWith('/blog/')) {
+      translationKey = 'blog'
+    }
 
     setLoadedConfigs(true)
     setTranslationKey(translationKey)
@@ -89,7 +93,11 @@ const Main = withRouter(({ children, router }) => {
     }
   }, [])
 
+  const hasIntroduction = (translationKey || customTitle || customTitleDescription || customDescription)
+  const excludedIntroduction = ['home'].includes(translationKey)
+
   const mainContent = !loadedConfigs && !isTransitioning ? '' : <div className={pageClasses} data-close-menu>
+    { (hasIntroduction && !excludedIntroduction) && <Introduction translationKey={translationKey} title={customTitle} titleDescription={customTitleDescription} description={customDescription} /> }
     {children}
   </div>
 
@@ -333,12 +341,7 @@ const Main = withRouter(({ children, router }) => {
       <Header />
       <Menu />
       { isTransitioning && <div className="loading-indicator" /> }
-      { translationKey &&
-          <>
-            <CustomHead title={getMessage(translationKey, 'title')} />
-            {translationKey !== 'home' && <Introduction translationKey={translationKey} />}
-          </>
-      }
+      { hasIntroduction && <CustomHead title={customTitle || getMessage(translationKey, 'title')} /> }
 
       { mainContent }
     </div>
@@ -347,7 +350,10 @@ const Main = withRouter(({ children, router }) => {
 
 Main.propTypes = {
   children: PropTypes.node,
-  router: PropTypes.object
+  router: PropTypes.object,
+  customTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  customTitleDescription: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  customDescription: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
 }
 
 // https://stackoverflow.com/questions/49809884/access-react-context-outside-of-render-function?answertab=votes#tab-top

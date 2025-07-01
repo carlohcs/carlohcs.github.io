@@ -3,52 +3,101 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
-  <!-- Página inicial - maior prioridade -->
+
   <url>
     <loc>https://carlohcs.me/</loc>
-    <lastmod>2025-06-29</lastmod>
+    <lastmod>2025-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Página de Software Engineer -->
   <url>
     <loc>https://carlohcs.me/engineer</loc>
-    <lastmod>2025-06-29</lastmod>
+    <lastmod>2025-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Página de Habilidades -->
   <url>
     <loc>https://carlohcs.me/skills</loc>
-    <lastmod>2025-06-29</lastmod>
+    <lastmod>2025-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Página de Currículo -->
   <url>
     <loc>https://carlohcs.me/resume</loc>
-    <lastmod>2025-06-29</lastmod>
+    <lastmod>2025-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Recursos estáticos importantes -->
   <url>
-    <loc>https://carlohcs.me/static/img/home/carlohcs-lg.png</loc>
-    <lastmod>2025-06-29</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://carlohcs.me/blog</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
-  
   <url>
-    <loc>https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg</loc>
-    <lastmod>2025-06-29</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://carlohcs.me/blog/bitcoin-por-que-voc%C3%AA-precisa-ter-da2cea58f87c</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://carlohcs.me/blog/educa%C3%A7%C3%A3o-financeira-aprenda-para-ontem-9b7be8ead253</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carlohcs.me/blog/de-j%C3%BAnior-a-especialista-ou-quase-63de329dbce5</loc>
+    <lastmod>2022-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carlohcs.me/blog/strategic-planning-for-information-systems-case-study-7138f771c642</loc>
+    <lastmod>2020-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carlohcs.me/blog/starting-a-team-with-team-canvas-bfa2092a7f90</loc>
+    <lastmod>2020-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carlohcs.me/blog/the-importance-of-team-building-for-it-team-development-case-study-8e3e20092778</loc>
+    <lastmod>2020-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carlohcs.me/blog/apresenta%C3%A7%C3%A3o-em-p%C3%BAblico-o-que-fazer-e-o-que-n%C3%A3o-fazer-564b65ebe8</loc>
+    <lastmod>2019-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carlohcs.me/blog/o-que-aprendi-fazendo-gest%C3%A3o-de-t-i-ao-inv%C3%A9s-de-engenharia-de-software-460a9d94f6c2</loc>
+    <lastmod>2019-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carlohcs.me/blog/o-que-aprendi-fazendo-gest%C3%A3o-de-t-i-ao-inv%C3%A9s-de-engenharia-de-software-460a9d94f6c2</loc>
+    <lastmod>2019-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carlohcs.me/blog/ouro-de-tolo-ecc9cd1f4d36</loc>
+    <lastmod>2019-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carlohcs.me/blog/tenha-uma-equipe-que-te-fa%C3%A7a-se-sentir-um-tolo-e-que-te-desafia-a-crescer-deaff82215a4</loc>
+    <lastmod>2019-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

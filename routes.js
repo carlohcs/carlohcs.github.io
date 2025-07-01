@@ -7,6 +7,12 @@ const customRoutes = [
     page:  '/'
   },
   {
+    name: 'blog',
+    // patterns: ['/en/blog', '/blog'],
+    patterns: ['/blog'],
+    page:  '/blog'
+  },
+  {
     name: 'engineer',
     // patterns: ['/en/software-engineer', '/engenheiro-de-software'],
     patterns: ['/engineer'],

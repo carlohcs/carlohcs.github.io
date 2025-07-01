@@ -47,7 +47,7 @@ const Skills = () => {
       <Main>
         <section className="resume">
           <div className="content container container--center">
-            <div className="">
+            <div className="projects">
               {getMessage('skills', 'items').map((project, key) =>
                 renderProject(project, key)
               )}

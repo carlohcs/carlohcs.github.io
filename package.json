@@ -1,6 +1,6 @@
 {
   "name": "carlohcs.github.io",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "My personal site.",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' node server.js",
@@ -13,7 +13,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "fonts:download": "node scripts/download-fonts.js",
-    "fonts:update": "node scripts/download-fonts.js"
+    "fonts:update": "node scripts/download-fonts.js",
+    "import:medium": "node scripts/import-medium-posts.js",
+    "generate:sitemap": "node scripts/generate-sitemap.js && cp sitemap static/sitemap.xml"
   },
   "engines": {
     "node": "18.18.x"
@@ -65,5 +67,8 @@
     "react-dom": "^16.9.0",
     "styled-jsx-plugin-postcss": "^2.0.1",
     "svg-sprite-loader": "^4.1.6"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0"
   }
 }

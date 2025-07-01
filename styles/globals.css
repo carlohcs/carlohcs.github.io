@@ -41,8 +41,6 @@ body {
 body {
   background: #fff;
   color: #1e1e1e;
-  /* Definir scroll behavior apenas após o load */
-  scroll-behavior: auto;
   /*https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter*/
   scrollbar-gutter: stable;
 
@@ -89,8 +87,7 @@ body {
   &.menu-open {
     /* overflow-x: hidden; */ /* Pensar em um jeito melhor */
 
-    .page-component,
-    .page__introduction {
+    .page-component {
       &:after {
         z-index: 3;
         content: "";
@@ -125,13 +122,12 @@ body {
     }
 
     .nav li {
-      width: 200px;
+      width: 240px;
       margin-left: 0;
     }
 
-    .page-component,
-    .page__introduction {
-      transform: translateX(260px);
+    .page-component {
+      transform: translateX(320px);
       background-color: rgba(29, 199, 121, 0.12);
       filter: blur(5px);
     }
@@ -230,14 +226,10 @@ a {
 
 .page {
   &__introduction {
-    padding: 0 40px;
+    margin-bottom: 80px;
 
-    @media screen and (min-width: 1280px) {
-      padding: 0 80px;
-    }
-
-    @media screen and (min-width: 1440px) {
-      padding: 0 120px;
+    @media (min-width: 1024px) {
+      margin-bottom: 100px;
     }
   }
 
@@ -327,8 +319,7 @@ h2 {
   }
 }
 
-.page-component,
-.page__introduction {
+.page-component {
   position: relative; /* Necessário devido ao click fora do componente */
   animation: fadeInUp 0.5s ease-out;
   opacity: 1;
@@ -406,7 +397,7 @@ h2 {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, #000, #28a745);
+  background: linear-gradient(90deg, #000, #1dc779a6);
   z-index: 9999;
   animation: loading-slide 10s ease-in-out infinite;
 }
@@ -458,163 +449,175 @@ h2 {
       box-shadow: 5px 10px 30px 0px rgba(255, 255, 255, 0.2) !important;
     }
   }
+
+  .post-card {
+    &:after {
+      background: rgba(255, 255, 255, 0.1);
+    }   
+  }
 }
 
-.project {
-  margin: 80px 0;
+.projects {
+  .project {
+    margin: 80px 0;
 
-  @media screen and (min-width: 1024px) {
-    margin: 100px 0;
-  }
-
-  &--no-shadow {
-    .project__cover {
-      box-shadow: none !important;
-    }
-  }
-
-  &--reduced-margin {
     @media screen and (min-width: 1024px) {
       margin: 100px 0;
     }
-  }
 
-  &__cover {
-    max-width: 100%;
-    margin: 0 auto 20px;
-    box-shadow: 0 15px 20px 5px rgba(68, 68, 68, 0.3);
-  }
-
-  &__description {
-    max-width: 650px;
-    margin-top: 10px;
-
-    @media screen and (min-width: 1024px) {
-      margin-top: 20px;
+    &:first-of-type {
+      margin-top: 0;
     }
 
-    p {
-      margin: 0;
+    &--no-shadow {
+      .project__cover {
+        box-shadow: none !important;
+      }
     }
-  }
 
-  &--main {
-    .project__cover {
+    &--reduced-margin {
       @media screen and (min-width: 1024px) {
-        max-width: 1200px;
-        margin: 0 auto 60px;
-        display: block;
+        margin: 100px 0;
+      }
+    }
+
+    &__cover {
+      max-width: 100%;
+      margin: 0 auto 20px;
+      box-shadow: 0 15px 20px 5px rgba(68, 68, 68, 0.3);
+    }
+
+    &__description {
+      max-width: 650px;
+      margin-top: 10px;
+
+      @media screen and (min-width: 1024px) {
+        margin-top: 20px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &--main {
+      .project__cover {
+        @media screen and (min-width: 1024px) {
+          max-width: 1200px;
+          margin: 0 auto 60px;
+          display: block;
+        }
+      }
+
+      .project__content {
+        flex-flow: column !important;
+
+        &__column {
+          &:nth-of-type(1) {
+            width: 100% !important;
+          }
+          &:nth-of-type(2) {
+            width: auto !important;
+          }
+        }
       }
     }
 
     .project__content {
-      flex-flow: column !important;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
 
       &__column {
-        &:nth-of-type(1) {
-          width: 100% !important;
-        }
-        &:nth-of-type(2) {
-          width: auto !important;
+        @media screen and (min-width: 1024px) {
+          width: 50%;
         }
       }
     }
-  }
-
-  .project__content {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-
-    &__column {
-      @media screen and (min-width: 1024px) {
-        width: 50%;
-      }
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    .project__content {
-      flex-flow: row;
-    }
-
-    &:not(.project--main):nth-child(even) {
-      .project__content {
-        flex-direction: row-reverse;
-
-        &__column {
-          @media screen and (min-width: 1024px) {
-            &:nth-of-type(1) {
-              padding-left: 20px;
-            }
-
-            &:nth-of-type(2) {
-              padding-right: 20px;
-            }
-          }
-
-          @media screen and (min-width: 1280px) {
-            &:nth-of-type(1) {
-              padding-left: 40px;
-            }
-
-            &:nth-of-type(2) {
-              padding-right: 40px;
-            }
-          }
-        }
-      }
-    }
-
-    &:not(.project--main):nth-child(odd) {
-      .project__content {
-        &__column {
-          @media screen and (min-width: 1024px) {
-            &:nth-of-type(1) {
-              padding-right: 20px;
-            }
-
-            &:nth-of-type(2) {
-              padding-left: 20px;
-            }
-          }
-
-          @media screen and (min-width: 1280px) {
-            &:nth-of-type(1) {
-              padding-right: 40px;
-            }
-
-            &:nth-of-type(2) {
-              padding-left: 40px;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .project__video {
-    width: 100%;
-    max-width: 100%;
-    cursor: pointer;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &__title {
-    margin: 0;
-  }
-
-  &__technology {
-    font-size: 12px;
-    margin-bottom: 0;
 
     @media screen and (min-width: 1024px) {
-      font-size: 16px;
-      margin-top: 20px !important;
+      .project__content {
+        flex-flow: row;
+      }
+
+      &:not(.project--main):nth-child(even) {
+        .project__content {
+          flex-direction: row-reverse;
+
+          &__column {
+            @media screen and (min-width: 1024px) {
+              &:nth-of-type(1) {
+                padding-left: 20px;
+              }
+
+              &:nth-of-type(2) {
+                padding-right: 20px;
+              }
+            }
+
+            @media screen and (min-width: 1280px) {
+              &:nth-of-type(1) {
+                padding-left: 40px;
+              }
+
+              &:nth-of-type(2) {
+                padding-right: 40px;
+              }
+            }
+          }
+        }
+      }
+
+      &:not(.project--main):nth-child(odd) {
+        .project__content {
+          &__column {
+            @media screen and (min-width: 1024px) {
+              &:nth-of-type(1) {
+                padding-right: 20px;
+              }
+
+              &:nth-of-type(2) {
+                padding-left: 20px;
+              }
+            }
+
+            @media screen and (min-width: 1280px) {
+              &:nth-of-type(1) {
+                padding-right: 40px;
+              }
+
+              &:nth-of-type(2) {
+                padding-left: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .project__video {
+      width: 100%;
+      max-width: 100%;
+      cursor: pointer;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__title {
+      margin: 0;
+    }
+
+    &__technology {
+      font-size: 12px;
+      margin-bottom: 0;
+
+      @media screen and (min-width: 1024px) {
+        font-size: 16px;
+        margin-top: 20px !important;
+      }
     }
   }
 }
