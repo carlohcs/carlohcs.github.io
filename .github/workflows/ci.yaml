@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-deploy:
-    name: Build and Deploy to GitHub Pages
+    name: Build and Deploy to GitHub
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +20,12 @@ jobs:
         with:
           node-version: '18.18.x'
           cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Configure npm
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm config set //registry.npmjs.org/:_authToken=""
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
@@ -42,6 +48,12 @@ jobs:
           test -f docs/_next/static/ || (echo "Next.js files not found!" && exit 1)
           test -f docs/sitemap.xml || (echo "sitemap.xml not found!" && exit 1)
           test -f docs/robots.txt || (echo "robots.txt not found!" && exit 1)
+          
+          # Validate fonts were copied to static build
+          test -f docs/static/fonts/rubik.css || (echo "Fonts CSS not found!" && exit 1)
+          test -f docs/static/fonts/rubik-5.woff2 || (echo "rubik-5.woff2 not found!" && exit 1)
+          test -f docs/static/fonts/rubik-11.woff2 || (echo "rubik-11.woff2 not found!" && exit 1)
+          
           echo "✅ Everything looks good!"
 
       # Deploy to GitHub Pages if on main branch
