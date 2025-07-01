@@ -1,6 +1,6 @@
 ---
 title: "Strategic Planning for Information Systems — Case Study"
-slug: "strategic-planning-for-information-systems-case-study-7138f771c642"
+slug: "2020-09-24-strategic-planning-for-information-systems-case-study-7138f771c642"
 date: "2020-09-24"
 excerpt: "Strategic Planning for Information Systems (SPIS) — Case Study
 
@@ -16,7 +16,7 @@ categories: ["it", "information-systems", "team", "strategic-planning-for-it", "
 <em>Strategic Planning for Information Systems (</em>SPIS)<em> — Case&nbsp;Study</em>
 </h3>
 <p>What is and what you can learn about&nbsp;it?</p>
-<figure><img alt="" src="/static/img/blog/img-1751403617011-ruzeethnn.jpg" data-original-src="https://cdn-images-1.medium.com/max/1024/1*8P7OXntH5MFyX3QjTQgn6w.png"><figcaption>Thinking behind a SPIS. Source:&nbsp;author.</figcaption></figure><p>In the final of 2016, I was starting in the co:lab team. The team was composed majority by designers and just one developer — that changed to coordinator position when I&nbsp;arrived.</p>
+<figure><img alt="" src="/static/img/blog/img-1751412821537-ekr1fut3j.jpg" data-original-src="https://cdn-images-1.medium.com/max/1024/1*8P7OXntH5MFyX3QjTQgn6w.png"><figcaption>Thinking behind a SPIS. Source:&nbsp;author.</figcaption></figure><p>In the final of 2016, I was starting in the co:lab team. The team was composed majority by designers and just one developer — that changed to coordinator position when I&nbsp;arrived.</p>
 <p>This team was — and yet is — responsible for a large number of projects inside of the company, which some parts of them are divided by the development and maintenance of style guides, systems, sites and components.</p>
 <p>But, unfortunately, the team didn’t have the necessary workforce and infrastructure to maintain a good work in this areas. So, in 2017, I started my MBA in IT Management and a teacher showed the Strategic Planning for Information Systems — and where it the things started to&nbsp;change.</p>
 <p>In early 2018, I profoundly analyzed the situation of my team and made some proposes with the help of the tool to the&nbsp;team.</p>
@@ -38,7 +38,7 @@ categories: ["it", "information-systems", "team", "strategic-planning-for-it", "
 <p>As a team that take care about a lot of projects, in the pass of the years, they doesn't have time to give a the necessary time to solve and to thinking about technical problems.</p>
 <h3>SWOT Analyses</h3>
 <p>In a way to show to the members witch are the issues and opportunities to be treated, the SWOT can help it. The SWOT show us the <strong>S</strong>trengths, <strong>W</strong>eaknesses, <strong>O</strong>pportunities and <strong>T</strong>hreats from a analyzed situation as&nbsp;below:</p>
-<figure><img alt="" src="/static/img/blog/img-1751403617012-eoml6jg2l.jpg" data-original-src="https://cdn-images-1.medium.com/max/1024/1*ak6_rIUMOtDficqAZewWlw.png"><figcaption>co:lab 2018 SWOT Analyses. Source:&nbsp;author.</figcaption></figure><p>The most dangerous problem in that time was the only one person to take care about technical things and the not maintenance of the legacy and new projects.</p>
+<figure><img alt="" src="/static/img/blog/img-1751412821538-0lwjjktjg.jpg" data-original-src="https://cdn-images-1.medium.com/max/1024/1*ak6_rIUMOtDficqAZewWlw.png"><figcaption>co:lab 2018 SWOT Analyses. Source:&nbsp;author.</figcaption></figure><p>The most dangerous problem in that time was the only one person to take care about technical things and the not maintenance of the legacy and new projects.</p>
 <p>To try to solve these topics, the SPIS tell us to try to define some measurable goals to achieve. We can see some of them as&nbsp;follow.</p>
 <h3>Goals</h3>
 <ul>
@@ -56,7 +56,7 @@ categories: ["it", "information-systems", "team", "strategic-planning-for-it", "
 <p>To mensure if the goals were working, the SPIS tell us to define some system of progress mensure, for example, the use of <a href="https://adaptmethodology.com/okr-at-google/">OKR's</a>. We can see how was these OKR's as&nbsp;bellow.</p>
 <h3>Progress measurement</h3>
 <p>OKR’s are an alternative to provide a general way to measure the progress of something. The method aims for clarify and simplicity, goals in a shorter period of time and the data drive culture. With this, is possible to make analyses within 3 or 6 months, for&nbsp;example.</p>
-<figure><img alt="" src="/static/img/blog/img-1751403617013-pxbtw1rw9.jpg" data-original-src="https://cdn-images-1.medium.com/max/1024/1*Jf1T0Rzx41N9n6q3Cjtp-w.png"><figcaption>CO:LAB Strategic Planning for Information Systems OKR's. Source:&nbsp;Author.</figcaption></figure><h3>2020: How are the&nbsp;things?</h3>
+<figure><img alt="" src="/static/img/blog/img-1751412821538-6ysu9msfx.jpg" data-original-src="https://cdn-images-1.medium.com/max/1024/1*Jf1T0Rzx41N9n6q3Cjtp-w.png"><figcaption>CO:LAB Strategic Planning for Information Systems OKR's. Source:&nbsp;Author.</figcaption></figure><h3>2020: How are the&nbsp;things?</h3>
 <p>Until the date of this article, co:lab has 5 documents of SPIS and we continue to make meetings to review and create new ones. The document now it's part of the main projects from the team. A lot of changes occurred and we can talk better&nbsp;bellow.</p>
 <h3>What worked?</h3>
 <ul>
@@ -82,4 +82,4 @@ categories: ["it", "information-systems", "team", "strategic-planning-for-it", "
 <p>In co:lab, we already get amazing results and we are still doing the working for increase that. It’s necessary more actions, persons and time to get the 100%-what is important is the persistence!</p>
 <p>So, did you ever tried something like that? Try and give us your feedback in the commentaries section. Have a good&nbsp;luck!</p>
 <blockquote>If you liked what you read, have a question or are going through something similar, feel free to leave your comment;)<br>Say hello at: <a href="https://www.linkedin.com/in/carlohcs">my Linkedin</a>.</blockquote>
-<img src="/static/img/blog/img-1751403617014-zg97knswy.jpg" width="1" height="1" alt="" data-original-src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=7138f771c642">
+<img src="/static/img/blog/img-1751412821539-igb8sc1y9.jpg" width="1" height="1" alt="" data-original-src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=7138f771c642">
