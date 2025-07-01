@@ -1,16 +1,19 @@
 {
   "name": "carlohcs.github.io",
-  "version": "3.0.0",
+  "version": "3.2.0",
   "description": "My personal site.",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' node server.js",
     "build": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next build",
+    "build:static": "npm run build && npm run export && npm run export:post",
     "export": "next export -o docs/ && touch docs/.nojekyll && touch docs/CNAME && echo 'carlohcs.me' > docs/CNAME",
-    "start": "cross-env NODE_ENV=production node server.js",
-    "deploy:github": "npm run build && npm run export && git add docs/ && git commit -m \"Deploy docs to Github\" && git push origin main",
+    "export:post": "node scripts/copy-static-files.js",
+    "start": "cross-env NODE_ENV=production NODE_OPTIONS='--openssl-legacy-provider' node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "fonts:download": "node scripts/download-fonts.js",
+    "fonts:update": "node scripts/download-fonts.js"
   },
   "engines": {
     "node": "18.18.x"

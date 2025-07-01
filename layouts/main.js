@@ -10,6 +10,7 @@ import { storage } from '../components/helpers/storage'
 import { Introduction } from '../components/page/Introduction'
 import { findRoute } from '../components/helpers/find-route'
 import { CustomHead } from '../components/custom-head/CustomHead'
+import { getImageUrl } from '../components/helpers/get-image-url'
 
 // https://nextjs.org/learn/basics/using-shared-components/the-layout-component
 
@@ -131,15 +132,15 @@ const Main = withRouter(({ children, router }) => {
         <meta property="og:locale" content="pt_BR" />
 
         {/* Imagem principal para compartilhamento */}
-        <meta property="og:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
+        <meta property="og:image" content={`https://carlohcs.me${getImageUrl('home/carlohcs-xs-2.jpg')}`} />
         <meta property="og:image:alt" content={getMessage('page', 'seoAltImageTitle')} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:secure_url" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
+        <meta property="og:image:secure_url" content={`https://carlohcs.me${getImageUrl('home/carlohcs-xs-2.jpg')}`} />
 
         {/* Imagem alternativa para diferentes contextos */}
-        <meta property="og:image" content="https://carlohcs.me/static/img/home/carlohcs-lg.png" />
+        <meta property="og:image" content={`https://carlohcs.me${getImageUrl('home/carlohcs-lg.png')}`} />
 
         {/* Informações específicas para artigos/portfolio */}
         <meta property="article:author" content="Carlos Henrique Carvalho de Santana" />
@@ -158,7 +159,7 @@ const Main = withRouter(({ children, router }) => {
         <meta property="twitter:creator" content="@carlohcs" />
         <meta property="twitter:title" content={getMessage('page', 'seoTitle')} />
         <meta property="twitter:description" content={getMessage('page', 'seoDescription')} />
-        <meta property="twitter:image" content="https://carlohcs.me/static/img/home/carlohcs-xs-2.jpg" />
+        <meta property="twitter:image" content={`https://carlohcs.me${getImageUrl('home/carlohcs-xs-2.jpg')}`} />
         <meta name="twitter:image:alt" content={getMessage('page', 'seoAltImageTitle')} />
         <meta name="twitter:domain" content="carlohcs.me" />
 
@@ -171,23 +172,58 @@ const Main = withRouter(({ children, router }) => {
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
 
-        {/* Preconnect - estabelece conexão antecipada */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true.toString()} />
+        {/* ========================================= */}
+        {/* 🖼️ PRELOAD/PREFETCH - Recursos Críticos */}
+        {/* ========================================= */}
 
         {/* Preload - carrega recursos críticos imediatamente */}
-        <link rel="preload" as="image" href="/static/img/home/carlohcs-lg.png" />
-        <link rel="preload" as="image" href="/static/img/home/carlohcs-xs-2.jpg" />
+        <link rel="preload" as="image" href={getImageUrl('home/carlohcs-lg.png')} />
+        <link rel="preload" as="image" href={getImageUrl('home/carlohcs-xs-2.jpg')} />
 
         {/* Prefetch - carrega recursos quando navegador estiver livre */}
         <link rel="prefetch" as="video" href="/static/video/godaddy.webm" />
-        <link rel="prefetch" as="image" href="/static/img/projects/godaddy.png" />
-        <link rel="prefetch" as="image" href="/static/img/skills/instructor.png" />
-        <link rel="prefetch" as="image" href="/static/img/skills/productowner.png" />
-        <link rel="prefetch" as="image" href="/static/img/skills/facilitator.png" />
+        <link rel="prefetch" as="image" href={getImageUrl('projects/godaddy.png')} />
+        <link rel="prefetch" as="image" href={getImageUrl('skills/instructor.png')} />
+        <link rel="prefetch" as="image" href={getImageUrl('skills/productowner.png')} />
+        <link rel="prefetch" as="image" href={getImageUrl('skills/facilitator.png')} />
 
-        {/* Fontes externas com otimização de carregamento */}
-        <link href="https://fonts.googleapis.com/css?family=Rubik:300,500&display=swap" rel="stylesheet" />
+        {/* ========================================= */}
+        {/* 🚀 FONTES - Estratégia Híbrida Local+CDN */}
+        {/* ========================================= */}
+
+        {/* 1️⃣ FONTES LOCAIS (Primeira prioridade) */}
+        <link rel="stylesheet" href="/static/fonts/rubik.css" />
+
+        {/* 2️⃣ PRELOAD das fontes críticas locais */}
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/static/fonts/rubik-5.woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/static/fonts/rubik-11.woff2"
+          crossOrigin="anonymous"
+        />
+
+        {/* 3️⃣ FALLBACK CDN (caso fontes locais falhem) */}
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap"
+          rel="stylesheet"
+          media="print"
+          onLoad="this.media='all'; this.onload=null;"
+        /> */}
+
+        {/* 4️⃣ FALLBACK para navegadores sem JavaScript - ERRO */}
+        {/* <noscript>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" />
+        </noscript> */}
 
         {/* ========================================= */}
         {/* 🟡 FAVICONS E ÍCONES - Branding          */}
@@ -195,16 +231,16 @@ const Main = withRouter(({ children, router }) => {
 
         {/* Favicons modernos - suporte cross-browser */}
         <link rel="icon" href="/static/img/favicon/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/static/img/favicon/favicon-96x96.png" />
+        <link rel="icon" type="image/svg+xml" href={getImageUrl('favicon/favicon.svg')} />
+        <link rel="icon" type="image/png" sizes="96x96" href={getImageUrl('favicon/favicon-96x96.png')} />
         <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
 
         {/* Apple Touch Icons */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href={getImageUrl('favicon/apple-touch-icon.png')} />
 
         {/* PWA Icons - quando usuário adiciona à tela inicial */}
-        <link rel="icon" type="image/png" sizes="192x192" href="/static/img/favicon/web-app-manifest-192x192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/static/img/favicon/web-app-manifest-512x512.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href={getImageUrl('favicon/web-app-manifest-192x192.png')} />
+        <link rel="icon" type="image/png" sizes="512x512" href={getImageUrl('favicon/web-app-manifest-512x512.png')} />
 
         {/* ========================================= */}
         {/* 🟡 PWA - Progressive Web App             */}
@@ -223,7 +259,7 @@ const Main = withRouter(({ children, router }) => {
 
         {/* Microsoft Tiles */}
         <meta name="msapplication-TileColor" content="#1e1e1e" />
-        <meta name="msapplication-TileImage" content="/static/img/favicon/web-app-manifest-192x192.png" />
+        <meta name="msapplication-TileImage" content={getImageUrl('favicon/web-app-manifest-192x192.png')} />
 
         {/* Web App Manifest */}
         <link rel="manifest" href="/static/manifest.json" />
@@ -278,7 +314,7 @@ const Main = withRouter(({ children, router }) => {
             "@type": "Person",
             "name": "Carlos Henrique Carvalho de Santana",
             "url": "https://carlohcs.me",
-            "image": "https://carlohcs.me/static/img/home/carlohcs-lg.png",
+            "image": "https://carlohcs.me${getImageUrl('home/carlohcs-lg.png')}",
             "jobTitle": "Software Engineer",
             "description": "${getMessage('page', 'seoDescription')}",
             "sameAs": [
@@ -296,7 +332,7 @@ const Main = withRouter(({ children, router }) => {
       </Head>
       <Header />
       <Menu />
-      {isTransitioning && <div className="loading-indicator" />}
+      { isTransitioning && <div className="loading-indicator" /> }
       { translationKey &&
           <>
             <CustomHead title={getMessage(translationKey, 'title')} />

@@ -9,8 +9,18 @@ const optimizedImages = require('next-optimized-images')
 // https://github.com/cyrilwanner/next-compose-plugins
 const nextConfig = {
   webpack: (config, _options) => {
-
-    // modify the `config` here
+    // Adiciona regra para arquivos .ico - não processa, apenas copia
+    config.module.rules.push({
+      test: /\.ico$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          publicPath: '/static/',
+          outputPath: 'static/',
+          name: '[path][name].[ext]'
+        }
+      }
+    })
 
     return config
   }
@@ -22,10 +32,13 @@ module.exports = withPlugins([
     handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
     optimizeImages: true,
     svgo: {
-
+      plugins: [
+        { removeViewBox: false },
+        { removeDimensions: true }
+      ]
     },
     optipng: {
-      optimizationLevel: 3
+      optimizationLevel: 4 // the default is 3, but 4 is better for production
     }
   }],
   [withCSS, {

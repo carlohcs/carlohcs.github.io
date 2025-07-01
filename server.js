@@ -6,6 +6,7 @@ const express = require('express')
 const envConfig = makeConfig()
 const app = next({ dev: envConfig.env !== 'production' })
 const routesHandler = routes.getRequestHandler(app)
+const isProd = envConfig.env === 'production'
 
 // https://github.com/fridays/next-routes#on-the-server
 
@@ -13,7 +14,7 @@ const routesHandler = routes.getRequestHandler(app)
 function handleRedirect(req, res, next) {
   let requestedUrl = req.originalUrl === '/' ? '' : req.originalUrl
 
-  if (envConfig.env === 'production' && req.hostname !== envConfig.host) {
+  if (isProd && req.hostname !== envConfig.host) {
     return res.redirect(301, `${envConfig.baseUrl}${requestedUrl}`)
   } else {
     return next()
@@ -22,33 +23,33 @@ function handleRedirect(req, res, next) {
 
 // Middleware de segurança - adiciona headers de proteção
 function securityHeaders(req, res, next) {
+  if (isProd) {
   // Proteção contra iframe embedding (clickjacking)
-  res.setHeader('X-Frame-Options', 'DENY')
+    res.setHeader('X-Frame-Options', 'DENY')
 
-  // Prevenção de MIME sniffing
-  res.setHeader('X-Content-Type-Options', 'nosniff')
+    // Prevenção de MIME sniffing
+    res.setHeader('X-Content-Type-Options', 'nosniff')
 
-  // Proteção XSS (Cross-Site Scripting)
-  res.setHeader('X-XSS-Protection', '1; mode=block')
+    // Proteção XSS (Cross-Site Scripting)
+    res.setHeader('X-XSS-Protection', '1; mode=block')
 
-  // Content Security Policy
-  res.setHeader('Content-Security-Policy',
-    'default-src \'self\'; ' +
+    // Content Security Policy
+    res.setHeader('Content-Security-Policy',
+      'default-src \'self\'; ' +
     'script-src \'self\' \'unsafe-inline\' https://www.google-analytics.com; ' +
     'style-src \'self\' \'unsafe-inline\' https://fonts.googleapis.com; ' +
     'font-src \'self\' https://fonts.gstatic.com; ' +
     'img-src \'self\' data: https:; ' +
     'connect-src \'self\' https://www.google-analytics.com; ' +
     'frame-ancestors \'none\';'
-  )
+    )
 
-  // Strict Transport Security (HTTPS)
-  if (envConfig.env === 'production') {
+    // Strict Transport Security (HTTPS)
     res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
-  }
 
-  // Referrer Policy
-  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
+    // Referrer Policy
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
+  }
 
   next()
 }
