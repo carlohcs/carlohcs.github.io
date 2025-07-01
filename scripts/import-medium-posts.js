@@ -156,7 +156,7 @@ function extractExcerpt(content) {
 function generateMarkdownFile(post) {
   const frontmatter = `---
 title: "${post.title.replace(/"/g, '\\"')}"
-slug: "${post.slug}"
+slug: "${createPostUrl(post)}"
 date: "${post.date}"
 excerpt: "${post.excerpt.replace(/"/g, '\\"')}"
 source: "medium"
@@ -170,8 +170,29 @@ categories: [${post.categories.map(cat => `"${cat.replace(/"/g, '\\"')}"`).join(
   return frontmatter + post.content
 }
 
+function sanitizeSlug(slug) {
+  let finalSlug
+
+  finalSlug = decodeURIComponent(slug).toLowerCase()
+
+  // Normaliza caracteres especiais (ç -> c, á -> a, é -> e, etc.)
+  finalSlug = finalSlug.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+
+  // Remove caracteres especiais e espaços, mantém apenas letras, números e hífens
+  finalSlug = finalSlug.replace(/[^a-z0-9]+/g, '-')
+
+  // Remove hífens no início e fim
+  finalSlug = finalSlug.replace(/^-|-$/g, '')
+
+  return finalSlug
+}
+
+function createPostUrl(post) {
+  return `${post.date}-${sanitizeSlug(post.slug)}`
+}
+
 function savePost(post) {
-  const filename = `${post.date}-${post.slug}.md`
+  const filename = `${createPostUrl(post)}.md`
   const filepath = path.join(POSTS_DIR, filename)
   const markdown = generateMarkdownFile(post)
 
