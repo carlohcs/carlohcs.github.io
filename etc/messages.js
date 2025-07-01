@@ -41,7 +41,7 @@ export const messages = {
       'description': '"Quando não me sentir mais útil, quando sentir que estou pensando só em mim mesmo, não tenho mais o direito de estar vivo. É assim que penso."<br /><br />- Enéas Carneiro'
     },
     'home': {
-      'title': 'Carlos Henrique | carlohcs.me',
+      'title': 'Carlos Henrique',
       'welcome': 'Olá.',
       'subdescription': 'Meu nome é Carlos Henrique.',
       'shortDescription': '<strong>Sou engenheiro de software, instrutor e facilitador.</strong>',
@@ -353,7 +353,7 @@ export const messages = {
       'description': '"When I no longer feel useful, when I feel that I am thinking only of myself, I no longer have the right to be alive. That is how I think."<br /><br />- Enéas Carneiro'
     },
     'home': {
-      'title': 'Carlos Henrique | carlohcs.me',
+      'title': 'Carlos Henrique',
       'welcome': 'Hello.',
       'subdescription': 'My name is Carlos Henrique.',
       'shortDescription': '<strong>I am a software engineer, instructor and facilitator.</strong>',

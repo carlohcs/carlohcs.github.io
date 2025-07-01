@@ -40,27 +40,42 @@ jobs:
       - name: Build the project
         run: npm run build:static
 
-      # - name: Validate static build
-      #   run: |
-      #     # Checking if the static build is valid
-      #     ls -la docs/
-      #     test -f docs/index.html || (echo "index.html not found!" && exit 1)
-      #     test -f docs/_next/static/ || (echo "Next.js files not found!" && exit 1)
-      #     test -f docs/sitemap.xml || (echo "sitemap.xml not found!" && exit 1)
-      #     test -f docs/robots.txt || (echo "robots.txt not found!" && exit 1)
+      - name: Validate static build
+        run: |
+          # Checking if the static build is valid
+          echo "📁 Checking docs directory..."
+          ls -la docs/
           
-      #     # Validate fonts were copied to static build
-      #     test -f docs/static/fonts/rubik.css || (echo "Fonts CSS not found!" && exit 1)
-      #     test -f docs/static/fonts/rubik-5.woff2 || (echo "rubik-5.woff2 not found!" && exit 1)
-      #     test -f docs/static/fonts/rubik-11.woff2 || (echo "rubik-11.woff2 not found!" && exit 1)
+          echo "🔍 Validating required files..."
+          test -f docs/index.html || (echo "❌ index.html not found!" && exit 1)
+          test -d docs/_next/static/ || (echo "❌ Next.js static files not found!" && exit 1)
+          test -f docs/sitemap.xml || (echo "❌ sitemap.xml not found!" && exit 1)
           
-      #     echo "✅ Everything looks good!"
+          echo "🎨 Validating fonts..."
+          test -f docs/static/fonts/rubik.css || (echo "❌ Fonts CSS not found!" && exit 1)
+          test -f docs/static/fonts/rubik-5.woff2 || (echo "❌ rubik-5.woff2 not found!" && exit 1)
+          test -f docs/static/fonts/rubik-11.woff2 || (echo "❌ rubik-11.woff2 not found!" && exit 1)
+          
+          echo "📊 Build size:"
+          du -sh docs/
+          echo "✅ Everything looks good!"
+
+      - name: Debug deployment info
+        run: |
+          echo "🔍 Deployment Debug Info:"
+          echo "Branch: ${{ github.ref }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Repository: ${{ github.repository }}"
 
       # Deploy to GitHub Pages if on main branch
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
           cname: carlohcs.me
+          force_orphan: true
+          enable_jekyll: false
+          commit_message: 'Deploy ${{ github.sha }}'
