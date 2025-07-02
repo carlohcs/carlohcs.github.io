@@ -26,6 +26,8 @@ const AppProvider = ({ children }) => {
     setLang(savedLang)
     setTheme(savedTheme)
     setIsHydrated(true)
+
+    document.body.classList.add('hydrated')
   }, [])
 
   // Aplica idioma apenas após hidratação

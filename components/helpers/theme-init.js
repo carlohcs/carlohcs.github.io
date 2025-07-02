@@ -1,8 +1,9 @@
 export const getThemeInitScript = () => `
 (function() {
+  var STORAGE_KEY = 'carlohcs.me';
+
   try {
-    const STORAGE_KEY = 'carlohcs.me';
-    const data = JSON.parse(localStorage.getItem(STORAGE_KEY))
+    var data = JSON.parse(localStorage.getItem(STORAGE_KEY))
 
     var theme = data.theme || 'light';
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -10,6 +11,15 @@ export const getThemeInitScript = () => `
     if (theme === 'dark' || (theme === 'system' && prefersDark)) {
       document.body.classList.add('dark-ui');
     }
-  } catch (e) {}
+
+    // Marca como hidratado após um frame
+    requestAnimationFrame(function() {
+      document.body.classList.add('hydrated');
+    });
+  } catch (e) {
+   setTimeout(function() {
+      document.body.classList.add('hydrated');
+    }, 100);
+  }
 })();
 `

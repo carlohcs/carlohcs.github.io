@@ -17,21 +17,16 @@ export const PageTransition = ({ children }) => {
       }, 50)
     }
 
-    const handleRouteChangeError = () => {
-      // Remove classe em caso de erro
-      document.body.classList.remove('page-transitioning')
-    }
-
     // Listeners para eventos do router
     router.events.on('routeChangeStart', handleRouteChangeStart)
     router.events.on('routeChangeComplete', handleRouteChangeComplete)
-    router.events.on('routeChangeError', handleRouteChangeError)
+    router.events.on('routeChangeError', handleRouteChangeComplete)
 
     // Cleanup
     return () => {
       router.events.off('routeChangeStart', handleRouteChangeStart)
       router.events.off('routeChangeComplete', handleRouteChangeComplete)
-      router.events.off('routeChangeError', handleRouteChangeError)
+      router.events.off('routeChangeError', handleRouteChangeComplete)
     }
   }, [router])
 

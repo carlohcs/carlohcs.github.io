@@ -48,6 +48,10 @@ body {
   /* Evita o "jump" quando scrollbar aparece/desaparece */
   overflow: hidden auto;
 
+  &.hydrated {
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+  }
+
   /* Previne flash durante navegação */
   &.page-transitioning {
     transition: none !important;
