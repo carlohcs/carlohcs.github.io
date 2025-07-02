@@ -1,6 +1,7 @@
 import App from 'next/app'
 import Router from 'next/router'
 import { AppProvider } from '../components/providers/AppProvider'
+import { PageTransition } from '../components/transition/PageTransition'
 import withGA from 'next-ga'
 
 import 'normalize.css'
@@ -41,9 +42,11 @@ class MyApp extends App {
 
     return (
       <>
-        <AppProvider key={router.route}>
-          <Component {...pageProps} key={router.route} />
-        </AppProvider>
+        <PageTransition>
+          <AppProvider key={router.route}>
+            <Component {...pageProps} key={router.route} />
+          </AppProvider>
+        </PageTransition>
       </>
     )
   }
