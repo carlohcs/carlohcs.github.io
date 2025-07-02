@@ -90,6 +90,75 @@ function cleanTitle(title) {
   return title.replace(/ \| by .+ \| .+$/, '').trim()
 }
 
+function getOriginalImageName(url) {
+  try {
+    const urlObj = new URL(url)
+    let pathname = urlObj.pathname
+
+    // Remove parâmetros de redimensionamento do Medium
+    pathname = pathname.replace(/\/max\/\d+\//, '/')
+    pathname = pathname.replace(/\/fit\/\d+\//, '/')
+
+    // Extrai o nome do arquivo
+    const filename = path.basename(pathname)
+
+    // Se não tem extensão, adiciona .jpg
+    if (!path.extname(filename)) {
+      return filename + '.jpg'
+    }
+
+    // Sanitiza o nome do arquivo
+    return filename.replace(/[^a-zA-Z0-9.-]/g, '_')
+  } catch (error) {
+    // Fallback para URLs malformadas
+    const timestamp = Date.now()
+    const randomId = Math.random().toString(36).substr(2, 6)
+    return `medium-image-${timestamp}-${randomId}.jpg`
+  }
+}
+
+function isImageValid(filepath) {
+  try {
+    if (!fs.existsSync(filepath)) {
+      return false
+    }
+
+    const stats = fs.statSync(filepath)
+
+    // Verifica se o arquivo tem tamanho razoável (> 1KB)
+    if (stats.size < 1024) {
+      console.log(`🗑️ Arquivo muito pequeno, será redownload: ${path.basename(filepath)}`)
+      return false
+    }
+
+    // Verifica se é um arquivo de imagem válido lendo os primeiros bytes
+    const buffer = fs.readFileSync(filepath, { start: 0, end: 10 })
+    const header = buffer.toString('hex')
+
+    // Verifica assinaturas de arquivo de imagem
+    const imageSignatures = [
+      'ffd8ff',    // JPEG
+      '89504e47',  // PNG
+      '47494638',  // GIF
+      '52494646'   // WebP (RIFF)
+    ]
+
+    const isValidImage = imageSignatures.some(sig =>
+      header.toLowerCase().startsWith(sig.toLowerCase())
+    )
+
+    if (!isValidImage) {
+      console.log(`🗑️ Arquivo não é uma imagem válida, será redownload: ${path.basename(filepath)}`)
+      return false
+    }
+
+    return true
+  } catch (error) {
+    console.log(`🗑️ Erro ao verificar imagem, será redownload: ${path.basename(filepath)}`)
+    return false
+  }
+}
+
 async function cleanContent(html) {
   // Verificar se o conteúdo já é HTML válido
   if (!html || typeof html !== 'string') {
@@ -121,27 +190,35 @@ async function cleanContent(html) {
     const src = img.src
     if (src && (src.includes('medium.com') || src.includes('cdn-images'))) {
       imageCounter++
-      const timestamp = Date.now()
-      const randomId = Math.random().toString(36).substr(2, 9)
-      const filename = `img-${timestamp}-${randomId}.jpg`
+
+      // Usa nome original da imagem
+      const filename = getOriginalImageName(src)
+      const filepath = path.join(IMAGES_DIR, filename)
 
       img.src = `/static/img/blog/${filename}`
       img.setAttribute('data-original-src', src)
 
-      console.log(`📥 Preparando download da imagem ${imageCounter}: ${src}`)
-      imagePromises.push(downloadImage(src, filename))
+      // Só baixa se não existe ou está inválida
+      if (!isImageValid(filepath)) {
+        console.log(`📥 Preparando download da imagem ${imageCounter}: ${filename}`)
+        imagePromises.push(downloadImage(src, filename))
+      } else {
+        console.log(`✅ Imagem já válida: ${filename}`)
+      }
     }
   })
 
   // Aguarda todas as imagens serem baixadas
   if (imagePromises.length > 0) {
-    console.log(`⏳ Baixando ${imagePromises.length} imagens...`)
+    console.log(`⏳ Baixando ${imagePromises.length} imagens novas/inválidas...`)
     try {
       await Promise.all(imagePromises)
       console.log(`✅ Todas as ${imagePromises.length} imagens foram processadas`)
     } catch (error) {
       console.warn('⚠️ Erro ao baixar algumas imagens:', error.message)
     }
+  } else {
+    console.log(`✅ Todas as imagens já estão válidas (${imageCounter} imagens)`)
   }
 
   return doc.body.innerHTML
@@ -206,11 +283,10 @@ async function downloadImage(url, filename, maxRedirects = 5) {
   return new Promise((resolve, reject) => {
     const filepath = path.join(IMAGES_DIR, filename)
 
-    // Verifica se a imagem já foi baixada
+    // Remove arquivo inválido se existir
     if (fs.existsSync(filepath)) {
-      console.log(`⏭️ Imagem já existe: ${filename}`)
-      resolve(filepath)
-      return
+      fs.unlinkSync(filepath)
+      console.log(`🗑️ Removido arquivo inválido: ${filename}`)
     }
 
     const downloadFromUrl = (currentUrl, redirectCount = 0) => {
@@ -255,8 +331,16 @@ async function downloadImage(url, filename, maxRedirects = 5) {
 
         file.on('finish', () => {
           file.close()
-          console.log(`🖼️ Imagem baixada: ${filename}`)
-          resolve(filepath)
+
+          // Verifica se a imagem baixada é válida
+          if (isImageValid(filepath)) {
+            console.log(`🖼️ Imagem baixada e validada: ${filename}`)
+            resolve(filepath)
+          } else {
+            console.log(`❌ Imagem baixada mas inválida: ${filename}`)
+            fs.unlink(filepath, () => {}) // Remove arquivo inválido
+            reject(new Error(`Imagem baixada é inválida: ${filename}`))
+          }
         })
 
         file.on('error', (err) => {
@@ -275,6 +359,34 @@ async function downloadImage(url, filename, maxRedirects = 5) {
   })
 }
 
+async function cleanImagesFolder(folder) {
+  let promises = []
+
+  fs.readdirSync(folder, (err, files) => {
+    if (err) {
+      console.error('❌ Erro ao ler diretório de imagens:', err)
+      return
+    }
+
+    files.forEach(file => {
+      promises.push(new Promise((resolve, _reject) => {
+        const filepath = path.join(folder, file)
+
+        fs.unlink(filepath, (err) => {
+          if (err) {
+            console.error('❌ Erro ao remover imagem:', err)
+          } else {
+            console.log(`Removida imagem: ${file}`)
+            resolve()
+          }
+        })
+      }))
+    })
+  })
+
+  await Promise.all(promises)
+}
+
 async function main() {
   try {
     console.log('🚀 Iniciando importação de posts do Medium via rss2json...\n')
@@ -291,6 +403,8 @@ async function main() {
     }
 
     console.log('\n📝 Processando e salvando posts...')
+
+    await cleanImagesFolder(IMAGES_DIR)
 
     let savedCount = 0
     for (const post of posts) {
