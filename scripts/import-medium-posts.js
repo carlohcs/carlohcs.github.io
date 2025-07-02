@@ -185,9 +185,17 @@ async function cleanContent(html) {
   // Converte imagens do Medium para locais e baixa
   const imagePromises = []
   let imageCounter = 0
+  let imagesArray = [...doc.querySelectorAll('img')]
 
-  doc.querySelectorAll('img').forEach(img => {
+  // remove the static.jpg image from Medium
+  doc.body.removeChild(imagesArray[imagesArray.length - 1])
+
+  // remove the static.jpg image from Medium
+  const images = imagesArray.splice(0, imagesArray.length - 1)
+
+  images.forEach(img => {
     const src = img.src
+
     if (src && (src.includes('medium.com') || src.includes('cdn-images'))) {
       imageCounter++
 
@@ -197,6 +205,7 @@ async function cleanContent(html) {
 
       img.src = `/static/img/blog/${filename}`
       img.setAttribute('data-original-src', src)
+      img.setAttribute('onerror', `this.onerror=null;this.src='${src}';`)
 
       // Só baixa se não existe ou está inválida
       if (!isImageValid(filepath)) {
