@@ -12,7 +12,9 @@ import { findRoute } from '../helpers/find-route'
 const ActiveLink = ({ children, router, route, className }) => {
   const activeClass = 'nav__item__link--active'
   const currentPath = router.pathname
-  const findCurrentRoute = findRoute(route).page
+  const currentRoute = findRoute(route)
+  const findCurrentRoute = currentRoute.page
+  const finalRoute = findCurrentRoute !== 'home' ? `${findCurrentRoute}` : '/'
   let active =
     currentPath === route || findCurrentRoute === currentPath ? activeClass : ''
 
@@ -23,14 +25,12 @@ const ActiveLink = ({ children, router, route, className }) => {
       return
     }
 
-    const finalRoute = findRoute(route).name
-
-    router.push(finalRoute !== 'home' ? finalRoute : '/')
+    router.push(finalRoute)
   }
 
   return (
     <a
-      href={route}
+      href={finalRoute}
       data-page={findCurrentRoute}
       onClick={handleClick}
       className={[className, active].join(' ')}

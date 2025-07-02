@@ -15,7 +15,7 @@
     "fonts:download": "node scripts/download-fonts.js",
     "fonts:update": "node scripts/download-fonts.js",
     "import:medium": "node scripts/import-medium-posts.js",
-    "generate:sitemap": "node scripts/generate-sitemap.js && cp sitemap static/sitemap.xml"
+    "generate:sitemap": "node scripts/generate-sitemap.js && cp sitemap.xml static/sitemap.xml"
   },
   "engines": {
     "node": "18.18.x"

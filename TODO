@@ -1,0 +1,3 @@
+[] Update meta data related to each file (eg. blog pages)
+[x] When navigating to a blog item and trying to come back, we are getting 404 because the url becames /blog/engineer
+[x] Some way to avoid white blinking (while loading the page)

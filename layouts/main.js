@@ -11,6 +11,7 @@ import { Introduction } from '../components/page/Introduction'
 import { findRoute } from '../components/helpers/find-route'
 import { CustomHead } from '../components/custom-head/CustomHead'
 import { getImageUrl } from '../components/helpers/get-image-url'
+import { getThemeInitScript } from '../components/helpers/theme-init'
 
 // https://nextjs.org/learn/basics/using-shared-components/the-layout-component
 
@@ -107,6 +108,28 @@ const Main = withRouter(({ children, router, customTitle, customTitleDescription
         {/* ========================================= */}
         {/* 🔴 PRIORIDADE CRÍTICA - Essencial       */}
         {/* ========================================= */}
+
+        {/* EVITA FOUC - Flash of Unstyled Content */}
+        {/* 1. HTML carrega (sem estilos) */}
+        {/* 2. O JavaScript executa e define o tema */}
+        {/* 3. O CSS é aplicado */}
+        {/* SCRIPT CRÍTICO - Executa antes de qualquer CSS */}
+        <script dangerouslySetInnerHTML={{ __html: getThemeInitScript() }} />
+
+        {/* CSS crítico inline */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            body { 
+              transition: none !important;
+              background: #fff; 
+              color: #1e1e1e;
+            }
+            body.dark-ui { 
+              background: #1e1e1e !important; 
+              color: #e1e1e1 !important;
+            }
+          `
+        }} />
 
         {/* Configurações básicas do navegador */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -14,18 +14,34 @@ const MENU_OPEN = 'menu-open'
 const OVERFLOW = 'overflow--hidden'
 
 const AppProvider = ({ children }) => {
-  const [lang, setLang] = useState(storage.getLang() || DEFAULT_LANG)
-  const [theme, setTheme] = useState(storage.getTheme() || DEFAULT_THEME)
+  const [isHydrated, setIsHydrated] = useState(false)
+  const [lang, setLang] = useState(DEFAULT_LANG)
+  const [theme, setTheme] = useState(DEFAULT_THEME)
 
+  // Hidratação após mount (evita SSR/client mismatch)
   useEffect(() => {
+    const savedLang = storage.getLang() || DEFAULT_LANG
+    const savedTheme = storage.getTheme() || DEFAULT_THEME
+
+    setLang(savedLang)
+    setTheme(savedTheme)
+    setIsHydrated(true)
+  }, [])
+
+  // Aplica idioma apenas após hidratação
+  useEffect(() => {
+    if (!isHydrated) return
+
     document.documentElement.lang = lang
     storage.saveLang(lang)
-  }, [lang])
+  }, [lang, isHydrated])
 
   useEffect(() => {
+    if (!isHydrated) return
+
     document.body.classList.toggle('dark-ui', theme === THEMES.DARK)
     storage.saveTheme(theme)
-  }, [theme])
+  }, [theme, isHydrated])
 
   const toggleLang = (val) => {
     if (!val) {
