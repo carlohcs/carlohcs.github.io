@@ -1,19 +1,20 @@
 import { useContext } from 'react'
 import { Main } from '../../layouts/main'
 import { AppContext } from '../providers/AppProvider'
-import { CustomHead } from '../custom-head/CustomHead'
 import PropTypes from 'prop-types'
 
 import './error.css'
+import { createMarkup } from '../helpers/create-markup'
+import Head from 'next/head'
 
 const ErrorWrapper = ({ statusCode }) => {
   const { getMessage } = useContext(AppContext)
 
-  const createMarkup = value => ({ __html: value })
   const title = statusCode === 404 ? getMessage('error', 'codes', '404') : getMessage('error', 'defaultErrorMessage')
+  const pageTitle = `${title.replace('.', '')} ${getMessage('page', 'titleSuffix')}`
+
   return (
     <>
-      <CustomHead title={title} />
       <Main>
         <div className="error-page flex flex--justify-start">
           <h1 className="error-page__status-code">{statusCode}</h1>
@@ -22,6 +23,9 @@ const ErrorWrapper = ({ statusCode }) => {
           <div className="error-page__citation" dangerouslySetInnerHTML={createMarkup(getMessage('error', 'citation'))} />
         </div>
       </Main>
+      <Head>
+        <title>{pageTitle}</title>
+      </Head>
     </>
   )
 }

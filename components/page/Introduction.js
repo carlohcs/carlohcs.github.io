@@ -2,9 +2,12 @@ import { useContext } from 'react'
 import { AppContext } from '../providers/AppProvider'
 import PropTypes from 'prop-types'
 import { createMarkup } from '../helpers/create-markup'
+import { useGetTranslationKey } from '../../hooks/use-get-translation-key'
+import { withRouter } from 'next/router'
 
-export const Introduction = ({ title, titleDescription, description, translationKey }) => {
+const Introduction = withRouter(({ title, titleDescription, description, router }) => {
   const { getMessage } = useContext(AppContext)
+  const translationKey = useGetTranslationKey(router)
   const finalTitle = title || getMessage(translationKey, 'title')
 
   const isTitleDescriptionComponent = typeof titleDescription === 'object'
@@ -25,11 +28,15 @@ export const Introduction = ({ title, titleDescription, description, translation
 
     </div>
   )
-}
+})
 
 Introduction.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   titleDescription: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   description: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  translationKey: PropTypes.string.isRequired
+  router: PropTypes.object.isRequired
+}
+
+export {
+  Introduction
 }

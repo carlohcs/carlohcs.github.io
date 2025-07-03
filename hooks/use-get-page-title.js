@@ -1,9 +1,7 @@
 import { useContext } from 'react'
-import Head from 'next/head'
-import { AppContext } from '../providers/AppProvider'
-import PropTypes from 'prop-types'
+import { AppContext } from '../components/providers/AppProvider'
 
-export const CustomHead = ({ title }) => {
+export const useGetPageTitle = ({ title }) => {
   const { getMessage } = useContext(AppContext)
   const isBlogPost = typeof window !== 'undefined' && window.location.pathname.includes('/blog/')
 
@@ -15,13 +13,5 @@ export const CustomHead = ({ title }) => {
 
   finalTitle = title ? `${title} ${getMessage('page', 'titleSuffix')}` : getMessage('page', 'defaultTitle')
 
-  return (
-    <Head>
-      <title>{finalTitle}</title>
-    </Head>
-  )
-}
-
-CustomHead.propTypes = {
-  title: PropTypes.string
+  return finalTitle
 }

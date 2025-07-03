@@ -1,8 +1,10 @@
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { storage } from '../helpers/storage'
-import { messages } from '../../etc/messages'
-import { LANGS, THEMES, DEFAULT_LANG, DEFAULT_THEME } from '../helpers/constants'
+
+import { LANGS, THEMES } from '../helpers/constants'
+import { useTheme } from '../../hooks/use-theme'
+import { useLang } from '../../hooks/use-lang'
+import { getMessage } from '../../hooks/use-get-message'
 
 // Sem precisar de Redux:
 // https://github.com/zeit/next.js/tree/2c7b4d8aaac475f81de21c0e9cb40fdea1a7a178/examples/with-context-api
@@ -14,70 +16,12 @@ const MENU_OPEN = 'menu-open'
 const OVERFLOW = 'overflow--hidden'
 
 const AppProvider = ({ children }) => {
-  const [isHydrated, setIsHydrated] = useState(false)
-  const [lang, setLang] = useState(DEFAULT_LANG)
-  const [theme, setTheme] = useState(DEFAULT_THEME)
+  const { theme, toggleTheme, toggleBetweenThemes } = useTheme()
+  const { lang, toggleLang } = useLang()
 
-  // Hidratação após mount (evita SSR/client mismatch)
   useEffect(() => {
-    const savedLang = storage.getLang() || DEFAULT_LANG
-    const savedTheme = storage.getTheme() || DEFAULT_THEME
-
-    setLang(savedLang)
-    setTheme(savedTheme)
-    setIsHydrated(true)
-
     document.body.classList.add('hydrated')
   }, [])
-
-  // Aplica idioma apenas após hidratação
-  useEffect(() => {
-    if (!isHydrated) return
-
-    document.documentElement.lang = lang
-    storage.saveLang(lang)
-  }, [lang, isHydrated])
-
-  useEffect(() => {
-    if (!isHydrated) return
-
-    document.body.classList.toggle('dark-ui', theme === THEMES.DARK)
-    storage.saveTheme(theme)
-  }, [theme, isHydrated])
-
-  const toggleLang = (val) => {
-    if (!val) {
-      throw new Error('Invalid lang')
-    }
-
-    setLang(LANGS[val.toUpperCase()])
-  }
-
-  const toggleTheme = (newTheme) => {
-    if (!THEMES[newTheme.toUpperCase()]) {
-      throw new Error('Invalid theme')
-    }
-
-    setTheme(THEMES[newTheme.toUpperCase()])
-  }
-
-  const getMessage = (page, prop, subprop) => {
-    const content = messages[lang][page]
-
-    if (prop && subprop) {
-      return content[prop][subprop]
-    }
-
-    if (prop) {
-      return content[prop]
-    }
-
-    return content
-  }
-
-  const toggleBetweenThemes = () => {
-    toggleTheme(theme === THEMES.DARK ? 'LIGHT' : 'DARK')
-  }
 
   const toggleMenu = () => {
     document.body.classList.toggle(MENU_OPEN)
@@ -99,9 +43,7 @@ const AppProvider = ({ children }) => {
         toggleBetweenThemes,
         toggleMenu,
         resetMenuBehavior,
-        getMessage,
-        getTheme: () => theme,
-        getLang: () => lang,
+        getMessage: (page, prop, subprop) => getMessage(lang, page, prop, subprop),
         themes: THEMES,
         langs: LANGS
       }}

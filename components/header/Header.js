@@ -21,25 +21,39 @@ const ToggleMenuComponent = () => {
 }
 
 const ToggleLanguageComponent = () => {
-  const { toggleLang, getMessage, getLang } = useContext(AppContext)
+  const { toggleLang, getMessage, lang } = useContext(AppContext)
 
   return (
     <div className="toggle-language" role="menu">
-      {Object.keys(LANGS).map((lang, index) => (
-        <span role="menuitem" key={lang} tabIndex={index + 2} title={lang} onClick={() => toggleLang(LANGS[lang])} onKeyDown={(e) => e.key === 'Enter' && toggleLang(LANGS[lang])} className={['toggle-language__option', getLang() === LANGS[lang] ? 'toggle-language__option--active' : ''].join(' ')} aria-label={getMessage('toggleLang', `${lang.toLowerCase()}LangLabel`)}>{lang}</span>
+      {Object.keys(LANGS).map((currentLang, index) => (
+        <span
+          role="menuitem"
+          key={currentLang}
+          tabIndex={index + 2}
+          title={currentLang}
+          onClick={() => toggleLang(currentLang)}
+          onKeyDown={(e) => e.key === 'Enter' && toggleLang(currentLang)}
+          className={[
+            'toggle-language__option',
+            LANGS[currentLang] === lang ? 'toggle-language__option--active' : ''
+          ].join(' ')}
+          aria-label={getMessage('toggleLang', `${currentLang.toLowerCase()}LangLabel`)}
+        >
+          {currentLang}
+        </span>
       ))}
     </div>
   )
 }
 
 const ToggleThemeComponent = () => {
-  const { toggleBetweenThemes, getMessage, getTheme } = useContext(AppContext)
+  const { toggleBetweenThemes, getMessage, theme } = useContext(AppContext)
 
   return (
     <div
       onClick={toggleBetweenThemes}
       onKeyDown={(e) => e.key === 'Enter' && toggleBetweenThemes()}
-      className={['toggle-theme', getTheme() === THEMES.DARK ? 'toggle-theme--light' : 'toggle-theme--dark'].join(' ')}
+      className={['toggle-theme', theme === THEMES.DARK ? 'toggle-theme--light' : 'toggle-theme--dark'].join(' ')}
       aria-label={getMessage('toggleTheme', 'aria')}
       title={getMessage('toggleTheme', 'title')}
       role="menuitem" tabIndex="4">
