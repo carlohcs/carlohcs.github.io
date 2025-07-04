@@ -1,9 +1,12 @@
-import { useState, useEffect, useContext } from 'react'
+import { useContext,useEffect, useState } from 'react'
+
 import PropTypes from 'prop-types'
+
 import { getAllPosts } from '../components/helpers/blog-utils'
-import { Main } from '../layouts/main'
-import { AppContext } from '../components/providers/AppProvider'
 import { createMarkup } from '../components/helpers/create-markup'
+import { AppContext } from '../components/providers/AppProvider'
+import { useGetPageMetaContent } from '../hooks/use-get-page-meta-content'
+import { Main } from '../layouts/main'
 
 import './blog.css'
 
@@ -13,7 +16,7 @@ const cleanExcerpt = (excerpt) => {
   return markup
 }
 
-const Blog = ({ posts: initialPosts }) => {
+const Blog = ({ posts: initialPosts, metaContent }) => {
   const [posts] = useState(initialPosts || [])
   const [loading, setLoading] = useState(!initialPosts)
 
@@ -38,7 +41,7 @@ const Blog = ({ posts: initialPosts }) => {
 
   return (
     <>
-      <Main>
+      <Main metaContent={metaContent}>
         <div className="blog-container container">
           <div className="posts-grid">
             {posts.map((post, index) => (
@@ -79,21 +82,25 @@ const Blog = ({ posts: initialPosts }) => {
 }
 
 Blog.propTypes = {
-  posts: PropTypes.array
+  posts: PropTypes.array,
+  metaContent: PropTypes.object
 }
 
 Blog.defaultProps = {
-  posts: []
+  posts: [],
+  metaContent: {}
 }
 
 // Função para gerar os posts estaticamente no build time
 export async function getStaticProps() {
   try {
     const posts = getAllPosts()
+    const metaContent = useGetPageMetaContent('blog')
 
     return {
       props: {
-        posts
+        posts,
+        metaContent
       },
       // Revalida a cada 24 horas se estiver em modo ISR
       revalidate: 86400

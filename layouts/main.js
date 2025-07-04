@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from 'react'
+
 import Router, { withRouter } from 'next/router'
+import PropTypes from 'prop-types'
+
 import { Header } from '../components/header/Header'
 import { Menu } from '../components/menu/Menu'
-import { AppContext } from '../components/providers/AppProvider'
-import PropTypes from 'prop-types'
-import { Introduction } from '../components/page/Introduction'
 import { Meta } from '../components/meta/Meta'
+import { Introduction } from '../components/page/Introduction'
+import { AppContext } from '../components/providers/AppProvider'
 import { useGetTranslationKey } from '../hooks/use-get-translation-key'
 
 // https://nextjs.org/learn/basics/using-shared-components/the-layout-component

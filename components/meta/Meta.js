@@ -1,11 +1,13 @@
-import Head from 'next/head'
-import { getImageUrl } from '../helpers/get-image-url'
-import { getThemeInitScript } from '../helpers/theme-init'
 import { useContext } from 'react'
-import { AppContext } from '../providers/AppProvider'
+
+import Head from 'next/head'
 import { withRouter } from 'next/router'
 import PropTypes from 'prop-types'
+
 import { useMetaContent } from '../../hooks/use-meta-content'
+import { getImageUrl } from '../helpers/get-image-url'
+import { getThemeInitScript } from '../helpers/theme-init'
+import { AppContext } from '../providers/AppProvider'
 
 const Meta = withRouter(({ router, customTitle, metaContent }) => {
   const { getMessage } = useContext(AppContext)

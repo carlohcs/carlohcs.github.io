@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 import { findRoute } from '../components/helpers/find-route'
 
 export const useGetTranslationKey = (router) => {

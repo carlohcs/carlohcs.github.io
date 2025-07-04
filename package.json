@@ -1,23 +1,26 @@
 {
   "name": "carlohcs.github.io",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "My personal site.",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' node server.js",
     "build": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next build",
+    "build:dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' APP_ENV='development' next build",
     "build:static": "npm run build && npm run export && npm run export:post",
-    "build:static:dev": "NODE_ENV=dev npm run build && npm run export && npm run export:post",
+    "build:static:dev": "cross-env APP_ENV='development' npm run build:dev && npm run export && npm run export:post",
     "export": "next export -o docs/ && touch docs/.nojekyll && touch docs/CNAME && echo 'carlohcs.me' > docs/CNAME",
     "export:post": "node scripts/copy-static-files.js",
-    "start": "cross-env NODE_ENV=production NODE_OPTIONS='--openssl-legacy-provider' node server.js",
-    "start:dev": "cross-env NODE_ENV=development NODE_OPTIONS='--openssl-legacy-provider' http-server docs -p 3000",
+    "start": "cross-env APP_ENV='production' NODE_OPTIONS='--openssl-legacy-provider' node server.js",
+    "start:dev": "cross-env APP_ENV='development' NODE_OPTIONS='--openssl-legacy-provider' http-server docs -p 3000",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "fonts:download": "node scripts/download-fonts.js",
     "fonts:update": "node scripts/download-fonts.js",
     "import:medium": "node scripts/import-medium-posts.js",
-    "generate:sitemap": "node scripts/generate-sitemap.js && cp sitemap.xml static/sitemap.xml"
+    "generate:sitemap": "node scripts/generate-sitemap.js && cp sitemap.xml static/sitemap.xml",
+    "generate:blog-previews": "node scripts/generate-blog-previews.js",
+    "build:dev:run": "npm run build:static:dev && npm run start:dev"
   },
   "engines": {
     "node": "18.18.x"
@@ -49,6 +52,7 @@
     "cross-env": "^5.2.1",
     "eslint": "^8.0.0",
     "eslint-plugin-react": "^7.28.5",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "express": "^4.17.1",
     "globals": "^16.2.0",
     "heroku-ssl-redirect": "0.0.4",
@@ -68,6 +72,7 @@
     "prop-types": "^15.8.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "sharp": "^0.34.2",
     "styled-jsx-plugin-postcss": "^2.0.1",
     "svg-sprite-loader": "^4.1.6"
   },

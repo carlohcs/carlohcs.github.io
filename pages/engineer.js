@@ -1,11 +1,15 @@
 import { useContext } from 'react'
-import { Main } from '../layouts/main'
+
+import PropTypes from 'prop-types'
+
+import { createMarkup } from '../components/helpers/create-markup'
 import { AppContext } from '../components/providers/AppProvider'
 import Video from '../components/video/video'
-import { createMarkup } from '../components/helpers/create-markup'
+import { useGetPageMetaContent } from '../hooks/use-get-page-meta-content'
+import { Main } from '../layouts/main'
 
 // TODO: usar essa página como modelo para as outras -> criar um componente
-const Engineer = () => {
+const Engineer = ({ metaContent }) => {
   const { getMessage } = useContext(AppContext)
 
   const renderProject = (project, key) => {
@@ -35,7 +39,7 @@ const Engineer = () => {
 
   return (
     <>
-      <Main>
+      <Main metaContent={metaContent}>
         <section className="software-engineer">
           <div className="content container container--center">
             <div className="projects">
@@ -50,6 +54,28 @@ const Engineer = () => {
       </Main>
     </>
   )
+}
+
+Engineer.propTypes = {
+  metaContent: PropTypes.object
+}
+
+export async function getStaticProps() {
+  try {
+    const metaContent = useGetPageMetaContent('engineer')
+
+    return {
+      props: {
+        metaContent
+      }
+    }
+  } catch (error) {
+    return {
+      props: {
+        metaContent: {}
+      }
+    }
+  }
 }
 
 export default Engineer

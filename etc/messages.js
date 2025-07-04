@@ -49,6 +49,7 @@ export const messages = {
     home: {
       title: 'Carlos Henrique',
       welcome: 'Olá.',
+      seoDescription: 'Sou engenheiro de software, instrutor e facilitador.',
       subdescription: 'Meu nome é Carlos Henrique.',
       shortDescription: '<strong>Sou engenheiro de software, instrutor e facilitador.</strong>',
       description: [
@@ -377,6 +378,7 @@ export const messages = {
     home: {
       title: 'Carlos Henrique',
       welcome: 'Hello.',
+      seoDescription: 'I am a software engineer, instructor and facilitator.',
       subdescription: 'My name is Carlos Henrique.',
       shortDescription: '<strong>I am a software engineer, instructor and facilitator.</strong>',
       description: [

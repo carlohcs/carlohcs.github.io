@@ -1,5 +1,6 @@
 import { withRouter } from 'next/router'
 import PropTypes from 'prop-types'
+
 import { findRoute } from '../helpers/find-route'
 
 // typically you want to use `next/link` for this usecase

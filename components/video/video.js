@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types'
 import { useRef } from 'react'
+
+import PropTypes from 'prop-types'
 
 const Video = ({ videoName }) => {
   const videoRef = useRef(null)

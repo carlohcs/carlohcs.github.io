@@ -1,11 +1,15 @@
 import { useContext } from 'react'
-import { Main } from '../layouts/main'
-import { AppContext } from '../components/providers/AppProvider'
+
+import PropTypes from 'prop-types'
+
 import { createMarkup } from '../components/helpers/create-markup'
+import { AppContext } from '../components/providers/AppProvider'
+import { useGetPageMetaContent } from '../hooks/use-get-page-meta-content'
+import { Main } from '../layouts/main'
 
 import './resume.css'
 
-const Resume = () => {
+const Resume = ({ metaContent }) => {
   const { getMessage } = useContext(AppContext)
 
   const renderExperienceItems = items => {
@@ -34,7 +38,7 @@ const Resume = () => {
 
   return (
     <>
-      <Main>
+      <Main metaContent={metaContent}>
         <section className="resume container">
           <div className="content">
             <div className="page__description">
@@ -55,6 +59,28 @@ const Resume = () => {
       </Main>
     </>
   )
+}
+
+Resume.propTypes = {
+  metaContent: PropTypes.object
+}
+
+export async function getStaticProps() {
+  try {
+    const metaContent = useGetPageMetaContent('resume')
+
+    return {
+      props: {
+        metaContent
+      }
+    }
+  } catch (error) {
+    return {
+      props: {
+        metaContent: {}
+      }
+    }
+  }
 }
 
 export default Resume

@@ -1,9 +1,13 @@
 import { useContext } from 'react'
-import { Main } from '../layouts/main'
-import { AppContext } from '../components/providers/AppProvider'
-import { createMarkup } from '../components/helpers/create-markup'
 
-const Skills = () => {
+import PropTypes from 'prop-types'
+
+import { createMarkup } from '../components/helpers/create-markup'
+import { AppContext } from '../components/providers/AppProvider'
+import { useGetPageMetaContent } from '../hooks/use-get-page-meta-content'
+import { Main } from '../layouts/main'
+
+const Skills = ({ metaContent }) => {
   const { getMessage } = useContext(AppContext)
 
   const renderProject = (project, key) => {
@@ -44,7 +48,7 @@ const Skills = () => {
 
   return (
     <>
-      <Main>
+      <Main metaContent={metaContent}>
         <section className="resume">
           <div className="content container container--center">
             <div className="projects">
@@ -57,6 +61,28 @@ const Skills = () => {
       </Main>
     </>
   )
+}
+
+Skills.propTypes = {
+  metaContent: PropTypes.object
+}
+
+export async function getStaticProps() {
+  try {
+    const metaContent = useGetPageMetaContent('skills')
+
+    return {
+      props: {
+        metaContent
+      }
+    }
+  } catch (error) {
+    return {
+      props: {
+        metaContent: {}
+      }
+    }
+  }
 }
 
 export default Skills

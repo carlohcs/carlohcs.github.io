@@ -1,12 +1,15 @@
-import PropTypes from 'prop-types'
-import { getAllPosts, getPostBySlug, getPostImage } from '../../components/helpers/blog-utils'
-import { Main } from '../../layouts/main'
 import { useContext } from 'react'
-import { AppContext } from '../../components/providers/AppProvider'
-import { formatDate } from '../../components/helpers/date'
+
+import PropTypes from 'prop-types'
+
+import { getAllPosts, getPostBySlug, getPostImage } from '../../components/helpers/blog-utils'
 import { getBuildTimeData } from '../../components/helpers/build-time-data'
-import { useGetHost } from '../../hooks/use-get-host'
+import { formatDate } from '../../components/helpers/date'
+import { getImageUrl } from '../../components/helpers/get-image-url'
+import { AppContext } from '../../components/providers/AppProvider'
 import { messages } from '../../etc/messages'
+import { useGetHost } from '../../hooks/use-get-host'
+import { Main } from '../../layouts/main'
 
 import './blog-post.css'
 
@@ -127,12 +130,12 @@ export async function getStaticProps({ params }) {
     return { notFound: true }
   }
 
-  const image = getPostImage(post)
+  const image = `${host}${getImageUrl(`blog/meta/${post.slug}.png`) || getPostImage(post)}`
 
   post.metaContent = {
     title: `${post.title} | Blog ${messages['en'].page.titleSuffix}`,
     description: post.excerpt,
-    image: `${host}${image}`,
+    image,
     imageAlt: post.title
   }
 

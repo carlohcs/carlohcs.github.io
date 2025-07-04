@@ -1,6 +1,8 @@
-import { AppContext, LANGS, THEMES } from '../providers/AppProvider'
-import Link from 'next/link'
 import { useContext } from 'react'
+
+import Link from 'next/link'
+
+import { AppContext, LANGS, THEMES } from '../providers/AppProvider'
 
 import './header.css'
 

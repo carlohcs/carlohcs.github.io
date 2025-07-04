@@ -1,10 +1,11 @@
 import { createContext, useEffect } from 'react'
+
 import PropTypes from 'prop-types'
 
-import { LANGS, THEMES } from '../helpers/constants'
-import { useTheme } from '../../hooks/use-theme'
-import { useLang } from '../../hooks/use-lang'
 import { getMessage } from '../../hooks/use-get-message'
+import { useLang } from '../../hooks/use-lang'
+import { useTheme } from '../../hooks/use-theme'
+import { LANGS, THEMES } from '../helpers/constants'
 
 // Sem precisar de Redux:
 // https://github.com/zeit/next.js/tree/2c7b4d8aaac475f81de21c0e9cb40fdea1a7a178/examples/with-context-api

@@ -1,13 +1,14 @@
 import { useContext } from 'react'
-import { AppContext } from '../components/providers/AppProvider'
-import { getImageUrl } from '../components/helpers/get-image-url'
-import { useGetTranslationKey } from './use-get-translation-key'
-import { useGetPageTitle } from './use-get-page-title'
+
 import { getBuildTimeData } from '../components/helpers/build-time-data'
+import { getImageUrl } from '../components/helpers/get-image-url'
+import { AppContext } from '../components/providers/AppProvider'
+import { config } from '../etc/config'
 import { messages } from '../etc/messages'
 import { customRoutes } from '../routes'
-import { config } from '../etc/config'
 import { useGetHost } from './use-get-host'
+import { useGetPageTitle } from './use-get-page-title'
+import { useGetTranslationKey } from './use-get-translation-key'
 
 const defaultPageMessage = messages['en'].page
 
@@ -57,14 +58,13 @@ export const useMetaContent = ({ router, customTitle }) => {
   const description = translationKey && translationKey !== 'home' ? getMessageSafe(translationKey, 'titleDescription') : getMessageSafe('page', 'seoDescription')
 
   // Evita mismatch entre servidor e cliente
-  const seoImage = `${host}${getImageUrl('home/carlohcs-xs-2.jpg')}`
   const seoImageTitle = getMessageSafe('page', 'seoAltImageTitle')
 
   return {
     url,
     title: title || defaultSeoContent.title,
     description: description || defaultSeoContent.description,
-    image: seoImage || defaultSeoContent.image,
+    image: defaultSeoContent.image,
     imageAlt: seoImageTitle || defaultSeoContent.imageAlt,
     keywords: 'Carlos Henrique Carvalho de Santana, Carlos Henrique, Carlos, Henrique, Carvalho, Santana, portfólio, portfolio, software engineer, frontend developer, react, javascript',
     author: 'Carlos Henrique Carvalho de Santana',

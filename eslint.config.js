@@ -1,6 +1,8 @@
 const { configs } = require('@eslint/js')
 const { browser, node } = require('globals')
 const pluginReact = require('eslint-plugin-react')
+const pluginSimpleImportSort = require('eslint-plugin-simple-import-sort')
+
 const _configs = pluginReact.configs
 
 module.exports = [
@@ -64,7 +66,8 @@ module.exports = [
       }
     },
     plugins: {
-      react: pluginReact
+      react: pluginReact,
+      'simple-import-sort': pluginSimpleImportSort
     },
     rules: {
       ..._configs.recommended.rules,
@@ -93,7 +96,33 @@ module.exports = [
       'space-infix-ops': 'error',
       'eol-last': ['error', 'always'],
       'no-trailing-spaces': 'error',
-      'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 0 }]
+      'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 0 }],
+
+      // import sorts see
+      // https://github.com/lydell/eslint-plugin-simple-import-sort/
+      // https://github.com/lydell/eslint-plugin-simple-import-sort/blob/master/examples/.eslintrc.js
+      'simple-import-sort/imports': [
+        'error',
+        {
+          groups: [
+            // Packages. `react` related packages come first.
+            // if we had more than one array, each array is separated
+            // by a space
+            ['^react', '^node:'],
+            // Packages.
+            // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+            ['^@?\\w'],
+            // Absolute imports and other imports such as Vue-style `@/foo`.
+            // Anything not matched in another group.
+            ['^'],
+            // Relative imports.
+            // Anything that starts with a dot.
+            ['^\\.'],
+            // Side effect imports.
+            ['^\\u0000']
+          ]
+        }
+      ]
     },
     settings: {
       react: {

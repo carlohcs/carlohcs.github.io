@@ -1,7 +1,9 @@
 import { useContext } from 'react'
-import { AppContext } from '../components/providers/AppProvider'
+
 import PropTypes from 'prop-types'
+
 import ErrorWrapper from '../components/error/ErrorWrapper'
+import { AppContext } from '../components/providers/AppProvider'
 
 const Error = ({ statusCode }) => {
   const { getMessage } = useContext(AppContext)

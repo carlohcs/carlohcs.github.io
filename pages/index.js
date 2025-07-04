@@ -1,7 +1,9 @@
 import { useContext } from 'react'
-import { Main } from '../layouts/main'
-import { AppContext } from '../components/providers/AppProvider'
+
 import { createMarkup } from '../components/helpers/create-markup'
+import { AppContext } from '../components/providers/AppProvider'
+import { useGetPageMetaContent } from '../hooks/use-get-page-meta-content'
+import { Main } from '../layouts/main'
 
 const socialNetworks = [
   { iconName: 'github-brands.svg', className: 'github', url: 'https://github.com/carlohcs', title: 'Github' },
@@ -16,15 +18,17 @@ const socialNetworks = [
   { iconName: 'envelope-regular.svg', className: 'mail', url: 'mailto: carlohcs@gmail.com', title: 'E-mail' }
 ]
 
+import PropTypes from 'prop-types'
+
 import './index.css'
 
-const Index = () => {
+const Index = ({ metaContent }) => {
   const { getMessage } = useContext(AppContext)
   const networksMessages = getMessage('home', 'networks')
 
   // KEEP: data-close-menu -> usado para fechar o menu quando clicar fora dele
   return (
-    <Main>
+    <Main metaContent={metaContent}>
       <section className="home container">
         <div className="content">
           <div className="home__left">
@@ -65,6 +69,28 @@ const Index = () => {
       </section>
     </Main>
   )
+}
+
+Index.propTypes = {
+  metaContent: PropTypes.object
+}
+
+export async function getStaticProps() {
+  try {
+    const metaContent = useGetPageMetaContent('home')
+
+    return {
+      props: {
+        metaContent
+      }
+    }
+  } catch (error) {
+    return {
+      props: {
+        metaContent: {}
+      }
+    }
+  }
 }
 
 export default Index

@@ -1,4 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
+
 import { DEFAULT_LANG } from '../components/helpers/constants'
 
 // https://github.com/zeit/next.js#custom-document

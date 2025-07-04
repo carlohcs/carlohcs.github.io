@@ -1,8 +1,9 @@
 import App from 'next/app'
 import Router from 'next/router'
+import withGA from 'next-ga'
+
 import { AppProvider } from '../components/providers/AppProvider'
 import { PageTransition } from '../components/transition/PageTransition'
-import withGA from 'next-ga'
 
 import 'normalize.css'
 import '../styles/globals.css'

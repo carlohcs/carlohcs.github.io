@@ -1,9 +1,11 @@
 import { useContext } from 'react'
-import { AppContext } from '../providers/AppProvider'
-import PropTypes from 'prop-types'
-import { createMarkup } from '../helpers/create-markup'
-import { useGetTranslationKey } from '../../hooks/use-get-translation-key'
+
 import { withRouter } from 'next/router'
+import PropTypes from 'prop-types'
+
+import { useGetTranslationKey } from '../../hooks/use-get-translation-key'
+import { createMarkup } from '../helpers/create-markup'
+import { AppContext } from '../providers/AppProvider'
 
 const Introduction = withRouter(({ title, titleDescription, description, router }) => {
   const { getMessage } = useContext(AppContext)

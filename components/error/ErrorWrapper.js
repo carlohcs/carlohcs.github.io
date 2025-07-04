@@ -1,11 +1,13 @@
 import { useContext } from 'react'
-import { Main } from '../../layouts/main'
-import { AppContext } from '../providers/AppProvider'
+
+import Head from 'next/head'
 import PropTypes from 'prop-types'
 
-import './error.css'
+import { Main } from '../../layouts/main'
 import { createMarkup } from '../helpers/create-markup'
-import Head from 'next/head'
+import { AppContext } from '../providers/AppProvider'
+
+import './error.css'
 
 const ErrorWrapper = ({ statusCode }) => {
   const { getMessage } = useContext(AppContext)
