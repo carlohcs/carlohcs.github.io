@@ -68,8 +68,8 @@ const Meta = withRouter(({ router, customTitle, metaContent }) => {
         {/* Imagem principal para compartilhamento */}
         <meta property="og:image" content={finalMetaContent.image} />
         <meta property="og:image:alt" content={finalMetaContent.imageAlt} />
-        {/* <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" /> */}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:secure_url" content={finalMetaContent.image} />
 

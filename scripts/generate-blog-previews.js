@@ -10,7 +10,7 @@ const BLOG_IMAGES_DIR = path.join(__dirname, '..', 'static', 'img', 'blog')
 
 // Configurações de design
 const CANVAS_WIDTH = 1200
-const CANVAS_HEIGHT = 630
+const CANVAS_HEIGHT = 628
 const OVERLAY_HEIGHT = 260
 const OVERLAY_MARGIN = 15  // Margens de 15px para top, left e right
 const OVERLAY_SIDE_MARGIN = 63  // Margem lateral específica para o overlay
@@ -37,11 +37,11 @@ async function createPreviewImage(post) {
       if (fs.existsSync(postImagePath)) {
         console.log(`  🖼️  Usando imagem: ${path.basename(postImagePath)}`)
 
-        // Redimensiona para 1170x520px e adiciona transparência à imagem do post
+        // Adiciona transparência à imagem do post
         postImageBuffer = await sharp(postImagePath)
-          .resize(1170, 520, { fit: 'cover' })
+          .resize(1170, 525, { fit: 'cover' })
           .composite([{
-            input: Buffer.from([255, 255, 255, 128]), // Branco com 50% transparência
+            input: Buffer.from([0, 0, 0, 128]), // Preto com 50% transparência
             raw: { width: 1, height: 1, channels: 4 },
             tile: true,
             blend: 'multiply'
@@ -52,7 +52,7 @@ async function createPreviewImage(post) {
     }
 
     // 3. Cria overlay com texto
-    const overlayY = 164 // 164px do topo
+    const overlayY = 163 // 163px do topo
     const overlayWidth = CANVAS_WIDTH - (OVERLAY_SIDE_MARGIN * 2)
     const textWidth = overlayWidth - (TEXT_PADDING * 2)
 
