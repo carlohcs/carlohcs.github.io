@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types'
-import { getAllPosts, getPostBySlug } from '../../components/helpers/blog-utils'
+import { getAllPosts, getPostBySlug, getPostImage } from '../../components/helpers/blog-utils'
 import { Main } from '../../layouts/main'
 import { useContext } from 'react'
 import { AppContext } from '../../components/providers/AppProvider'
 import { formatDate } from '../../components/helpers/date'
+import { getBuildTimeData } from '../../components/helpers/build-time-data'
+import { useGetHost } from '../../hooks/use-get-host'
+import { messages } from '../../etc/messages'
 
 import './blog-post.css'
 
@@ -53,6 +56,7 @@ const BlogPost = ({ post }) => {
   return (
     <>
       <Main
+        metaContent={post.metaContent}
         customTitle={post.title}
         customTitleDescription={<PostMeta post={post} />}
         customDescription={<PostComeBack />}>
@@ -111,13 +115,30 @@ export async function getStaticPaths() {
   }
 }
 
-// Gets the post data by slug
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug)
+  const host = useGetHost()
+  const buildTimeData = getBuildTimeData()
+  const isBuildData = !!buildTimeData
+  const posts = isBuildData ? buildTimeData.posts : getAllPosts()
+
+  const post = getPostBySlug(params.slug) || posts.find(p => p.slug === params.slug)
+
+  if (!post) {
+    return { notFound: true }
+  }
+
+  const image = getPostImage(post)
+
+  post.metaContent = {
+    title: `${post.title} | Blog ${messages['en'].page.titleSuffix}`,
+    description: post.excerpt,
+    image: `${host}${image}`,
+    imageAlt: post.title
+  }
 
   return {
     props: {
-      post: post || null
+      post
     },
     revalidate: 86400
   }

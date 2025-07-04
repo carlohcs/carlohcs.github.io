@@ -12,7 +12,7 @@ import { useGetTranslationKey } from '../hooks/use-get-translation-key'
 
 // Fonts vs SVG: https://fontawesome.com/how-to-use/on-the-web/other-topics/performance
 
-const Main = withRouter(({ children, router, customTitle, customTitleDescription, customDescription }) => {
+const Main = withRouter(({ children, router, customTitle, customTitleDescription, customDescription, metaContent }) => {
   const { resetMenuBehavior } = useContext(AppContext)
   const translationKey = useGetTranslationKey(router)
   const [loadedConfigs, setLoadedConfigs] = useState(false)
@@ -69,7 +69,7 @@ const Main = withRouter(({ children, router, customTitle, customTitleDescription
 
   return (
     <div className="app">
-      <Meta customTitle={customTitle} />
+      <Meta customTitle={customTitle} metaContent={metaContent}/>
       <Header />
       <Menu />
       { isTransitioning && <div className="loading-indicator" /> }
@@ -83,7 +83,8 @@ Main.propTypes = {
   router: PropTypes.object,
   customTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   customTitleDescription: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  customDescription: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+  customDescription: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  metaContent: PropTypes.object
 }
 
 // https://stackoverflow.com/questions/49809884/access-react-context-outside-of-render-function?answertab=votes#tab-top

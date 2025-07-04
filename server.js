@@ -1,12 +1,10 @@
 const next = require('next')
 const { routes } = require('./routes')
-const { makeConfig } = require('./config')
+const { config, isProd } = require('./etc/config')
 const express = require('express')
 
-const envConfig = makeConfig()
-const app = next({ dev: envConfig.env !== 'production' })
+const app = next({ dev: !isProd })
 const routesHandler = routes.getRequestHandler(app)
-const isProd = envConfig.env === 'production'
 
 // https://github.com/fridays/next-routes#on-the-server
 
@@ -14,8 +12,8 @@ const isProd = envConfig.env === 'production'
 function handleRedirect(req, res, next) {
   let requestedUrl = req.originalUrl === '/' ? '' : req.originalUrl
 
-  if (isProd && req.hostname !== envConfig.host) {
-    return res.redirect(301, `${envConfig.baseUrl}${requestedUrl}`)
+  if (isProd && req.hostname !== config.host) {
+    return res.redirect(301, `${config.baseUrl}${requestedUrl}`)
   } else {
     return next()
   }

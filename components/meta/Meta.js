@@ -7,9 +7,15 @@ import { withRouter } from 'next/router'
 import PropTypes from 'prop-types'
 import { useMetaContent } from '../../hooks/use-meta-content'
 
-const Meta = withRouter(({ router, customTitle }) => {
+const Meta = withRouter(({ router, customTitle, metaContent }) => {
   const { getMessage } = useContext(AppContext)
-  const metaContent = useMetaContent({ router, customTitle })
+  const dynamicMetaContent = useMetaContent({ router, customTitle })
+
+  // Prioridade: metaContent passado como prop sobrescreve o dinâmico
+  const finalMetaContent = {
+    ...dynamicMetaContent,
+    ...(metaContent || {})
+  }
 
   return (
     <>
@@ -25,30 +31,15 @@ const Meta = withRouter(({ router, customTitle }) => {
         {/* SCRIPT CRÍTICO - Executa antes de qualquer CSS */}
         <script dangerouslySetInnerHTML={{ __html: getThemeInitScript() }} />
 
-        {/* CSS crítico inline */}
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            body { 
-              transition: none !important;
-              background: #fff; 
-              color: #1e1e1e;
-            }
-            body.dark-ui { 
-              background: #1e1e1e !important; 
-              color: #e1e1e1 !important;
-            }
-          `
-        }} />
-
         {/* Configurações básicas do navegador */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{metaContent.title}</title>
+        <title>{finalMetaContent.title}</title>
         <meta charSet="utf-8" />
 
         {/* SEO fundamental - impacto direto no ranking */}
-        <meta name="description" content={metaContent.description} />
-        <meta name="keywords" content={metaContent.keywords} />
-        <meta name="author" content={metaContent.author} />
+        <meta name="description" content={finalMetaContent.description} />
+        <meta name="keywords" content={finalMetaContent.keywords} />
+        <meta name="author" content={finalMetaContent.author} />
 
         {/* Controle de indexação - define como motores de busca veem o site */}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -65,23 +56,23 @@ const Meta = withRouter(({ router, customTitle }) => {
         {/* ========================================= */}
 
         {/* Informações básicas para Facebook, LinkedIn, WhatsApp */}
-        <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content={metaContent.siteName} />
-        <meta property="og:title" content={metaContent.title} />
-        <meta property="og:description" content={metaContent.description} />
-        <meta property="og:url" content={metaContent.url} />
+        <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content={finalMetaContent.siteName} />
+        <meta property="og:title" content={finalMetaContent.title} />
+        <meta property="og:description" content={finalMetaContent.description} />
+        <meta property="og:url" content={finalMetaContent.url} />
         <meta property="og:type" content="website" />
-        <meta property="og:locale" content={metaContent.locale} />
+        <meta property="og:locale" content={finalMetaContent.locale} />
 
         {/* Imagem principal para compartilhamento */}
-        <meta property="og:image" content={metaContent.image} />
-        <meta property="og:image:alt" content={metaContent.imageAlt} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image" content={finalMetaContent.image} />
+        <meta property="og:image:alt" content={finalMetaContent.imageAlt} />
+        {/* <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" /> */}
         <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:secure_url" content={metaContent.image} />
+        <meta property="og:image:secure_url" content={finalMetaContent.image} />
 
         {/* Informações específicas para artigos/portfolio */}
-        <meta property="article:author" content={metaContent.author} />
+        <meta property="article:author" content={finalMetaContent.author} />
         <meta property="article:section" content="Portfolio" />
         <meta property="article:tag" content="Software Engineer" />
         <meta property="article:tag" content="Frontend Developer" />
@@ -95,10 +86,10 @@ const Meta = withRouter(({ router, customTitle }) => {
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:site" content="@carlohcs" />
         <meta property="twitter:creator" content="@carlohcs" />
-        <meta property="twitter:title" content={metaContent.title} />
-        <meta property="twitter:description" content={metaContent.description} />
-        <meta property="twitter:image" content={metaContent.image} />
-        <meta name="twitter:image:alt" content={metaContent.imageAlt} />
+        <meta property="twitter:title" content={finalMetaContent.title} />
+        <meta property="twitter:description" content={finalMetaContent.description} />
+        <meta property="twitter:image" content={finalMetaContent.image} />
+        <meta name="twitter:image:alt" content={finalMetaContent.imageAlt} />
         <meta name="twitter:domain" content="carlohcs.me" />
 
         {/* ========================================= */}
@@ -274,7 +265,8 @@ const Meta = withRouter(({ router, customTitle }) => {
 
 Meta.propTypes = {
   router: PropTypes.object,
-  customTitle: PropTypes.string
+  customTitle: PropTypes.string,
+  metaContent: PropTypes.object
 }
 
 export {

@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { AppContext } from '../components/providers/AppProvider'
+import { messages } from '../etc/messages'
 
 export const useGetPageTitle = ({ title }) => {
   const { getMessage } = useContext(AppContext)
@@ -8,7 +9,7 @@ export const useGetPageTitle = ({ title }) => {
   let finalTitle
 
   if (isBlogPost) {
-    finalTitle = `${finalTitle} | Blog`
+    finalTitle = `${finalTitle} | Blog ${messages['en'].page.titleSuffix}`
   }
 
   finalTitle = title ? `${title} ${getMessage('page', 'titleSuffix')}` : getMessage('page', 'defaultTitle')
