@@ -18,7 +18,7 @@ const defaultConfig = {
 }
 
 const makeConfig = () => {
-  const env = process.env.APP_ENV || 'development'
+  const env = process.env.APP_ENV || 'production'
 
   return { ...genericConfig, ...defaultConfig[env], env, isProd: env === 'production' }
 }
