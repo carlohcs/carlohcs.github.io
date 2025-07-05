@@ -1,0 +1,23 @@
+# https://carlohcs.me/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://carlohcs.me/sitemap.xml
+
+# Recursos importantes
+Allow: /static/img/
+Allow: /static/manifest.json
+Allow: /_next/static/
+
+# Bloquear arquivos desnecessários
+Disallow: /_next/static/chunks/
+Disallow: /static/video/
+Disallow: /*.json$
+
+# Crawl-delay para ser gentil com o servidor
+Crawl-delay: 1
+
+# Informações de contato
+# Contact: carlohcs@gmail.com
