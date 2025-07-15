@@ -33,6 +33,23 @@ const Meta = withRouter(({ router, customTitle, metaContent }) => {
         {/* SCRIPT CRÍTICO - Executa antes de qualquer CSS */}
         <script dangerouslySetInnerHTML={{ __html: getThemeInitScript() }} />
 
+        <script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZBRQER7ZJC"
+          async
+        />
+        <script
+          id="gtag-init"
+          async
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZBRQER7ZJC');
+      `
+          }}
+        />
+
         {/* Configurações básicas do navegador */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{finalMetaContent.title}</title>

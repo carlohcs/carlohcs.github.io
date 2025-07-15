@@ -1,6 +1,5 @@
 import App from 'next/app'
 import Router from 'next/router'
-import withGA from 'next-ga'
 
 import { AppProvider } from '../components/providers/AppProvider'
 import { PageTransition } from '../components/transition/PageTransition'
@@ -53,5 +52,4 @@ class MyApp extends App {
   }
 }
 
-// https://www.npmjs.com/package/next-ga
-export default  withGA('UA-41452796-2', Router)(MyApp)
+export default MyApp
