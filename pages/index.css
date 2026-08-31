@@ -1,3 +1,24 @@
+.home-page {
+  @media (min-width: 1280px) {
+    /* background: url(../static/img/home/carlohcs-2026.webp) center right no-repeat; */
+    background-size: cover;
+    /* Use a black tint to darken, or white tint to brighten */
+    /* background-color: rgba(0, 0, 0, 0.9);  */
+    /* background-color: #1e1e1e !important; */
+  
+    /* Blends the color and image together */
+    /* background-blend-mode: darken;  */
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+              url(../static/img/home/carlohcs-2026.webp_2K_202608311846.jpeg) center/cover;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .page-component {
+      padding: 0 120px 0 120px;
+    }
+  }
+}
+
 .home {
   &__left {
     @media (min-width: 1024px) {
@@ -9,7 +30,7 @@
     }
   }
 
-  &__right {
+  /* &__right {
     filter: saturate(0.9);
     display: none;
     position: absolute;
@@ -27,7 +48,7 @@
       background-position: bottom left;
       background-size: 840px;
     }
-  }
+  } */
 
   &__carlohcs-photography {
     &--xs {

@@ -62,20 +62,21 @@ const Main = withRouter(({ children, router, customTitle, customTitleDescription
   }, [])
 
   const hasIntroduction = (translationKey || customTitle || customTitleDescription || customDescription)
+  const isHome = translationKey === 'home'
   const excludedIntroduction = ['home'].includes(translationKey)
 
   const mainContent = !loadedConfigs && !isTransitioning ? '' : <div className={pageClasses} data-close-menu>
-    { (hasIntroduction && !excludedIntroduction) && <Introduction title={customTitle} titleDescription={customTitleDescription} description={customDescription} /> }
+    {(hasIntroduction && !excludedIntroduction) && <Introduction title={customTitle} titleDescription={customTitleDescription} description={customDescription} />}
     {children}
   </div>
 
   return (
-    <div className="app">
-      <Meta customTitle={customTitle} metaContent={metaContent}/>
+    <div className={`app ${isHome ? 'home-page' : ''}`}>
+      <Meta customTitle={customTitle} metaContent={metaContent} />
       <Header />
       <Menu />
-      { isTransitioning && <div className="loading-indicator" /> }
-      { mainContent }
+      {isTransitioning && <div className="loading-indicator" />}
+      {mainContent}
     </div>
   )
 })

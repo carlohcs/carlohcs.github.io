@@ -32,7 +32,7 @@ const Index = ({ metaContent }) => {
       <section className="home container">
         <div className="content">
           <div className="home__left">
-            <img src={require('../assets/img/home/carlohcs-xs-2.jpg')} alt="Fotografia de Carlos Henrique" className="home__carlohcs-photography--xs" />
+            <img src={require('../assets/img/home/carlohcs-2026-xs.webp')} alt="Fotografia de Carlos Henrique" className="home__carlohcs-photography--xs" />
 
             <div className="page__description">
               <div className="home__welcome">

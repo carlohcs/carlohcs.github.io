@@ -5,11 +5,13 @@ header {
   padding: 40px;
 
   @media screen and (min-width: 1280px) {
-    padding: 40px 80px 80px;
+    /* padding: 40px 80px 80px; */
+    padding: 40px 80px 60px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 80px 120px 80px;
+    /* padding: 60px 120px 80px; */
+    padding: 60px 120px 60px;
   }
 
   div {

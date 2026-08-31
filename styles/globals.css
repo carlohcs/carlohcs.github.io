@@ -314,18 +314,20 @@ h2 {
   display: flex;
   flex-flow: column;
   width: 100%;
-  min-height: calc(100vh - 120px);
+  /* min-height: calc(100vh - 120px); */
   justify-content: flex-start;
   visibility: visible;
   box-sizing: border-box;
   padding: 0 40px 40px;
 
   @media screen and (min-width: 1280px) {
-    padding: 0 80px 80px 80px;
+    /* padding: 0 80px 80px 80px; */
+    padding: 0 80px 40px 80px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 0 120px 120px 120px;
+    /* padding: 0 120px 120px 120px; */
+    padding: 0 120px 80px 120px;
   }
 
   > h1 {

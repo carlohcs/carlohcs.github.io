@@ -44,7 +44,7 @@ export const messages = {
       }
     ],
     footer: {
-      description: '"Quando não me sentir mais útil, quando sentir que estou pensando só em mim mesmo, não tenho mais o direito de estar vivo. É assim que penso."<br /><br />- Enéas Carneiro'
+      description: '"Quando não me sentir mais útil, quando sentir que estou pensando só em mim mesmo, não tenho mais o direito de estar vivo. É assim que penso."<br /><br />- Enéas Carneiro<br /><br />'
     },
     home: {
       title: 'Carlos Henrique',
@@ -373,7 +373,7 @@ export const messages = {
       }
     ],
     footer: {
-      description: '"When I no longer feel useful, when I feel that I am thinking only of myself, I no longer have the right to be alive. That is how I think."<br /><br />- Enéas Carneiro'
+      description: '"When I no longer feel useful, when I feel that I am thinking only of myself, <br />I no longer have the right to be alive. That is how I think."<br /><br />- Enéas Carneiro<br /><br />'
     },
     home: {
       title: 'Carlos Henrique',
